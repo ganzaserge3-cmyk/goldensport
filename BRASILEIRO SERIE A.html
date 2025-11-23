@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro Série A - Ganza Sport Hub</title>
+    <link rel="icon" type="image/jpg" href="https://static.vecteezy.com/system/resources/previews/002/767/621/non_2x/gs-logo-letter-initial-logo-designs-template-free-vector.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #222;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 3px solid #080707;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.25s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Active page indicator */
+        nav a[href="brasileiro-serie-a.html"] {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        nav a[href="brasileiro-serie-a.html"]::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: #0f0f0f;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 35px 0 15px;
+            font-weight: 700;
+            color: #333;
+            border-left: 5px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            color: #333;
+            border-left: 4px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            padding: 14px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 2px solid #ccc;
+            position: sticky;
+            top: 0;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Table row hover effect */
+        tbody tr:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* RELEGATION ZONE */
+        .relegation-zone td {
+            background: #100f0f;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* LIBERTADORES ZONE */
+        .libertadores {
+            background: #e8f4ff !important;
+        }
+
+        /* SUL-AMERICANA ZONE */
+        .sul-americana {
+            background: #fff0e8 !important;
+        }
+
+        /* Player stats highlight */
+        .top-player {
+            position: relative;
+        }
+
+        .top-player::after {
+            content: "★";
+            color: #ffcc00;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #080808;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .footer-section h2::after {
+            display: none;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sports-showcase {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .square-img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .under-text, .powered-text {
+            text-align: center;
+            color: #ccc;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* League info section */
+        .league-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #171717;
+        }
+
+        .info-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Section tabs */
+        .section-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #0f0909;
+            border-bottom: 3px solid #0b0b0b;
+        }
+
+        .tab:hover {
+            color: #0f0e0e;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            main {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h2::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            h3 {
+                font-size: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h3::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            table th, table td {
+                font-size: 15px;
+                padding: 8px;
+            }
+            
+            .league-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        /* Small screen adjustments */
+        @media(max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                margin: 25px 0 10px;
+            }
+            
+            h3 {
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+            
+            table th, table td {
+                font-size: 14px;
+                padding: 6px;
+            }
+            
+            footer {
+                padding: 30px 15px 15px;
+            }
+            
+            .info-value {
+                font-size: 20px;
+            }
+        }
+
+        /* Animation for table rows */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        tbody tr {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.05s; }
+        tbody tr:nth-child(2) { animation-delay: 0.1s; }
+        tbody tr:nth-child(3) { animation-delay: 0.15s; }
+        tbody tr:nth-child(4) { animation-delay: 0.2s; }
+        tbody tr:nth-child(5) { animation-delay: 0.25s; }
+        tbody tr:nth-child(6) { animation-delay: 0.3s; }
+        tbody tr:nth-child(7) { animation-delay: 0.35s; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-trophy"></i> BRASILEIRO SÉRIE A</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    
+        </nav>
+    </header>
+
+    <main>
+        <section id="brasileiro-serie-a">
+            <!-- League Info Section -->
+            <div class="league-info">
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="info-value">2024</div>
+                    <div class="info-label">Season</div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-users"></i>
+                    <div class="info-value">20</div>
+                    <div class="info-label">Teams</div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-trophy"></i>
+                    <div class="info-value">38</div>
+                    <div class="info-label">Matchdays</div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="info-value">78%</div>
+                    <div class="info-label">Avg. Attendance</div>
+                </div>
+            </div>
+
+            <!-- Section Tabs -->
+            <div class="section-tabs">
+                <div class="tab active" data-tab="player-stats">Player Stats</div>
+                <div class="tab" data-tab="fixtures">Fixtures</div>
+                <div class="tab" data-tab="standings">Standings</div>
+            </div>
+
+            <!-- Player Stats Tab Content -->
+            <div class="tab-content active" id="player-stats">
+                <h2><i class="fas fa-running"></i> TOP TACKLES - BRASILEIRO SÉRIE A</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Tackles P90</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td class="top-player">Rafael Ramos</td><td>Ceará</td><td>4.0</td></tr>
+                        <tr><td>2</td><td class="top-player">Lucas Sasha</td><td>Fortaleza EC</td><td>3.9</td></tr>
+                        <tr><td>3</td><td class="top-player">Gonzalo Escobar</td><td>Santos FC</td><td>3.7</td></tr>
+                        <tr><td>4</td><td>Kaiki</td><td>Cruzeiro EC</td><td>2.2</td></tr>
+                        <tr><td>5</td><td>Paulo Henrique</td><td>CR Vasco da Gama</td><td>2.2</td></tr>
+                        <tr><td>6</td><td>Ferraresi</td><td>São Paulo FC</td><td>2.2</td></tr>
+                        <tr><td>7</td><td>Alexandro Bernabei</td><td>SC Internacional</td><td>2.1</td></tr>
+                        <tr><td>8</td><td>Sasha</td><td>Fortaleza EC</td><td>2.1</td></tr>
+                        <tr><td>9</td><td>Raul</td><td>Ceará</td><td>2.0</td></tr>
+                        <tr><td>10</td><td>Jemmes</td><td>Mirassol FC</td><td>1.9</td></tr>
+                    </tbody>
+                </table>
+
+                <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - BRASILEIRO SÉRIE A</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Total Clean Sheets</th>
+                            <th>Matches Played</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td class="top-player">Agustín Rossi</td><td>CR Flamengo</td><td>16</td><td>30</td></tr>
+                        <tr><td>2</td><td class="top-player">Cássio</td><td>Cruzeiro EC</td><td>13</td><td>29</td></tr>
+                        <tr><td>3</td><td class="top-player">Rafael</td><td>São Paulo FC</td><td>11</td><td>29</td></tr>
+                        <tr><td>4</td><td>Fábio</td><td>Fluminense FC</td><td>11</td><td>31</td></tr>
+                        <tr><td>5</td><td>Everson</td><td>Clube Atlético Mineiro</td><td>10</td><td>28</td></tr>
+                        <tr><td>6</td><td>John Victor</td><td>Botafogo (RJ)</td><td>9</td><td>17</td></tr>
+                        <tr><td>7</td><td>Walter</td><td>Mirassol FC</td><td>9</td><td>24</td></tr>
+                        <tr><td>8</td><td>Hugo Souza</td><td>SC Corinthians Paulista</td><td>9</td><td>24</td></tr>
+                        <tr><td>9</td><td>Weverton</td><td>SE Palmeiras</td><td>9</td><td>26</td></tr>
+                        <tr><td>10</td><td>Ronaldo</td><td>EC Bahia</td><td>8</td><td>21</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Fixtures Tab Content -->
+            <div class="tab-content" id="fixtures">
+                <h2><i class="fas fa-calendar"></i> BRASILEIRO SÉRIE A FIXTURES</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date (BRT)</th>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Match Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Wed, Nov 12</td><td>Atlético Mineiro</td><td>Fortaleza EC</td><td>Rescheduled Match</td></tr>
+                        <tr><td>Sat, Nov 15</td><td>Sport Recife</td><td>CR Flamengo</td><td>Rescheduled Match</td></tr>
+                        <tr><td>Sat, Nov 15</td><td>Santos FC</td><td>SE Palmeiras</td><td>Rescheduled Match</td></tr>
+                        <tr><td>Sun, Nov 16</td><td>Red Bull Bragantino</td><td>Atlético Mineiro</td><td>Rescheduled Match</td></tr>
+                        <tr><td>Tue, Nov 18</td><td>Botafogo (RJ)</td><td>Sport Recife</td><td>Round 34 / Rescheduled</td></tr>
+                        <tr><td>Wed, Nov 19</td><td>Palmeiras</td><td>Vitória</td><td>Round 37 Match</td></tr>
+                        <tr><td>Wed, Nov 19</td><td>Fluminense FC</td><td>CR Flamengo</td><td>Round 34</td></tr>
+                        <tr><td>Wed, Nov 19</td><td>Grêmio</td><td>Vasco da Gama</td><td>Round 34</td></tr>
+                        <tr><td>Wed, Nov 19</td><td>Santos FC</td><td>Mirassol FC</td><td>Round 34</td></tr>
+                        <tr><td>Thu, Nov 20</td><td>Juventude</td><td>Cruzeiro EC</td><td>Round 34</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Standings Tab Content -->
+            <div class="tab-content" id="standings">
+                <h2><i class="fas fa-list-ol"></i> BRASILEIRO SÉRIE A STANDINGS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="libertadores"><td>1</td><td>SE Palmeiras</td><td>32</td><td>21</td><td>5</td><td>6</td><td>58</td><td>28</td><td>+30</td><td>68</td></tr>
+                        <tr class="libertadores"><td>2</td><td>CR Flamengo</td><td>32</td><td>20</td><td>8</td><td>4</td><td>64</td><td>20</td><td>+44</td><td>68</td></tr>
+                        <tr class="libertadores"><td>3</td><td>Cruzeiro EC</td><td>33</td><td>18</td><td>10</td><td>5</td><td>46</td><td>22</td><td>+24</td><td>64</td></tr>
+                        <tr class="libertadores"><td>4</td><td>Mirassol FC</td><td>33</td><td>16</td><td>11</td><td>6</td><td>54</td><td>33</td><td>+21</td><td>59</td></tr>
+                        <tr class="sul-americana"><td>5</td><td>EC Bahia</td><td>33</td><td>15</td><td>8</td><td>10</td><td>44</td><td>40</td><td>+4</td><td>53</td></tr>
+                        <tr class="sul-americana"><td>6</td><td>Botafogo (RJ)</td><td>33</td><td>14</td><td>10</td><td>9</td><td>44</td><td>28</td><td>+16</td><td>52</td></tr>
+                        <tr class="sul-americana"><td>7</td><td>Fluminense FC</td><td>33</td><td>15</td><td>6</td><td>12</td><td>38</td><td>37</td><td>+1</td><td>51</td></tr>
+                        <tr class="relegation-zone"><td>8</td><td>São Paulo FC</td><td>33</td><td>12</td><td>9</td><td>12</td><td>37</td><td>36</td><td>+1</td><td>45</td></tr>
+                        <tr class="relegation-zone"><td>9</td><td>Atlético Mineiro</td><td>32</td><td>11</td><td>10</td><td>11</td><td>34</td><td>34</td><td>0</td><td>43</td></tr>
+                        <tr class="relegation-zone"><td>10</td><td>CR Vasco da Gama</td><td>33</td><td>12</td><td>6</td><td>15</td><td>50</td><td>49</td><td>+1</td><td>42</td></tr>
+                    </tbody>
+                </table>
+                
+                <div style="margin-top: 20px; font-size: 14px; color: #666;">
+                    <p><span style="display: inline-block; width: 12px; height: 12px; background: #e8f4ff; margin-right: 5px;"></span> Copa Libertadores Qualification</p>
+                    <p><span style="display: inline-block; width: 12px; height: 12px; background: #fff0e8; margin-right: 5px;"></span> Copa Sul-Americana Qualification</p>
+                    <p><span style="display: inline-block; width: 12px; height: 12px; background: #100f0f; margin-right: 5px;"></span> Relegation Zone</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                <h2>GANZA SPORT HUB</h2>
+                <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+            </div>
+
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@ganza_0" target="_blank" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.instagram.com/gsporthub" target="_blank" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+                    </a>
+                    <a href="mailto:gsportlive1a@gmail.com" class="email-link" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fa-solid fa-envelope"></i> gsportlive1a@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sports-showcase">
+            <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img" alt="Ganza Sport Hub">
+        </div>
+
+        <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
+        <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
+
+        <p class="footer-copyright">
+            © 𝟐𝟎𝟐𝟓 𝐆𝐚𝐧𝐳𝐚 𝐒𝐩𝐨𝐫𝐭 𝐇𝐮𝐛 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Add animation to table rows on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('tbody tr').forEach(row => {
+                row.style.animationPlayState = 'paused';
+                observer.observe(row);
+            });
+        });
+    </script>
+</body>
+</html>
