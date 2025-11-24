@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - Ganza Sport Hub</title>
+<title>About Us - Golden Sport</title>
+
+<!-- Logo (favicon) -->
+<link rel="icon" type="image/jpg" 
+href="https://static.vecteezy.com/system/resources/previews/002/767/621/non_2x/gs-logo-letter-initial-logo-designs-template-free-vector.jpg">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3486690881489807"
+     crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
@@ -100,35 +107,55 @@ main {
     min-width: 200px;
 }
 
-h2, h3 {
-    color: #000000;
-    margin-top: 20px;
-    margin-bottom: 10px;
+h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 h2 {
-    font-size: 24px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    border-left: 5px solid #000;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-h3 {
-    font-size: 20px;
-    color: #333;
-}
-
-p, li {
+p {
+    margin: 12px 0;
     font-size: 16px;
-    margin-bottom: 12px;
 }
 
 ul {
-    margin-left: 20px;
+    margin: 15px 0;
+    padding-left: 20px;
 }
 
-section {
+li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 footer {
@@ -138,23 +165,6 @@ footer {
     padding: 15px;
     margin-top: 40px;
     font-size: 14px;
-}
-
-/* Content sections styling */
-.content-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.content-section ul {
-    margin-left: 30px;
-}
-
-.content-section li {
-    margin-bottom: 8px;
 }
 
 /* Responsive adjustments */
@@ -186,6 +196,135 @@ footer {
     .content-section {
         padding: 15px;
     }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Footer specific styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: none;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin: 10px;
+    border: none;
+}
+
+.footer-section h2 {
+    color: #87ceeb;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.footer-section p,
+.footer-section ul li a {
+    color: #d0eaff;
+    line-height: 1.6;
+    text-decoration: none;
+    border: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    border: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    border: none;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    display: inline-block;
+    border: none;
+}
+
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s;
+    border: none;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    color: #87ceeb;
+    font-size: 14px;
+    margin-top: 10px;
+    border: none;
+}
+
+.email-link i {
+    color: #7b3f00;
+    font-size: 22px;
+    margin-right: 8px;
+    transition: color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.email-link:hover i {
+    color: #a0522d;
+    transform: scale(1.1);
+}
+
+/* IMAGE AREA */
+.sports-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: none;
+}
+
+.square-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain; 
+    background-color: white;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+.under-text {
+    text-align: center;
+    margin-top: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.powered-text {
+    text-align: center;
+    margin-top: 2px;
+    color:white;
+    font-size: 14px;
+    border: none;
 }
 </style>
 </head>
@@ -196,7 +335,6 @@ footer {
     <h1 id="page-title"><i class="fas fa-info-circle"></i> About Us</h1>
     <nav>
         <a href="index.html" id="nav-home"><i class="fas fa-home"></i> Home</a>
- 
     </nav>
 </header>
 
@@ -219,29 +357,29 @@ footer {
         </select>
     </div>
 
-    <section>
+    <div class="container">
         <div class="content-section">
-            <h2 id="welcome-title">Welcome to Ganza Sport Hub</h2>
+            <h2 id="welcome-title"><i class="fas fa-basketball-ball"></i> Welcome to Golden Sport</h2>
             <p id="welcome-text1">
-                Ganza Sport Hub is a premier destination for sports enthusiasts worldwide, established in 2025 with the goal of delivering the most comprehensive, accurate, and engaging coverage of sports. We provide live scores, detailed statistics, match previews, expert commentary, and a thriving community platform where fans can connect and share their passion for the game.
+                Golden Sport is a premier destination for sports enthusiasts worldwide, established in 2025 with the goal of delivering the most comprehensive, accurate, and engaging coverage of sports. We provide live scores, detailed statistics, match previews, expert commentary, and a thriving community platform where fans can connect and share their passion for the game.
             </p>
             <p id="welcome-text2">
-                Our platform covers a wide variety of sports including basketball, football, volleyball, and international competitions. We recognize that sports fans crave more than just scores—they want insights, analysis, historical context, and stories behind the games. At Ganza Sport Hub, we work tirelessly to meet these needs and create a hub that caters to every type of sports fan.
+                Our platform covers a wide variety of sports including basketball, football, volleyball, and international competitions. We recognize that sports fans crave more than just scores—they want insights, analysis, historical context, and stories behind the games. At Golden Sport, we work tirelessly to meet these needs and create a hub that caters to every type of sports fan.
             </p>
         </div>
 
         <div class="content-section">
-            <h3 id="story-title">Our Story and Background</h3>
+            <h2 id="story-title"><i class="fas fa-history"></i> Our Story and Background</h2>
             <p id="story-text1">
-                Ganza Sport Hub began as a small initiative led by a group of passionate sports enthusiasts who noticed a gap in the availability of reliable, comprehensive, and user-friendly sports content. Initially focusing on local leagues and community sports events, the platform quickly expanded as our audience grew to include coverage of national and international competitions.
+                Golden Sport began as a small initiative led by a group of passionate sports enthusiasts who noticed a gap in the availability of reliable, comprehensive, and user-friendly sports content. Initially focusing on local leagues and community sports events, the platform quickly expanded as our audience grew to include coverage of national and international competitions.
             </p>
             <p id="story-text2">
-                Over the years, our team has grown to include professional sports analysts, statisticians, writers, and technology experts, all committed to delivering accurate information and exceptional user experience. Today, Ganza Sport Hub stands as a trusted source for sports news, analytics, and fan engagement worldwide.
+                Over the years, our team has grown to include professional sports analysts, statisticians, writers, and technology experts, all committed to delivering accurate information and exceptional user experience. Today, Golden Sport stands as a trusted source for sports news, analytics, and fan engagement worldwide.
             </p>
         </div>
 
         <div class="content-section">
-            <h3 id="mission-title">Our Mission</h3>
+            <h2 id="mission-title"><i class="fas fa-bullseye"></i> Our Mission</h2>
             <p id="mission-text">
                 Our mission is to provide a complete sports experience for fans by combining real-time updates, detailed statistics, expert insights, and interactive community features. We strive to connect fans with their favorite teams, players, and games, fostering a deep understanding and appreciation for sports at every level.
             </p>
@@ -255,14 +393,14 @@ footer {
         </div>
 
         <div class="content-section">
-            <h3 id="vision-title">Our Vision</h3>
+            <h2 id="vision-title"><i class="fas fa-eye"></i> Our Vision</h2>
             <p id="vision-text">
                 Our vision is to become the leading sports hub globally—a platform where fans can not only follow the games but also gain insights, learn about strategies, and celebrate the culture of sports. We aim to connect communities, inspire athletes, and create a space where sports lovers of all ages can come together.
             </p>
         </div>
 
         <div class="content-section">
-            <h3 id="values-title">Core Values</h3>
+            <h2 id="values-title"><i class="fas fa-star"></i> Core Values</h2>
             <ul>
                 <li id="value-integrity"><i class="fas fa-balance-scale"></i> <strong>Integrity:</strong> We provide unbiased, accurate, and fact-checked content.</li>
                 <li id="value-passion"><i class="fas fa-heart"></i> <strong>Passion:</strong> Our team lives and breathes sports, and our enthusiasm drives our content.</li>
@@ -273,9 +411,9 @@ footer {
         </div>
 
         <div class="content-section">
-            <h3 id="services-title">Our Services and Features</h3>
+            <h2 id="services-title"><i class="fas fa-cogs"></i> Our Services and Features</h2>
             <p id="services-intro">
-                Ganza Sport Hub provides a wide array of services designed to satisfy every sports fan. These include:
+                Golden Sport provides a wide array of services designed to satisfy every sports fan. These include:
             </p>
             <ul>
                 <li id="service-live"><i class="fas fa-broadcast-tower"></i> <strong>Live Scores:</strong> Instant updates across multiple sports leagues.</li>
@@ -289,9 +427,9 @@ footer {
         </div>
 
         <div class="content-section">
-            <h3 id="community-title">Community and Engagement</h3>
+            <h2 id="community-title"><i class="fas fa-handshake"></i> Community and Engagement</h2>
             <p id="community-text1">
-                Our community is at the heart of Ganza Sport Hub. We encourage fans to actively participate through comments, polls, discussions, and sharing their insights.
+                Our community is at the heart of Golden Sport. We encourage fans to actively participate through comments, polls, discussions, and sharing their insights.
             </p>
             <p id="community-text2">
                 We also provide educational content to help fans understand player techniques, tactics, and history—giving them a deeper understanding of the game.
@@ -299,34 +437,34 @@ footer {
         </div>
 
         <div class="content-section">
-            <h3 id="commitment-title">Commitment and Future Goals</h3>
+            <h2 id="commitment-title"><i class="fas fa-rocket"></i> Commitment and Future Goals</h2>
             <p id="commitment-text">
                 We plan to cover more sports categories, integrate AI-driven analytics, launch apps, and offer advanced tools for tracking performance and trends.
             </p>
         </div>
 
         <div class="content-section">
-            <h3 id="promise-title">Our Promise</h3>
+            <h2 id="promise-title"><i class="fas fa-hand-holding-heart"></i> Our Promise</h2>
             <p id="promise-text">
                 Every score, every story, and every fan matters. We promise to deliver reliable, accurate, and engaging content always.
             </p>
             <p><em id="quote-text">"Every Score, Every Story, Every Fan Matters."</em></p>
         </div>
-    </section>
+    </div>
+</main>
+
 <script>
 // Language translations
 const translations = {
     en: {
         "page-title": "About Us",
         "nav-home": "Home",
-        "nav-contact": "Contact",
-        "nav-privacy": "Privacy Policy",
-        "welcome-title": "Welcome to Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub is a premier destination for sports enthusiasts worldwide, established in 2025 with the goal of delivering the most comprehensive, accurate, and engaging coverage of sports. We provide live scores, detailed statistics, match previews, expert commentary, and a thriving community platform where fans can connect and share their passion for the game.",
-        "welcome-text2": "Our platform covers a wide variety of sports including basketball, football, volleyball, and international competitions. We recognize that sports fans crave more than just scores—they want insights, analysis, historical context, and stories behind the games. At Ganza Sport Hub, we work tirelessly to meet these needs and create a hub that caters to every type of sports fan.",
+        "welcome-title": "Welcome to Golden Sport",
+        "welcome-text1": "Golden Sport is a premier destination for sports enthusiasts worldwide, established in 2025 with the goal of delivering the most comprehensive, accurate, and engaging coverage of sports. We provide live scores, detailed statistics, match previews, expert commentary, and a thriving community platform where fans can connect and share their passion for the game.",
+        "welcome-text2": "Our platform covers a wide variety of sports including basketball, football, volleyball, and international competitions. We recognize that sports fans crave more than just scores—they want insights, analysis, historical context, and stories behind the games. At Golden Sport, we work tirelessly to meet these needs and create a hub that caters to every type of sports fan.",
         "story-title": "Our Story and Background",
-        "story-text1": "Ganza Sport Hub began as a small initiative led by a group of passionate sports enthusiasts who noticed a gap in the availability of reliable, comprehensive, and user-friendly sports content. Initially focusing on local leagues and community sports events, the platform quickly expanded as our audience grew to include coverage of national and international competitions.",
-        "story-text2": "Over the years, our team has grown to include professional sports analysts, statisticians, writers, and technology experts, all committed to delivering accurate information and exceptional user experience. Today, Ganza Sport Hub stands as a trusted source for sports news, analytics, and fan engagement worldwide.",
+        "story-text1": "Golden Sport began as a small initiative led by a group of passionate sports enthusiasts who noticed a gap in the availability of reliable, comprehensive, and user-friendly sports content. Initially focusing on local leagues and community sports events, the platform quickly expanded as our audience grew to include coverage of national and international competitions.",
+        "story-text2": "Over the years, our team has grown to include professional sports analysts, statisticians, writers, and technology experts, all committed to delivering accurate information and exceptional user experience. Today, Golden Sport stands as a trusted source for sports news, analytics, and fan engagement worldwide.",
         "mission-title": "Our Mission",
         "mission-text": "Our mission is to provide a complete sports experience for fans by combining real-time updates, detailed statistics, expert insights, and interactive community features. We strive to connect fans with their favorite teams, players, and games, fostering a deep understanding and appreciation for sports at every level.",
         "mission-item1": "Deliver real-time scores and updates for multiple sports leagues around the world.",
@@ -343,7 +481,7 @@ const translations = {
         "value-community": "Community: We foster engagement, discussion, and interaction among fans worldwide.",
         "value-reliability": "Reliability: Our content is timely, consistent, and trustworthy, ensuring fans always have the latest information.",
         "services-title": "Our Services and Features",
-        "services-intro": "Ganza Sport Hub provides a wide array of services designed to satisfy every sports fan. These include:",
+        "services-intro": "Golden Sport provides a wide array of services designed to satisfy every sports fan. These include:",
         "service-live": "Live Scores: Instant updates across multiple sports leagues, both local and international.",
         "service-stats": "Detailed Statistics: Comprehensive data on players, teams, match history, and trends.",
         "service-analysis": "Expert Analysis: Tactical breakdowns, pre-match and post-match reviews, and professional commentary.",
@@ -352,26 +490,23 @@ const translations = {
         "service-personalized": "Personalized Experience: Custom alerts, favorite teams tracking, and newsletters delivered directly to users.",
         "service-educational": "Educational Content: Articles that explain rules, tactics, and player development, helping fans better understand the sports they love.",
         "community-title": "Community and Engagement",
-        "community-text1": "Our community is at the heart of Ganza Sport Hub. We encourage fans to actively participate through comments, polls, discussions, and sharing their insights. Our social media presence further allows fans to engage with the global sports community, creating an interactive and connected experience. We believe that sports is most enjoyable when it is shared, discussed, and celebrated collectively.",
+        "community-text1": "Our community is at the heart of Golden Sport. We encourage fans to actively participate through comments, polls, discussions, and sharing their insights. Our social media presence further allows fans to engage with the global sports community, creating an interactive and connected experience. We believe that sports is most enjoyable when it is shared, discussed, and celebrated collectively.",
         "community-text2": "We also provide educational content aimed at helping fans understand the nuances of various sports, player techniques, tactical strategies, and historical perspectives. This ensures that our audience is informed, engaged, and empowered to appreciate every game at a deeper level.",
         "commitment-title": "Commitment and Future Goals",
-        "commitment-text": "Ganza Sport Hub is committed to continuous improvement and expansion. We plan to cover more sports categories, integrate AI-driven analytics for personalized insights, launch mobile applications, and provide advanced tools for tracking performance and trends. Our goal is to make Ganza Sport Hub the ultimate destination for sports fans worldwide.",
+        "commitment-text": "Golden Sport is committed to continuous improvement and expansion. We plan to cover more sports categories, integrate AI-driven analytics for personalized insights, launch mobile applications, and provide advanced tools for tracking performance and trends. Our goal is to make Golden Sport the ultimate destination for sports fans worldwide.",
         "promise-title": "Our Promise",
-        "promise-text": "Every score, every story, and every fan matters. We promise to maintain the highest standards in content quality, reliability, and community engagement. By joining Ganza Sport Hub, you are part of a growing community of sports enthusiasts who share the passion, excitement, and love of sports.",
-        "quote-text": "\"Every Score, Every Story, Every Fan Matters.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. All rights reserved."
+        "promise-text": "Every score, every story, and every fan matters. We promise to maintain the highest standards in content quality, reliability, and community engagement. By joining Golden Sport, you are part of a growing community of sports enthusiasts who share the passion, excitement, and love of sports.",
+        "quote-text": "\"Every Score, Every Story, Every Fan Matters.\""
     },
     es: {
         "page-title": "Sobre Nosotros",
         "nav-home": "Inicio",
-        "nav-contact": "Contacto",
-        "nav-privacy": "Política de Privacidad",
-        "welcome-title": "Bienvenido a Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub es un destino principal para los entusiastas del deporte en todo el mundo, establecido en 2025 con el objetivo de ofrecer la cobertura deportiva más completa, precisa y atractiva. Proporcionamos resultados en vivo, estadísticas detalladas, previas de partidos, comentarios de expertos y una plataforma comunitaria próspera donde los aficionados pueden conectarse y compartir su pasión por el juego.",
-        "welcome-text2": "Nuestra plataforma cubre una amplia variedad de deportes, incluidos baloncesto, fútbol, voleibol y competiciones internacionales. Reconocemos que los aficionados al deporte anhelan más que solo resultados: quieren información, análisis, contexto histórico e historias detrás de los juegos. En Ganza Sport Hub, trabajamos incansablemente para satisfacer estas necesidades y crear un centro que atienda a todo tipo de aficionado al deporte.",
+        "welcome-title": "Bienvenido a Golden Sport",
+        "welcome-text1": "Golden Sport es un destino principal para los entusiastas del deporte en todo el mundo, establecido en 2025 con el objetivo de ofrecer la cobertura deportiva más completa, precisa y atractiva. Proporcionamos resultados en vivo, estadísticas detalladas, previas de partidos, comentarios de expertos y una plataforma comunitaria próspera donde los aficionados pueden conectarse y compartir su pasión por el juego.",
+        "welcome-text2": "Nuestra plataforma cubre una amplia variedad de deportes, incluidos baloncesto, fútbol, voleibol y competiciones internacionales. Reconocemos que los aficionados al deporte anhelan más que solo resultados: quieren información, análisis, contexto histórico e historias detrás de los juegos. En Golden Sport, trabajamos incansablemente para satisfacer estas necesidades y crear un centro que atienda a todo tipo de aficionado al deporte.",
         "story-title": "Nuestra Historia y Antecedentes",
-        "story-text1": "Ganza Sport Hub comenzó como una pequeña iniciativa liderada por un grupo de apasionados entusiastas del deporte que notaron una brecha en la disponibilidad de contenido deportivo confiable, completo y fácil de usar. Inicialmente centrándose en ligas locales y eventos deportivos comunitarios, la plataforma se expandió rápidamente a medida que nuestra audiencia creció para incluir cobertura de competiciones nacionales e internacionales.",
-        "story-text2": "A lo largo de los años, nuestro equipo ha crecido para incluir analistas deportivos profesionales, estadísticos, escritores y expertos en tecnología, todos comprometidos a ofrecer información precisa y una experiencia de usuario excepcional. Hoy, Ganza Sport Hub se erige como una fuente confiable de noticias deportivas, análisis y participación de aficionados en todo el mundo.",
+        "story-text1": "Golden Sport comenzó como una pequeña iniciativa liderada por un grupo de apasionados entusiastas del deporte que notaron una brecha en la disponibilidad de contenido deportivo confiable, completo y fácil de usar. Inicialmente centrándose en ligas locales y eventos deportivos comunitarios, la plataforma se expandió rápidamente a medida que nuestra audiencia creció para incluir cobertura de competiciones nacionales e internacionales.",
+        "story-text2": "A lo largo de los años, nuestro equipo ha crecido para incluir analistas deportivos profesionales, estadísticos, escritores y expertos en tecnología, todos comprometidos a ofrecer información precisa y una experiencia de usuario excepcional. Hoy, Golden Sport se erige como una fuente confiable de noticias deportivas, análisis y participación de aficionados en todo el mundo.",
         "mission-title": "Nuestra Misión",
         "mission-text": "Nuestra misión es proporcionar una experiencia deportiva completa para los aficionados combinando actualizaciones en tiempo real, estadísticas detalladas, información de expertos y funciones comunitarias interactivas. Nos esforzamos por conectar a los aficionados con sus equipos, jugadores y juegos favoritos, fomentando una comprensión y apreciación profunda del deporte en todos los niveles.",
         "mission-item1": "Entregar resultados y actualizaciones en tiempo real para múltiples ligas deportivas en todo el mundo.",
@@ -388,7 +523,7 @@ const translations = {
         "value-community": "Comunidad: Fomentamos la participación, discusión e interacción entre aficionados de todo el mundo.",
         "value-reliability": "Confiabilidad: Nuestro contenido es oportuno, consistente y confiable, asegurando que los aficionados siempre tengan la información más reciente.",
         "services-title": "Nuestros Servicios y Características",
-        "services-intro": "Ganza Sport Hub proporciona una amplia gama de servicios diseñados para satisfacer a cada aficionado al deporte. Estos incluyen:",
+        "services-intro": "Golden Sport proporciona una amplia gama de servicios diseñados para satisfacer a cada aficionado al deporte. Estos incluyen:",
         "service-live": "Resultados en Vivo: Actualizaciones instantáneas en múltiples ligas deportivas, tanto locales como internacionales.",
         "service-stats": "Estadísticas Detalladas: Datos completos sobre jugadores, equipos, historial de partidos y tendencias.",
         "service-analysis": "Análisis de Expertos: Desgloses tácticos, revisiones previas y posteriores al partido, y comentarios profesionales.",
@@ -397,26 +532,23 @@ const translations = {
         "service-personalized": "Experiencia Personalizada: Alertas personalizadas, seguimiento de equipos favoritos y boletines entregados directamente a los usuarios.",
         "service-educational": "Contenido Educativo: Artículos que explican reglas, tácticas y desarrollo de jugadores, ayudando a los aficionados a comprender mejor los deportes que aman.",
         "community-title": "Comunidad y Participación",
-        "community-text1": "Nuestra comunidad está en el corazón de Ganza Sport Hub. Alentamos a los aficionados a participar activamente a través de comentarios, encuestas, discusiones y compartiendo sus ideas. Nuestra presencia en redes sociales permite además a los aficionados interactuar con la comunidad deportiva global, creando una experiencia interactiva y conectada. Creemos que el deporte es más disfrutable cuando se comparte, discute y celebra colectivamente.",
+        "community-text1": "Nuestra comunidad está en el corazón de Golden Sport. Alentamos a los aficionados a participar activamente a través de comentarios, encuestas, discusiones y compartiendo sus ideas. Nuestra presencia en redes sociales permite además a los aficionados interactuar con la comunidad deportiva global, creando una experiencia interactiva y conectada. Creemos que el deporte es más disfrutable cuando se comparte, discute y celebra colectivamente.",
         "community-text2": "También proporcionamos contenido educativo destinado a ayudar a los aficionados a comprender los matices de varios deportes, técnicas de jugadores, estrategias tácticas y perspectivas históricas. Esto asegura que nuestra audiencia esté informada, comprometida y empoderada para apreciar cada juego a un nivel más profundo.",
         "commitment-title": "Compromiso y Metas Futuras",
-        "commitment-text": "Ganza Sport Hub está comprometido con la mejora continua y la expansión. Planeamos cubrir más categorías deportivas, integrar análisis impulsados por IA para información personalizada, lanzar aplicaciones móviles y proporcionar herramientas avanzadas para rastrear el rendimiento y las tendencias. Nuestro objetivo es hacer de Ganza Sport Hub el destino definitivo para los aficionados al deporte en todo el mundo.",
+        "commitment-text": "Golden Sport está comprometido con la mejora continua y la expansión. Planeamos cubrir más categorías deportivas, integrar análisis impulsados por IA para información personalizada, lanzar aplicaciones móviles y proporcionar herramientas avanzadas para rastrear el rendimiento y las tendencias. Nuestro objetivo es hacer de Golden Sport el destino definitivo para los aficionados al deporte en todo el mundo.",
         "promise-title": "Nuestra Promesa",
-        "promise-text": "Cada resultado, cada historia y cada aficionado importa. Prometemos mantener los más altos estándares en calidad de contenido, confiabilidad y participación comunitaria. Al unirse a Ganza Sport Hub, usted es parte de una comunidad en crecimiento de entusiastas del deporte que comparten la pasión, emoción y amor por el deporte.",
-        "quote-text": "\"Cada Puntuación, Cada Historia, Cada Fan Importa.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Todos los derechos reservados."
+        "promise-text": "Cada resultado, cada historia y cada aficionado importa. Prometemos mantener los más altos estándares en calidad de contenido, confiabilidad y participación comunitaria. Al unirse a Golden Sport, usted es parte de una comunidad en crecimiento de entusiastas del deporte que comparten la pasión, emoción y amor por el deporte.",
+        "quote-text": "\"Cada Puntuación, Cada Historia, Cada Fan Importa.\""
     },
     fr: {
         "page-title": "À propos de nous",
         "nav-home": "Accueil",
-        "nav-contact": "Contact",
-        "nav-privacy": "Politique de confidentialité",
-        "welcome-title": "Bienvenue à Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub est une destination de premier plan pour les passionnés de sport du monde entier, créée en 2025 dans le but de fournir la couverture sportive la plus complète, précise et engageante. Nous fournissons des scores en direct, des statistiques détaillées, des prévisions de matchs, des commentaires d'experts et une plateforme communautaire dynamique où les fans peuvent se connecter et partager leur passion pour le jeu.",
-        "welcome-text2": "Notre plateforme couvre une grande variété de sports, y compris le basketball, le football, le volleyball et les compétitions internationales. Nous reconnaissons que les fans de sport veulent plus que des scores - ils veulent des informations, des analyses, un contexte historique et des histoires derrière les jeux. Chez Ganza Sport Hub, nous travaillons sans relâche pour répondre à ces besoins et créer un centre qui répond à tous les types de fans de sport.",
+        "welcome-title": "Bienvenue à Golden Sport",
+        "welcome-text1": "Golden Sport est une destination de premier plan pour les passionnés de sport du monde entier, créée en 2025 dans le but de fournir la couverture sportive la plus complète, précise et engageante. Nous fournissons des scores en direct, des statistiques détaillées, des prévisions de matchs, des commentaires d'experts et une plateforme communautaire dynamique où les fans peuvent se connecter et partager leur passion pour le jeu.",
+        "welcome-text2": "Notre plateforme couvre une grande variété de sports, y compris le basketball, le football, le volleyball et les compétitions internationales. Nous reconnaissons que les fans de sport veulent plus que des scores - ils veulent des informations, des analyses, un contexte historique et des histoires derrière les jeux. Chez Golden Sport, nous travaillons sans relâche pour répondre à ces besoins et créer un centre qui répond à tous les types de fans de sport.",
         "story-title": "Notre histoire et contexte",
-        "story-text1": "Ganza Sport Hub a commencé comme une petite initiative menée par un groupe de passionnés de sport qui ont remarqué un manque dans la disponibilité de contenu sportif fiable, complet et convivial. Se concentrant initialement sur les ligues locales et les événements sportifs communautaires, la plateforme s'est rapidement développée à mesure que notre public a grandi pour inclure la couverture des compétitions nationales et internationales.",
-        "story-text2": "Au fil des ans, notre équipe s'est agrandie pour inclure des analystes sportifs professionnels, des statisticiens, des rédacteurs et des experts en technologie, tous engagés à fournir des informations précises et une expérience utilisateur exceptionnelle. Aujourd'hui, Ganza Sport Hub est une source fiable d'actualités sportives, d'analyses et d'engagement des fans dans le monde entier.",
+        "story-text1": "Golden Sport a commencé comme une petite initiative menée par un groupe de passionnés de sport qui ont remarqué un manque dans la disponibilité de contenu sportif fiable, complet et convivial. Se concentrant initialement sur les ligues locales et les événements sportifs communautaires, la plateforme s'est rapidement développée à mesure que notre public a grandi pour inclure la couverture des compétitions nationales et internationales.",
+        "story-text2": "Au fil des ans, notre équipe s'est agrandie pour inclure des analystes sportifs professionnels, des statisticiens, des rédacteurs et des experts en technologie, tous engagés à fournir des informations précises et une expérience utilisateur exceptionnelle. Aujourd'hui, Golden Sport est une source fiable d'actualités sportives, d'analyses et d'engagement des fans dans le monde entier.",
         "mission-title": "Notre mission",
         "mission-text": "Notre mission est de fournir une expérience sportive complète aux fans en combinant des mises à jour en temps réel, des statistiques détaillées, des informations d'experts et des fonctionnalités communautaires interactives. Nous nous efforçons de connecter les fans avec leurs équipes, joueurs et jeux préférés, en favorisant une compréhension et une appréciation profondes du sport à tous les niveaux.",
         "mission-item1": "Fournir des scores et des mises à jour en temps réel pour plusieurs ligues sportives à travers le monde.",
@@ -433,7 +565,7 @@ const translations = {
         "value-community": "Communauté: Nous favorisons l'engagement, la discussion et l'interaction entre les fans du monde entier.",
         "value-reliability": "Fiabilité: Notre contenu est opportun, cohérent et digne de confiance, garantissant que les fans ont toujours les informations les plus récentes.",
         "services-title": "Nos services et fonctionnalités",
-        "services-intro": "Ganza Sport Hub fournit une large gamme de services conçus pour satisfaire chaque fan de sport. Ceux-ci incluent:",
+        "services-intro": "Golden Sport fournit une large gamme de services conçus pour satisfaire chaque fan de sport. Ceux-ci incluent:",
         "service-live": "Scores en direct: Mises à jour instantanées dans plusieurs ligues sportives, locales et internationales.",
         "service-stats": "Statistiques détaillées: Données complètes sur les joueurs, les équipes, l'historique des matchs et les tendances.",
         "service-analysis": "Analyse d'experts: Analyses tactiques, revues pré-match et post-match, et commentaires professionnels.",
@@ -442,26 +574,23 @@ const translations = {
         "service-personalized": "Expérience personnalisée: Alertes personnalisées, suivi des équipes favorites et newsletters livrées directement aux utilisateurs.",
         "service-educational": "Contenu éducatif: Articles qui expliquent les règles, les tactiques et le développement des joueurs, aidant les fans à mieux comprendre les sports qu'ils aiment.",
         "community-title": "Communauté et engagement",
-        "community-text1": "Notre communauté est au cœur de Ganza Sport Hub. Nous encourageons les fans à participer activement via des commentaires, des sondages, des discussions et le partage de leurs idées. Notre présence sur les médias sociaux permet en outre aux fans d'interagir avec la communauté sportive mondiale, créant une expérience interactive et connectée. Nous croyons que le sport est plus agréable lorsqu'il est partagé, discuté et célébré collectivement.",
+        "community-text1": "Notre communauté est au cœur de Golden Sport. Nous encourageons les fans à participer activement via des commentaires, des sondages, des discussions et le partage de leurs idées. Notre présence sur les médias sociaux permet en outre aux fans d'interagir avec la communauté sportive mondiale, créant une expérience interactive et connectée. Nous croyons que le sport est plus agréable lorsqu'il est partagé, discuté et célébré collectivement.",
         "community-text2": "Nous fournissons également du contenu éducatif visant à aider les fans à comprendre les nuances de divers sports, les techniques des joueurs, les stratégies tactiques et les perspectives historiques. Cela garantit que notre public est informé, engagé et habilité à apprécier chaque match à un niveau plus profond.",
         "commitment-title": "Engagement et objectifs futurs",
-        "commitment-text": "Ganza Sport Hub s'engage à une amélioration et une expansion continues. Nous prévoyons de couvrir plus de catégories sportives, d'intégrer des analyses basées sur l'IA pour des informations personnalisées, de lancer des applications mobiles et de fournir des outils avancés pour suivre les performances et les tendances. Notre objectif est de faire de Ganza Sport Hub la destination ultime pour les fans de sport du monde entier.",
+        "commitment-text": "Golden Sport s'engage à une amélioration et une expansion continues. Nous prévoyons de couvrir plus de catégories sportives, d'intégrer des analyses basées sur l'IA pour des informations personnalisées, de lancer des applications mobiles et de fournir des outils avancés pour suivre les performances et les tendances. Notre objectif est de faire de Golden Sport la destination ultime pour les fans de sport du monde entier.",
         "promise-title": "Notre promesse",
-        "promise-text": "Chaque score, chaque histoire et chaque fan compte. Nous promettons de maintenir les normes les plus élevées en matière de qualité de contenu, de fiabilité et d'engagement communautaire. En rejoignant Ganza Sport Hub, vous faites partie d'une communauté croissante de passionnés de sport qui partagent la passion, l'excitation et l'amour du sport.",
-        "quote-text": "\"Chaque Score, Chaque Histoire, Chaque Fan Compte.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Tous droits réservés."
+        "promise-text": "Chaque score, chaque histoire et chaque fan compte. Nous promettons de maintenir les normes les plus élevées en matière de qualité de contenu, de fiabilité et d'engagement communautaire. En rejoignant Golden Sport, vous faites partie d'une communauté croissante de passionnés de sport qui partagent la passion, l'excitation et l'amour du sport.",
+        "quote-text": "\"Chaque Score, Chaque Histoire, Chaque Fan Compte.\""
     },
     de: {
         "page-title": "Über uns",
         "nav-home": "Startseite",
-        "nav-contact": "Kontakt",
-        "nav-privacy": "Datenschutzrichtlinie",
-        "welcome-title": "Willkommen bei Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub ist ein erstklassiges Ziel für Sportbegeisterte weltweit, gegründet 2025 mit dem Ziel, die umfassendste, genaueste und ansprechendste Sportberichterstattung zu liefern. Wir bieten Live-Ergebnisse, detaillierte Statistiken, Spielvorschauen, Expertenkommentare und eine florierende Community-Plattform, auf der Fans sich verbinden und ihre Leidenschaft für das Spiel teilen können.",
-        "welcome-text2": "Unsere Plattform deckt eine Vielzahl von Sportarten ab, darunter Basketball, Fußball, Volleyball und internationale Wettbewerbe. Wir erkennen, dass Sportfans mehr wollen als nur Ergebnisse - sie wollen Einblicke, Analysen, historischen Kontext und Geschichten hinter den Spielen. Bei Ganza Sport Hub arbeiten wir unermüdlich daran, diesen Bedürfnissen gerecht zu werden und eine Anlaufstelle zu schaffen, die jeden Typ von Sportfan anspricht.",
+        "welcome-title": "Willkommen bei Golden Sport",
+        "welcome-text1": "Golden Sport ist ein erstklassiges Ziel für Sportbegeisterte weltweit, gegründet 2025 mit dem Ziel, die umfassendste, genaueste und ansprechendste Sportberichterstattung zu liefern. Wir bieten Live-Ergebnisse, detaillierte Statistiken, Spielvorschauen, Expertenkommentare und eine florierende Community-Plattform, auf der Fans sich verbinden und ihre Leidenschaft für das Spiel teilen können.",
+        "welcome-text2": "Unsere Plattform deckt eine Vielzahl von Sportarten ab, darunter Basketball, Fußball, Volleyball und internationale Wettbewerbe. Wir erkennen, dass Sportfans mehr wollen als nur Ergebnisse - sie wollen Einblicke, Analysen, historischen Kontext und Geschichten hinter den Spielen. Bei Golden Sport arbeiten wir unermüdlich daran, diesen Bedürfnissen gerecht zu werden und eine Anlaufstelle zu schaffen, die jeden Typ von Sportfan anspricht.",
         "story-title": "Unsere Geschichte und Hintergrund",
-        "story-text1": "Ganza Sport Hub begann als eine kleine Initiative, die von einer Gruppe leidenschaftlicher Sportbegeisterter geleitet wurde, die eine Lücke in der Verfügbarkeit von zuverlässigen, umfassenden und benutzerfreundlichen Sportinhalten bemerkten. Anfangs konzentriert auf lokale Ligen und Community-Sportveranstaltungen, expandierte die Plattform schnell, als unser Publikum wuchs, um die Berichterstattung über nationale und internationale Wettbewerbe einzuschließen.",
-        "story-text2": "Im Laufe der Jahre ist unser Team gewachsen und umfasst nun professionelle Sportanalysten, Statistiker, Autoren und Technologieexperten, die alle darauf verpflichtet sind, genaue Informationen und ein außergewöhnliches Benutzererlebnis zu liefern. Heute steht Ganza Sport Hub als vertrauenswürdige Quelle für Sportnachrichten, Analysen und Fan-Engagement weltweit.",
+        "story-text1": "Golden Sport begann als eine kleine Initiative, die von einer Gruppe leidenschaftlicher Sportbegeisterter geleitet wurde, die eine Lücke in der Verfügbarkeit von zuverlässigen, umfassenden und benutzerfreundlichen Sportinhalten bemerkten. Anfangs konzentriert auf lokale Ligen und Community-Sportveranstaltungen, expandierte die Plattform schnell, als unser Publikum wuchs, um die Berichterstattung über nationale und internationale Wettbewerbe einzuschließen.",
+        "story-text2": "Im Laufe der Jahre ist unser Team gewachsen und umfasst nun professionelle Sportanalysten, Statistiker, Autoren und Technologieexperten, die alle darauf verpflichtet sind, genaue Informationen und ein außergewöhnliches Benutzererlebnis zu liefern. Heute steht Golden Sport als vertrauenswürdige Quelle für Sportnachrichten, Analysen und Fan-Engagement weltweit.",
         "mission-title": "Unsere Mission",
         "mission-text": "Unsere Mission ist es, Sportfans ein komplettes Sporterlebnis zu bieten, indem wir Echtzeit-Updates, detaillierte Statistiken, Experten-Einblicke und interaktive Community-Funktionen kombinieren. Wir streben danach, Fans mit ihren Lieblingsteams, -spielern und -spielen zu verbinden und ein tiefes Verständnis und Wertschätzung für Sport auf jeder Ebene zu fördern.",
         "mission-item1": "Liefern von Echtzeit-Ergebnissen und Updates für mehrere Sportligen weltweit.",
@@ -478,7 +607,7 @@ const translations = {
         "value-community": "Gemeinschaft: Wir fördern Engagement, Diskussion und Interaktion unter Fans weltweit.",
         "value-reliability": "Zuverlässigkeit: Unser Inhalt ist zeitnah, konsistent und vertrauenswürdig, um sicherzustellen, dass Fans immer die neuesten Informationen haben.",
         "services-title": "Unsere Dienstleistungen und Funktionen",
-        "services-intro": "Ganza Sport Hub bietet eine breite Palette von Dienstleistungen, die jeden Sportfan zufriedenstellen sollen. Dazu gehören:",
+        "services-intro": "Golden Sport bietet eine breite Palette von Dienstleistungen, die jeden Sportfan zufriedenstellen sollen. Dazu gehören:",
         "service-live": "Live-Ergebnisse: Sofortige Updates in mehreren Sportligen, sowohl lokal als auch international.",
         "service-stats": "Detaillierte Statistiken: Umfassende Daten zu Spielern, Teams, Spielverlauf und Trends.",
         "service-analysis": "Expertenanalyse: Taktische Aufschlüsselungen, Vor- und Nachspiel-Bewertungen und professionelle Kommentare.",
@@ -487,26 +616,23 @@ const translations = {
         "service-personalized": "Personalisiertes Erlebnis: Benutzerdefinierte Benachrichtigungen, Verfolgung von Lieblingsteams und direkt an Benutzer gelieferte Newsletter.",
         "service-educational": "Bildungsinhalte: Artikel, die Regeln, Taktiken und Spielerentwicklung erklären und Fans helfen, die Sportarten, die sie lieben, besser zu verstehen.",
         "community-title": "Gemeinschaft und Engagement",
-        "community-text1": "Unsere Gemeinschaft steht im Mittelpunkt von Ganza Sport Hub. Wir ermutigen Fans, aktiv durch Kommentare, Umfragen, Diskussionen und das Teilen ihrer Einsichten teilzunehmen. Unsere Social-Media-Präsenz ermöglicht es Fans weiterhin, mit der globalen Sportgemeinschaft zu interagieren und ein interaktives und verbundenes Erlebnis zu schaffen. Wir glauben, dass Sport am meisten Spaß macht, wenn er gemeinsam geteilt, diskutiert und gefeiert wird.",
+        "community-text1": "Unsere Gemeinschaft steht im Mittelpunkt von Golden Sport. Wir ermutigen Fans, aktiv durch Kommentare, Umfragen, Diskussionen und das Teilen ihrer Einsichten teilzunehmen. Unsere Social-Media-Präsenz ermöglicht es Fans weiterhin, mit der globalen Sportgemeinschaft zu interagieren und ein interaktives und verbundenes Erlebnis zu schaffen. Wir glauben, dass Sport am meisten Spaß macht, wenn er gemeinsam geteilt, diskutiert und gefeiert wird.",
         "community-text2": "Wir bieten auch Bildungsinhalte an, die darauf abzielen, Fans zu helfen, die Nuancen verschiedener Sportarten, Spielertechniken, taktische Strategien und historische Perspektiven zu verstehen. Dies stellt sicher, dass unser Publikum informiert, engagiert und befähigt ist, jedes Spiel auf einer tieferen Ebene zu schätzen.",
         "commitment-title": "Engagement und Zukunftsziele",
-        "commitment-text": "Ganza Sport Hub ist kontinuierlicher Verbesserung und Expansion verpflichtet. Wir planen, mehr Sportkategorien abzudecken, KI-gestützte Analysen für personalisierte Einblicke zu integrieren, mobile Anwendungen zu starten und fortschrittliche Tools zur Verfolgung von Leistung und Trends bereitzustellen. Unser Ziel ist es, Ganza Sport Hub zum ultimativen Ziel für Sportfans weltweit zu machen.",
+        "commitment-text": "Golden Sport ist kontinuierlicher Verbesserung und Expansion verpflichtet. Wir planen, mehr Sportkategorien abzudecken, KI-gestützte Analysen für personalisierte Einblicke zu integrieren, mobile Anwendungen zu starten und fortschrittliche Tools zur Verfolgung von Leistung und Trends bereitzustellen. Unser Ziel ist es, Golden Sport zum ultimativen Ziel für Sportfans weltweit zu machen.",
         "promise-title": "Unser Versprechen",
-        "promise-text": "Jedes Ergebnis, jede Geschichte und jeder Fan zählt. Wir versprechen, die höchsten Standards in Inhaltsqualität, Zuverlässigkeit und Community-Engagement beizubehalten. Indem Sie Ganza Sport Hub beitreten, sind Sie Teil einer wachsenden Gemeinschaft von Sportbegeisterten, die die Leidenschaft, Aufregung und Liebe zum Sport teilen.",
-        "quote-text": "\"Jedes Ergebnis, Jede Geschichte, Jeder Fan Zählt.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Alle Rechte vorbehalten."
+        "promise-text": "Jedes Ergebnis, jede Geschichte und jeder Fan zählt. Wir versprechen, die höchsten Standards in Inhaltsqualität, Zuverlässigkeit und Community-Engagement beizubehalten. Indem Sie Golden Sport beitreten, sind Sie Teil einer wachsenden Gemeinschaft von Sportbegeisterten, die die Leidenschaft, Aufregung und Liebe zum Sport teilen.",
+        "quote-text": "\"Jedes Ergebnis, Jede Geschichte, Jeder Fan Zählt.\""
     },
     it: {
         "page-title": "Chi Siamo",
         "nav-home": "Home",
-        "nav-contact": "Contatto",
-        "nav-privacy": "Informativa sulla Privacy",
-        "welcome-title": "Benvenuti in Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub è una destinazione di primo piano per gli appassionati di sport di tutto il mondo, fondata nel 2025 con l'obiettivo di fornire la copertura sportiva più completa, accurata e coinvolgente. Forniamo punteggi in diretta, statistiche dettagliate, anteprime delle partite, commenti di esperti e una vivace piattaforma comunitaria dove i tifosi possono connettersi e condividere la loro passione per il gioco.",
-        "welcome-text2": "La nostra piattaforma copre un'ampia varietà di sport tra cui basket, calcio, pallavolo e competizioni internazionali. Riconosciamo che i tifosi desiderano più dei semplici punteggi: vogliono approfondimenti, analisi, contesto storico e storie dietro le partite. In Ganza Sport Hub, lavoriamo instancabilmente per soddisfare queste esigenze e creare un hub che si rivolga a ogni tipo di tifoso sportivo.",
+        "welcome-title": "Benvenuti in Golden Sport",
+        "welcome-text1": "Golden Sport è una destinazione di primo piano per gli appassionati di sport di tutto il mondo, fondata nel 2025 con l'obiettivo di fornire la copertura sportiva più completa, accurata e coinvolgente. Forniamo punteggi in diretta, statistiche dettagliate, anteprime delle partite, commenti di esperti e una vivace piattaforma comunitaria dove i tifosi possono connettersi e condividere la loro passione per il gioco.",
+        "welcome-text2": "La nostra piattaforma copre un'ampia varietà di sport tra cui basket, calcio, pallavolo e competizioni internazionali. Riconosciamo che i tifosi desiderano più dei semplici punteggi: vogliono approfondimenti, analisi, contesto storico e storie dietro le partite. In Golden Sport, lavoriamo instancabilmente per soddisfare queste esigenze e creare un hub che si rivolga a ogni tipo di tifoso sportivo.",
         "story-title": "La Nostra Storia e Contesto",
-        "story-text1": "Ganza Sport Hub è nata come una piccola iniziativa guidata da un gruppo di appassionati di sport che hanno notato una lacuna nella disponibilità di contenuti sportivi affidabili, completi e user-friendly. Inizialmente concentrandosi su leghe locali ed eventi sportivi comunitari, la piattaforma si è rapidamente espansa man mano che il nostro pubblico cresceva per includere la copertura di competizioni nazionali e internazionali.",
-        "story-text2": "Nel corso degli anni, il nostro team è cresciuto per includere analisti sportivi professionisti, statistici, scrittori ed esperti di tecnologia, tutti impegnati a fornire informazioni accurate e un'esperienza utente eccezionale. Oggi, Ganza Sport Hub si afferma come una fonte affidabile di notizie sportive, analisi e coinvolgimento dei tifosi in tutto il mondo.",
+        "story-text1": "Golden Sport è nata come una piccola iniziativa guidata da un gruppo di appassionati di sport che hanno notato una lacuna nella disponibilità di contenuti sportivi affidabili, completi e user-friendly. Inizialmente concentrandosi su leghe locali ed eventi sportivi comunitari, la piattaforma si è rapidamente espansa man mano che il nostro pubblico cresceva per includere la copertura di competizioni nazionali e internazionali.",
+        "story-text2": "Nel corso degli anni, il nostro team è cresciuto per includere analisti sportivi professionisti, statistici, scrittori ed esperti di tecnologia, tutti impegnati a fornire informazioni accurate e un'esperienza utente eccezionale. Oggi, Golden Sport si afferma come una fonte affidabile di notizie sportive, analisi e coinvolgimento dei tifosi in tutto il mondo.",
         "mission-title": "La Nostra Missione",
         "mission-text": "La nostra missione è fornire un'esperienza sportiva completa per i tifosi combinando aggiornamenti in tempo reale, statistiche dettagliate, approfondimenti di esperti e funzionalità comunitarie interattive. Ci sforziamo di connettere i tifosi con le loro squadre, giocatori e partite preferite, favorendo una profonda comprensione e apprezzamento per lo sport a ogni livello.",
         "mission-item1": "Fornire punteggi e aggiornamenti in tempo reale per multiple leghe sportive in tutto il mondo.",
@@ -523,7 +649,7 @@ const translations = {
         "value-community": "Comunità: Favoriamo l'impegno, la discussione e l'interazione tra i tifosi di tutto il mondo.",
         "value-reliability": "Affidabilità: I nostri contenuti sono tempestivi, coerenti e affidabili, assicurando che i tifosi abbiano sempre le informazioni più recenti.",
         "services-title": "I Nostri Servizi e Caratteristiche",
-        "services-intro": "Ganza Sport Hub fornisce una vasta gamma di servizi progettati per soddisfare ogni tifoso sportivo. Questi includono:",
+        "services-intro": "Golden Sport fornisce una vasta gamma di servizi progettati per soddisfare ogni tifoso sportivo. Questi includono:",
         "service-live": "Punteggi in Diretta: Aggiornamenti istantanei in multiple leghe sportive, sia locali che internazionali.",
         "service-stats": "Statistiche Dettagliate: Dati completi su giocatori, squadre, storico delle partite e tendenze.",
         "service-analysis": "Analisi di Esperti: Analisi tattiche, revisioni pre e post-partita e commenti professionali.",
@@ -532,26 +658,23 @@ const translations = {
         "service-personalized": "Esperienza Personalizzata: Avvisi personalizzati, monitoraggio delle squadre preferite e newsletter consegnate direttamente agli utenti.",
         "service-educational": "Contenuto Educativo: Articoli che spiegano regole, tattiche e sviluppo dei giocatori, aiutando i tifosi a comprendere meglio gli sport che amano.",
         "community-title": "Comunità e Coinvolgimento",
-        "community-text1": "La nostra comunità è al centro di Ganza Sport Hub. Incoraggiamo i tifosi a partecipare attivamente attraverso commenti, sondaggi, discussioni e condividendo le loro intuizioni. La nostra presenza sui social media permette inoltre ai tifosi di interagire con la comunità sportiva globale, creando un'esperienza interattiva e connessa. Crediamo che lo sport sia più divertente quando è condiviso, discusso e celebrato collettivamente.",
+        "community-text1": "La nostra comunità è al centro di Golden Sport. Incoraggiamo i tifosi a partecipare attivamente attraverso commenti, sondaggi, discussioni e condividendo le loro intuizioni. La nostra presenza sui social media permette inoltre ai tifosi di interagire con la comunità sportiva globale, creando un'esperienza interattiva e connessa. Crediamo che lo sport sia più divertente quando è condiviso, discusso e celebrato collettivamente.",
         "community-text2": "Forniamo anche contenuti educativi mirati ad aiutare i tifosi a comprendere le sfumature di vari sport, le tecniche dei giocatori, le strategie tattiche e le prospettive storiche. Ciò garantisce che il nostro pubblico sia informato, coinvolto e abilitato ad apprezzare ogni partita a un livello più profondo.",
         "commitment-title": "Impegno e Obiettivi Futuri",
-        "commitment-text": "Ganza Sport Hub è impegnata in un miglioramento e un'espansione continui. Pianifichiamo di coprire più categorie sportive, integrare analisi guidate dall'IA per approfondimenti personalizzati, lanciare applicazioni mobili e fornire strumenti avanzati per monitorare le prestazioni e le tendenze. Il nostro obiettivo è rendere Ganza Sport Hub la destinazione definitiva per i tifosi sportivi di tutto il mondo.",
+        "commitment-text": "Golden Sport è impegnata in un miglioramento e un'espansione continui. Pianifichiamo di coprire più categorie sportive, integrare analisi guidate dall'IA per approfondimenti personalizzati, lanciare applicazioni mobili e fornire strumenti avanzati per monitorare le prestazioni e le tendenze. Il nostro obiettivo è rendere Golden Sport la destinazione definitiva per i tifosi sportivi di tutto il mondo.",
         "promise-title": "La Nostra Promessa",
-        "promise-text": "Ogni punteggio, ogni storia e ogni tifoso conta. Promettiamo di mantenere gli standard più elevati in qualità dei contenuti, affidabilità e coinvolgimento della comunità. Unendoti a Ganza Sport Hub, fai parte di una comunità in crescita di appassionati di sport che condividono la passione, l'eccitazione e l'amore per lo sport.",
-        "quote-text": "\"Ogni Punteggio, Ogni Storia, Ogni Tifoso Conta.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Tutti i diritti riservati."
+        "promise-text": "Ogni punteggio, ogni storia e ogni tifoso conta. Promettiamo di mantenere gli standard più elevati in qualità dei contenuti, affidabilità e coinvolgimento della comunità. Unendoti a Golden Sport, fai parte di una comunità in crescita di appassionati di sport che condividono la passione, l'eccitazione e l'amore per lo sport.",
+        "quote-text": "\"Ogni Punteggio, Ogni Storia, Ogni Tifoso Conta.\""
     },
     pt: {
         "page-title": "Sobre Nós",
         "nav-home": "Início",
-        "nav-contact": "Contato",
-        "nav-privacy": "Política de Privacidade",
-        "welcome-title": "Bem-vindo ao Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub é um destino principal para entusiastas do esporte em todo o mundo, estabelecido em 2025 com o objetivo de fornecer a cobertura esportiva mais abrangente, precisa e envolvente. Fornecemos placares ao vivo, estatísticas detalhadas, prévias de partidas, comentários de especialistas e uma plataforma comunitária próspera onde os fãs podem se conectar e compartilhar sua paixão pelo jogo.",
-        "welcome-text2": "Nossa plataforma cobre uma grande variedade de esportes, incluindo basquete, futebol, vôlei e competições internacionais. Reconhecemos que os fãs de esportes desejam mais do que apenas placares - eles querem insights, análises, contexto histórico e histórias por trás dos jogos. No Ganza Sport Hub, trabalhamos incansavelmente para atender a essas necessidades e criar um hub que atenda a todos os tipos de fãs de esportes.",
+        "welcome-title": "Bem-vindo ao Golden Sport",
+        "welcome-text1": "Golden Sport é um destino principal para entusiastas do esporte em todo o mundo, estabelecido em 2025 com o objetivo de fornecer a cobertura esportiva mais abrangente, precisa e envolvente. Fornecemos placares ao vivo, estatísticas detalhadas, prévias de partidas, comentários de especialistas e uma plataforma comunitária próspera onde os fãs podem se conectar e compartilhar sua paixão pelo jogo.",
+        "welcome-text2": "Nossa plataforma cobre uma grande variedade de esportes, incluindo basquete, futebol, vôlei e competições internacionais. Reconhecemos que os fãs de esportes desejam mais do que apenas placares - eles querem insights, análises, contexto histórico e histórias por trás dos jogos. No Golden Sport, trabalhamos incansavelmente para atender a essas necessidades e criar um hub que atenda a todos os tipos de fãs de esportes.",
         "story-title": "Nossa História e Antecedentes",
-        "story-text1": "Ganza Sport Hub começou como uma pequena iniciativa liderada por um grupo de entusiastas de esportes apaixonados que notaram uma lacuna na disponibilidade de conteúdo esportivo confiável, abrangente e fácil de usar. Inicialmente focando em ligas locais e eventos esportivos comunitários, a plataforma se expandiu rapidamente à medida que nosso público cresceu para incluir a cobertura de competições nacionais e internacionais.",
-        "story-text2": "Ao longo dos anos, nossa equipe cresceu para incluir analistas esportivos profissionais, estatísticos, escritores e especialistas em tecnologia, todos comprometidos em fornecer informações precisas e uma experiência de usuário excepcional. Hoje, o Ganza Sport Hub é uma fonte confiável de notícias esportivas, análises e engajamento de fãs em todo o mundo.",
+        "story-text1": "Golden Sport começou como uma pequena iniciativa liderada por um grupo de entusiastas de esportes apaixonados que notaram uma lacuna na disponibilidade de conteúdo esportivo confiável, abrangente e fácil de usar. Inicialmente focando em ligas locais e eventos esportivos comunitários, a plataforma se expandiu rapidamente à medida que nosso público cresceu para incluir a cobertura de competições nacionais e internacionais.",
+        "story-text2": "Ao longo dos anos, nossa equipe cresceu para incluir analistas esportivos profissionais, estatísticos, escritores e especialistas em tecnologia, todos comprometidos em fornecer informações precisas e uma experiência de usuário excepcional. Hoje, o Golden Sport é uma fonte confiável de notícias esportivas, análises e engajamento de fãs em todo o mundo.",
         "mission-title": "Nossa Missão",
         "mission-text": "Nossa missão é fornecer uma experiência esportiva completa para os fãs, combinando atualizações em tempo real, estatísticas detalhadas, insights de especialistas e recursos interativos da comunidade. Nos esforçamos para conectar os fãs com seus times, jogadores e jogos favoritos, promovendo uma compreensão e apreciação profunda do esporte em todos os níveis.",
         "mission-item1": "Fornecer placares e atualizações em tempo real para várias ligas esportivas em todo o mundo.",
@@ -568,7 +691,7 @@ const translations = {
         "value-community": "Comunidade: Promovemos engajamento, discussão e interação entre fãs em todo o mundo.",
         "value-reliability": "Confiabilidade: Nosso conteúdo é oportuno, consistente e confiável, garantindo que os fãs sempre tenham as informações mais recentes.",
         "services-title": "Nossos Serviços e Recursos",
-        "services-intro": "Ganza Sport Hub fornece uma ampla gama de serviços projetados para satisfazer cada fã de esportes. Estes incluem:",
+        "services-intro": "Golden Sport fornece uma ampla gama de serviços projetados para satisfazer cada fã de esportes. Estes incluyen:",
         "service-live": "Placares ao Vivo: Atualizações instantâneas em várias ligas esportivas, tanto locais quanto internacionais.",
         "service-stats": "Estatísticas Detalhadas: Dados abrangentes sobre jogadores, times, histórico de partidas e tendências.",
         "service-analysis": "Análise de Especialistas: Análises táticas, análises pré e pós-jogo e comentários profissionais.",
@@ -577,26 +700,23 @@ const translations = {
         "service-personalized": "Experiência Personalizada: Alertas personalizados, acompanhamento de times favoritos e boletins informativos entregues diretamente aos usuários.",
         "service-educational": "Conteúdo Educacional: Artigos que explicam regras, táticas e desenvolvimento de jogadores, ajudando os fãs a entender melhor os esportes que amam.",
         "community-title": "Comunidade e Engajamento",
-        "community-text1": "Nossa comunidade está no coração do Ganza Sport Hub. Incentivamos os fãs a participarem ativamente por meio de comentários, enquetes, discussões e compartilhando seus insights. Nossa presença nas mídias sociais permite ainda que os fãs se envolvam com a comunidade esportiva global, criando uma experiência interativa e conectada. Acreditamos que o esporte é mais divertido quando é compartilhado, discutido e celebrado coletivamente.",
+        "community-text1": "Nossa comunidade está no coração do Golden Sport. Incentivamos os fãs a participarem ativamente por meio de comentários, enquetes, discussões e compartilhando seus insights. Nossa presença nas mídias sociais permite ainda que os fãs se envolvam com a comunidade esportiva global, criando uma experiência interativa e conectada. Acreditamos que o esporte é mais divertido quando é compartilhado, discutido e celebrado coletivamente.",
         "community-text2": "Também fornecemos conteúdo educacional visando ajudar os fãs a entender as nuances de vários esportes, técnicas de jogadores, estratégias táticas e perspectivas históricas. Isso garante que nosso público seja informado, engajado e capacitado para apreciar cada jogo em um nível mais profundo.",
         "commitment-title": "Compromisso e Metas Futuras",
-        "commitment-text": "Ganza Sport Hub está comprometido com a melhoria contínua e expansão. Planejamos cobrir mais categorias esportivas, integrar análises baseadas em IA para insights personalizados, lançar aplicativos móveis e fornecer ferramentas avançadas para rastrear desempenho e tendências. Nosso objetivo é tornar o Ganza Sport Hub o destino definitivo para fãs de esportes em todo o mundo.",
+        "commitment-text": "Golden Sport está comprometido com a melhoria contínua e expansão. Planejamos cobrir mais categorias esportivas, integrar análises baseadas em IA para insights personalizados, lançar aplicativos móveis e fornecer ferramentas avançadas para rastrear desempenho e tendências. Nosso objetivo é tornar o Golden Sport o destino definitivo para fãs de esportes em todo o mundo.",
         "promise-title": "Nossa Promessa",
-        "promise-text": "Cada placar, cada história e cada fã importa. Prometemos manter os mais altos padrões em qualidade de conteúdo, confiabilidade e engajamento comunitário. Ao se juntar ao Ganza Sport Hub, você faz parte de uma comunidade crescente de entusiastas do esporte que compartilham a paixão, a emoção e o amor pelos esportes.",
-        "quote-text": "\"Cada Placar, Cada História, Cada Fã Importa.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Todos os direitos reservados."
+        "promise-text": "Cada placar, cada história e cada fã importa. Prometemos manter os mais altos padrões em qualidade de conteúdo, confiabilidade e engajamento comunitário. Ao se juntar ao Golden Sport, você faz parte de uma comunidade crescente de entusiastas do esporte que compartilham a paixão, a emoção e o amor pelos esportes.",
+        "quote-text": "\"Cada Placar, Cada História, Cada Fã Importa.\""
     },
     ru: {
         "page-title": "О нас",
         "nav-home": "Главная",
-        "nav-contact": "Контакт",
-        "nav-privacy": "Политика конфиденциальности",
-        "welcome-title": "Добро пожаловать в Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub - это первоклассное направление для любителей спорта по всему миру, созданное в 2025 году с целью предоставления самого полного, точного и увлекательного освещения спортивных событий. Мы предоставляем результаты в прямом эфире, подробную статистику, предварительные обзоры матчей, экспертные комментарии и процветающую платформу сообщества, где болельщики могут общаться и делиться своей страстью к игре.",
-        "welcome-text2": "Наша платформа охватывает широкий спектр видов спорта, включая баскетбол, футбол, волейбол и международные соревнования. Мы понимаем, что болельщики хотят не только результатов - они хотят аналитику, анализ, исторический контекст и истории за играми. В Ganza Sport Hub мы неустанно работаем над удовлетворением этих потребностей и создаем центр, который обслуживает каждый тип спортивного болельщика.",
+        "welcome-title": "Добро пожаловать в Golden Sport",
+        "welcome-text1": "Golden Sport - это первоклассное направление для любителей спорта по всему миру, созданное в 2025 году с целью предоставления самого полного, точного и увлекательного освещения спортивных событий. Мы предоставляем результаты в прямом эфире, подробную статистику, предварительные обзоры матчей, экспертные комментарии и процветающую платформу сообщества, где болельщики могут общаться и делиться своей страстью к игре.",
+        "welcome-text2": "Наша платформа охватывает широкий спектр видов спорта, включая баскетбол, футбол, волейбол и международные соревнования. Мы понимаем, что болельщики хотят не только результатов - они хотят аналитику, анализ, исторический контекст и истории за играми. В Golden Sport мы неустанно работаем над удовлетворением этих потребностей и создаем центр, который обслуживает каждый тип спортивного болельщика.",
         "story-title": "Наша история и предыстория",
-        "story-text1": "Ganza Sport Hub начался как небольшая инициатива, возглавляемая группой страстных любителей спорта, которые заметили пробел в доступности надежного, комплексного и удобного спортивного контента. Изначально сосредоточившись на местных лигах и общественных спортивных мероприятиях, платформа быстро расширилась по мере роста нашей аудитории, чтобы включить освещение национальных и международных соревнований.",
-        "story-text2": "За годы наша команда выросла и теперь включает профессиональных спортивных аналитиков, статистиков, писателей и экспертов в области технологий, все они стремятся предоставлять точную информацию и исключительный пользовательский опыт. Сегодня Ganza Sport Hub является надежным источником спортивных новостей, аналитики и вовлечения болельщиков по всему миру.",
+        "story-text1": "Golden Sport начался как небольшая инициатива, возглавляемая группой страстных любителей спорта, которые заметили пробел в доступности надежного, комплексного и удобного спортивного контента. Изначально сосредоточившись на местных лигах и общественных спортивных мероприятиях, платформа быстро расширилась по мере роста нашей аудитории, чтобы включить освещение национальных и международных соревнований.",
+        "story-text2": "За годы наша команда выросла и теперь включает профессиональных спортивных аналитиков, статистиков, писателей и экспертов в области технологий, все они стремятся предоставлять точную информацию и исключительный пользовательский опыт. Сегодня Golden Sport является надежным источником спортивных новостей, аналитики и вовлечения болельщиков по всему миру.",
         "mission-title": "Наша миссия",
         "mission-text": "Наша миссия - предоставить болельщикам полный спортивный опыт, сочетая обновления в реальном времени, подробную статистику, экспертные анализы и интерактивные функции сообщества. Мы стремимся соединить болельщиков с их любимыми командами, игроками и играми, способствуя глубокому пониманию и признанию спорта на всех уровнях.",
         "mission-item1": "Обеспечивать результаты и обновления в реальном времени для нескольких спортивных лиг по всему миру.",
@@ -613,7 +733,7 @@ const translations = {
         "value-community": "Сообщество: Мы способствуем вовлечению, обсуждению и взаимодействию среди болельщиков по всему миру.",
         "value-reliability": "Надежность: Наш контент своевременен, последователен и заслуживает доверия, обеспечивая, чтобы болельщики всегда имели самую свежую информацию.",
         "services-title": "Наши услуги и функции",
-        "services-intro": "Ganza Sport Hub предоставляет широкий спектр услуг, предназначенных для удовлетворения каждого спортивного болельщика. К ним относятся:",
+        "services-intro": "Golden Sport предоставляет широкий спектр услуг, предназначенных для удовлетворения каждого спортивного болельщика. К ним относятся:",
         "service-live": "Результаты в прямом эфире: Мгновенные обновления в нескольких спортивных лигах, как местных, так и международных.",
         "service-stats": "Подробная статистика: Комплексные данные об игроках, командах, истории матчей и тенденциях.",
         "service-analysis": "Экспертный анализ: Тактические разборы, предматчевые и послематчевые обзоры и профессиональные комментарии.",
@@ -622,26 +742,23 @@ const translations = {
         "service-personalized": "Персонализированный опыт: Пользовательские оповещения, отслеживание любимых команд и информационные бюллетени, доставляемые непосредственно пользователям.",
         "service-educational": "Образовательный контент: Статьи, которые объясняют правила, тактику и развитие игроков, помогая болельщикам лучше понимать виды спорта, которые они любят.",
         "community-title": "Сообщество и вовлечение",
-        "community-text1": "Наше сообщество находится в сердце Ganza Sport Hub. Мы поощряем болельщиков активно участвовать через комментарии, опросы, обсуждения и обмен своими идеями. Наше присутствие в социальных сетях дополнительно позволяет болельщикам взаимодействовать с глобальным спортивным сообществом, создавая интерактивный и связанный опыт. Мы считаем, что спорт наиболее приятен, когда им делятся, обсуждают и празднуют коллективно.",
+        "community-text1": "Наше сообщество находится в сердце Golden Sport. Мы поощряем болельщиков активно участвовать через комментарии, опросы, обсуждения и обмен своими идеями. Наше присутствие в социальных сетях дополнительно позволяет болельщикам взаимодействовать с глобальным спортивным сообществом, создавая интерактивный и связанный опыт. Мы считаем, что спорт наиболее приятен, когда им делятся, обсуждают и празднуют коллективно.",
         "community-text2": "Мы также предоставляем образовательный контент, направленный на помощь болельщикам в понимании нюансов различных видов спорта, техник игроков, тактических стратегий и исторических перспектив. Это гарантирует, что наша аудитория информирована, вовлечена и наделена возможностью ценить каждую игру на более глубоком уровне.",
         "commitment-title": "Обязательства и будущие цели",
-        "commitment-text": "Ganza Sport Hub стремится к постоянному улучшению и расширению. Мы планируем охватить больше спортивных категорий, интегрировать аналитику на основе ИИ для персонализированных анализов, запустить мобильные приложения и предоставить передовые инструменты для отслеживания производительности и тенденций. Наша цель - сделать Ganza Sport Hub конечным направлением для спортивных болельщиков по всему миру.",
+        "commitment-text": "Golden Sport стремится к постоянному улучшению и расширению. Мы планируем охватить больше спортивных категорий, интегрировать аналитику на основе ИИ для персонализированных анализов, запустить мобильные приложения и предоставить передовые инструменты для отслеживания производительности и тенденций. Наша цель - сделать Golden Sport конечным направлением для спортивных болельщиков по всему миру.",
         "promise-title": "Наше обещание",
-        "promise-text": "Каждый результат, каждая история и каждый болельщик имеют значение. Мы обещаем поддерживать самые высокие стандарты качества контента, надежности и вовлечения сообщества. Присоединяясь к Ganza Sport Hub, вы становитесь частью растущего сообщества энтузиастов спорта, которые разделяют страсть, волнение и любовь к спорту.",
-        "quote-text": "\"Каждый Счет, Каждая История, Каждый Болельщик Имеет Значение.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. Все права защищены."
+        "promise-text": "Каждый результат, каждая история и каждый болельщик имеют значение. Мы обещаем поддерживать самые высокие стандарты качества контента, надежности и вовлечения сообщества. Присоединяясь к Golden Sport, вы становитесь частью растущего сообщества энтузиастов спорта, которые разделяют страсть, волнение и любовь к спорту.",
+        "quote-text": "\"Каждый Счет, Каждая История, Каждый Болельщик Имеет Значение.\""
     },
     zh: {
         "page-title": "关于我们",
         "nav-home": "首页",
-        "nav-contact": "联系我们",
-        "nav-privacy": "隐私政策",
-        "welcome-title": "欢迎来到 Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub 是全球体育爱好者的首选目的地，成立于 2025 年，旨在提供最全面、准确和引人入胜的体育报道。我们提供实时比分、详细统计数据、比赛预览、专家评论以及一个蓬勃发展的社区平台，粉丝可以在这里联系并分享他们对比赛的热情。",
-        "welcome-text2": "我们的平台涵盖各种体育项目，包括篮球、足球、排球和国际比赛。我们认识到体育迷渴望的不仅仅是比分——他们想要洞察力、分析、历史背景和比赛背后的故事。在 Ganza Sport Hub，我们不懈努力以满足这些需求，并创建一个迎合各类体育迷的中心。",
+        "welcome-title": "欢迎来到 Golden Sport",
+        "welcome-text1": "Golden Sport 是全球体育爱好者的首选目的地，成立于 2025 年，旨在提供最全面、准确和引人入胜的体育报道。我们提供实时比分、详细统计数据、比赛预览、专家评论以及一个蓬勃发展的社区平台，粉丝可以在这里联系并分享他们对比赛的热情。",
+        "welcome-text2": "我们的平台涵盖各种体育项目，包括篮球、足球、排球和国际比赛。我们认识到体育迷渴望的不仅仅是比分——他们想要洞察力、分析、历史背景和比赛背后的故事。在 Golden Sport，我们不懈努力以满足这些需求，并创建一个迎合各类体育迷的中心。",
         "story-title": "我们的故事和背景",
-        "story-text1": "Ganza Sport Hub 始于一群热情的体育爱好者领导的一项小倡议，他们注意到可靠、全面和用户友好的体育内容的可用性存在差距。最初专注于本地联赛和社区体育赛事，随着我们观众的增长，平台迅速扩展，包括对国内和国际比赛的报道。",
-        "story-text2": "多年来，我们的团队已经发展到包括专业体育分析师、统计学家、作家和技术专家，所有人都致力于提供准确的信息和卓越的用户体验。今天，Ganza Sport Hub 是全球体育新闻、分析和粉丝参与的可信赖来源。",
+        "story-text1": "Golden Sport 始于一群热情的体育爱好者领导的一项小倡议，他们注意到可靠、全面和用户友好的体育内容的可用性存在差距。最初专注于本地联赛和社区体育赛事，随着我们观众的增长，平台迅速扩展，包括对国内和国际比赛的报道。",
+        "story-text2": "多年来，我们的团队已经发展到包括专业体育分析师、统计学家、作家和技术专家，所有人都致力于提供准确的信息和卓越的用户体验。今天，Golden Sport 是全球体育新闻、分析和粉丝参与的可信赖来源。",
         "mission-title": "我们的使命",
         "mission-text": "我们的使命是通过结合实时更新、详细统计数据、专家洞察和互动社区功能，为粉丝提供完整的体育体验。我们努力将粉丝与他们最喜欢的球队、球员和比赛联系起来，在各个层面培养对体育的深刻理解和欣赏。",
         "mission-item1": "为世界各地的多个体育联赛提供实时比分和更新。",
@@ -658,7 +775,7 @@ const translations = {
         "value-community": "社区：我们在全球粉丝中促进参与、讨论和互动。",
         "value-reliability": "可靠性：我们的内容及时、一致且值得信赖，确保粉丝始终拥有最新信息。",
         "services-title": "我们的服务和功能",
-        "services-intro": "Ganza Sport Hub 提供广泛的服务，旨在满足每个体育迷的需求。这些包括：",
+        "services-intro": "Golden Sport 提供广泛的服务，旨在满足每个体育迷的需求。这些包括：",
         "service-live": "实时比分：在多个体育联赛中的即时更新，包括本地和国际联赛。",
         "service-stats": "详细统计：关于球员、球队、比赛历史和趋势的全面数据。",
         "service-analysis": "专家分析：战术分解、赛前和赛后回顾以及专业评论。",
@@ -667,26 +784,23 @@ const translations = {
         "service-personalized": "个性化体验：自定义提醒、最爱球队跟踪以及直接发送给用户的新闻通讯。",
         "service-educational": "教育内容：解释规则、战术和球员发展的文章，帮助粉丝更好地理解他们热爱的运动。",
         "community-title": "社区与参与",
-        "community-text1": "我们的社区是 Ganza Sport Hub 的核心。我们鼓励粉丝通过评论、投票、讨论和分享他们的见解来积极参与。我们在社交媒体上的存在进一步允许粉丝与全球体育社区互动，创造互动和连接的体验。我们相信，当体育被分享、讨论和集体庆祝时，它是最令人愉快的。",
+        "community-text1": "我们的社区是 Golden Sport 的核心。我们鼓励粉丝通过评论、投票、讨论和分享他们的见解来积极参与。我们在社交媒体上的存在进一步允许粉丝与全球体育社区互动，创造互动和连接的体验。我们相信，当体育被分享、讨论和集体庆祝时，它是最令人愉快的。",
         "community-text2": "我们还提供教育内容，旨在帮助粉丝理解各种运动的细微差别、球员技术、战术策略和历史观点。这确保我们的观众知情、参与并能够在更深层次上欣赏每场比赛。",
         "commitment-title": "承诺与未来目标",
-        "commitment-text": "Ganza Sport Hub 致力于持续改进和扩展。我们计划覆盖更多体育类别，整合基于 AI 的分析以获取个性化洞察，推出移动应用程序，并提供用于跟踪表现和趋势的高级工具。我们的目标是使 Ganza Sport Hub 成为全球体育迷的终极目的地。",
+        "commitment-text": "Golden Sport 致力于持续改进和扩展。我们计划覆盖更多体育类别，整合基于 AI 的分析以获取个性化洞察，推出移动应用程序，并提供用于跟踪表现和趋势的高级工具。我们的目标是使 Golden Sport 成为全球体育迷的终极目的地。",
         "promise-title": "我们的承诺",
-        "promise-text": "每一个比分，每一个故事，每一个粉丝都很重要。我们承诺在内容质量、可靠性和社区参与方面保持最高标准。通过加入 Ganza Sport Hub，您将成为不断增长的体育爱好者社区的一部分，他们分享着对体育的热情、兴奋和热爱。",
-        "quote-text": "\"每一个比分，每一个故事，每一个粉丝都很重要。\"",
-        "footer-text": "© 2025 Ganza Sport Hub。保留所有权利。"
+        "promise-text": "每一个比分，每一个故事，每一个粉丝都很重要。我们承诺在内容质量、可靠性和社区参与方面保持最高标准。通过加入 Golden Sport，您将成为不断增长的体育爱好者社区的一部分，他们分享着对体育的热情、兴奋和热爱。",
+        "quote-text": "\"每一个比分，每一个故事，每一个粉丝都很重要。\""
     },
     ja: {
         "page-title": "私たちについて",
         "nav-home": "ホーム",
-        "nav-contact": "お問い合わせ",
-        "nav-privacy": "プライバシーポリシー",
-        "welcome-title": "Ganza Sport Hubへようこそ",
-        "welcome-text1": "Ganza Sport Hubは、世界中のスポーツ愛好家のための第一級の目的地であり、2025年に設立され、最も包括的で正確かつ魅力的なスポーツ報道を提供することを目的としています。ライブスコア、詳細な統計、試合プレビュー、専門家の解説、そしてファンがつながり、ゲームへの情熱を共有できる活気あるコミュニティプラットフォームを提供します。",
-        "welcome-text2": "当社のプラットフォームは、バスケットボール、サッカー、バレーボール、国際大会など、多様なスポーツをカバーしています。私たちは、スポーツファンが単なるスコア以上のものを切望していることを認識しています—彼らは洞察、分析、歴史的文脈、そしてゲームの背後にある物語を求めています。Ganza Sport Hubでは、これらのニーズを満たし、あらゆるタイプのスポーツファンに対応するハブを作成するために尽力しています。",
+        "welcome-title": "Golden Sportへようこそ",
+        "welcome-text1": "Golden Sportは、世界中のスポーツ愛好家のための第一級の目的地であり、2025年に設立され、最も包括的で正確かつ魅力的なスポーツ報道を提供することを目的としています。ライブスコア、詳細な統計、試合プレビュー、専門家の解説、そしてファンがつながり、ゲームへの情熱を共有できる活気あるコミュニティプラットフォームを提供します。",
+        "welcome-text2": "当社のプラットフォームは、バスケットボール、サッカー、バレーボール、国際大会など、多様なスポーツをカバーしています。私たちは、スポーツファンが単なるスコア以上のものを切望していることを認識しています—彼らは洞察、分析、歴史的文脈、そしてゲームの背後にある物語を求めています。Golden Sportでは、これらのニーズを満たし、あらゆるタイプのスポーツファンに対応するハブを作成するために尽力しています。",
         "story-title": "私たちの物語と背景",
-        "story-text1": "Ganza Sport Hubは、信頼性が高く包括的でユーザーフレンドリーなスポーツコンテンツの可用性にギャップがあることに気付いた、情熱的なスポーツ愛好家のグループが主導する小さなイニシアチブとして始まりました。当初は地元リーグとコミュニティスポーツイベントに焦点を当てていましたが、視聴者が増えるにつれてプラットフォームは急速に拡大し、国内および国際大会の報道を含むようになりました。",
-        "story-text2": "長年にわたり、私たちのチームは成長し、プロのスポーツアナリスト、統計学者、ライター、テクノロジー専門家を含むようになり、全員が正確な情報と卓越したユーザー体験を提供することに取り組んでいます。今日、Ganza Sport Hubは、世界中のスポーツニュース、分析、ファンエンゲージメントの信頼できる情報源として確立されています。",
+        "story-text1": "Golden Sportは、信頼性が高く包括的でユーザーフレンドリーなスポーツコンテンツの可用性にギャップがあることに気付いた、情熱的なスポーツ愛好家のグループが主導する小さなイニシアチブとして始まりました。当初は地元リーグとコミュニティスポーツイベントに焦点を当てていましたが、視聴者が増えるにつれてプラットフォームは急速に拡大し、国内および国際大会の報道を含むようになりました。",
+        "story-text2": "長年にわたり、私たちのチームは成長し、プロのスポーツアナリスト、統計学者、ライター、テクノロジー専門家を含むようになり、全員が正確な情報と卓越したユーザー体験を提供することに取り組んでいます。今日、Golden Sportは、世界中のスポーツニュース、分析、ファンエンゲージメントの信頼できる情報源として確立されています。",
         "mission-title": "私たちの使命",
         "mission-text": "私たちの使命は、リアルタイムの更新、詳細な統計、専門家の洞察、インタラクティブなコミュニティ機能を組み合わせることで、ファンに完全なスポーツ体験を提供することです。私たちは、ファンをお気に入りのチーム、選手、ゲームとつなぎ、あらゆるレベルでスポーツへの深い理解と感謝を育むことを目指しています。",
         "mission-item1": "世界中の複数のスポーツリーグに対してリアルタイムのスコアと更新を提供します。",
@@ -703,7 +817,7 @@ const translations = {
         "value-community": "コミュニティ：私たちは世界中のファン間のエンゲージメント、議論、相互作用を促進します。",
         "value-reliability": "信頼性：私たちのコンテンツはタイムリーで一貫性があり信頼でき、ファンが常に最新の情報を持っていることを保証します。",
         "services-title": "私たちのサービスと機能",
-        "services-intro": "Ganza Sport Hubは、あらゆるスポーツファンを満足させるように設計された幅広いサービスを提供します。これらには以下が含まれます：",
+        "services-intro": "Golden Sportは、あらゆるスポーツファンを満足させるように設計された幅広いサービスを提供します。これらには以下が含まれます：",
         "service-live": "ライブスコア：ローカルおよび国際的な複数のスポーツリーグでの即時更新。",
         "service-stats": "詳細な統計：選手、チーム、試合履歴、傾向に関する包括的なデータ。",
         "service-analysis": "専門家分析：戦術的分析、試合前後のレビュー、プロの解説。",
@@ -712,26 +826,23 @@ const translations = {
         "service-personalized": "パーソナライズされた体験：カスタムアラート、お気に入りチームの追跡、ユーザーに直接配信されるニュースレター。",
         "service-educational": "教育的コンテンツ：ルール、戦術、選手育成を説明する記事で、ファンが愛するスポーツをよりよく理解するのを助けます。",
         "community-title": "コミュニティとエンゲージメント",
-        "community-text1": "私たちのコミュニティはGanza Sport Hubの中心です。私たちは、コメント、投票、ディスカッション、そして彼らの洞察を共有することによって、ファンが積極的に参加することを奨励します。私たちのソーシャルメディアでの存在は、さらにファンがグローバルなスポーツコミュニティと関わることを可能にし、インタラクティブでつながった体験を作り出します。私たちは、スポーツが共有され、議論され、集合的に祝われるときに最も楽しいものだと信じています。",
+        "community-text1": "私たちのコミュニティはGolden Sportの中心です。私たちは、コメント、投票、ディスカッション、そして彼らの洞察を共有することによって、ファンが積極的に参加することを奨励します。私たちのソーシャルメディアでの存在は、さらにファンがグローバルなスポーツコミュニティと関わることを可能にし、インタラクティブでつながった体験を作り出します。私たちは、スポーツが共有され、議論され、集合的に祝われるときに最も楽しいものだと信じています。",
         "community-text2": "私たちはまた、さまざまなスポーツのニュアンス、選手の技術、戦術的戦略、歴史的視点を理解するのをファンが助けることを目的とした教育的コンテンツを提供します。これにより、私たちの観客が情報を得て、関与し、すべてのゲームをより深いレベルで鑑賞する力を与えられることが保証されます。",
         "commitment-title": "コミットメントと将来の目標",
-        "commitment-text": "Ganza Sport Hubは、継続的な改善と拡大に取り組んでいます。私たちは、より多くのスポーツカテゴリーをカバーし、パーソナライズされた洞察のためのAI駆動の分析を統合し、モバイルアプリケーションを立ち上げ、パフォーマンスと傾向を追跡するための高度なツールを提供することを計画しています。私たちの目標は、Ganza Sport Hubを世界中のスポーツファンの究極の目的地にすることです。",
+        "commitment-text": "Golden Sportは、継続的な改善と拡大に取り組んでいます。私たちは、より多くのスポーツカテゴリーをカバーし、パーソナライズされた洞察のためのAI駆動の分析を統合し、モバイルアプリケーションを立ち上げ、パフォーマンスと傾向を追跡するための高度なツールを提供することを計画しています。私たちの目標は、Golden Sportを世界中のスポーツファンの究極の目的地にすることです。",
         "promise-title": "私たちの約束",
-        "promise-text": "すべてのスコア、すべての物語、すべてのファンが重要です。私たちは、コンテンツの品質、信頼性、コミュニティエンゲージメントにおいて最高水準を維持することを約束します。Ganza Sport Hubに参加することで、あなたは情熱、興奮、スポーツへの愛を共有する成長するスポーツ愛好家コミュニティの一員となります。",
-        "quote-text": "\"すべてのスコア、すべての物語、すべてのファンが重要です。\"",
-        "footer-text": "© 2025 Ganza Sport Hub。無断複写・転載を禁じます。"
+        "promise-text": "すべてのスコア、すべての物語、すべてのファンが重要です。私たちは、コンテンツの品質、信頼性、コミュニティエンゲージメントにおいて最高水準を維持することを約束します。Golden Sportに参加することで、あなたは情熱、興奮、スポーツへの愛を共有する成長するスポーツ愛好家コミュニティの一員となります。",
+        "quote-text": "\"すべてのスコア、すべての物語、すべてのファンが重要です。\""
     },
     ar: {
         "page-title": "من نحن",
         "nav-home": "الرئيسية",
-        "nav-contact": "اتصل بنا",
-        "nav-privacy": "سياسة الخصوصية",
-        "welcome-title": "مرحبًا بكم في Ganza Sport Hub",
-        "welcome-text1": "Ganza Sport Hub هو وجهة رئيسية لعشاق الرياضة في جميع أنحاء العالم، تأسس في عام 2025 بهدف تقديم التغطية الرياضية الأكثر شمولاً ودقة وجاذبية. نقدم النتائج المباشرة، والإحصائيات التفصيلية، ومعاينات المباريات، والتعليقات الخبيرة، ومنصة مجتمعية مزدهرة حيث يمكن للجماهير التواصل ومشاركة شغفهم باللعبة.",
-        "welcome-text2": "تغطي منصتنا مجموعة واسعة من الرياضات بما في ذلك كرة السلة، وكرة القدم، والكرة الطائرة، والمسابقات الدولية. ندرك أن عشاق الرياضة يتوقون إلى أكثر من مجرد نتائج - إنهم يريدون رؤى، وتحليلات، وسياق تاريخي، وقصص وراء الألعاب. في Ganza Sport Hub، نعمل بلا كلل لتلبية هذه الاحتياجات وخلق مركز يلبي كل نوع من عشاق الرياضة.",
+        "welcome-title": "مرحبًا بكم في Golden Sport",
+        "welcome-text1": "Golden Sport هو وجهة رئيسية لعشاق الرياضة في جميع أنحاء العالم، تأسس في عام 2025 بهدف تقديم التغطية الرياضية الأكثر شمولاً ودقة وجاذبية. نقدم النتائج المباشرة، والإحصائيات التفصيلية، ومعاينات المباريات، والتعليقات الخبيرة، ومنصة مجتمعية مزدهرة حيث يمكن للجماهير التواصل ومشاركة شغفهم باللعبة.",
+        "welcome-text2": "تغطي منصتنا مجموعة واسعة من الرياضات بما في ذلك كرة السلة، وكرة القدم، والكرة الطائرة، والمسابقات الدولية. ندرك أن عشاق الرياضة يتوقون إلى أكثر من مجرد نتائج - إنهم يريدون رؤى، وتحليلات، وسياق تاريخي، وقصص وراء الألعاب. في Golden Sport، نعمل بلا كلل لتلبية هذه الاحتياجات وخلق مركز يلبي كل نوع من عشاق الرياضة.",
         "story-title": "قصتنا وخلفيتنا",
-        "story-text1": "بدأ Ganza Sport Hub كمبادرة صغيرة قادها مجموعة من عشاق الرياضة المتحمسين الذين لاحظوا فجوة في توفر محتوى رياضي موثوق وشامل وسهل الاستخدام. بالتركيز في البداية على الدوريات المحلية والفعاليات الرياضية المجتمعية، توسعت المنصة بسرعة مع نمو جمهورنا لتشمل تغطية المسابقات الوطنية والدولية.",
-        "story-text2": "على مر السنين، نما فريقنا ليشمل محللين رياضيين محترفين، وإحصائيين، وكتاب، وخبراء تكنولوجيا، وجميعهم ملتزمون بتقديم معلومات دقيقة وتجربة مستخدم استثنائية. اليوم، يقف Ganza Sport Hub كمصدر موثوق للأخبار الرياضية، والتحليلات، ومشاركة المشجعين في جميع أنحاء العالم.",
+        "story-text1": "بدأ Golden Sport كمبادرة صغيرة قادها مجموعة من عشاق الرياضة المتحمسين الذين لاحظوا فجوة في توفر محتوى رياضي موثوق وشامل وسهل الاستخدام. بالتركيز في البداية على الدوريات المحلية والفعاليات الرياضية المجتمعية، توسعت المنصة بسرعة مع نمو جمهورنا لتشمل تغطية المسابقات الوطنية والدولية.",
+        "story-text2": "على مر السنين، نما فريقنا ليشمل محللين رياضيين محترفين، وإحصائيين، وكتاب، وخبراء تكنولوجيا، وجميعهم ملتزمون بتقديم معلومات دقيقة وتجربة مستخدم استثنائية. اليوم، يقف Golden Sport كمصدر موثوق للأخبار الرياضية، والتحليلات، ومشاركة المشجعين في جميع أنحاء العالم.",
         "mission-title": "مهمتنا",
         "mission-text": "مهمتنا هي توفير تجربة رياضية كاملة للجماهير من خلال الجمع بين التحديثات في الوقت الفعلي، والإحصائيات التفصيلية، ورؤى الخبراء، وميزات المجتمع التفاعلية. نحن نسعى لربط الجماهير بفرقهم المفضلة، واللاعبين، والألعاب، وتعزيز فهم وتقدير عميق للرياضة على كل مستوى.",
         "mission-item1": "تقديم النتائج والتحديثات في الوقت الفعلي لعدة دوريات رياضية حول العالم.",
@@ -748,7 +859,7 @@ const translations = {
         "value-community": "المجتمع: نحن نعزز المشاركة، والنقاش، والتفاعل بين الجماهير في جميع أنحاء العالم.",
         "value-reliability": "الموثوقية: محتوانا في الوقت المناسب، متسق، وجدير بالثقة، مما يضمن أن الجماهير لديها دائمًا أحدث المعلومات.",
         "services-title": "خدماتنا وميزاتنا",
-        "services-intro": "يوفر Ganza Sport Hub مجموعة واسعة من الخدمات المصممة لإرضاء كل مشجع رياضي. وتشمل هذه:",
+        "services-intro": "يوفر Golden Sport مجموعة واسعة من الخدمات المصممة لإرضاء كل مشجع رياضي. وتشمل هذه:",
         "service-live": "النتائج المباشرة: تحديثات فورية عبر عدة دوريات رياضية، محلية ودولية.",
         "service-stats": "إحصائيات مفصلة: بيانات شاملة عن اللاعبين، والفرق، وتاريخ المباريات، والاتجاهات.",
         "service-analysis": "تحليل الخبراء: تحليلات تكتيكية، مراجعات ما قبل وبعد المباراة، وتعليقات احترافية.",
@@ -757,26 +868,23 @@ const translations = {
         "service-personalized": "تجربة مخصصة: تنبيهات مخصصة، تتبع الفرق المفضلة، والنشرات الإخبارية التي يتم تسليمها مباشرة إلى المستخدمين.",
         "service-educational": "محتوى تعليمي: مقالات تشرح القواعد، والتكتيكات، وتطور اللاعبين، مما يساعد الجماهير على فهم أفضل للرياضات التي يحبونها.",
         "community-title": "المجتمع والمشاركة",
-        "community-text1": "مجتمعنا هو في قلب Ganza Sport Hub. نشجع الجماهير على المشاركة بنشاط من خلال التعليقات، والاستطلاعات، والمناقشات، ومشاركة رؤاهم. وجودنا على وسائل التواصل الاجتماعي يسمح أيضًا للجماهير بالتفاعل مع المجتمع الرياضي العالمي، مما يخلق تجربة تفاعلية ومتصلة. نحن نعتقد أن الرياضة هي الأكثر متعة عندما يتم مشاركتها، ومناقشتها، والاحتفاء بها جماعيًا.",
+        "community-text1": "مجتمعنا هو في قلب Golden Sport. نشجع الجماهير على المشاركة بنشاط من خلال التعليقات، والاستطلاعات، والمناقشات، ومشاركة رؤاهم. وجودنا على وسائل التواصل الاجتماعي يسمح أيضًا للجماهير بالتفاعل مع المجتمع الرياضي العالمي، مما يخلق تجربة تفاعلية ومتصلة. نحن نعتقد أن الرياضة هي الأكثر متعة عندما يتم مشاركتها، ومناقشتها، والاحتفاء بها جماعيًا.",
         "community-text2": "نوفر أيضًا محتوى تعليمي يهدف إلى مساعدة الجماهير على فهم الفروق الدقيقة في مختلف الرياضات، وتقنيات اللاعبين، والاستراتيجيات التكتيكية، والمنظورات التاريخية. هذا يضمن أن جمهورنا على اطلاع، ومشارك، وتمكين لتقدير كل لعبة على مستوى أعمق.",
         "commitment-title": "الالتزام والأهداف المستقبلية",
-        "commitment-text": "Ganza Sport Hub ملتزم بالتحسين المستمر والتوسع. نخطط لتغطية المزيد من الفئات الرياضية، ودمج التحليلات المدعومة بالذكاء الاصطناعي للحصول على رؤى مخصصة، وإطلاق تطبيقات الجوال، وتقديم أدوات متقدمة لتتبع الأداء والاتجاهات. هدفنا هو جعل Ganza Sport Hub الوجهة النهائية لعشاق الرياضة في جميع أنحاء العالم.",
+        "commitment-text": "Golden Sport ملتزم بالتحسين المستمر والتوسع. نخطط لتغطية المزيد من الفئات الرياضية، ودمج التحليلات المدعومة بالذكاء الاصطناعي للحصول على رؤى مخصصة، وإطلاق تطبيقات الجوال، وتقديم أدوات متقدمة لتتبع الأداء والاتجاهات. هدفنا هو جعل Golden Sport الوجهة النهائية لعشاق الرياضة في جميع أنحاء العالم.",
         "promise-title": "وعدنا",
-        "promise-text": "كل نتيجة، وكل قصة، وكل مشجع مهم. نعد بالحفاظ على أعلى المعايير في جودة المحتوى، والموثوقية، والمشاركة المجتمعية. من خلال الانضمام إلى Ganza Sport Hub، أنت جزء من مجتمع متزايد من عشاق الرياضة الذين يتشاركون الشغف، والإثارة، وحب الرياضة.",
-        "quote-text": "\"كل نتيجة، كل قصة، كل مشجع مهم.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. جميع الحقوق محفوظة."
+        "promise-text": "كل نتيجة، وكل قصة، وكل مشجع مهم. نعد بالحفاظ على أعلى المعايير في جودة المحتوى، والموثوقية، والمشاركة المجتمعية. من خلال الانضمام إلى Golden Sport، أنت جزء من مجتمع متزايد من عشاق الرياضة الذين يتشاركون الشغف، والإثارة، وحب الرياضة.",
+        "quote-text": "\"كل نتيجة، كل قصة، كل مشجع مهم.\""
     },
     hi: {
         "page-title": "हमारे बारे में",
         "nav-home": "होम",
-        "nav-contact": "संपर्क करें",
-        "nav-privacy": "गोपनीयता नीति",
-        "welcome-title": "Ganza Sport Hub में आपका स्वागत है",
-        "welcome-text1": "Ganza Sport Hub दुनिया भर के खेल प्रेमियों के लिए एक प्रमुख गंतव्य है, जिसकी स्थापना 2025 में खेलों की सबसे व्यापक, सटीक और आकर्षक कवरेज देने के लक्ष्य के साथ की गई थी। हम लाइव स्कोर, विस्तृत आंकड़े, मैच पूर्वावलोकन, विशेषज्ञ टिप्पणी और एक संपन्न समुदाय मंच प्रदान करते हैं जहां प्रशंसक जुड़ सकते हैं और खेल के प्रति अपने जुनून को साझा कर सकते हैं।",
-        "welcome-text2": "हमारा प्लेटफॉर्म बास्केटबॉल, फुटबॉल, वॉलीबॉल और अंतरराष्ट्रीय प्रतियोगिताओं सहित विभिन्न प्रकार के खेलों को कवर करता है। हम मानते हैं कि खेल प्रेमी केवल स्कोर से अधिक चाहते हैं - वे अंतर्दृष्टि, विश्लेषण, ऐतिहासिक संदर्भ और खेलों के पीछे की कहानियाँ चाहते हैं। Ganza Sport Hub में, हम इन आवश्यकताओं को पूरा करने और एक ऐसा केंद्र बनाने के लिए अथक रूप से काम करते हैं जो हर प्रकार के खेल प्रेमी को संतुष्ट करे।",
+        "welcome-title": "Golden Sport में आपका स्वागत है",
+        "welcome-text1": "Golden Sport दुनिया भर के खेल प्रेमियों के लिए एक प्रमुख गंतव्य है, जिसकी स्थापना 2025 में खेलों की सबसे व्यापक, सटीक और आकर्षक कवरेज देने के लक्ष्य के साथ की गई थी। हम लाइव स्कोर, विस्तृत आंकड़े, मैच पूर्वावलोकन, विशेषज्ञ टिप्पणी और एक संपन्न समुदाय मंच प्रदान करते हैं जहां प्रशंसक जुड़ सकते हैं और खेल के प्रति अपने जुनून को साझा कर सकते हैं।",
+        "welcome-text2": "हमारा प्लेटफॉर्म बास्केटबॉल, फुटबॉल, वॉलीबॉल और अंतरराष्ट्रीय प्रतियोगिताओं सहित विभिन्न प्रकार के खेलों को कवर करता है। हम मानते हैं कि खेल प्रेमी केवल स्कोर से अधिक चाहते हैं - वे अंतर्दृष्टि, विश्लेषण, ऐतिहासिक संदर्भ और खेलों के पीछे की कहानियाँ चाहते हैं। Golden Sport में, हम इन आवश्यकताओं को पूरा करने और एक ऐसा केंद्र बनाने के लिए अथक रूप से काम करते हैं जो हर प्रकार के खेल प्रेमी को संतुष्ट करे।",
         "story-title": "हमारी कहानी और पृष्ठभूमि",
-        "story-text1": "Ganza Sport Hub की शुरुआत एक छोटी पहल के रूप में हुई थी जिसका नेतृत्व जुनूनी खेल प्रेमियों के एक समूह ने किया था, जिन्होंने विश्वसनीय, व्यापक और उपयोगकर्ता-अनुकूल खेल सामग्री की उपलब्धता में एक अंतर देखा। शुरू में स्थानीय लीग और सामुदायिक खेल आयोजनों पर ध्यान केंद्रित करते हुए, प्लेटफॉर्म तेजी से विस्तारित हुआ क्योंकि हमारे दर्शक बढ़े और राष्ट्रीय और अंतरराष्ट्रीय प्रतियोगिताओं की कवरेज शामिल हुई।",
-        "story-text2": "वर्षों से, हमारी टीम में पेशेवर खेल विश्लेषकों, सांख्यिकीविदों, लेखकों और प्रौद्योगिकी विशेषज्ञों को शामिल किया गया है, जो सभी सटीक जानकारी और असाधारण उपयोगकर्ता अनुभव देने के लिए प्रतिबद्ध हैं। आज, Ganza Sport Hub दुनिया भर में खेल समाचार, विश्लेषण और प्रशंसक जुड़ाव का एक विश्वसनीय स्रोत है।",
+        "story-text1": "Golden Sport की शुरुआत एक छोटी पहल के रूप में हुई थी जिसका नेतृत्व जुनूनी खेल प्रेमियों के एक समूह ने किया था, जिन्होंने विश्वसनीय, व्यापक और उपयोगकर्ता-अनुकूल खेल सामग्री की उपलब्धता में एक अंतर देखा। शुरू में स्थानीय लीग और सामुदायिक खेल आयोजनों पर ध्यान केंद्रित करते हुए, प्लेटफॉर्म तेजी से विस्तारित हुआ क्योंकि हमारे दर्शक बढ़े और राष्ट्रीय और अंतरराष्ट्रीय प्रतियोगिताओं की कवरेज शामिल हुई।",
+        "story-text2": "वर्षों से, हमारी टीम में पेशेवर खेल विश्लेषकों, सांख्यिकीविदों, लेखकों और प्रौद्योगिकी विशेषज्ञों को शामिल किया गया है, जो सभी सटीक जानकारी और असाधारण उपयोगकर्ता अनुभव देने के लिए प्रतिबद्ध हैं। आज, Golden Sport दुनिया भर में खेल समाचार, विश्लेषण और प्रशंसक जुड़ाव का एक विश्वसनीय स्रोत है।",
         "mission-title": "हमारा मिशन",
         "mission-text": "हमारा मिशन रीयल-टाइम अपडेट, विस्तृत आंकड़े, विशेषज्ञ अंतर्दृष्टि और इंटरैक्टिव समुदाय सुविधाओं को मिलाकर प्रशंसकों के लिए एक संपूर्ण खेल अनुभव प्रदान करना है। हम प्रशंसकों को उनकी पसंदीदा टीमों, खिलाड़ियों और खेलों से जोड़ने का प्रयास करते हैं, हर स्तर पर खेलों की गहरी समझ और सराहना को बढ़ावा देते हैं।",
         "mission-item1": "दुनिया भर में कई खेल लीग के लिए रीयल-टाइम स्कोर और अपडेट दें।",
@@ -793,7 +901,7 @@ const translations = {
         "value-community": "समुदाय: हम दुनिया भर में प्रशंसकों के बीच जुड़ाव, चर्चा और परस्पर क्रिया को बढ़ावा देते हैं।",
         "value-reliability": "विश्वसनीयता: हमारी सामग्री समय पर, सुसंगत और भरोसेमंद है, यह सुनिश्चित करते हुए कि प्रशंसकों के पास हमेशा नवीनतम जानकारी हो।",
         "services-title": "हमारी सेवाएं और सुविधाएं",
-        "services-intro": "Ganza Sport Hub सेवाओं की एक विस्तृत श्रृंखला प्रदान करता है जो हर खेल प्रेमी को संतुष्ट करने के लिए डिज़ाइन की गई हैं। इनमें शामिल हैं:",
+        "services-intro": "Golden Sport सेवाओं की एक विस्तृत श्रृंखला प्रदान करता है जो हर खेल प्रेमी को संतुष्ट करने के लिए डिज़ाइन की गई हैं। इनमें शामिल हैं:",
         "service-live": "लाइव स्कोर: स्थानीय और अंतरराष्ट्रीय दोनों तरह की कई खेल लीग में तत्काल अपडेट।",
         "service-stats": "विस्तृत आंकड़े: खिलाड़ियों, टीमों, मैच इतिहास और रुझानों पर व्यापक डेटा।",
         "service-analysis": "विशेषज्ञ विश्लेषण: रणनीतिक विश्लेषण, मैच पूर्व और मैच के बाद की समीक्षा, और पेशेवर टिप्पणी।",
@@ -802,26 +910,23 @@ const translations = {
         "service-personalized": "व्यक्तिगत अनुभव: कस्टम अलर्ट, पसंदीदा टीमों की ट्रैकिंग, और सीधे उपयोगकर्ताओं को दिए गए न्यूज़लेटर।",
         "service-educational": "शैक्षिक सामग्री: ऐसे लेख जो नियमों, रणनीतियों और खिलाड़ी विकास की व्याख्या करते हैं, जिससे प्रशंसकों को उन खेलों को बेहतर ढंग से समझने में मदद मिलती है जिन्हें वे प्यार करते हैं।",
         "community-title": "समुदाय और जुड़ाव",
-        "community-text1": "हमारा समुदाय Ganza Sport Hub के दिल में है। हम प्रशंसकों को टिप्पणियों, पोल, चर्चाओं और अपनी अंतर्दृष्टि साझा करके सक्रिय रूप से भाग लेने के लिए प्रोत्साहित करते हैं। हमारी सोशल मीडिया उपस्थिति प्रशंसकों को वैश्विक खेल समुदाय के साथ जुड़ने की अनुमति देती है, जिससे एक इंटरैक्टिव और जुड़ा हुआ अनुभव बनता है। हम मानते हैं कि खेल सबसे अधिक आनंददायक होता है जब उसे साझा किया जाता है, चर्चा की जाती है और सामूहिक रूप से मनाया जाता है।",
+        "community-text1": "हमारा समुदाय Golden Sport के दिल में है। हम प्रशंसकों को टिप्पणियों, पोल, चर्चाओं और अपनी अंतर्दृष्टि साझा करके सक्रिय रूप से भाग लेने के लिए प्रोत्साहित करते हैं। हमारी सोशल मीडिया उपस्थिति प्रशंसकों को वैश्विक खेल समुदाय के साथ जुड़ने की अनुमति देती है, जिससे एक इंटरैक्टिव और जुड़ा हुआ अनुभव बनता है। हम मानते हैं कि खेल सबसे अधिक आनंददायक होता है जब उसे साझा किया जाता है, चर्चा की जाती है और सामूहिक रूप से मनाया जाता है।",
         "community-text2": "हम शैक्षिक सामग्री भी प्रदान करते हैं जिसका उद्देश्य प्रशंसकों को विभिन्न खेलों की बारीकियों, खिलाड़ी तकनीकों, रणनीतिक रणनीतियों और ऐतिहासिक परिप्रेक्ष्यों को समझने में मदद करना है। यह सुनिश्चित करता है कि हमारे दर्शक सूचित, संलग्न और सशक्त हों ताकि वे हर गेम को गहरे स्तर पर सराह सकें।",
         "commitment-title": "प्रतिबद्धता और भविष्य के लक्ष्य",
-        "commitment-text": "Ganza Sport Hub निरंतर सुधार और विस्तार के लिए प्रतिबद्ध है। हम अधिक खेल श्रेणियों को कवर करने, व्यक्तिगत अंतर्दृष्टि के लिए एआई-संचालित विश्लेषण को एकीकृत करने, मोबाइल एप्लिकेशन लॉन्च करने और प्रदर्शन और रुझानों को ट्रैक करने के लिए उन्नत उपकरण प्रदान करने की योजना बना रहे हैं। हमारा लक्ष्य Ganza Sport Hub को दुनिया भर के खेल प्रेमियों के लिए अंतिम गंतव्य बनाना है।",
+        "commitment-text": "Golden Sport निरंतर सुधार और विस्तार के लिए प्रतिबद्ध है। हम अधिक खेल श्रेणियों को कवर करने, व्यक्तिगत अंतर्दृष्टि के लिए एआई-संचालित विश्लेषण को एकीकृत करने, मोबाइल एप्लिकेशन लॉन्च करने और प्रदर्शन और रुझानों को ट्रैक करने के लिए उन्नत उपकरण प्रदान करने की योजना बना रहे हैं। हमारा लक्ष्य Golden Sport को दुनिया भर के खेल प्रेमियों के लिए अंतिम गंतव्य बनाना है।",
         "promise-title": "हमारा वादा",
-        "promise-text": "हर स्कोर, हर कहानी, और हर प्रशंसक मायने रखता है। हम सामग्री गुणवत्ता, विश्वसनीयता और समुदाय जुड़ाव में उच्चतम मानकों को बनाए रखने का वादा करते हैं। Ganza Sport Hub में शामिल होकर, आप खेल प्रेमियों के एक बढ़ते समुदाय का हिस्सा हैं जो जुनून, उत्साह और खेलों के प्यार को साझा करते हैं।",
-        "quote-text": "\"हर स्कोर, हर कहानी, हर प्रशंसक मायने रखता है।\"",
-        "footer-text": "© 2025 Ganza Sport Hub। सर्वाधिकार सुरक्षित।"
+        "promise-text": "हर स्कोर, हर कहानी, और हर प्रशंसक मायने रखता है। हम सामग्री गुणवत्ता, विश्वसनीयता और समुदाय जुड़ाव में उच्चतम मानकों को बनाए रखने का वादा करते हैं। Golden Sport में शामिल होकर, आप खेल प्रेमियों के एक बढ़ते समुदाय का हिस्सा हैं जो जुनून, उत्साह और खेलों के प्यार को साझा करते हैं।",
+        "quote-text": "\"हर स्कोर, हर कहानी, हर प्रशंसक मायने रखता है।\""
     },
     ko: {
         "page-title": "회사 소개",
         "nav-home": "홈",
-        "nav-contact": "문의하기",
-        "nav-privacy": "개인정보 보호정책",
-        "welcome-title": "Ganza Sport Hub에 오신 것을 환영합니다",
-        "welcome-text1": "Ganza Sport Hub는 전 세계 스포츠 애호가들을 위한 최고의 목적지로, 2025년에 설립되어 가장 포괄적이고 정확하며 매력적인 스포츠 커버리지를 제공하는 것을 목표로 합니다. 우리는 실시간 점수, 상세 통계, 경기 미리보기, 전문가 코멘트, 그리고 팬들이 연결되고 게임에 대한 열정을 공유할 수 있는 번성하는 커뮤니티 플랫폼을 제공합니다.",
-        "welcome-text2": "우리 플랫폼은 농구, 축구, 배구 및 국제 대회를 포함한 다양한 스포츠를 다룹니다. 우리는 스포츠 팬들이 단순한 점수 이상을 갈망한다는 것을 인식합니다 - 그들은 통찰력, 분석, 역사적 맥락, 그리고 게임 뒤에 있는 이야기를 원합니다. Ganza Sport Hub에서는 이러한 요구를 충족시키고 모든 유형의 스포츠 팬을 만족시키는 허브를 만들기 위해 끊임없이 노력합니다.",
+        "welcome-title": "Golden Sport에 오신 것을 환영합니다",
+        "welcome-text1": "Golden Sport는 전 세계 스포츠 애호가들을 위한 최고의 목적지로, 2025년에 설립되어 가장 포괄적이고 정확하며 매력적인 스포츠 커버리지를 제공하는 것을 목표로 합니다. 우리는 실시간 점수, 상세 통계, 경기 미리보기, 전문가 코멘트, 그리고 팬들이 연결되고 게임에 대한 열정을 공유할 수 있는 번성하는 커뮤니티 플랫폼을 제공합니다.",
+        "welcome-text2": "우리 플랫폼은 농구, 축구, 배구 및 국제 대회를 포함한 다양한 스포츠를 다룹니다. 우리는 스포츠 팬들이 단순한 점수 이상을 갈망한다는 것을 인식합니다 - 그들은 통찰력, 분석, 역사적 맥락, 그리고 게임 뒤에 있는 이야기를 원합니다. Golden Sport에서는 이러한 요구를 충족시키고 모든 유형의 스포츠 팬을 만족시키는 허브를 만들기 위해 끊임없이 노력합니다.",
         "story-title": "우리의 이야기와 배경",
-        "story-text1": "Ganza Sport Hub는 신뢰할 수 있고 포괄적이며 사용자 친화적인 스포츠 콘텐츠의 가용성에 격차가 있음을 알아차린 열정적인 스포츠 애호가 그룹이 주도한 작은 계기로 시작되었습니다. 처음에는 지역 리그와 커뮤니티 스포츠 이벤트에 초점을 맞추었으며, 플랫폼은 우리의 청중이 성장함에 따라 국가 및 국제 대회 커버리지를 포함하도록 빠르게 확장되었습니다.",
-        "story-text2": "수년에 걸쳐, 우리 팀은 정확한 정보와 탁월한 사용자 경험을 제공하기 위해 헌신하는 전문 스포츠 분석가, 통계학자, 작가 및 기술 전문가를 포함하도록 성장했습니다. 오늘날, Ganza Sport Hub는 전 세계 스포츠 뉴스, 분석 및 팬 참여의 신뢰할 수 있는 소스로 자리매김하고 있습니다.",
+        "story-text1": "Golden Sport는 신뢰할 수 있고 포괄적이며 사용자 친화적인 스포츠 콘텐츠의 가용성에 격차가 있음을 알아차린 열정적인 스포츠 애호가 그룹이 주도한 작은 계기로 시작되었습니다. 처음에는 지역 리그와 커뮤니티 스포츠 이벤트에 초점을 맞추었으며, 플랫폼은 우리의 청중이 성장함에 따라 국가 및 국제 대회 커버리지를 포함하도록 빠르게 확장되었습니다.",
+        "story-text2": "수년에 걸쳐, 우리 팀은 정확한 정보와 탁월한 사용자 경험을 제공하기 위해 헌신하는 전문 스포츠 분석가, 통계학자, 작가 및 기술 전문가를 포함하도록 성장했습니다. 오늘날, Golden Sport는 전 세계 스포츠 뉴스, 분석 및 팬 참여의 신뢰할 수 있는 소스로 자리매김하고 있습니다.",
         "mission-title": "우리의 미션",
         "mission-text": "우리의 미션은 실시간 업데이트, 상세 통계, 전문가 통찰력 및 상호작용 커뮤니티 기능을 결합하여 팬들을 위한 완전한 스포츠 경험을 제공하는 것입니다. 우리는 팬들이 그들이 좋아하는 팀, 선수 및 게임과 연결되도록 노력하며, 모든 수준에서 스포츠에 대한 깊은 이해와 감사를 조성합니다.",
         "mission-item1": "전 세계 여러 스포츠 리그에 대한 실시간 점수 및 업데이트를 제공합니다.",
@@ -838,7 +943,7 @@ const translations = {
         "value-community": "커뮤니티: 우리는 전 세계 팬들 사이에서 참여, 토론 및 상호작용을 조성합니다.",
         "value-reliability": "신뢰성: 우리의 콘텐츠는 시기적절하고 일관성 있으며 신뢰할 수 있어, 팬들이 항상 최신 정보를 가지고 있도록 보장합니다.",
         "services-title": "우리의 서비스와 기능",
-        "services-intro": "Ganza Sport Hub는 모든 스포츠 팬을 만족시키기 위해 설계된 다양한 서비스를 제공합니다. 여기에는 다음이 포함됩니다:",
+        "services-intro": "Golden Sport는 모든 스포츠 팬을 만족시키기 위해 설계된 다양한 서비스를 제공합니다. 여기에는 다음이 포함됩니다:",
         "service-live": "실시간 점수: 지역 및 국제적인 여러 스포츠 리그에서 즉시 업데이트.",
         "service-stats": "상세 통계: 선수, 팀, 경기 기록 및 트렌드에 대한 포괄적인 데이터.",
         "service-analysis": "전문가 분석: 전략적 분석, 경기 전후 리뷰 및 전문 코멘트.",
@@ -847,14 +952,13 @@ const translations = {
         "service-personalized": "개인화된 경험: 맞춤 알림, 선호 팀 추적 및 사용자에게 직접 전달되는 뉴스레터.",
         "service-educational": "교육 콘텐츠: 규칙, 전략 및 선수 발전을 설명하는 기사로, 팬들이 사랑하는 스포츠를 더 잘 이해하도록 돕습니다.",
         "community-title": "커뮤니티와 참여",
-        "community-text1": "우리 커뮤니티는 Ganza Sport Hub의 핵심입니다. 우리는 팬들이 댓글, 투표, 토론 및 그들의 통찰력을 공유함으로써 적극적으로 참여하도록 장려합니다. 우리의 소셜 미디어 존재는 팬들이 글로벌 스포츠 커뮤니티와 소통할 수 있도록 하여 상호작용적이고 연결된 경험을 창출합니다. 우리는 스포츠가 공유되고, 논의되며, 집단적으로 축하될 때 가장 즐겁다고 믿습니다.",
+        "community-text1": "우리 커뮤니티는 Golden Sport의 핵심입니다. 우리는 팬들이 댓글, 투표, 토론 및 그들의 통찰력을 공유함으로써 적극적으로 참여하도록 장려합니다. 우리의 소셜 미디어 존재는 팬들이 글로벌 스포츠 커뮤니티와 소통할 수 있도록 하여 상호작용적이고 연결된 경험을 창출합니다. 우리는 스포츠가 공유되고, 논의되며, 집단적으로 축하될 때 가장 즐겁다고 믿습니다.",
         "community-text2": "우리는 또한 다양한 스포츠의 뉘앙스, 선수 기술, 전략적 전술 및 역사적 관점을 이해하는 데 도움이 되는 교육 콘텐츠를 제공합니다. 이는 우리의 관객이 정보를 얻고, 참여하며, 모든 게임을 더 깊은 수준에서 감상할 수 있도록 합니다.",
         "commitment-title": "헌신과 미래 목표",
-        "commitment-text": "Ganza Sport Hub는 지속적인 개선과 확장에 헌신하고 있습니다. 우리는 더 많은 스포츠 카테고리를 커버하고, 개인화된 통찰력을 위한 AI 기반 분석을 통합하며, 모바일 애플리케이션을 출시하고, 성과와 트렌드를 추적하기 위한 고급 도구를 제공할 계획입니다. 우리의 목표는 Ganza Sport Hub를 전 세계 스포츠 팬들을 위한 궁극의 목적지로 만드는 것입니다.",
+        "commitment-text": "Golden Sport는 지속적인 개선과 확장에 헌신하고 있습니다. 우리는 더 많은 스포츠 카테고리를 커버하고, 개인화된 통찰력을 위한 AI 기반 분석을 통합하며, 모바일 애플리케이션을 출시하고, 성과와 트렌드를 추적하기 위한 고급 도구를 제공할 계획입니다. 우리의 목표는 Golden Sport를 전 세계 스포츠 팬들을 위한 궁극의 목적지로 만드는 것입니다.",
         "promise-title": "우리의 약속",
-        "promise-text": "모든 점수, 모든 이야기, 모든 팬이 중요합니다. 우리는 콘텐츠 품질, 신뢰성 및 커뮤니티 참여에서 최고 기준을 유지할 것을 약속합니다. Ganza Sport Hub에 가입함으로써, 당신은 열정, 흥분 및 스포츠에 대한 사랑을 공유하는 성장하는 스포츠 애호가 커뮤니티의 일원이 됩니다.",
-        "quote-text": "\"모든 점수, 모든 이야기, 모든 팬이 중요합니다.\"",
-        "footer-text": "© 2025 Ganza Sport Hub. 모든 권리 보유."
+        "promise-text": "모든 점수, 모든 이야기, 모든 팬이 중요합니다. 우리는 콘텐츠 품질, 신뢰성 및 커뮤니티 참여에서 최고 기준을 유지할 것을 약속합니다. Golden Sport에 가입함으로써, 당신은 열정, 흥분 및 스포츠에 대한 사랑을 공유하는 성장하는 스포츠 애호가 커뮤니티의 일원이 됩니다.",
+        "quote-text": "\"모든 점수, 모든 이야기, 모든 팬이 중요합니다.\""
     }
 };
 
@@ -880,232 +984,108 @@ function changeLanguage(lang) {
 // Initialize with English
 changeLanguage('en');
 </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganza Sport Hub</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f0f8ff;
-  }
-
-  main {
-    flex: 1;
-  }
-
-  footer {
-    background-color: #171717;
-    color: white;
-    padding: 50px 100px;
-    border: none;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: none;
-  }
-
-  .footer-section {
-    flex: 1;
-    min-width: 220px;
-    margin: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .footer-section h2 {
-    color: #87ceeb;
-    font-size: 20px;
-    margin-bottom: 15px;
-    border: none;
-  }
-
-  .footer-section p,
-  .footer-section ul li a {
-    color: #d0eaff;
-    line-height: 1.6;
-    text-decoration: none;
-    border: none;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    border: none;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 8px;
-    border: none;
-  }
-
-  .footer-section ul li a:hover {
-    color: white;
-  }
-
-  .social-icons a {
-    margin-right: 15px;
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .social-icons img {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.3s;
-    border: none;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-
-  .email-link {
-    display: inline-flex;
-    align-items: center;
-    color: #87ceeb;
-    font-size: 14px;
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .email-link i {
-    color: #7b3f00;
-    font-size: 22px;
-    margin-right: 8px;
-    transition: color 0.3s, transform 0.3s;
-    border: none;
-  }
-
-  .email-link:hover i {
-    color: #a0522d;
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    footer {
-      padding: 10px;
-    }
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    .footer-section {
-      margin-bottom: 20px;
-    }
-  }
-
-  /* IMAGE AREA */
-  .sports-showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border: none;
-  }
-
-  .square-img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain; 
-    background-color: white;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    border: none; /* removed line */
-  }
-
-  .under-text {
-    text-align: center;
-    margin-top: 8px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-  }
-
-  .powered-text {
-    text-align: center;
-    margin-top: 2px;
-    color:white;
-    font-size: 14px;
-    border: none;
-  }
-
-  p {
-    border: none !important;
-  }
-</style>
-</head>
-<body>
-
-<main></main>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-      <h2>GANZA SPORT HUB</h2>
-      <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
-    </div>
-
-  
-
-    <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-      <h2>Follow Us</h2>
-      <div class="social-icons">
-        <a href="https://www.youtube.com/@ganza_0" target="_blank" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png">
-        </a>
-        <a href="https://www.instagram.com/gsporthub" target="_blank" data-aos="fade-up" data-aos-delay="500">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg">
-        </a>
-        <a href="mailto:gsportlive1a@gmail.com" class="email-link" data-aos="fade-up" data-aos-delay="600">
-          <i class="fa-solid fa-envelope"></i> gsportlive1a@gmail.com
-        </a>
-      </div>
-    </div>
-  </div>
-
-<div class="sports-showcase">
-    <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img">
-</div>
-
-<p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
-<p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
-
-<p style="text-align:center; color:white; margin-top:20px; border:none;">
-© 𝟐𝟎𝟐𝟓 𝐆𝐚𝐧𝐳𝐚 𝐒𝐩𝐨𝐫𝐭 𝐇𝐮𝐛 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
-</p>
-
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 </script>
 
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
+                <h2>Golden Sport</h2>
+                <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+            </div>
+
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@ganza_0" target="_blank" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+                    </a>
+                    <a href="https://www.instagram.com/gsporthub" target="_blank" data-aos="fade-up" data-aos-delay="500">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+                    </a>
+                    <a href="mailto:gsportlive1a@gmail.com" class="email-link" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fa-solid fa-envelope"></i> gsportlive1a@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sports-showcase">
+            <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img" alt="Ganza Sport Hub">
+        </div>
+
+        <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
+        <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
+
+        <p class="footer-copyright">
+            © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Add animation to table rows on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('tbody tr').forEach(row => {
+                row.style.animationPlayState = 'paused';
+                observer.observe(row);
+            });
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
