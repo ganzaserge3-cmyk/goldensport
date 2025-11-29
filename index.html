@@ -48,9 +48,46 @@
             color: inherit;
         }
 
+        /* Cookie Notification */
+        .cookie-notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            font-size: 14px;
+        }
+
+        .cookie-notification p {
+            margin-right: 15px;
+            flex: 1;
+        }
+
+        .cookie-notification button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .cookie-notification button:hover {
+            background-color: #333;
+        }
+
         /* Navigation */
         header {
-            background-color: var(--primary-bg);
+            background-color: #000;
             box-shadow: 0 2px 10px var(--shadow-color);
             position: sticky;
             top: 0;
@@ -89,6 +126,7 @@
             font-weight: 500;
             position: relative;
             padding: 5px 0;
+            color: #fff;
         }
 
         .nav-links a:after {
@@ -98,7 +136,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--accent-color);
+            background-color: #fff;
             transition: width 0.3s ease;
         }
 
@@ -113,6 +151,36 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #fff;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: #fff;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
         }
 
         /* Hero Section */
@@ -402,37 +470,13 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: white ;
+            color: #cccccc;
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-bg);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px var(--shadow-color);
-                z-index: 1000;
-            }
-
-            .nav-links a {
-                color: var(--primary-text) !important; /* Force text to be visible */
-                padding: 12px 0;
-                border-bottom: 1px solid var(--border-color);
-                font-size: 1.1rem;
-            }
-
-            .nav-links a:last-child {
-                border-bottom: none;
-            }
-
-            .nav-links.active {
-                display: flex;
             }
 
             .mobile-menu-btn {
@@ -459,6 +503,16 @@
                 width: 120px;
                 height: 70px;
             }
+
+            .cookie-notification {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-notification p {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -483,34 +537,44 @@
     
 </head>
 <body>
-<!-- Navigation -->
-<header style="background:#000; animation: fadeSlide 0.7s ease;">
-    <style>
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(-15px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-
-    <div class="nav-container" 
-         style="display:flex; align-items:center; justify-content:space-between; padding:15px 25px;">
-
-        <!-- Circular Logo -->
-        <img src="ganza.jpeg" alt="Logo" 
-             style="height:55px; width:67px; border-radius:50%; object-fit:cover;">
-
-        <!-- Navigation Links -->
-        <nav class="nav-links" style="display:flex; gap:20px;">
-            <a href="about.html" style="color:#fff; text-decoration:none;">About Us</a>
-            <a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu-btn" style="background:none; border:none; color:#fff; font-size:22px;">
-            <i class="fas fa-bars"></i>
-        </button>
+    <!-- Cookie Notification -->
+    <div class="cookie-notification" id="cookieNotification">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <button id="acceptCookies">Accept</button>
     </div>
-</header>
+
+    <!-- Navigation -->
+    <header style="animation: fadeSlide 0.7s ease;">
+        <style>
+            @keyframes fadeSlide {
+                from { opacity: 0; transform: translateY(-15px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
+        <div class="nav-container">
+            <!-- Circular Logo -->
+            <img src="ganza.jpeg" alt="Logo" 
+                 style="height:55px; width:67px; border-radius:50%; object-fit:cover;">
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -550,7 +614,6 @@
         <h2 class="section-title">Featured Football </h2>
         <div class="leagues-grid">
             <!-- Premier League -->
-
             <a href="premierleague.html" class="league-card">
                 <div class="league-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
@@ -907,18 +970,29 @@
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
         });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
-            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.getElementById('mobileMenu');
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             
-            if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                navLinks.classList.remove('active');
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
             }
         });
+
+        // Cookie notification
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            document.getElementById('cookieNotification').style.display = 'none';
+            // In a real implementation, you would set a cookie here
+        });
+
+        // Hide cookie notification if already accepted (in a real implementation)
+        // if (localStorage.getItem('cookiesAccepted')) {
+        //     document.getElementById('cookieNotification').style.display = 'none';
+        // }
     </script>
 </body>
 </html>
