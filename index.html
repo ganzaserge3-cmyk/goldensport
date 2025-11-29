@@ -402,7 +402,7 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: #cccccc;
+            color: white ;
         }
 
         /* Responsive Styles */
@@ -418,6 +418,17 @@
                 padding: 20px;
                 box-shadow: 0 5px 10px var(--shadow-color);
                 z-index: 1000;
+            }
+
+            .nav-links a {
+                color: var(--primary-text) !important; /* Force text to be visible */
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border-color);
+                font-size: 1.1rem;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
             }
 
             .nav-links.active {

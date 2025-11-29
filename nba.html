@@ -12,7 +12,7 @@
     <link rel="icon" type="image/jpg" href="https://static.vecteezy.com/system/resources/previews/002/767/621/non_2x/gs-logo-letter-initial-logo-designs-template-free-vector.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
+        <style>
         /* GLOBAL */
         * {
             margin: 0;
@@ -72,12 +72,12 @@
         }
 
         /* Active page indicator */
-        nav a[href="nba.html"] {
+        nav a[href="serie-b.html"] {
             background-color: rgba(255, 255, 255, 0.15);
             color: #ffffff;
         }
 
-        nav a[href="nba.html"]::after {
+        nav a[href="serie-b.html"]::after {
             content: "";
             position: absolute;
             bottom: -3px;
@@ -177,10 +177,33 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* NBA specific styling */
-        .nba-header {
-            background: linear-gradient(135deg, #1d428a 0%, #c8102e 100%) !important;
+        /* RELEGATION ZONE */
+        .relegation-zone td {
+            background: #100f0f;
             color: white;
+            font-weight: bold;
+        }
+
+        /* PROMOTION ZONE */
+        .promotion-zone {
+            background: #e8f4ff !important;
+        }
+
+        /* PLAYOFF ZONE */
+        .playoff-zone {
+            background: #fff0e8 !important;
+        }
+
+        /* Player stats highlight */
+        .top-player {
+            position: relative;
+        }
+
+        .top-player::after {
+            content: "★";
+            color: #ffcc00;
+            margin-left: 5px;
+            font-size: 14px;
         }
 
         /* FOOTER */
@@ -278,8 +301,8 @@
         }
 
         .square-img {
-            max-width: 300px;
-            width: 100%;
+            max-width: 100px;
+            width: 100px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -287,7 +310,7 @@
 
         .under-text, .powered-text {
             text-align: center;
-            color: #ccc;
+            color: white;
             margin: 10px 0;
             font-size: 16px;
         }
@@ -540,8 +563,8 @@
             <!-- Section Tabs -->
             <div class="section-tabs">
                 <div class="tab active" data-tab="fixtures">Fixtures</div>
-                <div class="tab" data-tab="standings">Standings</div>
-                <div class="tab" data-tab="player-stats">Player Stats</div>
+                <div class="tab" data-tab="standings"> Eastern  Standings</div>
+                <div class="tab" data-tab="player-stats">Western Standings </div>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -898,6 +921,8 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> Eastern conferece NBA Standings</h2>
+                <table>
+                    <thead>
                 <tr>
                     <th>Rank</th>
                     <th>Team</th>
@@ -1081,6 +1106,8 @@
             <div class="tab-content" id="player-stats">
                 <h2><i class="fas fa-user"></i> Western Conference  NBA Standings  </h2>
               <tr>
+                <table>
+                    <thead>
                     <th>Rank</th>
                     <th>Team</th>
                     <th>W</th>
