@@ -112,6 +112,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: #fff;
         }
 
         /* Hero Section */
@@ -416,6 +417,7 @@
                 flex-direction: column;
                 padding: 20px;
                 box-shadow: 0 5px 10px var(--shadow-color);
+                z-index: 1000;
             }
 
             .nav-links.active {
@@ -466,59 +468,7 @@
                 height: 60px;
             }
         }
-      
-  /* NAVBAR */
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background: white;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .nav-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  /* HAMBURGER ICON */
-  .hamburger {
-    font-size: 28px;
-    cursor: pointer;
-    display: block;
-  }
-
-  /* MENU LINKS */
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: white;
-    padding: 10px;
-    border-top: 1px solid #eee;
-  }
-
-  .menu a {
-    padding: 10px 0;
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-  }
-
-  /* DESKTOP */
-  @media (min-width: 760px) {
-    .hamburger { display: none; }
-    .menu {
-      display: flex !important;
-      flex-direction: row;
-      gap: 20px;
-      border: none;
-      padding: 0;
-    }
-  }
-</style>
+    </style>
     
 </head>
 <body>
@@ -540,31 +490,16 @@
 
         <!-- Navigation Links -->
         <nav class="nav-links" style="display:flex; gap:20px;">
-            
             <a href="about.html" style="color:#fff; text-decoration:none;">About Us</a>
             <a href="contact.html" style="color:#fff; text-decoration:none;">Contact</a>
+        </nav>
 
-     <!-- Mobile Menu Button -->
+        <!-- Mobile Menu Button -->
         <button class="mobile-menu-btn" style="background:none; border:none; color:#fff; font-size:22px;">
             <i class="fas fa-bars"></i>
         </button>
-
     </div>
 </header>
-
-<!-- NAVBAR -->
-<div class="nav">
-  
-
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</div>
-
-<script>
-  function toggleMenu() {
-    var m = document.getElementById('menu');
-    m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
-  }
-</script>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -591,21 +526,17 @@
                 <div class="stat-number">15+</div>
                 <div class="stat-label">Countries</div>
             </div>
-        </div>
             
             <div class="stat-item">
                 <div class="stat-number">15+</div>
                 <div class="stat-label">NBA  Games and Statistics</div>
             </div>
         </div>
-    
-
     </section>
-
 
     <!-- Leagues Grid -->
     <section class="leagues-section">
-        <h2 class="section-title">Featured Football and Basketball Leagues</h2>
+        <h2 class="section-title">Featured Football </h2>
         <div class="leagues-grid">
             <!-- Premier League -->
 
@@ -871,8 +802,15 @@
                     <p class="league-country">Sweden</p>
                 </div>
             </a>
-            
+        </div>
+    </section>
           
+        
+       <!-- NBA  -->
+        <section class="leagues-section">
+          <h2 class="section-title">Basketball NBA </h2>
+             <div class="leagues-grid">
+
             <!-- NBA-->
             <a href="nba.html" class="league-card">
                 <div class="league-logo">
@@ -881,6 +819,22 @@
                 <div class="league-info">
                     <h3 class="league-name">NBA</h3>
                     <p class="league-country">USA</p>
+                </div>
+            </a>
+        </section>
+             
+       <!--Highlighhts  -->
+        <section class="leagues-section">
+          <h2 class="section-title">Matches Highlights</h2>
+             <div class="leagues-grid">
+                <!-- Highlights  -->
+            <a href="highlights.html" class="league-card">
+                <div class="league-logo">
+                    <img src="mel.jpg" alt="Highlights Logo">
+                </div>
+                <div class="league-info">
+                    <h3 class="league-name">Highlights</h3>
+                    <p class="league-country">Europe</p>
                 </div>
             </a>
         </div>
@@ -914,8 +868,7 @@
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="#">Home</a></li>
-
-        
+                </ul>
             </div>
             <div class="footer-section">
                 <h3>Legal</h3>
@@ -955,13 +908,6 @@
                 navLinks.classList.remove('active');
             }
         });
-        
-
-  function toggleMenu() {
-    var m = document.getElementById('menu');
-    m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
-  }
-
     </script>
 </body>
 </html>
