@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ✅ Google Verification (Shyira hano) -->
+    <!-- ✅ Google Verification -->
     <meta name="google-site-verification" content="2uHcn--eI6ITXQ9gzayv2ab_GLoJ35bt-gp1R9lKpR4" />
 
     <title>Golden Sports</title>
@@ -17,30 +17,36 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         :root {
             --primary-bg: #ffffff;
-            --secondary-bg: #f5f5f5;
+            --secondary-bg: #f8f9fa;
             --primary-text: #000000;
-            --secondary-text: #333333;
+            --secondary-text: #4a4a4a;
             --accent-color: #000000;
-            --border-color: #e0e0e0;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-color: #eaeaea;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
         }
 
         body {
             background-color: var(--primary-bg);
             color: var(--primary-text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -48,73 +54,88 @@
             color: inherit;
         }
 
-        /* Cookie Notification */
-        .cookie-notification {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #333;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            font-size: 14px;
-        }
-
-        .cookie-notification p {
-            margin-right: 15px;
-            flex: 1;
-        }
-
-        .cookie-notification button {
-            background-color: #000;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .cookie-notification button:hover {
-            background-color: #333;
-        }
-
-        /* Navigation */
-        header {
-            background-color: #000;
-            box-shadow: 0 2px 10px var(--shadow-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1.5px solid var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            padding: 18px 0;
         }
 
-        .logo {
+        .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -1px;
+            gap: 12px;
         }
 
-        .logo-icon {
-            color: #ff3d00;
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: #f0f0f0;
+            font-weight: 300;
         }
 
         .nav-links {
@@ -122,25 +143,27 @@
             gap: 30px;
         }
 
-        .nav-links a {
+        .nav-link {
+            color: white;
             font-weight: 500;
+            font-size: 0.95rem;
             position: relative;
-            padding: 5px 0;
-            color: #fff;
+            padding: 8px 0;
+            transition: var(--transition);
         }
 
-        .nav-links a:after {
+        .nav-link:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #fff;
+            background-color: white;
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover:after {
+        .nav-link:hover:after {
             width: 100%;
         }
 
@@ -150,138 +173,136 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #fff;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            padding: 20px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            display: none;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu a {
-            color: #fff;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 1.1rem;
-        }
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
+            color: white;
         }
 
         /* Hero Section */
         .hero {
-            padding: 120px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
-            background-size: cover;
-            background-position: center;
+            padding: 140px 20px 120px;
+            background: linear-gradient(135deg, #000 0%, #111 100%);
             color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+            opacity: 0.15;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 20px;
-            letter-spacing: -1.5px;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            color: #ddd;
+            font-weight: 300;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: white;
-            color: black;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
         }
 
         /* Stats Section */
         .stats-section {
-            padding: 60px 20px;
-            background-color: var(--accent-color);
-            color: var(--primary-bg);
+            padding: 80px 20px;
+            background-color: var(--secondary-bg);
         }
 
         .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
             gap: 30px;
         }
 
-        .stat-item {
+        .stat-card {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 30px;
             text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: #000;
         }
 
         .stat-label {
             font-size: 1rem;
-            color: #cccccc;
+            color: var(--secondary-text);
+            font-weight: 500;
         }
 
-        /* Leagues Grid */
+        /* Leagues Grid - Original Style */
         .leagues-section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 15px;
             position: relative;
+            display: inline-block;
         }
 
         .section-title:after {
             content: '';
             position: absolute;
             width: 60px;
-            height: 3px;
+            height: 4px;
             background-color: var(--accent-color);
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .leagues-grid {
@@ -290,13 +311,14 @@
             gap: 25px;
         }
 
+        /* Original League Card Style */
         .league-card {
             background-color: var(--primary-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px var(--shadow-color);
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -304,7 +326,7 @@
 
         .league-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px var(--shadow-color);
+            box-shadow: var(--hover-shadow);
             background-color: var(--accent-color);
             color: var(--primary-bg);
         }
@@ -348,6 +370,50 @@
             color: #cccccc;
         }
 
+        /* Features Section */
+        .features-section {
+            padding: 100px 20px;
+            background-color: var(--secondary-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--radius-md);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            line-height: 1.7;
+        }
+
         /* Partners Section */
         .partners-section {
             padding: 80px 20px;
@@ -363,7 +429,7 @@
             margin-top: 40px;
             max-width: 1000px;
             margin-left: auto;
-            margin-right: auto
+            margin-right: auto;
         }
 
         .partner-logo {
@@ -473,6 +539,65 @@
             color: #cccccc;
         }
 
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 96px;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-link {
+            color: white;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-link:hover {
+            color: #ddd;
+        }
+
+        .mobile-link:last-child {
+            border-bottom: none;
+        }
+
+        /* Cookie Notification */
+        .cookie-notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cookie-notification p {
+            margin-right: 20px;
+            flex: 1;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .nav-links {
@@ -484,11 +609,29 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
             .leagues-grid {
@@ -511,7 +654,7 @@
 
             .cookie-notification p {
                 margin-right: 0;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
         }
 
@@ -540,27 +683,22 @@
     <!-- Cookie Notification -->
     <div class="cookie-notification" id="cookieNotification">
         <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-        <button id="acceptCookies">Accept</button>
+        <button class="btn btn-primary" id="acceptCookies">Accept</button>
     </div>
 
     <!-- Navigation -->
-    <header style="animation: fadeSlide 0.7s ease;">
-        <style>
-            @keyframes fadeSlide {
-                from { opacity: 0; transform: translateY(-15px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-
-        <div class="nav-container">
-            <!-- Circular Logo -->
-            <img src="ganza.jpeg" alt="Logo" 
-                 style="height:55px; width:67px; border-radius:50%; object-fit:cover;">
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="ganza.jpeg" alt="Golden Sports Logo" class="logo-image">
+                <div class="logo-text">GOLDEN<span>SPORTS</span></div>
+            </div>
 
             <!-- Desktop Navigation Links -->
             <nav class="nav-links">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+             
             </nav>
 
             <!-- Mobile Menu Button -->
@@ -571,399 +709,454 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
+            <a href="about.html" class="mobile-link">About Us</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+         
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="container hero-content">
             <h1>Your Sports Universe</h1>
             <p>Experience every match, every goal, every victory. Real-time Statistics, in-depth stats, and breaking news from Football and Basketball leagues worldwide.</p>
-            <a href="#" class="cta-button">Explore Leagues</a>
+            <div class="hero-buttons">
+                <a href="#football" class="btn btn-primary">Explore Football Leagues</a>
+                <a href="#highlights" class="btn btn-outline">Watch Highlights</a>
+            </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
+        <div class="container stats-container">
+            <div class="stat-card">
                 <div class="stat-number">25+</div>
-                <div class="stat-label">Football leagues</div>
+                <div class="stat-label">Football Leagues</div>
             </div>
-            <div class="stat-item">
+            <div class="stat-card">
                 <div class="stat-number">10+</div>
-                <div class="stat-label">Statistics</div>
+                <div class="stat-label">Advanced Statistics</div>
             </div>
-        
-            <div class="stat-item">
+            <div class="stat-card">
                 <div class="stat-number">15+</div>
-                <div class="stat-label">Countries</div>
+                <div class="stat-label">Countries Covered</div>
             </div>
-            
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">NBA  Games and Statistics</div>
+            <div class="stat-card">
+                <div class="stat-number">NBA</div>
+                <div class="stat-label">Games & Statistics</div>
             </div>
         </div>
     </section>
 
-    <!-- Leagues Grid -->
-    <section class="leagues-section">
-        <h2 class="section-title">Featured Football </h2>
-        <div class="leagues-grid">
-            <!-- Premier League -->
-            <a href="premierleague.html" class="league-card">
-                <div class="league-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Golden Sports</h2>
+                <p class="section-subtitle">Comprehensive coverage, real-time updates, and in-depth analysis for true sports enthusiasts</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="feature-title">Global Football Coverage</h3>
+                    <p class="feature-description">From Premier League to local tournaments, we cover football leagues from around the world with detailed statistics and analysis.</p>
                 </div>
-                <div class="league-info">
-                    <h3 class="league-name">Premier League</h3>
-                    <p class="league-country">England</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3 class="feature-title">NBA & Basketball</h3>
+                    <p class="feature-description">Complete NBA coverage with player stats, team analysis, game highlights, and real-time scores from all matches.</p>
                 </div>
-            </a>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Match Highlights</h3>
+                    <p class="feature-description">Watch the best moments from recent matches with our curated highlights section, updated daily with the latest action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- La Liga -->
-            <a href="laliga.html" class="league-card">
-                <div class="league-logo">
-                    <img src="noooo.png" alt="La Liga Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">La Liga</h3>
-                    <p class="league-country">Spain</p>
-                </div>
-            </a>
+    <!-- ALL FOOTBALL LEAGUES SECTION -->
+    <section class="leagues-section" id="football">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Football Leagues</h2>
+                <p class="section-subtitle">Complete coverage of football leagues from around the world</p>
+            </div>
+            <div class="leagues-grid">
+                <!-- Premier League -->
+                <a href="premierleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Premier League</h3>
+                        <p class="league-country">England</p>
+                    </div>
+                </a>
 
-            <!-- Bundesliga -->
-            <a href="BUNDESLIGA.html" class="league-card">
-                <div class="league-logo">
-                    <img src="jojojj.webp" alt="Bundesliga Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Bundesliga</h3>
-                    <p class="league-country">Germany</p>
-                </div>
-            </a>
+                <!-- La Liga -->
+                <a href="laliga.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="noooo.png" alt="La Liga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">La Liga</h3>
+                        <p class="league-country">Spain</p>
+                    </div>
+                </a>
 
-            <!-- Serie A -->
-            <a href="SERIE A.html" class="league-card">
-                <div class="league-logo">
-                    <img src="vieir.webp" alt="Serie A Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Serie A</h3>
-                    <p class="league-country">Italy</p>
-                </div>
-            </a>
+                <!-- Bundesliga -->
+                <a href="BUNDESLIGA.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="jojojj.webp" alt="Bundesliga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Bundesliga</h3>
+                        <p class="league-country">Germany</p>
+                    </div>
+                </a>
 
-            <!-- Ligue 1 -->
-            <a href="ligue1.html" class="league-card">
-                <div class="league-logo">
-                    <img src="emma.png" alt="Ligue 1 Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Ligue 1</h3>
-                    <p class="league-country">France</p>
-                </div>
-            </a>
+                <!-- Serie A -->
+                <a href="SERIE A.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="vieir.webp" alt="Serie A Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Serie A</h3>
+                        <p class="league-country">Italy</p>
+                    </div>
+                </a>
 
-            <!-- Champions League -->
-            <a href="championsleague.html" class="league-card">
-                <div class="league-logo">
-                    <img src="vraiment.jpg" alt="Champions League Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Champions League</h3>
-                    <p class="league-country">Europe</p>
-                </div>
-            </a>
+                <!-- Ligue 1 -->
+                <a href="ligue1.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="emma.png" alt="Ligue 1 Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Ligue 1</h3>
+                        <p class="league-country">France</p>
+                    </div>
+                </a>
 
-            <!-- Europa League -->
-            <a href="EUROPA LEAGUE.html" class="league-card">
-                <div class="league-logo">
-                    <img src="just do  it.png" alt="Europa League Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Europa League</h3>
-                    <p class="league-country">Europe</p>
-                </div>
-            </a>
+                <!-- Champions League -->
+                <a href="championsleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="vraiment.jpg" alt="Champions League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Champions League</h3>
+                        <p class="league-country">Europe</p>
+                    </div>
+                </a>
 
-            <!-- Super Lig -->
-            <a href="superlig.html" class="league-card">
-                <div class="league-logo">
-                    <img src="delete.png" alt="Super Lig Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Super Lig</h3>
-                    <p class="league-country">Turkey</p>
-                </div>
-            </a>
-            
-            <!-- Saudi Pro League -->
-            <a href="saudiproleague.html" class="league-card">
-                <div class="league-logo">
-                    <img src="saudi.png" alt="Saudi Pro league Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Saudi Pro League</h3>
-                    <p class="league-country">Saudi Arabia</p>
-                </div>
-            </a>
-            
-            <!-- Pro League -->
-            <a href="proleague.HTML" class="league-card">
-                <div class="league-logo">
-                    <img src="pro league.png" alt="Pro League Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Pro League</h3>
-                    <p class="league-country">Belgian</p>
-                </div>
-            </a>
-            
-            <!-- Italian Serie B -->
-            <a href="ITALIAN SERIE B.html" class="league-card">
-                <div class="league-logo">
-                    <img src="serie b.png" alt="italian serie b Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Italian Serie B</h3>
-                    <p class="league-country">Italy</p>
-                </div>
-            </a>
-            
-            <!-- Seribian Super Liga -->
-            <a href="seribiansuperliga.HTML" class="league-card">
-                <div class="league-logo">
-                    <img src="seribian.jpg" alt="Seribian Super Liga Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Seribian Super Liga</h3>
-                    <p class="league-country">Seribian</p>
-                </div>
-            </a>
-            
-            <!--Tunisian ligue -->
-            <a href="tunisianligueprofessionnelle1.HTML" class="league-card">
-                <div class="league-logo">
-                    <img src="tunisian.png" alt="Tunisian Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Tunisian Ligue</h3>
-                    <p class="league-country">Tunisian</p>
-                </div>
-            </a>
-            
-            <!-- South Africa Premiership -->
-            <a href="southafricapremiership.html" class="league-card">
-                <div class="league-logo">
-                    <img src="southafrica.png" alt="South Africa Premiership Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">South Africa Premiership</h3>
-                    <p class="league-country">South Africa</p>
-                </div>
-            </a>
-            
-            <!--Ekstraklasa -->
-            <a href="EKSTRAKLASA.html" class="league-card">
-                <div class="league-logo">
-                    <img src="eksastarasa.png" alt="Ekstraklasa Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Ekstraklasa</h3>
-                    <p class="league-country">Poland</p>
-                </div>
-            </a>
-            
-            <!-- Eredivisie -->
-            <a href="eredivisie.html" class="league-card">
-                <div class="league-logo">
-                    <img src="eredivisie.png" alt="Eredivisie Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Eredivisie</h3>
-                    <p class="league-country">Netherlands</p>
-                </div>
-            </a>
-            
-            <!-- Egyptian Premier League -->
-            <a href="EGYPTIAN PREMIER LEAGUE.html" class="league-card">
-                <div class="league-logo">
-                    <img src="eyptian.jpg" alt="Egyptian Premier League Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Egyptian Premier League</h3>
-                    <p class="league-country">Egypt</p>
-                </div>
-            </a>
-            
-            <!-- Efl Championships -->
-            <a href="EFL CHAMPIONSHIP.html" class="league-card">
-                <div class="league-logo">
-                    <img src="efl.png" alt=" Efl Championships Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Efl Championships</h3>
-                    <p class="league-country">England </p>
-                </div>
-            </a>
-            
-            <!-- Danish Super Liga-->
-            <a href="DANISH SUPERLIGA.HTML" class="league-card">
-                <div class="league-logo">
-                    <img src="delete.png" alt="Danifour.pngsh Super Liga Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Danish Super Liga</h3>
-                    <p class="league-country">Denmark</p>
-                </div>
-            </a>
-            
-            <!-- Cypriot First Division  -->
-            <a href="CYPRIOT FIRST DIVISION.html" class="league-card">
-                <div class="league-logo">
-                    <img src="cyprioty.png" alt="  Cypriot First Division Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Cypriot First Division </h3>
-                    <p class="league-country">Cyprus</p>
-                </div>
-            </a>
-             
-            <!-- Croatian HNL  -->
-            <a href="croatian.html" class="league-card">
-                <div class="league-logo">
-                    <img src="hnl.png" alt="  Croatian HNL Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Croatian HNL </h3>
-                    <p class="league-country">Croatia</p>
-                </div>
-            </a>
-             
-            <!-- Carabao Cup  -->
-            <a href="CARABAO CUP.HTML" class="league-card">
-                <div class="league-logo">
-                    <img src="cup carabaop.jpg" alt=" Carabao Cup Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name"> Carabao Cup</h3>
-                    <p class="league-country">Englamd</p>
-                </div>
-            </a>
+                <!-- Europa League -->
+                <a href="EUROPA LEAGUE.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="just do  it.png" alt="Europa League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Europa League</h3>
+                        <p class="league-country">Europe</p>
+                    </div>
+                </a>
+
+                <!-- Super Lig -->
+                <a href="superlig.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="delete.png" alt="Super Lig Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Super Lig</h3>
+                        <p class="league-country">Turkey</p>
+                    </div>
+                </a>
                 
-            <!-- Brasileiro Serie A -->
-            <a href="BRASILEIRO SERIE A.html" class="league-card">
-                <div class="league-logo">
-                    <img src="bars.png" alt="Brasileiro Serie A  Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Brasileiro Serie A </h3>
-                    <p class="league-country">Brasil</p>
-                </div>
-            </a>
-                  
-            <!-- Allsvenskan-->
-            <a href="ALLSVENSKAN.html" class="league-card">
-                <div class="league-logo">
-                    <img src="kooko.png" alt="ALLSVENSKAN Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Allsvenskan</h3>
-                    <p class="league-country">Sweden</p>
-                </div>
-            </a>
+                <!-- Saudi Pro League -->
+                <a href="saudiproleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="saudi.png" alt="Saudi Pro league Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Saudi Pro League</h3>
+                        <p class="league-country">Saudi Arabia</p>
+                    </div>
+                </a>
+                
+                <!-- Pro League -->
+                <a href="proleague.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="pro league.png" alt="Pro League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Pro League</h3>
+                        <p class="league-country">Belgian</p>
+                    </div>
+                </a>
+                
+                <!-- Italian Serie B -->
+                <a href="ITALIAN SERIE B.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="serie b.png" alt="italian serie b Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Italian Serie B</h3>
+                        <p class="league-country">Italy</p>
+                    </div>
+                </a>
+                
+                <!-- Serbian Super Liga -->
+                <a href="seribiansuperliga.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="seribian.jpg" alt="Serbian Super Liga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Serbian Super Liga</h3>
+                        <p class="league-country">Serbia</p>
+                    </div>
+                </a>
+                
+                <!-- Tunisian ligue -->
+                <a href="tunisianligueprofessionnelle1.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="tunisian.png" alt="Tunisian Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Tunisian Ligue</h3>
+                        <p class="league-country">Tunisia</p>
+                    </div>
+                </a>
+                
+                <!-- South Africa Premiership -->
+                <a href="southafricapremiership.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="southafrica.png" alt="South Africa Premiership Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">South Africa Premiership</h3>
+                        <p class="league-country">South Africa</p>
+                    </div>
+                </a>
+                
+                <!-- Ekstraklasa -->
+                <a href="EKSTRAKLASA.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="eksastarasa.png" alt="Ekstraklasa Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Ekstraklasa</h3>
+                        <p class="league-country">Poland</p>
+                    </div>
+                </a>
+                
+                <!-- Eredivisie -->
+                <a href="eredivisie.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="eredivisie.png" alt="Eredivisie Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Eredivisie</h3>
+                        <p class="league-country">Netherlands</p>
+                    </div>
+                </a>
+                
+                <!-- Egyptian Premier League -->
+                <a href="EGYPTIAN PREMIER LEAGUE.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="eyptian.jpg" alt="Egyptian Premier League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Egyptian Premier League</h3>
+                        <p class="league-country">Egypt</p>
+                    </div>
+                </a>
+                
+                <!-- Efl Championships -->
+                <a href="EFL CHAMPIONSHIP.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="efl.png" alt=" Efl Championships Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Efl Championships</h3>
+                        <p class="league-country">England </p>
+                    </div>
+                </a>
+                
+                <!-- Danish Super Liga-->
+                <a href="DANISH SUPERLIGA.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="delete.png" alt="Danish Super Liga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Danish Super Liga</h3>
+                        <p class="league-country">Denmark</p>
+                    </div>
+                </a>
+                
+                <!-- Cypriot First Division  -->
+                <a href="CYPRIOT FIRST DIVISION.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="cyprioty.png" alt="  Cypriot First Division Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Cypriot First Division </h3>
+                        <p class="league-country">Cyprus</p>
+                    </div>
+                </a>
+                 
+                <!-- Croatian HNL  -->
+                <a href="croatian.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="hnl.png" alt="  Croatian HNL Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Croatian HNL </h3>
+                        <p class="league-country">Croatia</p>
+                    </div>
+                </a>
+                 
+                <!-- Carabao Cup  -->
+                <a href="CARABAO CUP.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="cup carabaop.jpg" alt=" Carabao Cup Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name"> Carabao Cup</h3>
+                        <p class="league-country">England</p>
+                    </div>
+                </a>
+                    
+                <!-- Brasileiro Serie A -->
+                <a href="BRASILEIRO SERIE A.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="bars.png" alt="Brasileiro Serie A  Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Brasileiro Serie A </h3>
+                        <p class="league-country">Brazil</p>
+                    </div>
+                </a>
+                      
+                <!-- Allsvenskan-->
+                <a href="ALLSVENSKAN.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="kooko.png" alt="ALLSVENSKAN Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Allsvenskan</h3>
+                        <p class="league-country">Sweden</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
-          
-        
-       <!-- NBA  -->
-        <section class="leagues-section">
-          <h2 class="section-title">Basketball NBA </h2>
-             <div class="leagues-grid">
 
-            <!-- NBA-->
-            <a href="nba.html" class="league-card">
-                <div class="league-logo">
-                    <img src="SCORE.png" alt="NBA Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">NBA</h3>
-                    <p class="league-country">USA</p>
-                </div>
-            </a>
-        </section>
-             
-       <!--Highlighhts  -->
-        <section class="leagues-section">
-          <h2 class="section-title">Matches Highlights</h2>
-             <div class="leagues-grid">
+    <!-- NBA SECTION -->
+    <section class="leagues-section" id="nba" style="background-color: var(--secondary-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Basketball NBA</h2>
+                <p class="section-subtitle">Complete NBA coverage with statistics, games, and team analysis</p>
+            </div>
+            <div class="leagues-grid">
+                <!-- NBA-->
+                <a href="nba.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="SCORE.png" alt="NBA Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">NBA</h3>
+                        <p class="league-country">USA</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS SECTION -->
+    <section class="leagues-section" id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Matches Highlights</h2>
+                <p class="section-subtitle">Watch the best moments from recent football matches</p>
+            </div>
+            <div class="leagues-grid">
                 <!-- Highlights  -->
-            <a href="highlights.html" class="league-card">
-                <div class="league-logo">
-                    <img src="mel.jpg" alt="Highlights Logo">
-                </div>
-                <div class="league-info">
-                    <h3 class="league-name">Highlights</h3>
-                    <p class="league-country">Europe</p>
-                </div>
-            </a>
+                <a href="highlights.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="mel.jpg" alt="Highlights Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Highlights</h3>
+                        <p class="league-country">Europe & Worldwide</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Partners Section -->
     <section class="partners-section">
-        <h2 class="section-title"> Partners</h2>
-        <div class="partners-logos">
-            <div class="partner-logo">
-                <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-logos">
+                <div class="partner-logo">
+                    <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+                </div>
             </div>
-    
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Golden Sports</h3>
-                <p>Your ultimate destination for live football scores, standings, fixtures and stats from all major leagues around the world.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#https://www.facebook.com/profile.php?id=100091981114981"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#https://www.instagram.com/gsporthub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                    <a href="#https://www.youtube.com/@linkin.ganza0"><i class="fab fa-youtube"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Golden Sports</h3>
+                    <p>Your ultimate destination for live football scores, standings, fixtures and stats from all major leagues around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100091981114981"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/gsporthub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@linkin.ganza0"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#football">Football Leagues</a></li>
+                        <li><a href="#nba">NBA</a></li>
+                        <li><a href="#highlights">Highlights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
+                        <li><a href="tel:0728624943">0728624943</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                </ul>
+            <div class="copyright">
+                <p style="color: white ;">© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
             </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul class="footer-links">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="cookies.html">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul class="footer-links">
-                    <li><a href="gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
-                    <li><a href="tel:0728624943"></a>0728624943</li>
-                    <li><a href="contact.html">Contact Form</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p style="color: white ;">© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
         </div>
     </footer>
 
@@ -986,13 +1179,62 @@
         // Cookie notification
         document.getElementById('acceptCookies').addEventListener('click', function() {
             document.getElementById('cookieNotification').style.display = 'none';
-            // In a real implementation, you would set a cookie here
+            localStorage.setItem('cookiesAccepted', 'true');
         });
 
-        // Hide cookie notification if already accepted (in a real implementation)
-        // if (localStorage.getItem('cookiesAccepted')) {
-        //     document.getElementById('cookieNotification').style.display = 'none';
-        // }
+        // Hide cookie notification if already accepted
+        if (localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieNotification').style.display = 'none';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add card hover effect - turns card black on hover
+        document.querySelectorAll('.league-card').forEach(card => {
+            // Store original background color
+            card.dataset.originalBg = getComputedStyle(card).backgroundColor;
+            
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#000';
+                this.style.color = '#fff';
+                
+                // Also change country text color
+                const countryText = this.querySelector('.league-country');
+                if(countryText) {
+                    countryText.style.color = '#ccc';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+                
+                // Reset country text color
+                const countryText = this.querySelector('.league-country');
+                if(countryText) {
+                    countryText.style.color = '';
+                }
+            });
+        });
     </script>
 </body>
 </html>
