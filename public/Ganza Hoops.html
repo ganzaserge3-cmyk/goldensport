@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganza Hoops | G Group Partner | GoldenSport</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: #f8f9fa;
+            color: #000;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+        
+        /* Ganza Hoops Specific Styling */
+        :root {
+            --ganza-primary: #8B0000; /* Dark Red */
+            --ganza-secondary: #F5DEB3; /* Wheat */
+            --ganza-accent: #000080; /* Navy */
+        }
+        
+        .ganza-hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1544919982-b61976a0d7ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: #F5DEB3;
+            font-style: italic;
+            margin-top: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .athlete-showcase {
+            background: #f9f9f9;
+            padding: 60px 0;
+            border-top: 5px solid var(--ganza-primary);
+            border-bottom: 5px solid var(--ganza-primary);
+        }
+        
+        .athlete-profile-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        
+        @media (max-width: 768px) {
+            .athlete-profile-card {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .athlete-photo {
+            background: var(--ganza-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        
+        .athlete-photo-placeholder {
+            width: 180px;
+            height: 180px;
+            background: var(--ganza-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ganza-primary);
+            font-size: 4rem;
+            font-weight: bold;
+            border: 5px solid white;
+        }
+        
+        .athlete-details {
+            padding: 30px;
+        }
+        
+        .athlete-name {
+            color: var(--ganza-primary);
+            margin-bottom: 5px;
+        }
+        
+        .athlete-title {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .athlete-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .stat-box {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid var(--ganza-accent);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--ganza-primary);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        /* Video Platform Section */
+        .video-platform {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .platform-description {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #FF0000; /* YouTube Red */
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #CC0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+        
+        .cta-button i {
+            margin-right: 8px;
+        }
+        
+        /* G Group Network Section */
+        .g-group-network {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+            color: white;
+        }
+        
+        .network-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .network-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .network-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .network-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .network-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .network-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Instagram Section */
+        .instagram-section {
+            padding: 60px 0;
+            background: #fafafa;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .instagram-handle {
+            color: #E4405F; /* Instagram Pink */
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 15px 0;
+        }
+        
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-button:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .social-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(to right, var(--ganza-primary), var(--ganza-accent));
+            width: 100px;
+            margin: 30px auto;
+            border-radius: 3px;
+        }
+        
+        /* Footer Styling */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p {
+            text-align: left;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .ganza-hero {
+                padding: 50px 0;
+            }
+            
+            .athlete-photo-placeholder {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .athlete-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="../index.html" class="back-to-home">
+        ← Back to GoldenSport
+    </a>
+    
+    <main class="partner-detail-page">
+        
+        <!-- Ganza Hoops Hero Section -->
+        <section class="ganza-hero">
+            <div class="container">
+                <h1>Ganza Hoops</h1>
+                <p class="hero-tagline">A G Group YouTube channel dedicated to the journey of young athlete Ganza Serge and the spirit of basketball development</p>
+                
+                <div style="margin-top: 40px;">
+                    <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" class="cta-button">
+                        <i class="fab fa-youtube"></i> Watch on YouTube
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Athlete Showcase Section -->
+        <section class="athlete-showcase">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px; color: var(--ganza-accent);">Featured Athlete: Ganza Serge</h2>
+                
+                <div class="athlete-profile-card">
+                    <div class="athlete-photo">
+                        <div class="athlete-photo-placeholder">
+                            GS
+                        </div>
+                    </div>
+                    <div class="athlete-details">
+                        <h3 class="athlete-name">Ganza Serge</h3>
+                        <p class="athlete-title">Point Guard / Shooting Guard | #0 | Rwandan Basketball Prodigy</p>
+                        
+                        <p>At just 14 years old, Ganza Serge represents the future of basketball. Standing at 1.75m (5'9") with a 32-inch vertical leap, his game is built on exceptional skill, basketball IQ, and relentless work ethic.</p>
+                        
+                        <div class="athlete-stats">
+                            <div class="stat-box">
+                                <span class="stat-value">18.7</span>
+                                <span class="stat-label">Points Per Game</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">7.3</span>
+                                <span class="stat-label">Assists Per Game</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">42%</span>
+                                <span class="stat-label">3-Point Percentage</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-value">1.8</span>
+                                <span class="stat-label">Steals Per Game</span>
+                            </div>
+                        </div>
+                        
+                        <p>"I don't chase highlights. I chase mastery. The highlight reel is just what happens when preparation meets opportunity." <br><em>- Ganza Serge</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Video Platform Section -->
+        <section id="youtube" class="video-platform">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px; color: var(--ganza-primary);">The Ganza Hoops YouTube Channel</h2>
+                
+                <div class="platform-description">
+                    <p><strong>Ganza Hoops</strong> is the visual storytelling arm of the G Group sports network, focusing on:</p>
+                    
+                    <ul style="text-align: left; max-width: 600px; margin: 25px auto; line-height: 1.8;">
+                        <li><strong>Skill Development Series:</strong> Breaking down the techniques that make great players</li>
+                        <li><strong>Game Highlights:</strong> Showcasing Ganza Serge's progression and key performances</li>
+                        <li><strong>Training Diaries:</strong> Behind-the-scenes access to the daily grind of a young athlete</li>
+                        <li><strong>Basketball Education:</strong> Tutorials, drills, and strategic breakdowns for aspiring players</li>
+                    </ul>
+                    
+                    <p>The channel serves as both an inspirational platform for young athletes and an analytical resource for coaches and basketball enthusiasts.</p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" class="cta-button">
+                        <i class="fab fa-youtube"></i> Subscribe to Ganza Hoops on YouTube
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- G Group Network Section -->
+        <section class="g-group-network">
+            <div class="container">
+                <h2 class="network-title">Part of the G Group Sports Network</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; opacity: 0.9;">
+                    Ganza Hoops is one pillar of a comprehensive digital sports ecosystem managed by G Group, connecting fans across multiple platforms.
+                </p>
+                
+                <div class="network-grid">
+                    <!-- GoldenSport Card -->
+                    <div class="network-card">
+                        <span class="network-icon">🌐</span>
+                        <h3>GoldenSport Live</h3>
+                        <p>The comprehensive sports hub for real-time statistics, in-depth analysis, and global coverage of football and basketball.</p>
+                        <a href="https://goldensportlive.vercel.app" target="_blank" class="network-link">Visit Site</a>
+                    </div>
+                    
+                    <!-- Ganza Basketball Card -->
+                    <div class="network-card">
+                        <span class="network-icon">🏀</span>
+                        <h3>Ganza Serge Basketball</h3>
+                        <p>The official athlete profile and stats platform tracking the development and performance of Ganza Serge.</p>
+                        <a href="https://ganzasergebasketball.vercel.app" target="_blank" class="network-link">Visit Site</a>
+                    </div>
+                    
+                    <!-- Ganza Hoops Card -->
+                    <div class="network-card">
+                        <span class="network-icon">🎥</span>
+                        <h3>Ganza Hoops</h3>
+                        <p>The video platform bringing the Ganza Serge journey to life through highlights, training footage, and skill tutorials.</p>
+                        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" class="network-link">Watch Videos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Instagram Section -->
+        <section class="instagram-section">
+            <div class="container">
+                <h3 style="color: #333; margin-bottom: 15px;">Follow GoldenSport on Instagram</h3>
+                <p>For daily sports updates, behind-the-scenes content, and community engagement</p>
+                
+                <div class="instagram-handle">@goldensportlive</div>
+                
+                <a href="https://www.instagram.com/goldensportlive" target="_blank" class="social-button">
+                    <span class="social-icon">📷</span> Follow on Instagram
+                </a>
+            </div>
+        </section>
+        
+        <!-- Partnership Summary -->
+        <section style="padding: 60px 0; text-align: center;">
+            <div class="container">
+                <h3 style="color: var(--ganza-primary); margin-bottom: 20px;">A Strategic G Group Partnership</h3>
+                <p style="max-width: 700px; margin: 0 auto; line-height: 1.7; color: #555;">
+                    The partnership between <strong>GoldenSport</strong> and <strong>Ganza Hoops</strong> creates a unique synergy: GoldenSport provides the statistical and analytical framework for understanding sports, while Ganza Hoops delivers the human storytelling and visual documentation of athletic development. Together, they offer fans a complete perspective on the sport of basketball.
+                </p>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer from Main Page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 style="color: white;">𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</h3>
+                    <p style="color: white;">Your ultimate destination for live football scores, standings, fixtures and stats from all major leagues around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100091981114981"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/goldensportlive/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: white;">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;" href="../index.html">Home</a></li>
+                        <li><a style="color: white;" href="../index.html#football">Football Leagues</a></li>
+                        <li><a style="color: white;" href="../index.html#nba">NBA</a></li>
+                        <li><a style="color: white;" href="../index.html#highlights">Highlights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: white;">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
+                        <li><a style="color: white;" href="terms.html">Terms of Service</a></li>
+                        <li><a style="color: white;" href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: white;">Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;" href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
+                        <li><a style="color: white;" href="tel:0728624943">0728624943</a></li>
+                        <li><a style="color: white;" href="contact.html">Contact Form</a></li>
+                        <li><a style="color: white;" href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p style="color: white;">© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add current year to footer if needed
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

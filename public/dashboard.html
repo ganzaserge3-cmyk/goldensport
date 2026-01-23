@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Golden Sport</title>
+    <style>
+        body { background: #f8f9fa; color: #000; font-family: 'Segoe UI', sans-serif; }
+        .container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 40px; }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eaeaea; }
+        .dashboard-header h1 { margin: 0; color: #000; }
+        .header-actions { display: flex; gap: 10px; }
+        .settings-toggle, .logout-btn { padding: 10px 15px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
+        .settings-toggle { background: #f8f9fa; color: #000; }
+        .settings-toggle:hover { background: #e9ecef; }
+        .logout-btn { background: #ff6b6b; color: #fff; }
+        .logout-btn:hover { background: #e55a5a; }
+        .settings-panel { margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; }
+        .settings-panel h2 { margin-bottom: 20px; color: #000; }
+        .settings-content { display: grid; gap: 15px; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #e9ecef; }
+        .setting-item:last-child { border-bottom: none; }
+        .setting-item label { font-weight: 600; color: #000; }
+        .setting-item span { color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Dashboard</h1>
+            <div class="header-actions">
+                <button class="settings-toggle" onclick="toggleSettings()">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+                <button class="logout-btn" onclick="logoutUser()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <div class="settings-panel" id="settingsPanel" style="display: none;">
+            <h2>Account Settings</h2>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label>Username</label>
+                    <span id="settingsUsername"></span>
+                </div>
+                <div class="setting-item">
+                    <label>Email</label>
+                    <span id="settingsEmail"></span>
+                </div>
+                <div class="setting-item">
+                    <label>Account Status</label>
+                    <span>Active</span>
+                </div>
+                <div class="setting-item">
+                    <label>Member Since</label>
+                    <span id="settingsMemberSince"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-info" id="userInfo">
+            <div class="profile-header">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-details">
+                    <h2 id="userName"></h2>
+                    <p id="userEmail"></p>
+                    <p class="member-since">Member since: <span id="memberSince"></span></p>
+                </div>
+            </div>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Profile Status</h3>
+                    <p>Active</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Account Type</h3>
+                    <p>Standard User</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logoutUser() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+        function renderUserInfo() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('userName').textContent = user.username;
+                document.getElementById('userEmail').textContent = user.email;
+                document.getElementById('memberSince').textContent = new Date().toLocaleDateString();
+                document.getElementById('settingsUsername').textContent = user.username;
+                document.getElementById('settingsEmail').textContent = user.email;
+                document.getElementById('settingsMemberSince').textContent = new Date().toLocaleDateString();
+            } else {
+                document.querySelector('.container').innerHTML = '<h1>Please log in to access your dashboard</h1><a href="public/login.html" class="btn">Login</a>';
+            }
+        }
+        function toggleSettings() {
+            const settingsPanel = document.getElementById('settingsPanel');
+            settingsPanel.style.display = settingsPanel.style.display === 'none' ? 'block' : 'none';
+        }
+        window.addEventListener('DOMContentLoaded', renderUserInfo);
+    </script>
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Golden Sport</title>
+
+<!-- Logo (favicon) -->
+<link rel="icon" type="image/jpg" 
+href="https://static.vecteezy.com/system/resources/previews/002/767/621/non_2x/gs-logo-letter-initial-logo-designs-template-free-vector.jpg">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3486690881489807"
+     crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav a:hover {
+    background-color: #333;
+}
+
+main {
+    max-width: 100%;
+    margin: 40px auto;
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+.language-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    background: #e9e9e9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-selector i {
+    font-size: 20px;
+    color: #333;
+}
+
+.language-selector select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    border-left: 5px solid #000;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+p {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+footer {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .language-selector {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .language-selector select {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    main {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+    
+    .content-section {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Footer specific styles */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: none;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin: 10px;
+    border: none;
+}
+
+.footer-section h2 {
+    color: #faf4f4ea;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+.footer-section p,
+.footer-section ul li a {
+    color: #f0f1f1f3;
+    line-height: 1.6;
+    text-decoration: none;
+    border: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    border: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    border: none;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    display: inline-block;
+    border: none;
+}
+
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s;
+    border: none;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    color: #9a5b08;
+    font-size: 14px;
+    margin-top: 10px;
+    border: none;
+}
+
+.email-link i {
+    color: #7b3f00;
+    font-size: 22px;
+    margin-right: 8px;
+    transition: color 0.3s, transform 0.3s;
+    border: none;
+}
+
+.email-link:hover i {
+    color: #a0522d;
+    transform: scale(1.1);
+}
+
+/* Contact specific styles */
+.contact-link {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #333;
+}
+
+.contact-link img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* IMAGE AREA */
+.sports-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: none;
+}
+
+.square-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; 
+    background-color: white;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+}
+
+.under-text {
+    text-align: center;
+    margin-top: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+.powered-text {
+    text-align: center;
+    margin-top: 2px;
+    color:white;
+    font-size: 14px;
+    border: none;
+}
+ /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background:  rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+</style>
+</head>
+
+<body>
+        <!-- Back to Home Button -->
+    <a href="../index.html" class="back-to-home">
+        ← Back to GoldenSport
+    </a>
+
+<header>
+    <h1 id="page-title"><i class="fas fa-envelope"></i> Contact Us</h1>
+    <nav>
+        <a href="index.html" id="nav-home"><i class="fas fa-home"></i> Home</a>
+    </nav>
+</header>
+
+<main>
+    <div class="language-selector">
+        <i class="fas fa-globe"></i>
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="es">Español (Spanish)</option>
+            <option value="fr">Français (French)</option>
+            <option value="de">Deutsch (German)</option>
+            <option value="it">Italiano (Italian)</option>
+            <option value="pt">Português (Portuguese)</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="zh">中文 (Chinese)</option>
+            <option value="ja">日本語 (Japanese)</option>
+            <option value="ar">العربية (Arabic)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+            <option value="ko">한국어 (Korean)</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2 id="section-title"><i class="fas fa-handshake"></i> Get in Touch with Golden Sport</h2>
+            <p id="intro-text">
+                We love to hear from our fans, visitors, and partners. Whether you have a question, suggestion, or just want to connect, there are multiple ways to reach out to us. Your feedback helps us improve and continue delivering the best sports content online.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2 id="email-title"><i class="fas fa-envelope"></i> Email</h2>
+            <p id="email-text">You can contact us directly via email: <a href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></p>
+        </div>
+
+        <div class="content-section">
+            <h2 id="social-title"><i class="fas fa-share-alt"></i> Follow Us on Social Media</h2>
+            <p id="social-text">Stay connected with our latest updates, highlights, and community content:</p>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" class="contact-link" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube Icon">
+                        <span id="youtube-text">YouTube: Ganza Hoops </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/goldensportlive" class="contact-link" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Icon">
+                        <span id="instagram-text">Instagram: golden sport</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 id="additional-title"><i class="fas fa-info-circle"></i> Additional Information</h2>
+            <p id="additional-text1">
+                We encourage our fans to reach out with any questions, suggestions, or collaboration ideas. Your input is valuable, and we aim to respond promptly to ensure every message is acknowledged. Whether it's about our website content, upcoming events, sports analysis, or social media engagement, we are here to assist.
+            </p>
+            <p id="additional-text2">
+                For partnership inquiries or media-related requests, please send an email specifying your interest, and our team will contact you with detailed information and next steps. We are committed to building strong relationships with our community, fans, and partners worldwide.
+            </p>
+            <p id="additional-text3">
+                Connect with us and stay updated with all sports news, highlights, and community activities. Join the Golden Sport family today!
+            </p>
+            <p><em id="quote-text">"Your connection, feedback, and engagement are what drive us forward."</em></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2 style="color: white;">Golden Sport</h2>
+            <p style="color: white;">The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+        </div>
+
+        <div class="footer-section">
+            <h2 style="color: white;"> Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png">
+                </a>
+                <a href="https://www.instagram.com/goldensportlive" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg">
+                </a>
+                <a href="mailto:gsportlive1a@gmail.com" class="email-link">
+                    <i class="fa-solid fa-envelope"></i> gsportlive1a@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sports-showcase">
+        <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img">
+    </div>
+
+    <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
+    <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
+
+    <p style="color: white;" style="text-align:center; color:white; margin-top:20px; border:none;">
+        © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
+    </p>
+</footer>
+
+<script>
+// Language translations
+const translations = {
+    en: {
+        "page-title": "Contact Us",
+        "nav-home": "Home",
+        "section-title": "Get in Touch with Golden Sport",
+        "intro-text": "We love to hear from our fans, visitors, and partners. Whether you have a question, suggestion, or just want to connect, there are multiple ways to reach out to us. Your feedback helps us improve and continue delivering the best sports content online.",
+        "email-title": "Email",
+        "email-text": "You can contact us directly via email: ",
+        "social-title": "Follow Us on Social Media",
+        "social-text": "Stay connected with our latest updates, highlights, and community content:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Additional Information",
+        "additional-text1": "We encourage our fans to reach out with any questions, suggestions, or collaboration ideas. Your input is valuable, and we aim to respond promptly to ensure every message is acknowledged. Whether it's about our website content, upcoming events, sports analysis, or social media engagement, we are here to assist.",
+        "additional-text2": "For partnership inquiries or media-related requests, please send an email specifying your interest, and our team will contact you with detailed information and next steps. We are committed to building strong relationships with our community, fans, and partners worldwide.",
+        "additional-text3": "Connect with us and stay updated with all sports news, highlights, and community activities. Join the Golden Sport family today!",
+        "quote-text": "\"Your connection, feedback, and engagement are what drive us forward.\""
+    },
+    es: {
+        "page-title": "Contáctenos",
+        "nav-home": "Inicio",
+        "section-title": "Ponte en Contacto con Golden Sport",
+        "intro-text": "Nos encanta escuchar a nuestros seguidores, visitantes y socios. Ya sea que tengas una pregunta, sugerencia o simplemente quieras conectarte, hay múltiples formas de contactarnos. Tus comentarios nos ayudan a mejorar y continuar ofreciendo el mejor contenido deportivo en línea.",
+        "email-title": "Correo Electrónico",
+        "email-text": "Puedes contactarnos directamente por correo electrónico: ",
+        "social-title": "Síguenos en Redes Sociales",
+        "social-text": "Mantente conectado con nuestras últimas actualizaciones, resúmenes y contenido comunitario:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Información Adicional",
+        "additional-text1": "Animamos a nuestros seguidores a contactarnos con cualquier pregunta, sugerencia o idea de colaboración. Tu aporte es valioso y nuestro objetivo es responder rápidamente para asegurar que cada mensaje sea reconocido. Ya sea sobre el contenido de nuestro sitio web, próximos eventos, análisis deportivo o participación en redes sociales, estamos aquí para ayudar.",
+        "additional-text2": "Para consultas de asociación o solicitudes relacionadas con medios, por favor envía un correo electrónico especificando tu interés, y nuestro equipo te contactará con información detallada y próximos pasos. Estamos comprometidos a construir relaciones sólidas con nuestra comunidad, seguidores y socios en todo el mundo.",
+        "additional-text3": "Conéctate con nosotros y mantente actualizado con todas las noticias deportivas, resúmenes y actividades comunitarias. ¡Únete a la familia Golden Sport hoy!",
+        "quote-text": "\"Tu conexión, comentarios y participación son lo que nos impulsa hacia adelante.\""
+    },
+    fr: {
+        "page-title": "Contactez-nous",
+        "nav-home": "Accueil",
+        "section-title": "Contactez Golden Sport",
+        "intro-text": "Nous aimons entendre nos fans, visiteurs et partenaires. Que vous ayez une question, une suggestion ou que vous souhaitiez simplement vous connecter, il existe plusieurs façons de nous contacter. Vos commentaires nous aident à nous améliorer et à continuer à fournir le meilleur contenu sportif en ligne.",
+        "email-title": "E-mail",
+        "email-text": "Vous pouvez nous contacter directement par e-mail: ",
+        "social-title": "Suivez-nous sur les réseaux sociaux",
+        "social-text": "Restez connecté avec nos dernières mises à jour, temps forts et contenu communautaire:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Informations supplémentaires",
+        "additional-text1": "Nous encourageons nos fans à nous contacter avec toutes questions, suggestions ou idées de collaboration. Votre contribution est précieuse et nous visons à répondre rapidement pour nous assurer que chaque message est pris en compte. Qu'il s'agisse du contenu de notre site web, des événements à venir, de l'analyse sportive ou de l'engagement sur les réseaux sociaux, nous sommes là pour vous aider.",
+        "additional-text2": "Pour les demandes de partenariat ou les demandes liées aux médias, veuillez envoyer un e-mail en précisant votre intérêt, et notre équipe vous contactera avec des informations détaillées et les prochaines étapes. Nous nous engageons à construire des relations solides avec notre communauté, nos fans et nos partenaires dans le monde entier.",
+        "additional-text3": "Connectez-vous avec nous et restez informé de toutes les actualités sportives, des temps forts et des activités communautaires. Rejoignez la famille Golden Sport aujourd'hui!",
+        "quote-text": "\"Votre connexion, vos commentaires et votre engagement sont ce qui nous pousse vers l'avant.\""
+    },
+    de: {
+        "page-title": "Kontaktieren Sie uns",
+        "nav-home": "Startseite",
+        "section-title": "Kontaktieren Sie Golden Sport",
+        "intro-text": "Wir hören gerne von unseren Fans, Besuchern und Partnern. Egal, ob Sie eine Frage haben, einen Vorschlag machen oder sich einfach nur verbinden möchten, es gibt mehrere Möglichkeiten, uns zu erreichen. Ihr Feedback hilft uns, uns zu verbessern und weiterhin die besten Sportinhalte online zu liefern.",
+        "email-title": "E-Mail",
+        "email-text": "Sie können uns direkt per E-Mail kontaktieren: ",
+        "social-title": "Folgen Sie uns in den sozialen Medien",
+        "social-text": "Bleiben Sie mit unseren neuesten Updates, Highlights und Community-Inhalten verbunden:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Zusätzliche Informationen",
+        "additional-text1": "Wir ermutigen unsere Fans, sich mit Fragen, Vorschlägen oder Kooperationsideen an uns zu wenden. Ihr Input ist wertvoll und wir bemühen uns, schnell zu antworten, um sicherzustellen, dass jede Nachricht bestätigt wird. Egal, ob es um den Inhalt unserer Website, bevorstehende Veranstaltungen, Sportanalysen oder Engagement in sozialen Medien geht, wir sind hier, um zu helfen.",
+        "additional-text2": "Für Partnerschaftsanfragen oder medienbezogene Anfragen senden Sie bitte eine E-Mail mit Angabe Ihres Interesses, und unser Team wird Sie mit detaillierten Informationen und nächsten Schritten kontaktieren. Wir sind bestrebt, starke Beziehungen zu unserer Community, unseren Fans und Partnern weltweit aufzubauen.",
+        "additional-text3": "Verbinden Sie sich mit uns und bleiben Sie auf dem Laufenden mit allen Sportnachrichten, Highlights und Community-Aktivitäten. Werden Sie noch heute Teil der Golden Sport Familie!",
+        "quote-text": "\"Ihre Verbindung, Ihr Feedback und Ihr Engagement sind das, was uns vorantreibt.\""
+    },
+    it: {
+        "page-title": "Contattaci",
+        "nav-home": "Home",
+        "section-title": "Mettiti in Contatto con Golden Sport",
+        "intro-text": "Ci piace sentire i nostri fan, visitatori e partner. Che tu abbia una domanda, un suggerimento o voglia semplicemente di connetterti, ci sono diversi modi per contattarci. Il tuo feedback ci aiuta a migliorare e a continuare a fornire i migliori contenuti sportivi online.",
+        "email-title": "Email",
+        "email-text": "Puoi contattarci direttamente via email: ",
+        "social-title": "Seguici sui Social Media",
+        "social-text": "Rimani connesso con i nostri ultimi aggiornamenti, momenti salienti e contenuti della community:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Informazioni Aggiuntive",
+        "additional-text1": "Incoraggiamo i nostri fan a contattarci con qualsiasi domanda, suggerimento o idea di collaborazione. Il tuo contributo è prezioso e miriamo a rispondere prontamente per assicurarci che ogni messaggio venga riconosciuto. Che si tratti dei contenuti del nostro sito web, dei prossimi eventi, delle analisi sportive o dell'impegno sui social media, siamo qui per aiutare.",
+        "additional-text2": "Per richieste di partnership o richieste relative ai media, invia un'email specificando il tuo interesse e il nostro team ti contatterà con informazioni dettagliate e i prossimi passi. Siamo impegnati a costruire relazioni solide con la nostra comunità, i fan e i partner in tutto il mondo.",
+        "additional-text3": "Connettiti con noi e rimani aggiornato con tutte le notizie sportive, i momenti salienti e le attività della community. Unisciti alla famiglia Golden Sport oggi!",
+        "quote-text": "\"La tua connessione, feedback e impegno sono ciò che ci spinge avanti.\""
+    },
+    pt: {
+        "page-title": "Contate-nos",
+        "nav-home": "Início",
+        "section-title": "Entre em Contato com Golden Sport",
+        "intro-text": "Adoramos ouvir nossos fãs, visitantes e parceiros. Se você tem uma pergunta, sugestão ou apenas quer se conectar, há várias maneiras de entrar em contato conosco. Seu feedback nos ajuda a melhorar e continuar fornecendo o melhor conteúdo esportivo online.",
+        "email-title": "E-mail",
+        "email-text": "Você pode nos contatar diretamente por e-mail: ",
+        "social-title": "Siga-nos nas Redes Sociais",
+        "social-text": "Mantenha-se conectado com nossas últimas atualizações, destaques e conteúdo da comunidade:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Informações Adicionais",
+        "additional-text1": "Incentivamos nossos fãs a entrar em contato conosco com quaisquer perguntas, sugestões ou ideias de colaboração. Sua contribuição é valiosa e nosso objetivo es responder prontamente para garantir que cada mensagem seja reconhecida. Seja sobre o conteúdo do nosso site, eventos futuros, análise esportiva ou engajamento nas redes sociais, estamos aqui para ajudar.",
+        "additional-text2": "Para consultas de parceria ou solicitações relacionadas à mídia, envie um e-mail especificando seu interesse, e nossa equipe entrará em contato com informações detalhadas e próximos passos. Estamos comprometidos em construir relacionamentos sólidos com nossa comunidade, fãs e parceiros em todo o mundo.",
+        "additional-text3": "Conecte-se conosco e mantenha-se atualizado com todas as notícias esportivas, destaques e atividades da comunidade. Junte-se à família Golden Sport hoje!",
+        "quote-text": "\"Sua conexão, feedback e engajamento são o que nos impulsionam para frente.\""
+    },
+    ru: {
+        "page-title": "Свяжитесь с нами",
+        "nav-home": "Главная",
+        "section-title": "Свяжитесь с Golden Sport",
+        "intro-text": "Мы любим слышать наших поклонников, посетителей и партнеров. Если у вас есть вопрос, предложение или вы просто хотите связаться, есть несколько способов связаться с нами. Ваши отзывы помогают нам улучшаться и продолжать предоставлять лучший спортивный контент в Интернете.",
+        "email-title": "Электронная почта",
+        "email-text": "Вы можете связаться с нами напрямую по электронной почте: ",
+        "social-title": "Следите за нами в социальных сетях",
+        "social-text": "Будьте в курсе наших последних обновлений, основных моментов и контента сообщества:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "Дополнительная информация",
+        "additional-text1": "Мы призываем наших поклонников обращаться к нам с любыми вопросами, предложениями или идеями сотрудничества. Ваш вклад ценен, и мы стремимся оперативно отвечать, чтобы каждое сообщение было подтверждено. Будь то содержание нашего веб-сайта, предстоящие события, спортивный анализ или взаимодействие в социальных сетях, мы здесь, чтобы помочь.",
+        "additional-text2": "По вопросам партнерства или связанным с медиа, пожалуйста, отправьте электронное письмо с указанием вашего интереса, и наша команда свяжется с вами с подробной информацией и дальнейшими шагами. Мы стремимся строить прочные отношения с нашим сообществом, поклонниками и партнерами по всему миру.",
+        "additional-text3": "Свяжитесь с нами и будьте в курсе всех спортивных новостей, основных моментов и мероприятий сообщества. Присоединяйтесь к семье Golden Sport сегодня!",
+        "quote-text": "\"Ваша связь, отзывы и вовлеченность - вот что движет нас вперед.\""
+    },
+    zh: {
+        "page-title": "联系我们",
+        "nav-home": "首页",
+        "section-title": "与 Golden Sport 取得联系",
+        "intro-text": "我们喜欢听取我们的粉丝、访客和合作伙伴的意见。无论您有疑问、建议，还是只是想联系，都有多种方式可以联系我们。您的反馈帮助我们改进并继续提供最佳的在线体育内容。",
+        "email-title": "电子邮件",
+        "email-text": "您可以直接通过电子邮件联系我们：",
+        "social-title": "在社交媒体上关注我们",
+        "social-text": "与我们最新的更新、精彩内容和社区内容保持联系：",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "附加信息",
+        "additional-text1": "我们鼓励我们的粉丝提出任何问题、建议或合作想法。您的意见很有价值，我们旨在及时回复，确保每条消息都得到确认。无论是关于我们网站内容、即将举行的活动、体育分析还是社交媒体参与，我们都在这里提供帮助。",
+        "additional-text2": "对于合作咨询或与媒体相关的请求，请发送电子邮件说明您的兴趣，我们的团队将与您联系，提供详细信息和后续步骤。我们致力于与我们的社区、粉丝和全球合作伙伴建立牢固的关系。",
+        "additional-text3": "与我们联系，随时了解所有体育新闻、精彩内容和社区活动。立即加入 Golden Sport 大家庭！",
+        "quote-text": "\"您的联系、反馈和参与是推动我们前进的动力。\""
+    },
+    ja: {
+        "page-title": "お問い合わせ",
+        "nav-home": "ホーム",
+        "section-title": "Golden Sport に連絡する",
+        "intro-text": "私たちは、ファン、訪問者、パートナーの皆様からのご意見を喜んでお聞きします。質問、提案、または単に連絡を取りたい場合でも、私たちに連絡する方法は複数あります。皆様のフィードバックは、私たちが改善し、最高のスポーツコンテンツをオンラインで提供し続けるのに役立ちます。",
+        "email-title": "メール",
+        "email-text": "メールで直接ご連絡ください：",
+        "social-title": "ソーシャルメディアでフォローする",
+        "social-text": "最新の更新、ハイライト、コミュニティコンテンツに接続してください：",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "追加情報",
+        "additional-text1": "私たちは、ファンの皆様が質問、提案、またはコラボレーションのアイデアを持って連絡することを奨励しています。皆様の意見は貴重であり、すべてのメッセージが確認されるように迅速に応答することを目指しています。当社のウェブサイトコンテンツ、今後のイベント、スポーツ分析、またはソーシャルメディアへの関与についてであれば、私たちがお手伝いします。",
+        "additional-text2": "パートナーシップのお問い合わせやメディア関連のリクエストについては、ご関心を指定してメールを送信してください。当社のチームが詳細な情報と次のステップをお知らせします。私たちは、コミュニティ、ファン、世界中のパートナーとの強い関係を構築することに取り組んでいます。",
+        "additional-text3": "私たちとつながり、すべてのスポーツニュース、ハイライト、コミュニティ活動を最新の状態に保ちましょう。今日、Golden Sport ファミリーに参加してください！",
+        "quote-text": "\"あなたとのつながり、フィードバック、関与が私たちを前進させます。\""
+    },
+    ar: {
+        "page-title": "اتصل بنا",
+        "nav-home": "الرئيسية",
+        "section-title": "تواصل مع Golden Sport",
+        "intro-text": "نحن نحب أن نسمع من معجبينا وزوارنا وشركائنا. سواء كان لديك سؤال أو اقتراح أو ترغب فقط في التواصل، هناك طرق متعددة للتواصل معنا. ملاحظاتك تساعدنا على التحسن والاستمرار في تقديم أفضل محتوى رياضي عبر الإنترنت.",
+        "email-title": "البريد الإلكتروني",
+        "email-text": "يمكنك الاتصال بنا مباشرة عبر البريد الإلكتروني: ",
+        "social-title": "تابعنا على وسائل التواصل الاجتماعي",
+        "social-text": "ابق على اتصال بأحدث التحديثات والأبرز ومحتوى المجتمع:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "معلومات إضافية",
+        "additional-text1": "نحن نشجع معجبينا على التواصل معنا بأي أسئلة أو اقتراحات أو أفكار للتعاون. مدخلاتك قيمة ونسعى للرد بسرعة لضمان أن كل رسالة يتم الاعتراف بها. سواء كان الأمر يتعلق بمحتوى موقعنا على الويب، أو الأحداث القادمة، أو التحليل الرياضي، أو المشاركة في وسائل التواصل الاجتماعي، فنحن هنا للمساعدة.",
+        "additional-text2": "للاستفسارات حول الشراكة أو الطلبات المتعلقة بالوسائط، يرجى إرسال بريد إلكتروني يحدد اهتمامك، وسيتصل بك فريقنا بمعلومات مفصلة والخطوات التالية. نحن ملتزمون ببناء علاقات قوية مع مجتمعنا ومعجبينا وشركائنا في جميع أنحاء العالم.",
+        "additional-text3": "تواصل معنا وابق على اطلاع بجميع أخبار الرياضة والأبرز وأنشطة المجتمع. انضم إلى عائلة Golden Sport اليوم!",
+        "quote-text": "\"اتصالك وملاحظاتك ومشاركتك هي ما تدفعنا إلى الأمام.\""
+    },
+    hi: {
+        "page-title": "हमसे संपर्क करें",
+        "nav-home": "होम",
+        "section-title": "Golden Sport से संपर्क करें",
+        "intro-text": "हमें अपने प्रशंसकों, आगंतुकों और भागीदारों से सुनना पसंद है। चाहे आपके पास कोई प्रश्न हो, सुझाव हो, या बस जुड़ना चाहते हों, हमसे संपर्क करने के कई तरीके हैं। आपकी प्रतिक्रिया हमें बेहतर बनाने और ऑनलाइन सर्वश्रेष्ठ खेल सामग्री देने में मदद करती है।",
+        "email-title": "ईमेल",
+        "email-text": "आप सीधे ईमेल के माध्यम से हमसे संपर्क कर सकते हैं: ",
+        "social-title": "सोशल मीडिया पर हमें फॉलो करें",
+        "social-text": "हमारे नवीनतम अपडेट, हाइलाइट्स और समुदाय सामग्री से जुड़े रहें:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "अतिरिक्त जानकारी",
+        "additional-text1": "हम अपने प्रशंसकों को किसी भी प्रश्न, सुझाव, या सहयोग विचारों के साथ संपर्क करने के लिए प्रोत्साहित करते हैं। आपका इनपुट मूल्यवान है, और हम यह सुनिश्चित करने के लिए तुरंत जवाब देने का लक्ष्य रखते हैं कि हर संदेश स्वीकार किया जाए। चाहे वह हमारी वेबसाइट सामग्री, आगामी कार्यक्रमों, खेल विश्लेषण, या सोशल मीडिया जुड़ाव के बारे में हो, हम मदद के लिए यहां हैं।",
+        "additional-text2": "साझेदारी पूछताछ या मीडिया-संबंधित अनुरोधों के लिए, कृपया अपनी रुचि निर्दिष्ट करते हुए एक ईमेल भेजें, और हमारी टीम आपसे विस्तृत जानकारी और अगले चरणों के साथ संपर्क करेगी। हम अपने समुदाय, प्रशंसकों और दुनिया भर में भागीदारों के साथ मजबूत संबंध बनाने के लिए प्रतिबद्ध हैं।",
+        "additional-text3": "हमसे जुड़ें और सभी खेल समाचार, हाइलाइट्स और समुदाय गतिविधियों के साथ अद्यतित रहें। आज ही Golden Sport परिवार में शामिल हों!",
+        "quote-text": "\"आपका कनेक्शन, प्रतिक्रिया और जुड़ाव ही है जो हमें आगे बढ़ाता है।\""
+    },
+    ko: {
+        "page-title": "문의하기",
+        "nav-home": "홈",
+        "section-title": "Golden Sport에 연락하기",
+        "intro-text": "우리는 팬, 방문자 및 파트너의 의견을 듣는 것을 좋아합니다. 질문, 제안이 있거나 단순히 연결하고 싶다면 저희에게 연락할 수 있는 여러 방법이 있습니다. 귀하의 피드백은 우리가 개선하고 최고의 스포츠 콘텐츠를 온라인으로 계속 제공하는 데 도움이 됩니다.",
+        "email-title": "이메일",
+        "email-text": "이메일을 통해 직접 문의하실 수 있습니다: ",
+        "social-title": "소셜 미디어에서 팔로우하기",
+        "social-text": "최신 업데이트, 하이라이트 및 커뮤니티 콘텐츠와 연결 상태를 유지하세요:",
+        "youtube-text": "YouTube: @ganza_0",
+        "instagram-text": "Instagram: @gsporthub",
+        "additional-title": "추가 정보",
+        "additional-text1": "우리는 팬들이 질문, 제안 또는 협업 아이디어로 연락하도록 권장합니다. 귀하의 의견은 가치 있으며 모든 메시지가 인정되도록 신속하게 응답하는 것을 목표로 합니다. 웹사이트 콘텐츠, 예정된 이벤트, 스포츠 분석 또는 소셜 미디어 참여에 관한 것이든 저희가 도와드리겠습니다.",
+        "additional-text2": "파트너십 문의 또는 미디어 관련 요청의 경우 관심사를 지정하여 이메일을 보내주시면 저희 팀이 자세한 정보와 다음 단계를 알려드립니다. 우리는 커뮤니티, 팬 및 전 세계 파트너와 강력한 관계를 구축하기 위해 최선을 다하고 있습니다.",
+        "additional-text3": "저희와 연결되어 모든 스포츠 뉴스, 하이라이트 및 커뮤니티 활동을 최신 상태로 유지하세요. 지금 Golden Sport 가족에 가입하세요!",
+        "quote-text": "\"귀하의 연결, 피드백 및 참여가 우리를 앞으로 나아가게 합니다.\""
+    }
+};
+
+// Language selector functionality
+document.getElementById('language-select').addEventListener('change', function() {
+    const selectedLang = this.value;
+    changeLanguage(selectedLang);
+});
+
+function changeLanguage(lang) {
+    // Update all text elements with translations
+    for (const [key, value] of Object.entries(translations[lang])) {
+        const element = document.getElementById(key);
+        if (element) {
+            if (key === 'email-text') {
+                // Special handling for email text to preserve the email link
+                element.innerHTML = value + '<a href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a>';
+            } else {
+                element.textContent = value;
+            }
+        }
+    }
+    
+    // Update the HTML lang attribute
+    document.documentElement.lang = lang;
+}
+
+// Initialize with English
+changeLanguage('en');
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+
+</body>
+</html>

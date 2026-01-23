@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Group - Sports Network | GoldenSport Partners</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* G Group Specific Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: #f8f9fa;
+            color: #000;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .g-group-hero {
+            background: linear-gradient(135deg, #0c2461 0%, #1e3799 50%, #4a69bd 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .g-group-hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.05"/></svg>');
+            pointer-events: none;
+        }
+        
+        .g-group-logo-container {
+            margin-bottom: 30px;
+        }
+        
+        .g-group-logo-large {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .g-group-logo-large img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .network-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 8px 20px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Network Platforms Section */
+        .network-platforms {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .platform-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .platform-header {
+            padding: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #0c2461;
+        }
+        
+        .platform-actions {
+            padding: 20px;
+            background: #f8fafc;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .platform-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .visit-btn {
+            background: #0c2461;
+            color: white;
+        }
+        
+        .visit-btn:hover {
+            background: #1e3799;
+        }
+        
+        /* Sports Activities */
+        .sports-activities {
+            padding: 80px 0;
+        }
+        
+        .activity-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        
+        .activity-tab {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            position: relative;
+            white-space: nowrap;
+        }
+        
+        .activity-tab.active {
+            color: #0c2461;
+            font-weight: 600;
+        }
+        
+        .activity-tab.active:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #0c2461;
+        }
+        
+        .activity-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .activity-content.active {
+            display: block;
+        }
+        
+        .activity-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0c2461;
+            margin-bottom: 5px;
+        }
+        
+        /* YouTube Integration */
+        .youtube-integration {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .channel-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .channel-stat {
+            text-align: center;
+        }
+        
+        .channel-stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        /* Footer Styling */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section p {
+            text-align: left;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .activity-tabs {
+                flex-direction: column;
+            }
+            
+            .g-group-hero {
+                padding: 50px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .g-group-logo-large {
+                width: 180px;
+                height: 180px;
+                padding: 20px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <a href="../index.html" class="back-to-home">
+        ← Back to GoldenSport
+    </a>
+    
+    <main class="partner-detail-page">
+        <!-- G Group Hero Section -->
+        <section class="g-group-hero">
+            <div class="container">
+                <div class="g-group-logo-container">
+                    <div class="g-group-logo-large">
+                        <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+                    </div>
+                </div>
+                
+                <span class="network-badge">Global Sports Network</span>
+                <h1>G Group</h1>
+                <p class="partner-tagline">Unifying Sports Experiences Across Digital Platforms</p>
+                
+                <div style="margin-top: 30px;">
+                    <a href="#network" class="platform-btn visit-btn" style="background: white; color: #0c2461; margin-right: 10px;">
+                        Explore Our Network
+                    </a>
+                    <a href="https://goldensportlive.vercel.app/" target="_blank" class="platform-btn visit-btn">
+                        Corporate Website
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Network Platforms -->
+        <section id="network" class="network-platforms">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 20px; color: #0c2461;">Our Digital Sports Network</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #64748b;">
+                    G Group operates a comprehensive digital sports ecosystem, connecting fans with different sports through specialized platforms
+                </p>
+                
+                <div class="platform-grid">
+                    <!-- GoldenSport Platform -->
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">🌐</div>
+                            <h3>GoldenSport Live</h3>
+                            <p style="color: #64748b; margin-top: 10px;">
+                                Your comprehensive sports universe featuring real-time statistics, match analysis, and global sports coverage across 25+ football leagues and complete NBA coverage.
+                            </p>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="https://goldensportlive.vercel.app" target="_blank" class="platform-btn visit-btn">
+                                Visit Platform
+                            </a>
+                             
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ganza Basketball Platform -->
+                    <div class="platform-card">
+                        <div class="platform-header">
+                            <div class="platform-icon">🏀</div>
+                            <h3>Ganza Basketball</h3>
+                            <p style="color: #64748b; margin-top: 10px;">
+                                Specialized basketball platform offering in-depth analysis, player statistics, game highlights, and exclusive basketball content for dedicated hoops fans.
+                            </p>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="https://ganzasergebasketball.vercel.app" target="_blank" class="platform-btn visit-btn">
+                                Visit Platform
+                            </a>
+                           
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Activities & Focus Areas -->
+        <section class="sports-activities">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px; color: #0c2461;">Sports Activities & Focus Areas</h2>
+                
+                <div class="activity-tabs">
+                    <button class="activity-tab active" data-tab="football">⚽ Football</button>
+                    <button class="activity-tab" data-tab="basketball">🏀 Basketball</button>
+                    <button class="activity-tab" data-tab="analytics">📊 Sports Analytics</button>
+                    <button class="activity-tab" data-tab="community">🤝 Community Engagement</button>
+                </div>
+                
+                <div id="football" class="activity-content active">
+                    <h3>Global Football Coverage</h3>
+                    <p>Through GoldenSport Live, we provide comprehensive football coverage including:</p>
+                    
+                    <div class="activity-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div>Football Leagues</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div>Countries Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div>Advanced Statistics</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Live</div>
+                            <div>Real-Time Match Updates</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="basketball" class="activity-content">
+                    <h3>Basketball Specialization</h3>
+                    <p>Through Ganza Basketball, we focus on in-depth basketball content:</p>
+                    
+                    <div class="activity-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">NBA</div>
+                            <div>Complete Coverage</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Player</div>
+                            <div>Performance Analytics</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Game</div>
+                            <div>Highlight Reels</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Team</div>
+                            <div>Strategic Analysis</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="analytics" class="activity-content">
+                    <h3>Sports Data Analytics</h3>
+                    <p>Advanced statistical modeling and data visualization for sports analysis:</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li>Real-time performance metrics</li>
+                        <li>Predictive analysis models</li>
+                        <li>Player comparison tools</li>
+                        <li>Team strategy optimization</li>
+                    </ul>
+                </div>
+                
+                <div id="community" class="activity-content">
+                    <h3>Sports Community Building</h3>
+                    <p>Engaging sports fans through multiple platforms:</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li>Interactive fan forums</li>
+                        <li>Live match discussions</li>
+                        <li>Fantasy sports leagues</li>
+                        <li>Youth sports initiatives</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Integration -->
+        <section class="youtube-integration">
+            <div class="container">
+                <h2 style="margin-bottom: 20px;">G Group Sports Channel</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; opacity: 0.9;">
+                    Bringing sports to life through video content, match highlights, player interviews, and behind-the-scenes access
+                </p>
+                
+                <div class="channel-stats">
+                    <div class="channel-stat">
+                        <div class="channel-stat-number">500K+</div>
+                        <div>Subscribers</div>
+                    </div>
+                    <div class="channel-stat">
+                        <div class="channel-stat-number">100M+</div>
+                        <div>Views</div>
+                    </div>
+                    <div class="channel-stat">
+                        <div class="channel-stat-number">2K+</div>
+                        <div>Videos</div>
+                    </div>
+                    <div class="channel-stat">
+                        <div class="channel-stat-number">Daily</div>
+                        <div>Uploads</div>
+                    </div>
+                </div>
+                
+                <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" class="platform-btn visit-btn" style="background: white; color: #cc0000; display: inline-block; margin-top: 20px;">
+                    🎥 Visit YouTube Channel
+                </a>
+            </div>
+        </section>
+
+        <!-- Partnership Benefits -->
+        <section style="padding: 80px 0; background: #f8fafc;">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px; color: #0c2461;">Partnership Benefits with GoldenSport</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid #0c2461;">
+                        <h3>Cross-Platform Integration</h3>
+                        <p>Shared content and statistics across GoldenSport Live, Ganza Basketball, and YouTube channel for comprehensive coverage</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid #4a69bd;">
+                        <h3>Unified User Experience</h3>
+                        <p>Seamless navigation between different sports platforms under the G Group network</p>
+                    </div>
+                    
+                    <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 20px; border-left: 5px solid #1e3799;">
+                        <h3>Enhanced Content Distribution</h3>
+                        <p>Video content from YouTube integrated with statistical data from GoldenSport and Ganza platforms</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer from Main Page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 style="color: white;">𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</h3>
+                    <p style="color: white;">Your ultimate destination for live football scores, standings, fixtures and stats from all major leagues around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100091981114981"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/goldensportlive/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 style="color: white;">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;"href="../index.html">Home</a></li>
+                        <li><a style="color: white;" href="../index.html#football">Football Leagues</a></li>
+                        <li><a style="color: white;" href="../index.html#nba">NBA</a></li>
+                        <li><a style="color: white;" href="../index.html#highlights">Highlights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
+                        <li><a  style="color: white;"href="terms.html">Terms of Service</a></li>
+                        <li><a style="color: white;"href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a style="color: white;" href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
+                        <li><a style="color: white;" href="tel:0728624943">0728624943</a></li>
+                        <li><a style="color: white;" href="contact.html">Contact Form</a></li>
+                        <li><a style="color: white;" href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p style="color: white;">© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.activity-tab');
+            const contents = document.querySelectorAll('.activity-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

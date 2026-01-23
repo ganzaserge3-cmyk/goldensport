@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1769091640878",
+    "username": "ganza serge ",
+    "email": "ganzaserge3@gmail.com",
+    "password": "$2b$10$mj/KAOzRJ.kcQbuQd95eNe8XLtR7GrILa6mxj1u6hZL7MUV0XEREu",
+    "createdAt": "2026-01-22T14:20:40.895Z"
+  },
+  {
+    "id": "1769093168909",
+    "username": "brulon",
+    "email": "abakundanyeb@gmail.com",
+    "password": "$2b$10$t2MtXIqpUkJ29gS70Ofl9eUQj3hTbjuDCn7v3gNq6iKdXNOeKl7lq",
+    "createdAt": "2026-01-22T14:46:08.909Z"
+  }
+]

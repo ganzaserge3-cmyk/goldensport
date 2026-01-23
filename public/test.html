@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Authentication</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        input { padding: 8px; margin: 5px; width: 200px; }
+        .result { margin-top: 10px; padding: 10px; background: #f0f0f0; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Authentication Test</h1>
+
+    <div class="test-section">
+        <h2>Sign Up Test</h2>
+        <input type="text" id="signupUsername" placeholder="Username" value="testuser"><br>
+        <input type="email" id="signupEmail" placeholder="Email" value="test@example.com"><br>
+        <input type="password" id="signupPassword" placeholder="Password" value="testpass"><br>
+        <button onclick="testSignup()">Test Sign Up</button>
+        <div id="signupResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Login Test</h2>
+        <input type="email" id="loginEmail" placeholder="Email" value="test@example.com"><br>
+        <input type="password" id="loginPassword" placeholder="Password" value="testpass"><br>
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Server Status</h2>
+        <button onclick="testServer()">Check Server Status</button>
+        <div id="serverResult" class="result"></div>
+    </div>
+
+    <script>
+        async function testSignup() {
+            const username = document.getElementById('signupUsername').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            document.getElementById('signupResult').innerHTML = 'Testing...';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                const data = await response.json();
+                document.getElementById('signupResult').innerHTML = `<strong>Status:</strong> ${response.status}<br><strong>Response:</strong> ${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                document.getElementById('signupResult').innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            document.getElementById('loginResult').innerHTML = 'Testing...';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                document.getElementById('loginResult').innerHTML = `<strong>Status:</strong> ${response.status}<br><strong>Response:</strong> ${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                document.getElementById('loginResult').innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testServer() {
+            document.getElementById('serverResult').innerHTML = 'Testing...';
+
+            try {
+                const response = await fetch('http://localhost:3000/');
+                const text = await response.text();
+                document.getElementById('serverResult').innerHTML = `<strong>Status:</strong> ${response.status}<br><strong>Response:</strong> ${text}`;
+            } catch (error) {
+                document.getElementById('serverResult').innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Golden Sport</title>
+    <style>
+        body { background: #f8f9fa; color: #000; font-family: 'Segoe UI', sans-serif; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 40px; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        .logout-btn { background: #ff6b6b; color: #fff; border: 1px solid #ff6b6b; padding: 10px 20px; border-radius: 20px; cursor: pointer; transition: 0.3s; }
+        .logout-btn:hover { background: #fff; color: #ff6b6b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Settings</h1>
+        <p>Settings page for your account. (Add more settings as needed)</p>
+        <button class="logout-btn" onclick="logoutUser()">Logout</button>
+        <a href="dashboard.html" style="margin-left:20px;">Dashboard</a>
+    </div>
+    <script>
+        function logoutUser() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
