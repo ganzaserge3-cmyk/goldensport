@@ -24,6 +24,15 @@ mongoose.connect(MONGO_URI)
 // Routes
 app.use("/api/auth", authRoutes);
 
+// Serve static files from Leagues folder
+app.use('/Leagues', express.static('../Leagues'));
+
+// Serve static files from public folder
+app.use('/public', express.static('../public'));
+
+// Serve static files from root directory
+app.use(express.static('../'));
+
 // Test route
 app.get("/", (req, res) => {
   res.send("Backend irimo gukora neza 🚀");

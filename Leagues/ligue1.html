@@ -15,6 +15,539 @@
   <link rel="stylesheet" href="css/ligue.css ">
 </head>
 <body>
+    <style>
+            
+        /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #222;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 3px solid #080707;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.25s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Active page indicator */
+        nav a[href="ligue1.html"] {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        nav a[href="ligue1.html"]::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: #0f0f0f;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 35px 0 15px;
+            font-weight: 700;
+            color: #333;
+            border-left: 5px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            padding: 14px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 2px solid #ccc;
+            position: sticky;
+            top: 0;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Table row hover effect */
+        tbody tr:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* RED ZONE */
+        .black-zone td {
+            background: #100f0f;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* CHAMPIONS LEAGUE ZONE */
+        .champions-league {
+            background: #e8f4ff !important;
+        }
+
+        /* EUROPA LEAGUE ZONE */
+        .europa-league {
+            background: #fff0e8 !important;
+        }
+
+        /* Player stats highlight */
+        .top-player {
+            position: relative;
+        }
+
+        .top-player::after {
+            content: "★";
+            color: #ffcc00;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #080808;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .footer-section h2::after {
+            display: none;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sports-showcase {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .square-img {
+            max-width: 100px;
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .under-text, .powered-text {
+            text-align: center;
+            color: white;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* League info section */
+        .league-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #171717;
+        }
+
+        .info-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Section tabs */
+        .section-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #0f0909;
+            border-bottom: 3px solid #0b0b0b;
+        }
+
+        .tab:hover {
+            color: #0f0e0e;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Fixtures grid styling */
+        .fixtures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .fixture-card {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+        
+        .fixture-card:hover {
+            background: #f0f8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .fixture-card > div:first-child {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .date {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            main {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h2::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            table th, table td {
+                font-size: 15px;
+                padding: 8px;
+            }
+            
+            .league-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .fixtures-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Small screen adjustments */
+        @media(max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                margin: 25px 0 10px;
+            }
+            
+            table th, table td {
+                font-size: 14px;
+                padding: 6px;
+            }
+            
+            footer {
+                padding: 30px 15px 15px;
+            }
+            
+            .info-value {
+                font-size: 20px;
+            }
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+
+        /* Animation for table rows */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        tbody tr {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.05s; }
+        tbody tr:nth-child(2) { animation-delay: 0.1s; }
+        tbody tr:nth-child(3) { animation-delay: 0.15s; }
+        tbody tr:nth-child(4) { animation-delay: 0.2s; }
+        tbody tr:nth-child(5) { animation-delay: 0.25s; }
+        tbody tr:nth-child(6) { animation-delay: 0.3s; }
+        tbody tr:nth-child(7) { animation-delay: 0.35s; }
+    
+    </style>
     <!-- Back to Home Button -->
     <a href="../index.html" class="back-to-home">
         ← Back to GoldenSport
@@ -23,7 +556,7 @@
     <header>
         <h1><i class="fas fa-futbol"></i> LIGUE 1</h1>
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
             <a href="premier-league.html"><i class="fas fa-futbol"></i> Premier League</a>
             <a href="laliga.html"><i class="fas fa-futbol"></i> La Liga</a>
             <a href="serie-a.html"><i class="fas fa-futbol"></i> Serie A</a>
@@ -68,748 +601,35 @@
             <!-- Stats Tab Content -->
             <div class="tab-content active" id="stats">
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - LIGUE 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Club</th>
-                            <th>Assists</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="top-player">Vitinha</td>
-                            <td>PSG</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>P. Aubameyang</td>
-                            <td>Marseille</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Adrien Thomasson</td>
-                            <td>Lens</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Ludovic Ajorque</td>
-                            <td>Brest</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Matthieu Udol</td>
-                            <td>Metz</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Bilal Nadir</td>
-                            <td>Marseille</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Gauthier Hein</td>
-                            <td>Metz</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Valentin Barco</td>
-                            <td>Strasbourg</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Afonso Moreira</td>
-                            <td>Lyon</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Ilan Kebbal</td>
-                            <td>Paris FC</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Arsene Kouassi</td>
-                            <td>Lens</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Felix Correia</td>
-                            <td>Nice</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Desire Doue</td>
-                            <td>PSG</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Lamine Camara</td>
-                            <td>Monaco</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Folarin Balogun</td>
-                            <td>Monaco</td>
-                            <td>3</td>
-                        </tr>
-                    </tbody>
-                </table>
-
+              
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - LIGUE 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Club</th>
-                            <th>Goals</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="top-player">Mason Greenwood</td>
-                            <td>Marseille</td>
-                            <td>11</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Joaquin Panichelli</td>
-                            <td>Strasbourg</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Esteban Lepaul</td>
-                            <td>Rennes</td>
-                            <td>9</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Pavel Sulc</td>
-                            <td>Lyon</td>
-                            <td>8</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Wesley Said</td>
-                            <td>Lens</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Odsonne Edouard</td>
-                            <td>Lens</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Ansu Fati</td>
-                            <td>Monaco</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Romain Del Castillo</td>
-                            <td>Brest</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Ilan Kebbal</td>
-                            <td>Paris FC</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Gauthier Hein</td>
-                            <td>Metz</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>P. Aubameyang</td>
-                            <td>Marseille</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Philippe Pagis</td>
-                            <td>Lorient</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Florian Thauvin</td>
-                            <td>Lens</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>H. Arnar Haraldsson</td>
-                            <td>Lille</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Lassine Sinayoko</td>
-                            <td>Auxerre</td>
-                            <td>5</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - LIGUE 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Goalkeeper</th>
-                            <th>Club</th>
-                            <th>CS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="top-player">Lucas Chevalier</td>
-                            <td>PSG</td>
-                            <td>7</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dominik Greif</td>
-                            <td>Lyon</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Mike Penders</td>
-                            <td>Strasbourg</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Robin Risser</td>
-                            <td>Lens</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Guillaume Restes</td>
-                            <td>Toulouse</td>
-                            <td>6</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Geronimo Rulli</td>
-                            <td>Marseille</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Herve Koffi</td>
-                            <td>Angers</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Berke Ozer</td>
-                            <td>Lille</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Mory Diaw</td>
-                            <td>Le Havre</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Brice Samba</td>
-                            <td>Rennes</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Radoslaw Majecki</td>
-                            <td>Brest</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Remy Descamps</td>
-                            <td>Lyon</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Donovan Leon</td>
-                            <td>Auxerre</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Anthony Lopes</td>
-                            <td>Nantes</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Jonathan Fischer</td>
-                            <td>Metz</td>
-                            <td>3</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+       
+        
 
                 <h2><i class="fas fa-passport"></i> TOTAL PASSES - LIGUE 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Club</th>
-                            <th>Passes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="top-player">Marquinhos</td>
-                            <td>PSG</td>
-                            <td>1456</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Manuel Ugarte</td>
-                            <td>PSG</td>
-                            <td>1324</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Danilo Pereira</td>
-                            <td>PSG</td>
-                            <td>1287</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Benjamin André</td>
-                            <td>Lille</td>
-                            <td>1215</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Youssouf Fofana</td>
-                            <td>Monaco</td>
-                            <td>1189</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Flavien Tait</td>
-                            <td>Rennes</td>
-                            <td>1156</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Corentin Tolisso</td>
-                            <td>Lyon</td>
-                            <td>1134</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Seko Fofana</td>
-                            <td>Lens</td>
-                            <td>1098</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Jordan Ferri</td>
-                            <td>Montpellier</td>
-                            <td>1076</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Adrien Thomasson</td>
-                            <td>Lens</td>
-                            <td>1045</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Matteo Guendouzi</td>
-                            <td>Marseille</td>
-                            <td>1023</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Valentin Rongier</td>
-                            <td>Marseille</td>
-                            <td>1011</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Jean-Ricner Bellegarde</td>
-                            <td>Strasbourg</td>
-                            <td>987</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Jérôme Onguéné</td>
-                            <td>Nice</td>
-                            <td>956</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Pedro Chirivella</td>
-                            <td>Nantes</td>
-                            <td>934</td>
-                        </tr>
-                    </tbody>
-                </table>
+             
+                  
+              
             </div>
 
             <!-- Teams Tab Content -->
             <div class="tab-content" id="teams">
                 <h2><i class="fas fa-users"></i> TOP SCORING TEAMS - LIGUE 1</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Team</th>
-                            <th>Goals For</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td class="top-player">Paris Saint-Germain</td>
-                            <td>37</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Marseille</td>
-                            <td>36</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Lille</td>
-                            <td>33</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>RC Lens</td>
-                            <td>31</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Rennes</td>
-                            <td>29</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Lyon</td>
-                            <td>25</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Strasbourg</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Toulouse</td>
-                            <td>21</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>AS Monaco</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Brest</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Paris FC</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Angers</td>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Metz</td>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Lorient</td>
-                            <td>17</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Nantes</td>
-                            <td>16</td>
-                        </tr>
-                    </tbody>
-                </table>
+       
             </div>
 
             <!-- Fixtures Tab Content -->
-            <div class="tab-content" id="fixtures">
-                <h2><i class="fas fa-calendar-day"></i> LIGUE 1 FIXTURES</h2>
-                <div class="fixtures-grid">
-                    <div class="fixture-card"><div>Monaco vs Lorient</div><div class="date">Jan 16, 20:00</div></div>
-                    <div class="fixture-card"><div>PSG vs Lille</div><div class="date">Jan 16, 22:00</div></div>
-                    <div class="fixture-card"><div>RC Lens vs Auxerre</div><div class="date">Jan 17, 18:00</div></div>
-                    <div class="fixture-card"><div>Toulouse vs Nice</div><div class="date">Jan 17, 20:00</div></div>
-                    <div class="fixture-card"><div>Angers vs Marseille</div><div class="date">Jan 17, 22:05</div></div>
-                    <div class="fixture-card"><div>Strasbourg vs Metz</div><div class="date">Jan 18, 16:00</div></div>
-                    <div class="fixture-card"><div>Nantes vs Paris FC</div><div class="date">Jan 18, 18:15</div></div>
-                    <div class="fixture-card"><div>Rennes vs Le Havre</div><div class="date">Jan 18, 18:15</div></div>
-                    <div class="fixture-card"><div>Lyon vs Brest</div><div class="date">Jan 18, 21:45</div></div>
-                </div>
+    
             </div>
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> LIGUE 1 STANDINGS</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Team</th>
-                            <th>P</th>
-                            <th>W</th>
-                            <th>D</th>
-                            <th>L</th>
-                            <th>GD</th>
-                            <th>Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="champions-league">
-                            <td>1</td>
-                            <td class="top-player">RC Lens</td>
-                            <td>17</td>
-                            <td>13</td>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>+18</td>
-                            <td>40</td>
-                        </tr>
-                        <tr class="champions-league">
-                            <td>2</td>
-                            <td>Paris Saint-Germain</td>
-                            <td>17</td>
-                            <td>12</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>+22</td>
-                            <td>39</td>
-                        </tr>
-                        <tr class="champions-league">
-                            <td>3</td>
-                            <td>Marseille</td>
-                            <td>17</td>
-                            <td>10</td>
-                            <td>2</td>
-                            <td>5</td>
-                            <td>+19</td>
-                            <td>32</td>
-                        </tr>
-                        <tr class="europa-league">
-                            <td>4</td>
-                            <td>Lille</td>
-                            <td>17</td>
-                            <td>10</td>
-                            <td>2</td>
-                            <td>5</td>
-                            <td>+11</td>
-                            <td>32</td>
-                        </tr>
-                        <tr class="europa-league">
-                            <td>5</td>
-                            <td>Lyon</td>
-                            <td>17</td>
-                            <td>9</td>
-                            <td>3</td>
-                            <td>5</td>
-                            <td>+8</td>
-                            <td>30</td>
-                        </tr>
-                        <tr class="europa-league">
-                            <td>6</td>
-                            <td>Rennes</td>
-                            <td>17</td>
-                            <td>8</td>
-                            <td>6</td>
-                            <td>3</td>
-                            <td>+5</td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Strasbourg</td>
-                            <td>17</td>
-                            <td>7</td>
-                            <td>3</td>
-                            <td>7</td>
-                            <td>+5</td>
-                            <td>24</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Toulouse</td>
-                            <td>17</td>
-                            <td>7</td>
-                            <td>2</td>
-                            <td>8</td>
-                            <td>+2</td>
-                            <td>23</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>AS Monaco</td>
-                            <td>17</td>
-                            <td>7</td>
-                            <td>2</td>
-                            <td>8</td>
-                            <td>-3</td>
-                            <td>23</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Angers</td>
-                            <td>17</td>
-                            <td>6</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>-2</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>Brest</td>
-                            <td>17</td>
-                            <td>6</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>-4</td>
-                            <td>22</td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>Lorient</td>
-                            <td>17</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td>8</td>
-                            <td>-9</td>
-                            <td>19</td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>Le Havre</td>
-                            <td>17</td>
-                            <td>5</td>
-                            <td>3</td>
-                            <td>9</td>
-                            <td>-8</td>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>Nice</td>
-                            <td>17</td>
-                            <td>5</td>
-                            <td>3</td>
-                            <td>9</td>
-                            <td>-10</td>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>Paris FC</td>
-                            <td>17</td>
-                            <td>4</td>
-                            <td>4</td>
-                            <td>9</td>
-                            <td>-9</td>
-                            <td>16</td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>Montpellier</td>
-                            <td>17</td>
-                            <td>4</td>
-                            <td>3</td>
-                            <td>10</td>
-                            <td>-12</td>
-                            <td>15</td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td>Metz</td>
-                            <td>17</td>
-                            <td>4</td>
-                            <td>2</td>
-                            <td>11</td>
-                            <td>-15</td>
-                            <td>14</td>
-                        </tr>
-                        <tr>
-                            <td>18</td>
-                            <td>Nantes</td>
-                            <td>17</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>10</td>
-                            <td>-16</td>
-                            <td>13</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Auxerre</td>
-                            <td>17</td>
-                            <td>3</td>
-                            <td>3</td>
-                            <td>11</td>
-                            <td>-18</td>
-                            <td>12</td>
-                        </tr>
-                        <tr class="black-zone">
-                            <td>20</td>
-                            <td>Clermont</td>
-                            <td>17</td>
-                            <td>2</td>
-                            <td>4</td>
-                            <td>11</td>
-                            <td>-20</td>
-                            <td>10</td>
-                        </tr>
-                    </tbody>
-                </table>
+          
             </div>
         </section>
     </main>
@@ -817,21 +637,21 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                <h2 style="color: white;">Golden Sport</h2>
-                <p style="color: white;">The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+                <h2>Golden Sport</h2>
+                <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
             </div>
 
             <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                <h2 style="color: white;">Navigation</h2>
+                <h2>Navigation</h2>
                 <ul>
-                    <li><a style="color: white;" href="about.html">About Us</a></li>
-                    <li><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
-                    <li><a style="color: white;" href="contact.html">Contact</a></li>
+                    <li><a href="../public/about.html">About Us</a></li>
+                    <li><a href="../public/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../public/contact.html">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                <h2 style="color: white;">Follow Us</h2>
+                <h2>Follow Us</h2>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" data-aos="fade-up" data-aos-delay="400">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -853,7 +673,7 @@
         <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
         <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
 
-        <p style="color: white;" class="footer-copyright">
+        <p class="footer-copyright">
             © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
         </p>
     </footer>
@@ -908,3 +728,4 @@
     </script>
 </body>
 </html>
+

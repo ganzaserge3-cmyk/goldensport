@@ -121,9 +121,41 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = router;
+// TOKEN VALIDATION
+router.get("/validate", async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({ message: "No token provided" });
+        }
 
-// GOOGLE OAUTH ROUTES
+        const token = authHeader.substring(7); // Remove 'Bearer ' prefix
+
+        // Verify the token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'ganzakmk');
+
+        // Check if MongoDB is connected
+        if (mongoose.connection.readyState === 1) {
+            // Use MongoDB
+            const user = await User.findById(decoded.id);
+            if (!user) {
+                return res.status(401).json({ message: "User not found" });
+            }
+        } else {
+            // Use file storage
+            const user = users.find(u => u.id === decoded.id);
+            if (!user) {
+                return res.status(401).json({ message: "User not found" });
+            }
+        }
+
+        res.status(200).json({ valid: true, message: "Token is valid" });
+    } catch (error) {
+        console.error("Token validation error:", error);
+        res.status(401).json({ message: "Invalid token" });
+    }
+});
+
 router.post("/google", async (req, res) => {
   try {
     const { token } = req.body;
@@ -193,3 +225,5 @@ router.post("/google", async (req, res) => {
     res.status(500).json({ message: "Google authentication failed" });
   }
 });
+
+module.exports = router;

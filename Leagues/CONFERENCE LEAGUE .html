@@ -15,6 +15,536 @@
 <link rel="stylesheet" href="css/conference.css">
 </head>
 <body>
+    <style>
+            /* GLOBAL */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f7f7f7;
+        color: #222;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+        padding: 25px 0;
+        text-align: center;
+        border-bottom: 3px solid #080707;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a {
+        color: #e6e6e6;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 17px;
+        font-weight: 600;
+        transition: 0.25s;
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+    }
+
+    /* Active page indicator */
+    nav a[href="conference-league.html"] {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+    }
+
+    nav a[href="conference-league.html"]::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 15px;
+        right: 15px;
+        height: 3px;
+        background-color: #0f0f0f;
+        border-radius: 2px;
+    }
+
+    /* MAIN CONTENT */
+    main {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+        font-size: 28px;
+        margin: 35px 0 15px;
+        font-weight: 700;
+        color: #333;
+        border-left: 5px solid #100f0f;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    h2::after {
+        content: "";
+        flex-grow: 1;
+        height: 3px;
+        background: linear-gradient(to right, #0a0a0a, transparent);
+        margin-left: 10px;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin: 30px 0 15px;
+        font-weight: 600;
+        color: #333;
+        border-left: 4px solid #100f0f;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    h3::after {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background: linear-gradient(to right, #0a0a0a, transparent);
+        margin-left: 10px;
+    }
+
+    /* TABLES */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0 40px;
+        background: #fff;
+        border: 2px solid #000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    table th {
+        background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+        padding: 14px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 16px;
+        border-bottom: 2px solid #ccc;
+        position: sticky;
+        top: 0;
+    }
+
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 16px;
+        transition: background-color 0.2s;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    /* Table row hover effect */
+    tbody tr:hover {
+        background-color: #f0f8ff;
+        transform: scale(1.005);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ROUND OF 16 ZONE */
+    .round-of-16 {
+        background: #e8f4ff !important;
+    }
+
+    /* PLAYOFF ZONE */
+    .playoff-zone {
+        background: #fff0e8 !important;
+    }
+
+    /* ELIMINATED ZONE */
+    .eliminated-zone {
+        background: #100f0f !important;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* Player stats highlight */
+    .top-player {
+        position: relative;
+    }
+
+    .top-player::after {
+        content: "★";
+        color: #ffcc00;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+        color: #ffffff;
+        padding: 40px 20px 20px;
+        margin-top: 60px;
+        border-top: 3px solid #080808;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-section h2 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 20px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .footer-section h2::after {
+        display: none;
+    }
+
+    .footer-section p {
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+        color: white;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: white;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .email-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sports-showcase {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .square-img {
+        max-width: 100px;
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .under-text, .powered-text {
+        text-align: center;
+        color: white;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+    }
+
+    /* League info section */
+    .league-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        border-left: 4px solid #171717;
+    }
+
+    .info-item {
+        text-align: center;
+        flex: 1;
+    }
+
+    .info-item i {
+        font-size: 24px;
+        color: #0a0a0a;
+        margin-bottom: 10px;
+    }
+
+    .info-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .info-label {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    /* Section tabs */
+    .section-tabs {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e5e5e5;
+    }
+
+    .tab {
+        padding: 12px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #666;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s;
+    }
+
+    .tab.active {
+        color: #0f0909;
+        border-bottom: 3px solid #0b0b0b;
+    }
+
+    .tab:hover {
+        color: #0f0e0e;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+        main {
+            padding: 20px;
+            margin: 20px 10px;
+        }
+        
+        header {
+            padding: 15px 0;
+        }
+        
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav a {
+            margin: 5px 0;
+            width: 80%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        h2::after {
+            width: 100%;
+            margin-top: 5px;
+            margin-left: 0;
+        }
+
+        h3 {
+            font-size: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        h3::after {
+            width: 100%;
+            margin-top: 5px;
+            margin-left: 0;
+        }
+
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        table th, table td {
+            font-size: 15px;
+            padding: 8px;
+        }
+        
+        .league-info {
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section-tabs {
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    /* Small screen adjustments */
+    @media(max-width: 480px) {
+        body {
+            font-size: 16px;
+        }
+        
+        main {
+            padding: 15px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin: 25px 0 10px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        
+        table th, table td {
+            font-size: 14px;
+            padding: 6px;
+        }
+        
+        footer {
+            padding: 30px 15px 15px;
+        }
+        
+        .info-value {
+            font-size: 20px;
+        }
+    }
+     /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background:  rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+
+    /* Animation for table rows */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    tbody tr {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    tbody tr:nth-child(1) { animation-delay: 0.05s; }
+    tbody tr:nth-child(2) { animation-delay: 0.1s; }
+    tbody tr:nth-child(3) { animation-delay: 0.15s; }
+    tbody tr:nth-child(4) { animation-delay: 0.2s; }
+    tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    tbody tr:nth-child(6) { animation-delay: 0.3s; }
+    tbody tr:nth-child(7) { animation-delay: 0.35s; }
+    </style>
         <!-- Back to Home Button -->
     <a href="../index.html" class="back-to-home">
         ← Back to GoldenSport
@@ -22,7 +552,7 @@
     <header>
         <h1><i class="fas fa-trophy"></i> CONFERENCE LEAGUE</h1>
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
  
         </nav>
     </header>
@@ -64,155 +594,25 @@
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                           
-           <th>#</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Kevin Denkey</td><td>Cercle Brugge</td><td>7</td></tr>
-                    <tr><td>2</td><td>Christopher Nkunku</td><td>Chelsea</td><td>6</td></tr>
-                    <tr><td>3</td><td>Joao Felix</td><td>Chelsea</td><td>5</td></tr>
-                    <tr><td>4</td><td>Arthur Cabral</td><td>Fiorentina</td><td>5</td></tr>
-                    <tr><td>5</td><td>Marc Guiu</td><td>Chelsea</td><td>4</td></tr>
-                    <tr><td>6</td><td>Afimico Pululu</td><td>Jagiellonia</td><td>4</td></tr>
-                    <tr><td>7</td><td>Tomaš Chory</td><td>Slavia Praha</td><td>4</td></tr>
-                    <tr><td>8</td><td>Jonathan Ikoné</td><td>Fiorentina</td><td>4</td></tr>
-                    <tr><td>9</td><td>Thijs Dallinga</td><td>Bologna</td><td>3</td></tr>
-                    <tr><td>10</td><td>Albert Grønbæk</td><td>Rennes</td><td>3</td></tr>
-                    <tr><td>11</td><td>Krzysztof Piątek</td><td>Baunatal</td><td>3</td></tr>
-                    <tr><td>12</td><td>Ricardo Horta</td><td>Braga</td><td>3</td></tr>
-                    <tr><td>13</td><td>Erik Botheim</td><td>Malmö</td><td>3</td></tr>
-                    <tr><td>14</td><td>Mikael Ishak</td><td>Lech Poznań</td><td>3</td></tr>
-                    <tr><td>15</td><td>Gonçalo Ramos</td><td>PSG (EL Drop)</td><td>3</td></tr>
-                </tbody>
-            </table>
-
+              
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Enzo Fernández</td><td>Chelsea</td><td>5</td></tr>
-                    <tr><td>2</td><td>Mykhailo Mudryk</td><td>Chelsea</td><td>4</td></tr>
-                    <tr><td>3</td><td>Yari Verschaeren</td><td>Anderlecht</td><td>4</td></tr>
-                    <tr><td>4</td><td>Cristiano Biraghi</td><td>Fiorentina</td><td>3</td></tr>
-                    <tr><td>5</td><td>Pavel Šulc</td><td>Viktoria Plzeň</td><td>3</td></tr>
-                    <tr><td>6</td><td>Vincenzo Grifo</td><td>Freiburg</td><td>3</td></tr>
-                    <tr><td>7</td><td>Pedro Neto</td><td>Chelsea</td><td>3</td></tr>
-                    <tr><td>8</td><td>Florent Mollet</td><td>Nantes</td><td>2</td></tr>
-                    <tr><td>9</td><td>Anders Christiansen</td><td>Malmö</td><td>2</td></tr>
-                    <tr><td>10</td><td>Ismaël Saibari</td><td>PSV</td><td>2</td></tr>
-                    <tr><td>11</td><td>Teddy Teuma</td><td>Reims</td><td>2</td></tr>
-                    <tr><td>12</td><td>Gauthier Hein</td><td>Auxerre</td><td>2</td></tr>
-                    <tr><td>13</td><td>Koki Machida</td><td>Union SG</td><td>2</td></tr>
-                    <tr><td>14</td><td>Cameron Puertas</td><td>Union SG</td><td>2</td></tr>
-                    <tr><td>15</td><td>Jordi Mboula</td><td>Gil Vicente</td><td>2</td></tr>
-                </tbody>
-            </table>
+               
 
              
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Goalkeeper</th><th>Club</th><th>CS</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Filip Jørgensen</td><td>Chelsea</td><td>4</td></tr>
-                    <tr><td>2</td><td>David de Gea</td><td>Fiorentina</td><td>3</td></tr>
-                    <tr><td>3</td><td>Kasper Schmeichel</td><td>Anderlecht</td><td>3</td></tr>
-                    <tr><td>4</td><td>Noah Atubolu</td><td>Freiburg</td><td>3</td></tr>
-                    <tr><td>5</td><td>Antonín Kinský</td><td>Slavia Praha</td><td>3</td></tr>
-                    <tr><td>6</td><td>Moritz Nicolas</td><td>Gladbach</td><td>2</td></tr>
-                    <tr><td>7</td><td>Matheus</td><td>Braga</td><td>2</td></tr>
-                    <tr><td>8</td><td>Anthony Moris</td><td>Union SG</td><td>2</td></tr>
-                    <tr><td>9</td><td>Dominik Takáč</td><td>Slovan Bratislava</td><td>2</td></tr>
-                    <tr><td>10</td><td>Sivert Nilsen</td><td>SK Brann</td><td>2</td></tr>
-                    <tr><td>11</td><td>Viljami Sinisalo</td><td>Celtic</td><td>2</td></tr>
-                    <tr><td>12</td><td>Jack Butland</td><td>Rangers</td><td>2</td></tr>
-                    <tr><td>13</td><td>Iván Villar</td><td>Celta Vigo</td><td>1</td></tr>
-                    <tr><td>14</td><td>Philipp Köhn</td><td>Monaco</td><td>1</td></tr>
-                    <tr><td>15</td><td>Oliver Christensen</td><td>Fiorentina</td><td>1</td></tr>
-                </tbody>
-            </table>
-
+            
+            
 
                 <h2><i class="fas fa-running"></i> TOP TACKLES - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Player</th><th>Club</th><th>Tackles</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td><strong>Chávez</strong></td><td>AZ Alkmaar</td><td class="stat-val">18</td></tr>
-                <tr><td>2</td><td><strong>Ronaldo Webster</strong></td><td>Shkëndija</td><td class="stat-val">18</td></tr>
-                <tr><td>3</td><td>Cissé</td><td>KuPS Kuopio</td><td>17</td></tr>
-                <tr><td>4</td><td>Lazaros Rota</td><td>AEK Athens</td><td>16</td></tr>
-                <tr><td>5</td><td>Kolega</td><td>Lincoln Red Imps</td><td>15</td></tr>
-                <tr><td>6</td><td>Flach</td><td>Jagiellonia</td><td>14</td></tr>
-                <tr><td>7</td><td>Holse</td><td>Samsunspor</td><td>14</td></tr>
-                <tr><td>8</td><td>Tobias</td><td>AZ Alkmaar</td><td>12</td></tr>
-                <tr><td>9</td><td>Vincenzo Polito</td><td>Strasbourg</td><td>12</td></tr>
-                <tr><td>10</td><td>Amane Romeo</td><td>Häcken</td><td>9</td></tr>
-                <tr><td>11</td><td>Mees De Wit</td><td>AZ Alkmaar</td><td>9</td></tr>
-                <tr><td>12</td><td>Furkan Demir</td><td>Rapid Wien</td><td>9</td></tr>
-                <tr><td>13</td><td>Emerson</td><td>Sparta Praha</td><td>9</td></tr>
-                <tr><td>14</td><td>Jamie Roche</td><td>Lausanne</td><td>8</td></tr>
-                <tr><td>15</td><td>Eric Boakye</td><td>Nordsjælland</td><td>8</td></tr>
-            </tbody>
-        </table>
-
-
+            
+    
                
-                
                 <h2><i class="fas fa-hands"></i> TOP SAVES - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Goalkeeper</th><th>Club</th><th>Saves</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Srdjan Blažić</td><td>Borac</td><td>31</td></tr>
-                    <tr><td>2</td><td>Zigi Ati</td><td>St. Gallen</td><td>28</td></tr>
-                    <tr><td>3</td><td>Dominik Takáč</td><td>Slovan Bratislava</td><td>26</td></tr>
-                    <tr><td>4</td><td>Viljami Sinisalo</td><td>Celtic</td><td>24</td></tr>
-                    <tr><td>5</td><td>Anthony Moris</td><td>Union SG</td><td>22</td></tr>
-                    <tr><td>6</td><td>Mory Diaw</td><td>Clermont</td><td>21</td></tr>
-                    <tr><td>7</td><td>Matvei Safonov</td><td>PSG</td><td>19</td></tr>
-                    <tr><td>8</td><td>Heinz Lindner</td><td>Sion</td><td>19</td></tr>
-                    <tr><td>9</td><td>Jack Butland</td><td>Rangers</td><td>18</td></tr>
-                    <tr><td>10</td><td>David de Gea</td><td>Fiorentina</td><td>17</td></tr>
-                    <tr><td>11</td><td>Filip Jørgensen</td><td>Chelsea</td><td>15</td></tr>
-                    <tr><td>12</td><td>Kasper Schmeichel</td><td>Anderlecht</td><td>15</td></tr>
-                    <tr><td>13</td><td>Noah Atubolu</td><td>Freiburg</td><td>14</td></tr>
-                    <tr><td>14</td><td>Antonín Kinský</td><td>Slavia Praha</td><td>14</td></tr>
-                    <tr><td>15</td><td>Matheus</td><td>Braga</td><td>13</td></tr>
-                </tbody>
-            </table>
+            
 
                 <h2><i class="fas fa-passport"></i> PLAYERS PASSING ACCURACY - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Player</th><th>Club</th><th>Accuracy (%)</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td>Renato Veiga</td><td>Chelsea</td><td class="stat-val">96.8%</td></tr>
-                <tr><td>2</td><td>Benoît Badiashile</td><td>Chelsea</td><td class="stat-val">95.4%</td></tr>
-                <tr><td>3</td><td>Levi Colwill</td><td>Chelsea</td><td class="stat-val">94.2%</td></tr>
-                <tr><td>4</td><td>Pietro Comuzzo</td><td>Fiorentina</td><td class="stat-val">93.5%</td></tr>
-                <tr><td>5</td><td>Jan Bořil</td><td>Slavia Praha</td><td class="stat-val">92.1%</td></tr>
-                <tr><td>6</td><td>Tosin Adarabioyo</td><td>Chelsea</td><td class="stat-val">91.8%</td></tr>
-                <tr><td>7</td><td>Matthias Ginter</td><td>Freiburg</td><td class="stat-val">91.5%</td></tr>
-                <tr><td>8</td><td>David Hancko</td><td>Feyenoord</td><td class="stat-val">90.9%</td></tr>
-                <tr><td>9</td><td>Zeno Debast</td><td>Sporting CP</td><td class="stat-val">90.4%</td></tr>
-                <tr><td>10</td><td>Luka Modrić</td><td>Real Madrid (Drop)</td><td class="stat-val">90.1%</td></tr>
-                <tr><td>11</td><td>Bryan Cristante</td><td>Roma</td><td class="stat-val">89.8%</td></tr>
-                <tr><td>12</td><td>Lucas Veríssimo</td><td>Benfica</td><td class="stat-val">89.5%</td></tr>
-                <tr><td>13</td><td>Amir Rrahmani</td><td>Napoli</td><td class="stat-val">89.2%</td></tr>
-                <tr><td>14</td><td>Jan Paul van Hecke</td><td>Brighton</td><td class="stat-val">88.9%</td></tr>
-                <tr><td>15</td><td>William Saliba</td><td>Arsenal (Drop)</td><td class="stat-val">88.7%</td></tr>
-            </tbody>
-        </table>
+             
 
                     
                
@@ -221,81 +621,16 @@
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Team</th><th>Possession</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Chelsea</td><td class="stat-val">68.5%</td></tr>
-                    <tr><td>2</td><td>Fiorentina</td><td class="stat-val">64.2%</td></tr>
-                    <tr><td>3</td><td>Real Betis</td><td class="stat-val">61.0%</td></tr>
-                    <tr><td>4</td><td>Freiburg</td><td class="stat-val">59.8%</td></tr>
-                    <tr><td>5</td><td>Slavia Praha</td><td class="stat-val">58.5%</td></tr>
-                    <tr><td>6</td><td>Anderlecht</td><td class="stat-val">57.2%</td></tr>
-                    <tr><td>7</td><td>Gent</td><td class="stat-val">56.9%</td></tr>
-                    <tr><td>8</td><td>Braga</td><td class="stat-val">55.4%</td></tr>
-                    <tr><td>9</td><td>FC Copenhagen</td><td class="stat-val">54.8%</td></tr>
-                    <tr><td>10</td><td>Başakşehir</td><td class="stat-val">53.2%</td></tr>
-                    <tr><td>11</td><td>Vitória SC</td><td class="stat-val">52.5%</td></tr>
-                    <tr><td>12</td><td>LASK</td><td class="stat-val">51.9%</td></tr>
-                    <tr><td>13</td><td>Molde</td><td class="stat-val">50.8%</td></tr>
-                    <tr><td>14</td><td>Legia Warszawa</td><td class="stat-val">49.5%</td></tr>
-                    <tr><td>15</td><td>Rapid Wien</td><td class="stat-val">48.2%</td></tr>
-                </tbody>
-            </table>
-   
+              
         
 
                 <h2><i class="fas fa-passport"></i> PASSING ACCURACY - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Player</th><th>Club</th><th>Accuracy</th></tr></thead>
-            <tbody>
-                <tr><td>1</td><td><strong>Zeefuik</strong></td><td>AZ Alkmaar</td><td class="stat-val">100%</td></tr>
-                <tr><td>2</td><td><strong>Krstevski</strong></td><td>Shkëndija</td><td class="stat-val">100%</td></tr>
-                <tr><td>3</td><td>Kliment</td><td>Sigma Olomouc</td><td>100%</td></tr>
-                <tr><td>4</td><td>Marius Lode</td><td>Häcken</td><td>95.8%</td></tr>
-                <tr><td>5</td><td>Benoît Badiashile</td><td>Chelsea</td><td>95.4%</td></tr>
-                <tr><td>6</td><td>Alaa Ghram</td><td>Shakhtar</td><td>93.3%</td></tr>
-                <tr><td>7</td><td>Pietro Comuzzo</td><td>Fiorentina</td><td>93.5%</td></tr>
-                <tr><td>8</td><td>Tobias</td><td>AZ Alkmaar</td><td>92.3%</td></tr>
-                <tr><td>9</td><td>Jan Bořil</td><td>Slavia Praha</td><td>92.1%</td></tr>
-                <tr><td>10</td><td>Tosin Adarabioyo</td><td>Chelsea</td><td>91.8%</td></tr>
-                <tr><td>11</td><td>Matthias Ginter</td><td>Freiburg</td><td>91.5%</td></tr>
-                <tr><td>12</td><td>David Hancko</td><td>Feyenoord</td><td>90.9%</td></tr>
-                <tr><td>13</td><td>Zeno Debast</td><td>Sporting CP</td><td>90.4%</td></tr>
-                <tr><td>14</td><td>Luka Modrić</td><td>Real Madrid</td><td>90.1%</td></tr>
-                <tr><td>15</td><td>Amane Romeo</td><td>Häcken</td><td>90.0%</td></tr>
-            </tbody>
-        </table>
-        <small>*Minimum 3 matches played.</small>
-
+              
+     
                   
 
                 <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - CONFERENCE LEAGUE</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th><th>Team</th><th>Goals</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>Chelsea</td><td>18</td></tr>
-                    <tr><td>2</td><td>Fiorentina</td><td>14</td></tr>
-                    <tr><td>3</td><td>Cercle Brugge</td><td>12</td></tr>
-                    <tr><td>4</td><td>Slavia Praha</td><td>11</td></tr>
-                    <tr><td>5</td><td>Anderlecht</td><td>10</td></tr>
-                    <tr><td>6</td><td>Freiburg</td><td>9</td></tr>
-                    <tr><td>7</td><td>Jagiellonia</td><td>9</td></tr>
-                    <tr><td>8</td><td>Braga</td><td>8</td></tr>
-                    <tr><td>9</td><td>Viktoria Plzeň</td><td>8</td></tr>
-                    <tr><td>10</td><td>Heidenheim</td><td>7</td></tr>
-                    <tr><td>11</td><td>Legia Warszawa</td><td>7</td></tr>
-                    <tr><td>12</td><td>Real Betis</td><td>6</td></tr>
-                    <tr><td>13</td><td>Rapid Wien</td><td>6</td></tr>
-                    <tr><td>14</td><td>Vitória SC</td><td>5</td></tr>
-                    <tr><td>15</td><td>Djurgården</td><td>5</td></tr>
-                </tbody>
-            </table>
+               
                        
                  
             </div>
@@ -303,16 +638,7 @@
             <!-- Fixtures Tab Content -->
             <div class="tab-content" id="fixtures">
                 <h2><i class="fas fa-calendar-day"></i> CONFERENCE LEAGUE FIXTURES</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <div class="fixtures-container">
-            <div class="fixture"><div class="vs">Chelsea vs Shamrock Rovers</div><div class="time">Jan 22, 21:00</div></div>
-            <div class="fixture"><div class="vs">Fiorentina vs LASK</div><div class="time">Jan 22, 21:00</div></div>
-            <div class="fixture"><div class="vs">Legia vs Rapid Wien</div><div class="time">Jan 22, 18:45</div></div>
-            <div class="fixture"><div class="vs">Jagiellonia vs Omonia</div><div class="time">Jan 22, 18:45</div></div>
-            <div class="fixture"><div class="vs">Hearts vs Cercle Brugge</div><div class="time">Jan 22, 21:00</div></div>
-            <div class="fixture"><div class="vs">Vitória SC vs Panathinaikos</div><div class="time">Jan 22, 21:00</div></div>
+             
         </div>
 
                   
@@ -321,28 +647,7 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> CONFERENCE LEAGUE STANDINGS</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Pos</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
-            <tbody>
-                <tr style="color: var(--uecl-green);"><td>1</td><td><strong>Chelsea</strong></td><td>4</td><td>4</td><td>0</td><td>0</td><td>+15</td><td>12</td></tr>
-                <tr style="color: var(--uecl-green);"><td>2</td><td>Fiorentina</td><td>4</td><td>4</td><td>0</td><td>0</td><td>+8</td><td>12</td></tr>
-                <tr><td>3</td><td>Legia Warszawa</td><td>4</td><td>4</td><td>0</td><td>0</td><td>+7</td><td>12</td></tr>
-                <tr><td>4</td><td>Jagiellonia</td><td>4</td><td>3</td><td>1</td><td>0</td><td>+5</td><td>10</td></tr>
-                <tr><td>5</td><td>Rapid Wien</td><td>4</td><td>3</td><td>1</td><td>0</td><td>+4</td><td>10</td></tr>
-                <tr><td>6</td><td>Vitória SC</td><td>4</td><td>3</td><td>0</td><td>1</td><td>+3</td><td>9</td></tr>
-                <tr><td>7</td><td>Heidenheim</td><td>4</td><td>3</td><td>0</td><td>1</td><td>+2</td><td>9</td></tr>
-                <tr><td>8</td><td>Shamrock Rovers</td><td>4</td><td>2</td><td>1</td><td>1</td><td>+2</td><td>7</td></tr>
-                <tr><td>9</td><td>Cercle Brugge</td><td>4</td><td>2</td><td>0</td><td>2</td><td>+5</td><td>6</td></tr>
-                <tr><td>10</td><td>Heart of Midlothian</td><td>4</td><td>2</td><td>0</td><td>2</td><td>+0</td><td>6</td></tr>
-                <tr><td>11</td><td>Gent</td><td>4</td><td>2</td><td>0</td><td>2</td><td>-1</td><td>6</td></tr>
-                <tr><td>12</td><td>Luzern</td><td>4</td><td>2</td><td>0</td><td>2</td><td>-2</td><td>6</td></tr>
-                <tr><td>13</td><td>Omonia</td><td>4</td><td>1</td><td>1</td><td>2</td><td>+1</td><td>4</td></tr>
-                <tr><td>14</td><td>Molde</td><td>4</td><td>1</td><td>1</td><td>2</td><td>+0</td><td>4</td></tr>
-                <tr><td>15</td><td>Panathinaikos</td><td>4</td><td>1</td><td>1</td><td>2</td><td>-2</td><td>4</td></tr>
-            </tbody>
-        </table>
+           
                           
          
         </section>
@@ -351,21 +656,22 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                <h2 style="color: white;">Golden Sport</h2>
-                <p style="color: white;">The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+                <h2>Golden Sport</h2>
+                <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
             </div>
 
+         
             <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                <h2 style="color: white;">Navigation</h2>
+                <h2>Navigation</h2>
                 <ul>
-                    <li><a style="color: white;" href="about.html">About Us</a></li>
-                    <li><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
-                    <li><a style="color: white;" href="contact.html">Contact</a></li>
+                    <li><a href="../public/about.html">About Us</a></li>
+                    <li><a href="../public/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../public/contact.html">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                <h2 style="color: white;">Follow Us</h2>
+                <h2>Follow Us</h2>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" data-aos="fade-up" data-aos-delay="400">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -387,7 +693,7 @@
         <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
         <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
 
-        <p style="color: white;" class="footer-copyright">
+        <p class="footer-copyright">
             © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
         </p>
     </footer>
@@ -442,4 +748,5 @@
     </script>
 </body>
 </html>
+
 

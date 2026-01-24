@@ -164,13 +164,27 @@
             </svg>
             Continue with Google
         </button>
+
+        <!-- Hidden Google Sign-In button for fallback -->
+        <div id="google-signin-button" style="display: none; margin: 10px 0;"></div>
         <div class="link">
-            <a href="public/login.html">Already have an account? Login</a>
+            <a href="login.html">Already have an account? Login</a>
         </div>
         <div id="message"></div>
     </div>
 
     <script>
+        // Check if user is already logged in and redirect
+        window.addEventListener('DOMContentLoaded', function() {
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+
+            if (token && user) {
+                // User is already logged in, redirect to dashboard
+                window.location.href = 'dashboard.html';
+            }
+        });
+
         document.getElementById('signupForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -207,16 +221,47 @@
         });
 
         function handleGoogleSignUp() {
-            document.getElementById('message').innerHTML = '<div style="color: #778da9; text-align: center;">Connecting to Google...</div>';
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerHTML = '<div style="color: #778da9; text-align: center;">Connecting to Google...</div>';
 
-            // Initialize Google Sign-In
-            google.accounts.id.initialize({
-                client_id: '534367923011-sejspfqhk9i62fob2i254e25n557vqjv.apps.googleusercontent.com',
-                callback: handleGoogleCredentialResponse
-            });
+            // Check if Google API is loaded
+            if (typeof google === 'undefined' || !google.accounts) {
+                messageDiv.innerHTML = '<div class="error">Google Sign-In is not loaded. Please refresh the page and try again.</div>';
+                return;
+            }
 
-            // Show Google Sign-In popup
-            google.accounts.id.prompt();
+            try {
+                // Initialize Google Sign-In with proper error handling
+                google.accounts.id.initialize({
+                    client_id: '534367923011-sejspfqhk9i62fob2i254e25n557vqjv.apps.googleusercontent.com',
+                    callback: handleGoogleCredentialResponse,
+                    auto_select: false,
+                    cancel_on_tap_outside: true
+                });
+
+                // Use renderButton instead of prompt for more reliable sign-in
+                google.accounts.id.renderButton(
+                    document.getElementById('google-signin-button'),
+                    {
+                        theme: 'outline',
+                        size: 'large',
+                        text: 'continue_with',
+                        shape: 'rectangular'
+                    }
+                );
+
+                // Trigger the sign-in popup
+                google.accounts.id.prompt((notification) => {
+                    if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+                        // Fallback: show the button
+                        document.getElementById('google-signin-button').style.display = 'block';
+                        messageDiv.innerHTML = '<div style="color: #778da9; text-align: center;">Click the Google button below to continue</div>';
+                    }
+                });
+            } catch (error) {
+                console.error('Google Sign-In initialization error:', error);
+                messageDiv.innerHTML = '<div class="error">Failed to initialize Google Sign-In. Please try again.</div>';
+            }
         }
 
         async function handleGoogleCredentialResponse(response) {

@@ -15,6 +15,563 @@
     <link rel="stylesheet" href="css/serie a.css">
 </head>
 <body>
+    <style>
+        
+        /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #222;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 3px solid #080707;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.25s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Active page indicator */
+        nav a[href="serie-a.html"] {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        nav a[href="serie-a.html"]::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: #0f0f0f;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 35px 0 15px;
+            font-weight: 700;
+            color: #333;
+            border-left: 5px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            color: #333;
+            border-left: 4px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            padding: 14px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 2px solid #ccc;
+            position: sticky;
+            top: 0;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Table row hover effect */
+        tbody tr:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* CHAMPIONS LEAGUE ZONE */
+        .champions-league {
+            background: #e8f4ff !important;
+        }
+
+        /* EUROPA LEAGUE ZONE */
+        .europa-league {
+            background: #fff0e8 !important;
+        }
+
+        /* RELEGATION ZONE */
+        .relegation-zone {
+            background: #100f0f !important;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Player stats highlight */
+        .top-player {
+            position: relative;
+        }
+
+        .top-player::after {
+            content: "★";
+            color: #ffcc00;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #080808;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .footer-section h2::after {
+            display: none;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sports-showcase {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .square-img {
+            max-width: 100px;
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .under-text, .powered-text {
+            text-align: center;
+            color: white;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* League info section */
+        .league-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #171717;
+        }
+
+        .info-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Section tabs */
+        .section-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #0f0909;
+            border-bottom: 3px solid #0b0b0b;
+        }
+
+        .tab:hover {
+            color: #0f0e0e;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Fixture styles */
+        .fixture-list {
+            margin: 20px 0;
+        }
+
+        .match {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            transition: background-color 0.3s;
+        }
+
+        .match:hover {
+            background-color: #f5f5f5;
+        }
+
+        .match .time {
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            main {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h2::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            h3 {
+                font-size: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h3::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            table th, table td {
+                font-size: 15px;
+                padding: 8px;
+            }
+            
+            .league-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        /* Small screen adjustments */
+        @media(max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                margin: 25px 0 10px;
+            }
+            
+            h3 {
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+            
+            table th, table td {
+                font-size: 14px;
+                padding: 6px;
+            }
+            
+            footer {
+                padding: 30px 15px 15px;
+            }
+            
+            .info-value {
+                font-size: 20px;
+            }
+        }
+        
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(194, 152, 2, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Animation for table rows */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        tbody tr {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.05s; }
+        tbody tr:nth-child(2) { animation-delay: 0.1s; }
+        tbody tr:nth-child(3) { animation-delay: 0.15s; }
+        tbody tr:nth-child(4) { animation-delay: 0.2s; }
+        tbody tr:nth-child(5) { animation-delay: 0.25s; }
+        tbody tr:nth-child(6) { animation-delay: 0.3s; }
+        tbody tr:nth-child(7) { animation-delay: 0.35s; }
+    </style>
+    
     <!-- Back to Home Button -->
     <a href="../index.html" class="back-to-home">
         ← Back to GoldenSport
@@ -68,174 +625,28 @@
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - SERIE A</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Club</th>
-                            <th>Goals</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Lautaro Martínez</td><td>Inter Milan</td><td>10</td></tr>
-                        <tr><td>2</td><td>Christian Pulisic</td><td>AC Milan</td><td>8</td></tr>
-                        <tr><td>3</td><td>Rafael Leão</td><td>AC Milan</td><td>7</td></tr>
-                        <tr><td>4</td><td>Nico Paz</td><td>Como</td><td>6</td></tr>
-                        <tr><td>5</td><td>Rasmus Højlund</td><td>Napoli</td><td>6</td></tr>
-                        <tr><td>6</td><td>Kenan Yıldız</td><td>Juventus</td><td>6</td></tr>
-                        <tr><td>7</td><td>Riccardo Orsolini</td><td>Bologna</td><td>6</td></tr>
-                        <tr><td>8</td><td>Moise Kean</td><td>Fiorentina</td><td>6</td></tr>
-                        <tr><td>9</td><td>Anastasios Douvikas</td><td>Como</td><td>6</td></tr>
-                        <tr><td>10</td><td>Gianluca Scamacca</td><td>Atalanta</td><td>5</td></tr>
-                        <tr><td>11</td><td>Matìas Soulé</td><td>Roma</td><td>5</td></tr>
-                        <tr><td>12</td><td>Keinan Davis</td><td>Udinese</td><td>5</td></tr>
-                        <tr><td>13</td><td>Nicolò Zaniolo</td><td>Udinese</td><td>5</td></tr>
-                        <tr><td>14</td><td>Nikola Vlašić</td><td>Torino</td><td>5</td></tr>
-                        <tr><td>15</td><td>Jamie Vardy</td><td>Cremonese</td><td>5</td></tr>
-                    </tbody>
-                </table>
+
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - SERIE A</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Club</th>
-                            <th>Assists</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Nico Paz</td><td>Como</td><td>6</td></tr>
-                        <tr><td>2</td><td>Nicolò Barella</td><td>Inter Milan</td><td>6</td></tr>
-                        <tr><td>3</td><td>Federico Dimarco</td><td>Inter Milan</td><td>5</td></tr>
-                        <tr><td>4</td><td>Jesús Rodríguez</td><td>Como</td><td>5</td></tr>
-                        <tr><td>5</td><td>Jari Vandeputte</td><td>Cremonese</td><td>5</td></tr>
-                        <tr><td>6</td><td>Emil Holm</td><td>Bologna</td><td>4</td></tr>
-                        <tr><td>7</td><td>Cristian Volpato</td><td>Sassuolo</td><td>4</td></tr>
-                        <tr><td>8</td><td>Ange-Yoan Bonny</td><td>Parma</td><td>4</td></tr>
-                        <tr><td>9</td><td>Nicolò Cambiaghi</td><td>Lazio</td><td>4</td></tr>
-                        <tr><td>10</td><td>Lautaro Martínez</td><td>Inter Milan</td><td>4</td></tr>
-                        <tr><td>11</td><td>Kenan Yıldız</td><td>Juventus</td><td>4</td></tr>
-                        <tr><td>12</td><td>Giovane</td><td>Napoli</td><td>4</td></tr>
-                        <tr><td>13</td><td>Adrien Rabiot</td><td>Juventus</td><td>3</td></tr>
-                        <tr><td>14</td><td>Domenico Berardi</td><td>Sassuolo</td><td>3</td></tr>
-                        <tr><td>15</td><td>Taty Castellanos</td><td>Lazio</td><td>3</td></tr>
-                    </tbody>
-                </table>
+           
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - SERIE A</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Goalkeeper</th>
-                            <th>Club</th>
-                            <th>CS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Ivan Provedel</td><td>Lazio</td><td>9</td></tr>
-                        <tr><td>2</td><td>Jean Butez</td><td>Como</td><td>9</td></tr>
-                        <tr><td>3</td><td>Mike Maignan</td><td>AC Milan</td><td>8</td></tr>
-                        <tr><td>4</td><td>Mile Svilar</td><td>Roma</td><td>8</td></tr>
-                        <tr><td>5</td><td>Yann Sommer</td><td>Inter Milan</td><td>7</td></tr>
-                        <tr><td>6</td><td>Michele Di Gregorio</td><td>Juventus</td><td>7</td></tr>
-                        <tr><td>7</td><td>Wladimiro Falcone</td><td>Lecce</td><td>6</td></tr>
-                        <tr><td>8</td><td>Marco Carnesecchi</td><td>Atalanta</td><td>5</td></tr>
-                        <tr><td>9</td><td>Vanja Milinković-Savić</td><td>Napoli</td><td>5</td></tr>
-                        <tr><td>10</td><td>Emil Audero</td><td>Cremonese</td><td>5</td></tr>
-                        <tr><td>11</td><td>Alberto Paleari</td><td>Torino</td><td>5</td></tr>
-                        <tr><td>12</td><td>Lukasz Skorupski</td><td>Bologna</td><td>4</td></tr>
-                        <tr><td>13</td><td>Maduka Okoye</td><td>Udinese</td><td>4</td></tr>
-                        <tr><td>14</td><td>Adrian Semper</td><td>Pisa</td><td>4</td></tr>
-                        <tr><td>15</td><td>Arijanet Murić</td><td>Sassuolo</td><td>4</td></tr>
-                    </tbody>
-                </table>
+             
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - SERIE A</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Team</th>
-                            <th>Goals For</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>Inter Milan</td><td>40</td></tr>
-                        <tr><td>2</td><td>AC Milan</td><td>29</td></tr>
-                        <tr><td>3</td><td>Napoli</td><td>28</td></tr>
-                        <tr><td>4</td><td>Juventus</td><td>27</td></tr>
-                        <tr><td>5</td><td>Como</td><td>26</td></tr>
-                        <tr><td>6</td><td>Bologna</td><td>25</td></tr>
-                        <tr><td>7</td><td>Atalanta</td><td>23</td></tr>
-                        <tr><td>8</td><td>Sassuolo</td><td>23</td></tr>
-                        <tr><td>9</td><td>Roma</td><td>22</td></tr>
-                        <tr><td>10</td><td>Torino</td><td>21</td></tr>
-                        <tr><td>11</td><td>Cagliari</td><td>21</td></tr>
-                        <tr><td>12</td><td>Lazio</td><td>20</td></tr>
-                        <tr><td>13</td><td>Udinese</td><td>20</td></tr>
-                        <tr><td>14</td><td>Cremonese</td><td>20</td></tr>
-                        <tr><td>15</td><td>Fiorentina</td><td>20</td></tr>
-                    </tbody>
-                </table>
+              
+              
             </div>
 
             <!-- Fixtures Tab Content -->
-            <div class="tab-content" id="fixtures">
-                <h2><i class="fas fa-calendar-day"></i> SERIE A FIXTURES</h2>
-                <div class="fixture-list">
-                    <div class="match"><span>Roma vs Sassuolo</span><span class="time">Jan 10, 19:00</span></div>
-                    <div class="match"><span>Atalanta vs Torino</span><span class="time">Jan 10, 21:45</span></div>
-                    <div class="match"><span>Lecce vs Parma</span><span class="time">Jan 11, 13:30</span></div>
-                    <div class="match"><span>Fiorentina vs AC Milan</span><span class="time">Jan 11, 16:00</span></div>
-                    <div class="match"><span>Verona vs Lazio</span><span class="time">Jan 11, 19:00</span></div>
-                    <div class="match"><span>Inter Milan vs Napoli</span><span class="time">Jan 11, 21:45</span></div>
-                    <div class="match"><span>Genoa vs Cagliari</span><span class="time">Jan 12, 19:30</span></div>
-                    <div class="match"><span>Juventus vs Cremonese</span><span class="time">Jan 12, 21:45</span></div>
-                    <div class="match"><span>Napoli vs Parma</span><span class="time">Jan 14, 17:30</span></div>
-                </div>
-            </div>
-
+       
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> SERIE A STANDINGS</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Team</th>
-                            <th>P</th>
-                            <th>W</th>
-                            <th>D</th>
-                            <th>L</th>
-                            <th>GD</th>
-                            <th>Pts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td><strong>Inter Milan</strong></td><td>18</td><td>14</td><td>0</td><td>4</td><td>+25</td><td>42</td></tr>
-                        <tr><td>2</td><td>AC Milan</td><td>18</td><td>11</td><td>6</td><td>1</td><td>+15</td><td>39</td></tr>
-                        <tr><td>3</td><td>Napoli</td><td>18</td><td>12</td><td>2</td><td>4</td><td>+13</td><td>38</td></tr>
-                        <tr><td>4</td><td>Juventus</td><td>19</td><td>10</td><td>6</td><td>3</td><td>+11</td><td>36</td></tr>
-                        <tr><td>5</td><td>AS Roma</td><td>19</td><td>12</td><td>0</td><td>7</td><td>+10</td><td>36</td></tr>
-                        <tr><td>6</td><td>Como</td><td>18</td><td>9</td><td>6</td><td>3</td><td>+14</td><td>33</td></tr>
-                        <tr><td>7</td><td>Atalanta</td><td>19</td><td>7</td><td>7</td><td>5</td><td>+4</td><td>28</td></tr>
-                        <tr><td>8</td><td>Bologna</td><td>18</td><td>7</td><td>5</td><td>6</td><td>+6</td><td>26</td></tr>
-                        <tr><td>9</td><td>Lazio</td><td>19</td><td>6</td><td>7</td><td>6</td><td>+4</td><td>25</td></tr>
-                        <tr><td>10</td><td>Udinese</td><td>19</td><td>7</td><td>4</td><td>8</td><td>-10</td><td>25</td></tr>
-                        <tr><td>11</td><td>Sassuolo</td><td>19</td><td>6</td><td>5</td><td>8</td><td>-2</td><td>23</td></tr>
-                        <tr><td>12</td><td>Torino</td><td>19</td><td>6</td><td>5</td><td>8</td><td>-9</td><td>23</td></tr>
-                        <tr><td>13</td><td>Cremonese</td><td>19</td><td>5</td><td>7</td><td>7</td><td>-3</td><td>22</td></tr>
-                        <tr><td>14</td><td>Cagliari</td><td>19</td><td>4</td><td>7</td><td>8</td><td>-6</td><td>19</td></tr>
-                        <tr><td>15</td><td>Parma</td><td>18</td><td>4</td><td>6</td><td>8</td><td>-9</td><td>18</td></tr>
-                    </tbody>
-                </table>
+              
             </div>
         </section>
     </main>
@@ -243,21 +654,22 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                <h2 style="color: white;">Golden Sport</h2>
-                <p style="color: white;">The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
+                <h2>Golden Sport</h2>
+                <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
             </div>
 
+  
             <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                <h2 style="color: white;">Navigation</h2>
+                <h2>Navigation</h2>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../public/about.html">About Us</a></li>
+                    <li><a href="../public/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../public/contact.html">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                <h2 style="color: white;">Follow Us</h2>
+                <h2>Follow Us</h2>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" data-aos="fade-up" data-aos-delay="400">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -279,7 +691,7 @@
         <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
         <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
 
-        <p style="color: white;" class="footer-copyright">
+        <p class="footer-copyright">
             © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
         </p>
     </footer>
@@ -334,3 +746,4 @@
     </script>
 </body>
 </html>
+

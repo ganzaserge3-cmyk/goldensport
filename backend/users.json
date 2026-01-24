@@ -12,5 +12,12 @@
     "email": "abakundanyeb@gmail.com",
     "password": "$2b$10$t2MtXIqpUkJ29gS70Ofl9eUQj3hTbjuDCn7v3gNq6iKdXNOeKl7lq",
     "createdAt": "2026-01-22T14:46:08.909Z"
+  },
+  {
+    "id": "1769209122227",
+    "username": "jonathan",
+    "email": "gsportslive1a@gmail.com",
+    "password": "$2b$10$tgRzgTvVGOk9/9jcRl5dWu9hnZq3MuPeTi8OAWhyjm5DHoWkq5UNS",
+    "createdAt": "2026-01-23T22:58:42.263Z"
   }
 ]

@@ -16,6 +16,499 @@
 
 </head>
 <body>
+    <style>
+         /* GLOBAL */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f7f7f7;
+        color: #222;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #040404 0%, #161616 100%);
+        padding: 25px 0;
+        text-align: center;
+        border-bottom: 3px solid #070707;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav a {
+        color: #e6e6e6;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 17px;
+        font-weight: 600;
+        transition: 0.25s;
+        padding: 8px 15px;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    nav a:hover {
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+    }
+
+    /* Active page indicator */
+    nav a[href="premierleague.html"] {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+    }
+
+    nav a[href="premierleague.html"]::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 15px;
+        right: 15px;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+    }
+
+    /* MAIN CONTENT */
+    main {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+        font-size: 28px;
+        margin: 35px 0 15px;
+        font-weight: 700;
+        color: #333;
+        border-left: 5px solid #2c5282;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    h2::after {
+        content: "";
+        flex-grow: 1;
+        height: 3px;
+        background: linear-gradient(to right, #2c5282, transparent);
+        margin-left: 10px;
+    }
+
+    /* TABLES */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0 40px;
+        background: #fff;
+        border: 2px solid #0d0d0d;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    table th {
+        background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+        padding: 14px 12px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 16px;
+        border-bottom: 2px solid #ccc;
+        position: sticky;
+        top: 0;
+    }
+
+    table td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 16px;
+        transition: background-color 0.2s;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    /* Table row hover effect */
+    tbody tr:hover {
+        background-color: #f0f8ff;
+        transform: scale(1.005);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* RELEGATION ZONE */
+    .relegation-zone td {
+        background: #e74c3c;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* CHAMPIONS LEAGUE ZONE */
+    .champions-league {
+        background: #e8f4ff !important;
+    }
+
+    /* EUROPA LEAGUE ZONE */
+    .europa-league {
+        background: #fff0e8 !important;
+    }
+
+    /* Player stats highlight */
+    .top-player {
+        position: relative;
+    }
+
+    .top-player::after {
+        content: "★";
+        color: #ffcc00;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: linear-gradient(135deg, #1a3a5f 0%, #2c5282 100%);
+        color: #ffffff;
+        padding: 40px 20px 20px;
+        margin-top: 60px;
+        border-top: 3px solid #080808;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-section h2 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 20px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .footer-section h2::after {
+        display: none;
+    }
+
+    .footer-section p {
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+        color: white;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: white;
+    }
+
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .email-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sports-showcase {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .square-img {
+        max-width: 100px;
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .under-text, .powered-text {
+        text-align: center;
+        color: white ;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        color: white;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #111212;
+    }
+
+    /* League info section */
+    .league-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        border-left: 4px solid #0b0b0b;
+    }
+
+    .info-item {
+        text-align: center;
+        flex: 1;
+    }
+
+    .info-item i {
+        font-size: 24px;
+        color: #0f1010;
+        margin-bottom: 10px;
+    }
+
+    .info-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #111010;
+    }
+
+    .info-label {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+    }
+
+    /* Section tabs */
+    .section-tabs {
+        display: flex;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e5e5e5;
+    }
+
+    .tab {
+        padding: 12px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #666;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s;
+    }
+
+    .tab.active {
+        color: #2c5282;
+        border-bottom: 3px solid #1a1a1b;
+    }
+
+    .tab:hover {
+        color: #2c5282;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+        main {
+            padding: 20px;
+            margin: 20px 10px;
+        }
+        
+        header {
+            padding: 15px 0;
+        }
+        
+        header h1 {
+            font-size: 32px;
+        }
+
+        nav {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav a {
+            margin: 5px 0;
+            width: 80%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        h2::after {
+            width: 100%;
+            margin-top: 5px;
+            margin-left: 0;
+        }
+
+        table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        table th, table td {
+            font-size: 15px;
+            padding: 8px;
+        }
+        
+        .league-info {
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section-tabs {
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .footer-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    /* Small screen adjustments */
+    @media(max-width: 480px) {
+        body {
+            font-size: 16px;
+        }
+        
+        main {
+            padding: 15px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin: 25px 0 10px;
+        }
+        
+        table th, table td {
+            font-size: 14px;
+            padding: 6px;
+        }
+        
+        footer {
+            padding: 30px 15px 15px;
+        }
+        
+        .info-value {
+            font-size: 20px;
+        }
+    }
+     /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background:  rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+    /* Animation for table rows */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    tbody tr {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    tbody tr:nth-child(1) { animation-delay: 0.05s; }
+    tbody tr:nth-child(2) { animation-delay: 0.1s; }
+    tbody tr:nth-child(3) { animation-delay: 0.15s; }
+    tbody tr:nth-child(4) { animation-delay: 0.2s; }
+    tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    tbody tr:nth-child(6) { animation-delay: 0.3s; }
+    tbody tr:nth-child(7) { animation-delay: 0.35s; }   
+    </style>
         <!-- Back to Home Button -->
     <a href="../index.html" class="back-to-home">
         ← Back to GoldenSport
@@ -23,7 +516,7 @@
     <header>
         <h1><i class="fas fa-trophy"></i> PREMIER LEAGUE</h1>
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
         </nav>
     </header>
 
@@ -64,77 +557,12 @@
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - PREMIER LEAGUE</h2>
-                <table>
-                    <thead>
-<tr>
-    <th>#</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>Erling Haaland</strong></td><td>Man City</td><td class="stat-val">20</td></tr>
-                    <tr><td>2</td><td>Igor Thiago</td><td>Brentford</td><td class="stat-val">16</td></tr>
-                    <tr><td>3</td><td>Antoine Semenyo</td><td>Bournemouth</td><td>10</td></tr>
-                    <tr><td>4</td><td>Dominic Calvert-Lewin</td><td>Leeds</td><td>9</td></tr>
-                    <tr><td>5</td><td>Hugo Ekitiké</td><td>Liverpool</td><td>8</td></tr>
-                    <tr><td>6</td><td>Danny Welbeck</td><td>Brighton</td><td>8</td></tr>
-                    <tr><td>7</td><td>Jean-Philippe Mateta</td><td>Crystal Palace</td><td>8</td></tr>
-                    <tr><td>8</td><td>Bruno Guimarães</td><td>Newcastle</td><td>8</td></tr>
-                    <tr><td>9</td><td>Junior Kroupi</td><td>Bournemouth</td><td>7</td></tr>
-                    <tr><td>10</td><td>Nick Woltemade</td><td>Newcastle</td><td>7</td></tr>
-                    <tr><td>11</td><td>Richarlison</td><td>Tottenham</td><td>6</td></tr>
-                    <tr><td>12</td><td>Marcus Tavernier</td><td>Bournemouth</td><td>6</td></tr>
-                    <tr><td>13</td><td>Son Heung-min</td><td>Tottenham</td><td>5</td></tr>
-                    <tr><td>14</td><td>Ollie Watkins</td><td>Aston Villa</td><td>5</td></tr>
-                    <tr><td>15</td><td>Nicolas Jackson</td><td>Chelsea</td><td>5</td></tr>
-                </tbody>
-            </table>
+             
                   
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - PREMIER LEAGUE</h2>
-                <table>
-                    <thead>
-<tr>
-    <th>#</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>Bruno Fernandes</strong></td><td>Man Utd</td><td class="stat-val">8</td></tr>
-                    <tr><td>2</td><td>Rayan Cherki</td><td>Man City</td><td class="stat-val">7</td></tr>
-                    <tr><td>3</td><td>Jack Grealish</td><td>Everton</td><td>6</td></tr>
-                    <tr><td>4</td><td>Granit Xhaka</td><td>Sunderland</td><td>5</td></tr>
-                    <tr><td>5</td><td>Mohammed Kudus</td><td>Tottenham</td><td>5</td></tr>
-                    <tr><td>6</td><td>Bukayo Saka</td><td>Arsenal</td><td>5</td></tr>
-                    <tr><td>7</td><td>Declan Rice</td><td>Arsenal</td><td>5</td></tr>
-                    <tr><td>8</td><td>Yankuba Minteh</td><td>Brighton</td><td>4</td></tr>
-                    <tr><td>9</td><td>Quilindschy Hartman</td><td>Burnley</td><td>4</td></tr>
-                    <tr><td>10</td><td>Enzo Le Fée</td><td>Sunderland</td><td>4</td></tr>
-                    <tr><td>11</td><td>Jérémy Doku</td><td>Man City</td><td>4</td></tr>
-                    <tr><td>12</td><td>Morgan Rogers</td><td>Aston Villa</td><td>4</td></tr>
-                    <tr><td>13</td><td>Youri Tielemans</td><td>Aston Villa</td><td>4</td></tr>
-                    <tr><td>14</td><td>Harry Wilson</td><td>Fulham</td><td>4</td></tr>
-                    <tr><td>15</td><td>Reece James</td><td>Chelsea</td><td>4</td></tr>
-                </tbody>
-            </table>
-        
+             
                   
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - PREMIER LEAGUE</h2>
-                <table>
-                    <thead>
-              <tr>
-                <th>#</th><th>Goalkeeper</th><th>Club</th><th>CS</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>David Raya</strong></td><td>Arsenal</td><td class="stat-val">10</td></tr>
-                    <tr><td>2</td><td>Robert Sánchez</td><td>Chelsea</td><td class="stat-val">9</td></tr>
-                    <tr><td>3</td><td>G. Donnarumma</td><td>Man City</td><td>8</td></tr>
-                    <tr><td>4</td><td>Jordan Pickford</td><td>Everton</td><td>8</td></tr>
-                    <tr><td>5</td><td>Dean Henderson</td><td>Crystal Palace</td><td>8</td></tr>
-                    <tr><td>6</td><td>Robin Roefs</td><td>Sunderland</td><td>7</td></tr>
-                    <tr><td>7</td><td>Guglielmo Vicario</td><td>Tottenham</td><td>7</td></tr>
-                    <tr><td>8</td><td>Nick Pope</td><td>Newcastle</td><td>6</td></tr>
-                    <tr><td>9</td><td>Alisson</td><td>Liverpool</td><td>6</td></tr>
-                    <tr><td>10</td><td>Bart Verbruggen</td><td>Brighton</td><td>5</td></tr>
-                    <tr><td>11</td><td>Bernd Leno</td><td>Fulham</td><td>5</td></tr>
-                    <tr><td>12</td><td>Caoimhín Kelleher</td><td>Brentford</td><td>5</td></tr>
-                    <tr><td>13</td><td>Djordje Petrovic</td><td>Bournemouth</td><td>5</td></tr>
-                    <tr><td>14</td><td>Emiliano Martínez</td><td>Aston Villa</td><td>5</td></tr>
-                    <tr><td>15</td><td>Lucas Perri</td><td>Leeds</td><td>3</td></tr>
-                </tbody>
-            </table>
              
                  
             </div>
@@ -142,130 +570,23 @@
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - PREMIER LEAGUE</h2>
-                <table>
-                    <thead>
-               <tr>
-                <th>#</th><th>Team</th><th>Goals For</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>Manchester City</strong></td><td class="stat-val">45</td></tr>
-                    <tr><td>2</td><td>Arsenal</td><td class="stat-val">40</td></tr>
-                    <tr><td>3</td><td>Manchester United</td><td>36</td></tr>
-                    <tr><td>4</td><td>Brentford</td><td>35</td></tr>
-                    <tr><td>5</td><td>Bournemouth</td><td>34</td></tr>
-                    <tr><td>6</td><td>Chelsea</td><td>34</td></tr>
-                    <tr><td>7</td><td>Aston Villa</td><td>33</td></tr>
-                    <tr><td>8</td><td>Newcastle</td><td>32</td></tr>
-                    <tr><td>9</td><td>Liverpool</td><td>32</td></tr>
-                    <tr><td>10</td><td>Tottenham</td><td>31</td></tr>
-                    <tr><td>11</td><td>Brighton</td><td>31</td></tr>
-                    <tr><td>12</td><td>Fulham</td><td>30</td></tr>
-                    <tr><td>13</td><td>Leeds United</td><td>29</td></tr>
-                    <tr><td>14</td><td>Sunderland</td><td>21</td></tr>
-                    <tr><td>15</td><td>Crystal Palace</td><td>22</td></tr>
-                </tbody>
-            </table>
-               
+            
           
 
                 <h2><i class="fas fa-passport"></i> TOTAL PASSES - PREMIER LEAGUE</h2>
-                <table>
-                    <thead>
-<tr>
-    <th>#</th><th>Player</th><th>Club</th><th>Passes</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td><strong>Virgil van Dijk</strong></td><td>Liverpool</td><td class="stat-val">1,681</td></tr>
-                    <tr><td>2</td><td>Lewis Dunk</td><td>Brighton</td><td>1,602</td></tr>
-                    <tr><td>3</td><td>Joachim Andersen</td><td>Fulham</td><td>1,455</td></tr>
-                    <tr><td>4</td><td>Jan Paul van Hecke</td><td>Brighton</td><td>1,443</td></tr>
-                    <tr><td>5</td><td>Elliot Anderson</td><td>Nott'm Forest</td><td>1,429</td></tr>
-                </tbody>
-            </table>
-            <table>
-                <thead><tr><th>#</th><th>Player</th><th>Club</th><th>Passes</th></tr></thead>
-                <tbody>
-                    <tr><td>6</td><td>Rúben Dias</td><td>Man City</td><td>1,399</td></tr>
-                    <tr><td>7</td><td>Trevoh Chalobah</td><td>Chelsea</td><td>1,358</td></tr>
-                    <tr><td>8</td><td>Ibrahima Konaté</td><td>Liverpool</td><td>1,292</td></tr>
-                    <tr><td>9</td><td>Martín Zubimendi</td><td>Arsenal</td><td>1,271</td></tr>
-                    <tr><td>10</td><td>Ezri Konsa</td><td>Aston Villa</td><td>1,249</td></tr>
-                </tbody>
-            </table>
+           
             </div>
              
                     
 <!-- Fixtures Tab Content -->
-<div class="tab-content" id="fixtures">
-    <h2><i class="fas fa-calendar-day"></i> PREMIER LEAGUE FIXTURES</h2>
 
-    <table border="1" cellpadding="10" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Match</th>
-                <th>Kick-off Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Jan 17</td>
-                <td>Man Utd vs Man City</td>
-                <td>12:30</td>
-            </tr>
-            <tr>
-                <td>Jan 17</td>
-                <td>Chelsea vs Brentford</td>
-                <td>15:00</td>
-            </tr>
-            <tr>
-                <td>Jan 17</td>
-                <td>Liverpool vs Burnley</td>
-                <td>15:00</td>
-            </tr>
-            <tr>
-                <td>Jan 18</td>
-                <td>Aston Villa vs Everton</td>
-                <td>16:30</td>
-            </tr>
-            <tr>
-                <td>Jan 25</td>
-                <td>Arsenal vs Man Utd</td>
-                <td>16:30</td>
-            </tr>
-            <tr>
-                <td>Jan 31</td>
-                <td>Liverpool vs Newcastle</td>
-                <td>20:00</td>
-            </tr>
-        </tbody>
-    </table>
 </div>
 
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> PREMIER LEAGUE STANDINGS</h2>
-                <table>
-                    <thead>
-                      <tr>
-                        <th>Pos</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
-            <tbody>
-                <tr style="background:#e8f5e9"><td>1</td><td><strong>Arsenal</strong></td><td>21</td><td>15</td><td>4</td><td>2</td><td>+26</td><td>49</td></tr>
-                <tr><td>2</td><td>Manchester City</td><td>21</td><td>13</td><td>4</td><td>4</td><td>+26</td><td>43</td></tr>
-                <tr><td>3</td><td>Aston Villa</td><td>21</td><td>13</td><td>4</td><td>4</td><td>+9</td><td>43</td></tr>
-                <tr><td>4</td><td>Liverpool</td><td>21</td><td>10</td><td>5</td><td>6</td><td>+4</td><td>35</td></tr>
-                <tr><td>5</td><td>Brentford</td><td>21</td><td>10</td><td>3</td><td>8</td><td>+7</td><td>33</td></tr>
-                <tr><td>6</td><td>Newcastle United</td><td>21</td><td>9</td><td>5</td><td>7</td><td>+5</td><td>32</td></tr>
-                <tr><td>7</td><td>Manchester United</td><td>21</td><td>8</td><td>8</td><td>5</td><td>+4</td><td>32</td></tr>
-                <tr><td>8</td><td>Chelsea</td><td>21</td><td>8</td><td>7</td><td>6</td><td>+10</td><td>31</td></tr>
-                <tr><td>9</td><td>Fulham</td><td>21</td><td>9</td><td>4</td><td>8</td><td>0</td><td>31</td></tr>
-                <tr><td>10</td><td>Sunderland</td><td>21</td><td>7</td><td>9</td><td>5</td><td>-1</td><td>30</td></tr>
-                <tr><td>11</td><td>Brighton & Hove Albion</td><td>21</td><td>7</td><td>8</td><td>6</td><td>+3</td><td>29</td></tr>
-                <tr><td>12</td><td>Everton</td><td>21</td><td>8</td><td>5</td><td>8</td><td>-2</td><td>29</td></tr>
-                <tr><td>13</td><td>Crystal Palace</td><td>21</td><td>7</td><td>7</td><td>7</td><td>-1</td><td>28</td></tr>
-                <tr><td>14</td><td>Tottenham Hotspur</td><td>21</td><td>7</td><td>6</td><td>8</td><td>+3</td><td>27</td></tr>
-                <tr><td>15</td><td>Bournemouth</td><td>21</td><td>6</td><td>8</td><td>7</td><td>-6</td><td>26</td></tr>
-            </tbody>
-        </table>
+             
              
        
 
@@ -278,15 +599,15 @@
             <p style="color: white;">The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
         </div>
 
-        <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-            <h2 style="color: white;">Navigation</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 10px;"><a style="color: white;" href="about.html">About Us</a></li>
-                <li style="margin-bottom: 10px;"><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
-                <li style="margin-bottom: 10px;"><a style="color: white;" href="contact.html">Contact</a></li>
-            </ul>
-        </div>
 
+            <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+                <h2 style="color: white;">Navigation</h2>
+                <ul>
+                    <li><a style="color: white;" href="../public/about.html">About Us</a></li>
+                    <li><a style="color: white;" href="../public/privacy.html">Privacy Policy</a></li>
+                    <li><a style="color: white;" href="../public/contact.html">Contact</a></li>
+                </ul>
+            </div>
         <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
             <h2 style="color: white; font-size: 20px; margin-bottom: 20px; border-left: none; padding-left: 0;">Follow Us</h2>
             <div class="social-icons" style="display: flex; flex-direction: column; gap: 15px;">
@@ -367,3 +688,4 @@
 </script>
 </body>
 </html>
+

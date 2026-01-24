@@ -17,6 +17,536 @@
      
 </head>
 <body>
+    <style>
+            /* GLOBAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #222;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 3px solid #080707;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #e6e6e6;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.25s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Active page indicator */
+        nav a[href="serbian-super-liga.html"] {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        nav a[href="serbian-super-liga.html"]::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background-color: #0f0f0f;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 35px 0 15px;
+            font-weight: 700;
+            color: #333;
+            border-left: 5px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            color: #333;
+            border-left: 4px solid #100f0f;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: linear-gradient(to right, #0a0a0a, transparent);
+            margin-left: 10px;
+        }
+
+        /* TABLES */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0 40px;
+            background: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+            padding: 14px 12px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 2px solid #ccc;
+            position: sticky;
+            top: 0;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        /* Table row hover effect */
+        tbody tr:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* RELEGATION ZONE */
+        .relegation-zone td {
+            background: #100f0f;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* CHAMPIONS LEAGUE ZONE */
+        .champions-league {
+            background: #e8f4ff !important;
+        }
+
+        /* EUROPA LEAGUE ZONE */
+        .europa-league {
+            background: #fff0e8 !important;
+        }
+
+        /* Player stats highlight */
+        .top-player {
+            position: relative;
+        }
+
+        .top-player::after {
+            content: "★";
+            color: #ffcc00;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+            color: #ffffff;
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 3px solid #080808;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        .footer-section h2::after {
+            display: none;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .email-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sports-showcase {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .square-img {
+            max-width: 100pxx;
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .under-text, .powered-text {
+            text-align: center;
+            color: white;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* League info section */
+        .league-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #171717;
+        }
+
+        .info-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Section tabs */
+        .section-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: #0f0909;
+            border-bottom: 3px solid #0b0b0b;
+        }
+
+        .tab:hover {
+            color: #0f0e0e;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 768px) {
+            main {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h2::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            h3 {
+                font-size: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h3::after {
+                width: 100%;
+                margin-top: 5px;
+                margin-left: 0;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            table th, table td {
+                font-size: 15px;
+                padding: 8px;
+            }
+            
+            .league-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        /* Small screen adjustments */
+        @media(max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                margin: 25px 0 10px;
+            }
+            
+            h3 {
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+            
+            table th, table td {
+                font-size: 14px;
+                padding: 6px;
+            }
+            
+            footer {
+                padding: 30px 15px 15px;
+            }
+            
+            .info-value {
+                font-size: 20px;
+            }
+        }
+         /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(194, 152, 2, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+        }
+
+        /* Animation for table rows */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        tbody tr {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        tbody tr:nth-child(1) { animation-delay: 0.05s; }
+        tbody tr:nth-child(2) { animation-delay: 0.1s; }
+        tbody tr:nth-child(3) { animation-delay: 0.15s; }
+        tbody tr:nth-child(4) { animation-delay: 0.2s; }
+        tbody tr:nth-child(5) { animation-delay: 0.25s; }
+        tbody tr:nth-child(6) { animation-delay: 0.3s; }
+        tbody tr:nth-child(7) { animation-delay: 0.35s; } 
+    </style>
         <!-- Back to Home Button -->
     <a href="../index.html" class="back-to-home">
         ← Back to GoldenSport
@@ -24,7 +554,7 @@
     <header>
         <h1><i class="fas fa-trophy"></i> SERBIAN SUPER LIGA</h1>
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="../index.html"><i class="fas fa-home"></i> Home</a>
          
         </nav>
     </header>
@@ -66,121 +596,21 @@
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORER - SERBIAN SUPER LIGA</h2>
-                <table>
-                    <thead>
-                    <tr>
-  <thead>
-    <tr><th>Rank</th><th>Player</th><th>Team</th><th>Goals</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Aleksandar Katai</td><td>Red Star Belgrade</td><td>15</td></tr>
-    <tr><td>2</td><td>Jovan Milošević</td><td>Partizan</td><td>12</td></tr>
-    <tr><td>3</td><td>Slobodan Tedić</td><td>Čukarički</td><td>10</td></tr>
-    <tr><td>4</td><td>Jay Enem</td><td>OFK Beograd</td><td>10</td></tr>
-    <tr><td>5</td><td>Vukašin Bogdanović</td><td>Radnik Surdulica</td><td>7</td></tr>
-    <tr><td>6</td><td>Douglas Owusu</td><td>Radnik Surdulica</td><td>7</td></tr>
-    <tr><td>7</td><td>Bayéré Junior Loué</td><td>Javor Ivanjica</td><td>7</td></tr>
-    <tr><td>8</td><td>Ester Sokler</td><td>Radnički Kragujevac</td><td>6</td></tr>
-    <tr><td>9</td><td>Vasilije Novičić</td><td>IMT Novi Beograd</td><td>6</td></tr>
-    <tr><td>10</td><td>Radivoj Bosić</td><td>Radnički Niš</td><td>6</td></tr>
-    <tr><td>11</td><td>Stefan Tomović</td><td>Spartak Subotica</td><td>6</td></tr>
-    <tr><td>12</td><td>Milutin Vidosavljević</td><td>Vojvodina</td><td>5</td></tr>
-    <tr><td>13</td><td>Lazar Ranđelović</td><td>Vojvodina</td><td>5</td></tr>
-    <tr><td>14</td><td>Stefan Stanisavljević</td><td>Novi Pazar</td><td>5</td></tr>
-    <tr><td>15</td><td>Sava Petrov</td><td>Železničar Pančevo</td><td>5</td></tr>
-  </tbody>
-</table>
-               
-        
+
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - SERBIAN SUPER LIGA</h2>
-                <table>
-                    <thead>
-                        <tr>
-                         
-  <thead>
-    <tr><th>Rank</th><th>Player</th><th>Team</th><th>Assists</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Diogo Bezerra</td><td>OFK Beograd</td><td>8</td></tr>
-    <tr><td>2</td><td>Mateja Gašić</td><td>Radnik Surdulica</td><td>6</td></tr>
-    <tr><td>3</td><td>Milan Vukotić</td><td>Partizan</td><td>5</td></tr>
-    <tr><td>4</td><td>Mirko Ivanić</td><td>Red Star Belgrade</td><td>5</td></tr>
-    <tr><td>5</td><td>Bibras Natcho</td><td>Partizan</td><td>4</td></tr>
-    <tr><td>6</td><td>Lazar Ranđelović</td><td>Vojvodina</td><td>4</td></tr>
-    <tr><td>7</td><td>Guelor Kanga</td><td>Red Star Belgrade</td><td>3</td></tr>
-    <tr><td>8</td><td>Luka Adžić</td><td>Čukarički</td><td>3</td></tr>
-    <tr><td>9</td><td>Marko Docić</td><td>Čukarički</td><td>3</td></tr>
-    <tr><td>10</td><td>Saša Jovanović</td><td>TSC</td><td>3</td></tr>
-    <tr><td>11</td><td>Aleksandar Mesarović</td><td>Radnički Niš</td><td>3</td></tr>
-    <tr><td>12</td><td>Đorđe Ivanović</td><td>Čukarički</td><td>3</td></tr>
-    <tr><td>13</td><td>Stefan Vukić</td><td>Vojvodina</td><td>2</td></tr>
-    <tr><td>14</td><td>Veljko Simić</td><td>Vojvodina</td><td>2</td></tr>
-    <tr><td>15</td><td>Nikola Čumić</td><td>Vojvodina</td><td>2</td></tr>
-  </tbody>
-</table>
+
       
                 
                
 
                 <h2><i class="fas fa-running"></i> TOP TACKLES - SERBIAN SUPER LIGA</h2>
-                <table>
-                    <thead>
-                        <tr>
-                          
-  <thead>
-    <tr><th>Rank</th><th>Player</th><th>Team</th><th>Avg Tackles/90</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Ognjen Ugresic</td><td>Radnički Kragujevac</td><td>4.8</td></tr>
-    <tr><td>2</td><td>Tomás Händel</td><td>Red Star Belgrade</td><td>4.5</td></tr>
-    <tr><td>3</td><td>Njegoš Petrović</td><td>Vojvodina</td><td>4.2</td></tr>
-    <tr><td>4</td><td>Aleksa Cvetković</td><td>OFK Beograd</td><td>4.0</td></tr>
-    <tr><td>5</td><td>Vanja Dragojević</td><td>IMT Novi Beograd</td><td>3.9</td></tr>
-    <tr><td>6</td><td>Leonard Owusu</td><td>Partizan</td><td>3.7</td></tr>
-    <tr><td>7</td><td>Miloš Degenek</td><td>TSC</td><td>3.5</td></tr>
-    <tr><td>8</td><td>Slobodan Medojević</td><td>Vojvodina</td><td>3.4</td></tr>
-    <tr><td>9</td><td>Mateja Gašić</td><td>Radnik Surdulica</td><td>3.3</td></tr>
-    <tr><td>10</td><td>Nikola Simić</td><td>Vojvodina</td><td>3.1</td></tr>
-    <tr><td>11</td><td>Vasilije Novičić</td><td>IMT Novi Beograd</td><td>3.0</td></tr>
-    <tr><td>12</td><td>Marko Docić</td><td>Čukarički</td><td>2.9</td></tr>
-    <tr><td>13</td><td>Nemanja Miletić</td><td>Novi Pazar</td><td>2.8</td></tr>
-    <tr><td>14</td><td>Mbouri Yamkam</td><td>Radnički Niš</td><td>2.7</td></tr>
-    <tr><td>15</td><td>Saša Marković</td><td>OFK Beograd</td><td>2.6</td></tr>
-  </tbody>
-</table>
-
+           
              
         
                     
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - SERBIAN SUPER LIGA</h2>
-                <table>
-                    <thead>
-                        <tr>
-                         
-  <thead>
-    <tr><th>Rank</th><th>Goalkeeper</th><th>Team</th><th>Clean Sheets</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Marko Milošević</td><td>Partizan</td><td>8</td></tr>
-    <tr><td>2</td><td>Željko Samčović</td><td>Novi Pazar</td><td>7</td></tr>
-    <tr><td>3</td><td>Stefan Ranđelović</td><td>Radnik Surdulica</td><td>7</td></tr>
-    <tr><td>4</td><td>Matheus</td><td>Red Star Belgrade</td><td>7</td></tr>
-    <tr><td>5</td><td>Dragan Rosić</td><td>Vojvodina</td><td>7</td></tr>
-    <tr><td>6</td><td>Zoran Popović</td><td>Železničar Pančevo</td><td>7</td></tr>
-    <tr><td>7</td><td>Luka Lijeskić</td><td>Radnički Kragujevac</td><td>6</td></tr>
-    <tr><td>8</td><td>Nikola Simić</td><td>TSC</td><td>6</td></tr>
-    <tr><td>9</td><td>Saša Stamenković</td><td>Mladost Lučani</td><td>5</td></tr>
-    <tr><td>10</td><td>Balša Popović</td><td>OFK Beograd</td><td>5</td></tr>
-    <tr><td>11</td><td>Strahinja Manojlović</td><td>Radnički Niš</td><td>4</td></tr>
-    <tr><td>12</td><td>Bojan Brać</td><td>IMT Novi Beograd</td><td>4</td></tr>
-    <tr><td>13</td><td>Nikola Vasiljević</td><td>Javor Ivanjica</td><td>3</td></tr>
-    <tr><td>14</td><td>Lazar Balević</td><td>Napredak Kruševac</td><td>3</td></tr>
-    <tr><td>15</td><td>Lazar Kaličanin</td><td>Čukarički</td><td>2</td></tr>
-  </tbody>
-</table>
-                </tbody>
-                </table>
+  
             </div>
 
             <!-- Team Stats Tab Content -->
@@ -188,54 +618,14 @@
           
 
     <h2><i class="fas fa-futbol"></i> SERBIAN SUPER LIGA TOP POSSESSION</h2>
-    <table>
-        <thead>
-            <tr>
-               
-  <thead>
-    <tr><th>Rank</th><th>Team</th><th>Average Possession</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Red Star Belgrade</td><td>64.2%</td></tr>
-    <tr><td>2</td><td>Partizan</td><td>61.5%</td></tr>
-    <tr><td>3</td><td>Vojvodina</td><td>58.8%</td></tr>
-    <tr><td>4</td><td>TSC Bačka Topola</td><td>56.3%</td></tr>
-    <tr><td>5</td><td>Čukarički</td><td>54.1%</td></tr>
-    <tr><td>6</td><td>Radnički Kragujevac</td><td>51.4%</td></tr>
-    <tr><td>7</td><td>Novi Pazar</td><td>49.7%</td></tr>
-    <tr><td>8</td><td>OFK Beograd</td><td>48.2%</td></tr>
-    <tr><td>9</td><td>Železničar Pančevo</td><td>47.5%</td></tr>
-    <tr><td>10</td><td>Radnički Niš</td><td>46.1%</td></tr>
-    <tr><td>11</td><td>IMT Novi Beograd</td><td>45.8%</td></tr>
-    <tr><td>12</td><td>Spartak Subotica</td><td>44.2%</td></tr>
-    <tr><td>13</td><td>Mladost Lučani</td><td>43.9%</td></tr>
-    <tr><td>14</td><td>Radnik Surdulica</td><td>42.5%</td></tr>
-    <tr><td>15</td><td>Javor Ivanjica</td><td>41.8%</td></tr>
-  </tbody>
-</table>
+
                    
             </div>
 
             <!-- Fixtures Tab Content -->
             <div class="tab-content" id="fixtures">
                 <h2><i class="fas fa-calendar"></i> SERBIAN SUPER LIGA FIXTURES</h2>
-                <table>
-                    <thead>
-                        <tr>
-  <thead>
-    <tr><th>Date</th><th>Home Team</th><th>Away Team</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Jan 31</td><td>FK Partizan</td><td>Radnički Niš</td></tr>
-    <tr><td>Jan 31</td><td>Čukarički</td><td>Red Star Belgrade</td></tr>
-    <tr><td>Jan 31</td><td>TSC Bačka Topola</td><td>Vojvodina</td></tr>
-    <tr><td>Jan 31</td><td>Novi Pazar</td><td>Spartak Subotica</td></tr>
-    <tr><td>Jan 31</td><td>Železničar Pančevo</td><td>Radnik Surdulica</td></tr>
-    <tr><td>Jan 31</td><td>Mladost Lučani</td><td>OFK Beograd</td></tr>
-    <tr><td>Jan 31</td><td>Radnički 1923</td><td>IMT Novi Beograd</td></tr>
-    <tr><td>Jan 31</td><td>Napredak Kruševac</td><td>Javor Ivanjica</td></tr>
-  </tbody>
-</table>
+
               
                     
             </div>
@@ -243,31 +633,7 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> SERBIAN SUPER LIGA STANDINGS</h2>
-                <table>
-                    <thead>
-                    <tr>
-  <thead>
-    <tr><th>Pos</th><th>Team</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1</td><td>Partizan</td><td>20</td><td>15</td><td>1</td><td>4</td><td>+26</td><td>46</td></tr>
-    <tr><td>2</td><td>Red Star Belgrade</td><td>20</td><td>14</td><td>3</td><td>3</td><td>+40</td><td>45</td></tr>
-    <tr><td>3</td><td>Vojvodina</td><td>20</td><td>12</td><td>4</td><td>4</td><td>+15</td><td>40</td></tr>
-    <tr><td>4</td><td>Novi Pazar</td><td>20</td><td>9</td><td>5</td><td>6</td><td>+1</td><td>32</td></tr>
-    <tr><td>5</td><td>Železničar Pančevo</td><td>20</td><td>9</td><td>4</td><td>7</td><td>+2</td><td>31</td></tr>
-    <tr><td>6</td><td>Čukarički</td><td>20</td><td>8</td><td>6</td><td>6</td><td>+2</td><td>30</td></tr>
-    <tr><td>7</td><td>Radnik Surdulica</td><td>20</td><td>8</td><td>4</td><td>8</td><td>+2</td><td>28</td></tr>
-    <tr><td>8</td><td>Radnički 1923</td><td>20</td><td>7</td><td>6</td><td>7</td><td>-3</td><td>27</td></tr>
-    <tr><td>9</td><td>OFK Beograd</td><td>20</td><td>7</td><td>4</td><td>9</td><td>-3</td><td>25</td></tr>
-    <tr><td>10</td><td>Mladost Lučani</td><td>20</td><td>6</td><td>7</td><td>7</td><td>-9</td><td>25</td></tr>
-    <tr><td>11</td><td>TSC Bačka Topola</td><td>20</td><td>6</td><td>6</td><td>8</td><td>-5</td><td>24</td></tr>
-    <tr><td>12</td><td>IMT Novi Beograd</td><td>20</td><td>6</td><td>4</td><td>10</td><td>-16</td><td>22</td></tr>
-    <tr><td>13</td><td>Javor Ivanjica</td><td>20</td><td>5</td><td>6</td><td>9</td><td>-10</td><td>21</td></tr>
-    <tr><td>14</td><td>Radnički Niš</td><td>20</td><td>5</td><td>4</td><td>11</td><td>-5</td><td>19</td></tr>
-    <tr><td>15</td><td>Spartak Subotica</td><td>20</td><td>3</td><td>6</td><td>11</td><td>-14</td><td>15</td></tr>
-    <tr><td>16</td><td>Napredak Kruševac</td><td>20</td><td>2</td><td>6</td><td>12</td><td>-23</td><td>12</td></tr>
-  </tbody>
-</table>
+ 
                
         </section>
     </main>
@@ -275,21 +641,22 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
-                <h2 style="color: white;">Golden Sport</h2>
+                <h2>Golden Sport</h2>
                 <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
             </div>
 
+      
             <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
-                <h2 style="color: white;">Navigation</h2>
+                <h2>Navigation</h2>
                 <ul>
-                    <li><a style="color: white;" href="about.html">About Us</a></li>
-                    <li><a style="color: white;" href="privacy.html">Privacy Policy</a></li>
-                    <li><a style="color: white;" href="contact.html">Contact</a></li>
+                    <li><a href="../public/about.html">About Us</a></li>
+                    <li><a href="../public/privacy.html">Privacy Policy</a></li>
+                    <li><a href="../public/contact.html">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
-                <h2 style="color: white;">Follow Us</h2>
+                <h2>Follow Us</h2>
                 <div class="social-icons">
                     <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" data-aos="fade-up" data-aos-delay="400">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
@@ -311,7 +678,7 @@
         <p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
         <p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
 
-        <p style="color: white;" class="footer-copyright">
+        <p class="footer-copyright">
             © 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
         </p>
     </footer>
@@ -366,3 +733,4 @@
     </script>
 </body>
 </html>
+
