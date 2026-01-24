@@ -242,22 +242,6 @@
             max-width: 150px;
             height: auto;
         }
-         .partners-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px; /* Adjust spacing between logos */
-    flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
-}
-
-.partner-logo {
-    flex: 0 0 auto; /* Don't grow or shrink */
-}
-
-.partner-logo img {
-    max-width: 150px; /* Adjust logo size as needed */
-    height: auto;
-}
 
         /* Footer */
         footer {
@@ -308,73 +292,6 @@
             color: #ccc;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-        .modal-content {
-            background: #fff;
-            padding: 25px;
-            border-radius: var(--radius-md);
-            width: 320px;
-            position: relative;
-        }
-        .modal h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .form-control:focus {
-            outline: none;
-            border-color: #000;
-        }
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 12px;
-            cursor: pointer;
-            font-size: 20px;
-            color: #666;
-        }
-        .modal-message {
-            margin-top: 10px;
-            font-size: 14px;
-            text-align: center;
-        }
-        .modal-footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 14px;
-        }
-        .modal-footer a {
-            color: #000;
-            font-weight: 500;
-            text-decoration: underline;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -404,14 +321,14 @@
     <header>
         <div class="container header-container">
             <div class="logo-container">
-                <img src="../image/ganza.jpeg" alt="Golden Sports Logo" class="logo-image">
+                <img src="image/ganza.jpeg" alt="Golden Sports Logo" class="logo-image">
                 <div class="logo-text">𝐆𝐨𝐥𝐝𝐞𝐧<span>𝐒𝐩𝐨𝐫𝐭</span></div>
             </div>
 
             <!-- Desktop Navigation Links -->
             <nav class="nav-links">
-                <a href="../public/about.html" class="nav-link">About Us</a>
-                <a href="../public/contact.html" class="nav-link">Contact</a>
+                <a href="public/about.html" class="nav-link">About Us</a>
+                <a href="public/contact.html" class="nav-link">Contact</a>
                 <div class="auth-buttons" id="authButtons">
                     <!-- Auth buttons will be managed by JS -->
                 </div>
@@ -435,8 +352,8 @@
                         </div>
                     </div>
                     <div class="settings-menu">
-                        <a href="../public/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                        <a href="../public/settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="public/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="public/settings.html"><i class="fas fa-cog"></i> Settings</a>
                         <button onclick="logoutUser()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </div>
                 </div>
@@ -450,133 +367,13 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
-            <a href="../public/about.html" class="mobile-link">About Us</a>
-            <a href="../public/contact.html" class="mobile-link">Contact</a>
+            <a href="public/about.html" class="mobile-link">About Us</a>
+            <a href="public/contact.html" class="mobile-link">Contact</a>
             <div style="margin-top: 20px;" id="mobileAuthButtons">
                 <!-- Auth buttons will be managed by JS -->
             </div>
         </div>
     </header>
-    <script>
-    // Auth button logic
-    function renderAuthButtons() {
-        const authButtons = document.getElementById('authButtons');
-        const mobileAuthButtons = document.getElementById('mobileAuthButtons');
-        const userProfile = document.getElementById('userProfile');
-        const mobileSettings = document.getElementById('mobileSettings');
-        const profileName = document.getElementById('profileName');
-        const profileEmail = document.getElementById('profileEmail');
-        const mobileUserName = document.getElementById('mobileUserName');
-        const mobileUserEmail = document.getElementById('mobileUserEmail');
-
-        authButtons.innerHTML = '';
-        mobileAuthButtons.innerHTML = '';
-
-        const token = localStorage.getItem('token');
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        if (token && user) {
-            // Validate token before showing authenticated UI
-            validateToken(token).then(isValid => {
-                if (isValid) {
-                    // Show user profile
-                    userProfile.style.display = 'block';
-                    profileName.textContent = `Welcome back, ${user.username}!`;
-                    profileEmail.textContent = user.email;
-
-                    // Show mobile settings icon
-                    mobileSettings.style.display = 'block';
-                    mobileUserName.textContent = user.username;
-                    mobileUserEmail.textContent = user.email;
-
-                    // Show logout, dashboard, settings in nav
-                    authButtons.innerHTML = `
-                        <a href="../public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
-                        <a href="../public/settings.html" class="nav-link auth-btn">Settings</a>
-                        <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
-                    `;
-                    mobileAuthButtons.innerHTML = `
-                        <a href="../public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
-                        <a href="../public/settings.html" class="mobile-link auth-btn">Settings</a>
-                        <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
-                    `;
-                } else {
-                    // Token is invalid, clear storage and show login/signup
-                    localStorage.removeItem('token');
-                    localStorage.removeItem('user');
-                    showUnauthenticatedUI();
-                }
-            }).catch(() => {
-                // Error validating token, clear storage
-                localStorage.removeItem('token');
-                localStorage.removeItem('user');
-                showUnauthenticatedUI();
-            });
-        } else {
-            showUnauthenticatedUI();
-        }
-                <a href="public\login.htmlpublic\login.html" class="mobile-link auth-btn">Login</a>
-                <a href="public\signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
-            `;
-        }
-    }
-    function toggleMobileSettings() {
-        const dropdown = document.getElementById('settingsDropdown');
-        dropdown.classList.toggle('show');
-    }
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        const mobileSettings = document.getElementById('mobileSettings');
-        const dropdown = document.getElementById('settingsDropdown');
-        if (!mobileSettings.contains(event.target)) {
-            dropdown.classList.remove('show');
-        }
-    });
-    function logoutUser() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        renderAuthButtons();
-        // Close mobile settings dropdown
-        document.getElementById('settingsDropdown').classList.remove('show');
-    }
-    function showUnauthenticatedUI() {
-        const authButtons = document.getElementById('authButtons');
-        const mobileAuthButtons = document.getElementById('mobileAuthButtons');
-        const userProfile = document.getElementById('userProfile');
-        const mobileSettings = document.getElementById('mobileSettings');
-
-        // Hide user profile and mobile settings
-        userProfile.style.display = 'none';
-        mobileSettings.style.display = 'none';
-
-        // Show login/signup
-        authButtons.innerHTML = `
-            <a href="../public/login.html" class="nav-link auth-btn">Login</a>
-            <a href="../public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
-        `;
-        mobileAuthButtons.innerHTML = `
-            <a href="../public/login.html" class="mobile-link auth-btn">Login</a>
-            <a href="../public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
-        `;
-    }
-
-    async function validateToken(token) {
-        try {
-            // Make a request to validate the token
-            const response = await fetch('http://localhost:3000/api/auth/validate', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            });
-            return response.ok;
-        } catch (error) {
-            console.error('Token validation error:', error);
-            return false;
-        }
-    }
-    window.addEventListener('DOMContentLoaded', renderAuthButtons);
-    </script>
 
     <!-- User Profile Section -->
     <section class="user-profile" id="userProfile" style="display: none;">
@@ -589,9 +386,9 @@
                     <h3 id="profileName">Welcome back!</h3>
                     <p id="profileEmail"></p>
                     <div class="profile-actions">
-                        <a href="../public/dashboard.html" class="btn btn-primary">Dashboard</a>
-                        <a href="../public/settings.html"  class="btn btn-outline">Settings</a>
-                        <button class="btn btnoutline logout-btn" onclick="logoutUser()">Logout</button>
+                        <a href="public/dashboard.html" class="btn btn-primary">Dashboard</a>
+                        <a href="public/settings.html"  class="btn btn-outline">Settings</a>
+                        <button class="btn btn-outline logout-btn" onclick="logoutUser()">Logout</button>
                     </div>
                 </div>
             </div>
@@ -674,7 +471,7 @@
             </div>
             <div class="leagues-grid">
                 <!-- Premier League -->
-                <a href="premierleague.html" class="league-card">
+                <a href="Leagues/premierleague.html" class="league-card">
                     <div class="league-logo">
                         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
                     </div>
@@ -685,9 +482,9 @@
                 </a>
 
                 <!-- La Liga -->
-                <a href="laliga.html" class="league-card">
+                <a href="Leagues/laliga.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/noooo.png" alt="La Liga Logo">
+                        <img src="image/noooo.png" alt="La Liga Logo">
                     </div>
                     <div class="league-info">                  
                         <h3 class="league-name">La Liga</h3>
@@ -696,9 +493,9 @@
                 </a>
 
                 <!-- Bundesliga -->
-                <a href="BUNDESLIGA.html" class="league-card">
+                <a href="Leagues/BUNDESLIGA.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/jojojj.webp" alt="Bundesliga Logo">
+                        <img src="image/jojojj.webp" alt="Bundesliga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Bundesliga</h3>
@@ -707,9 +504,9 @@
                 </a>
 
                 <!-- Serie A -->
-                <a href="SERIE A.html" class="league-card">
+                <a href="Leagues/SERIE A.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/vieir.webp" alt="Serie A Logo">
+                        <img src="image/vieir.webp" alt="Serie A Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Serie A</h3>
@@ -718,9 +515,9 @@
                 </a>
 
                 <!-- Ligue 1 -->
-                <a href="ligue1.html" class="league-card">
+                <a href="Leagues/ligue1.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/emma.png" alt="Ligue 1 Logo">
+                        <img src="image/emma.png" alt="Ligue 1 Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Ligue 1</h3>
@@ -729,9 +526,9 @@
                 </a>
 
                 <!-- Champions League -->
-                <a href="championsleague.html" class="league-card">
+                <a href="Leagues/championsleague.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/vraiment.jpg" alt="Champions League Logo">
+                        <img src="image/vraiment.jpg" alt="Champions League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Champions League</h3>
@@ -740,9 +537,9 @@
                 </a>
 
                 <!-- Europa League -->
-                <a href="EUROPA LEAGUE.html" class="league-card">
+                <a href="Leagues/EUROPA LEAGUE.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/just do  it.png" alt="Europa League Logo">
+                        <img src="image/just do  it.png" alt="Europa League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Europa League</h3>
@@ -751,9 +548,9 @@
                 </a>
 
                 <!-- Super Lig -->
-                <a href="superlig.html" class="league-card">
+                <a href="Leagues/superlig.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/delete.png" alt="Super Lig Logo">
+                        <img src="image/delete.png" alt="Super Lig Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Super Lig</h3>
@@ -762,9 +559,9 @@
                 </a>
                 
                 <!-- Saudi Pro League -->
-                <a href="saudiproleague.html" class="league-card">
+                <a href="Leagues/saudiproleague.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/saudi.png" alt="Saudi Pro league Logo">
+                        <img src="image/saudi.png" alt="Saudi Pro league Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Saudi Pro League</h3>
@@ -773,9 +570,9 @@
                 </a>
                 
                 <!-- Conference League -->
-                <a href="CONFERENCE LEAGUE .html" class="league-card">
+                <a href="Leagues/CONFERENCE LEAGUE .html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/goo.jpg" alt="Conference league  Logo">
+                        <img src="image/goo.jpg" alt="Conference league  Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Conference League</h3>
@@ -784,9 +581,9 @@
                 </a>
                 
                 <!-- Italian Serie B -->
-                <a href="ITALIAN SERIE B.html" class="league-card">
+                <a href="Leagues/ITALIAN SERIE B.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/serie b.png" alt="italian serie b Logo">
+                        <img src="image/serie b.png" alt="italian serie b Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Italian Serie B</h3>
@@ -795,9 +592,9 @@
                 </a>
                 
                 <!-- Serbian Super Liga -->
-                <a href="seribiansuperliga.HTML" class="league-card">
+                <a href="Leagues/seribiansuperliga.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/seribian.jpg" alt="Serbian Super Liga Logo">
+                        <img src="image/seribian.jpg" alt="Serbian Super Liga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Serbian Super Liga</h3>
@@ -806,9 +603,9 @@
                 </a>
                 
                 <!-- Tunisian ligue -->
-                <a href="tunisianligueprofessionnelle1.HTML" class="league-card">
+                <a href="Leagues/tunisianligueprofessionnelle1.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/tunisian.png" alt="Tunisian Logo">
+                        <img src="image/tunisian.png" alt="Tunisian Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Tunisian Ligue</h3>
@@ -817,9 +614,9 @@
                 </a>
                 
                 <!-- South Africa Premiership -->
-                <a href="southafricapremiership.html" class="league-card">
+                <a href="Leagues/southafricapremiership.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/southafrica.png" alt="South Africa Premiership Logo">
+                        <img src="image/southafrica.png" alt="South Africa Premiership Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">South Africa Premiership</h3>
@@ -828,9 +625,9 @@
                 </a>
                 
                 <!-- Ekstraklasa -->
-                <a href="EKSTRAKLASA.html" class="league-card">
+                <a href="Leagues/EKSTRAKLASA.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/eksastarasa.png" alt="Ekstraklasa Logo">
+                        <img src="image/eksastarasa.png" alt="Ekstraklasa Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Ekstraklasa</h3>
@@ -839,9 +636,9 @@
                 </a>
                 
                 <!-- Eredivisie -->
-                <a href="eredivisie.html" class="league-card">
+                <a href="Leagues/eredivisie.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/eredivisie.png" alt="Eredivisie Logo">
+                        <img src="image/eredivisie.png" alt="Eredivisie Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Eredivisie</h3>
@@ -850,9 +647,9 @@
                 </a>
                 
                 <!-- Egyptian Premier League -->
-                <a href="EGYPTIAN PREMIER LEAGUE.html" class="league-card">
+                <a href="Leagues/EGYPTIAN PREMIER LEAGUE.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/eyptian.jpg" alt="Egyptian Premier League Logo">
+                        <img src="image/eyptian.jpg" alt="Egyptian Premier League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Egyptian Premier League</h3>
@@ -861,9 +658,9 @@
                 </a>
                 
                 <!-- Efl Championships -->
-                <a href="EFL CHAMPIONSHIP.html" class="league-card">
+                <a href="Leagues/EFL CHAMPIONSHIP.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/efl.png" alt=" Efl Championships Logo">
+                        <img src="image/efl.png" alt=" Efl Championships Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Efl Championships</h3>
@@ -872,9 +669,9 @@
                 </a>
                 
                 <!-- Danish Super Liga-->
-                <a href="DANISH SUPERLIGA.HTML" class="league-card">
+                <a href="Leagues/DANISH SUPERLIGA.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/delete.png" alt="Danish Super Liga Logo">
+                        <img src="image/delete.png" alt="Danish Super Liga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Danish Super Liga</h3>
@@ -883,9 +680,9 @@
                 </a>
                 
                 <!-- Cypriot First Division  -->
-                <a href="CYPRIOT FIRST DIVISION.html" class="league-card">
+                <a href="Leagues/CYPRIOT FIRST DIVISION.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/cyprioty.png" alt="  Cypriot First Division Logo">
+                        <img src="image/cyprioty.png" alt="  Cypriot First Division Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Cypriot First Division </h3>
@@ -894,9 +691,9 @@
                 </a>
                  
                 <!-- Croatian HNL  -->
-                <a href="croatian.html" class="league-card">
+                <a href="Leagues/croatian.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/hnl.png" alt="  Croatian HNL Logo">
+                        <img src="image/hnl.png" alt="  Croatian HNL Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Croatian HNL </h3>
@@ -905,9 +702,9 @@
                 </a>
                  
                 <!-- Carabao Cup  -->
-                <a href="CARABAO CUP.HTML" class="league-card">
+                <a href="Leagues/CARABAO CUP.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/cup carabaop.jpg" alt=" Carabao Cup Logo">
+                        <img src="image/cup carabaop.jpg" alt=" Carabao Cup Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name"> Carabao Cup</h3>
@@ -916,9 +713,9 @@
                 </a>
                     
                 <!-- Brasileiro Serie A -->
-                <a href="BRASILEIRO SERIE A.html" class="league-card">
+                <a href="Leagues/BRASILEIRO SERIE A.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/bars.png" alt="Brasileiro Serie A  Logo">
+                        <img src="image/bars.png" alt="Brasileiro Serie A  Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Brasileiro Serie A </h3>
@@ -927,9 +724,9 @@
                 </a>
                       
                 <!-- Allsvenskan-->
-                <a href="ALLSVENSKAN.html" class="league-card">
+                <a href="Leagues/ALLSVENSKAN.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/kooko.png" alt="ALLSVENSKAN Logo">
+                        <img src="image/kooko.png" alt="ALLSVENSKAN Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Allsvenskan</h3>
@@ -949,9 +746,9 @@
             </div>
             <div class="leagues-grid">
                 <!-- NBA-->
-                <a href="nba.html" class="league-card">
+                <a href="Leagues/nba.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/SCORE.png" alt="NBA Logo">
+                        <img src="image/SCORE.png" alt="NBA Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">NBA</h3>
@@ -971,9 +768,9 @@
             </div>
             <div class="leagues-grid">
                 <!-- Highlights  -->
-                <a href="highlights.html" class="league-card">
+                <a href="Leagues/highlights.html" class="league-card">
                     <div class="league-logo">
-                        <img src="../image/mel.jpg" alt="Highlights Logo">
+                        <img src="image/mel.jpg" alt="Highlights Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Highlights</h3>
@@ -981,26 +778,27 @@
                     </div>
                 </a>
             </div>
-            </main>
         </div>
-  <!-- Partners Section -->
-<section class="partners-section">
-    <div class="container">
-        <h2 class="section-title">Our Partners</h2>
-        <div class="partners-logos">
-            <div class="partner-logo">
-                <a href="../public/G Group.html">
-                    <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
-                </a>
-            </div>
-            <div class="partner-logo">
-                <a href="../public/Ganza Hoops.html">
-                    <img src="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png" alt="Ganza Hoops">
-                </a>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-logos">
+                <div class="partner-logo">
+                    <a href="public/G Group.html">
+                        <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+                    </a>
+                </div>
+                <div class="partner-logo">
+                    <a href="public/Ganza Hoops.html">
+                        <img src="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png" alt="Ganza Hoops">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1028,9 +826,9 @@
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="../public/privacy.html">Privacy Policy</a></li>
-                        <li><a href="../public/terms.html">Terms of Service</a></li>
-                        <li><a href="../public/cookies.html">Cookie Policy</a></li>
+                        <li><a href="public/privacy.html">Privacy Policy</a></li>
+                        <li><a href="public/terms.html">Terms of Service</a></li>
+                        <li><a href="public/cookies.html">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1038,8 +836,8 @@
                     <ul class="footer-links">
                         <li><a href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
                         <li><a href="tel:0728624943">0728624943</a></li>
-                        <li><a href="../public/contact.html">Contact Form</a></li>
-                        <li><a href="../public/about.html">About Us</a></li>
+                        <li><a href="public/contact.html">Contact Form</a></li>
+                        <li><a href="public/about.html">About Us</a></li>
                     </ul>
                 </div> 
             </div>
@@ -1049,9 +847,99 @@
         </div>
     </footer>
 
-
-   
     <script>
+        // Auth button logic
+        function renderAuthButtons() {
+            const authButtons = document.getElementById('authButtons');
+            const mobileAuthButtons = document.getElementById('mobileAuthButtons');
+            const userProfile = document.getElementById('userProfile');
+            const mobileSettings = document.getElementById('mobileSettings');
+            const profileName = document.getElementById('profileName');
+            const profileEmail = document.getElementById('profileEmail');
+            const mobileUserName = document.getElementById('mobileUserName');
+            const mobileUserEmail = document.getElementById('mobileUserEmail');
+
+            authButtons.innerHTML = '';
+            mobileAuthButtons.innerHTML = '';
+
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (token && user) {
+                // Show user profile
+                userProfile.style.display = 'block';
+                profileName.textContent = `Welcome back, ${user.username}!`;
+                profileEmail.textContent = user.email;
+
+                // Show mobile settings icon
+                mobileSettings.style.display = 'block';
+                mobileUserName.textContent = user.username;
+                mobileUserEmail.textContent = user.email;
+
+                // Show logout, dashboard, settings in nav
+                authButtons.innerHTML = `
+                    <a href="public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
+                    <a href="public/settings.html" class="nav-link auth-btn">Settings</a>
+                    <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+                `;
+                mobileAuthButtons.innerHTML = `
+                    <a href="public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
+                    <a href="public/settings.html" class="mobile-link auth-btn">Settings</a>
+                    <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+                `;
+            } else {
+                showUnauthenticatedUI();
+            }
+        }
+
+        function toggleMobileSettings() {
+            const dropdown = document.getElementById('settingsDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileSettings = document.getElementById('mobileSettings');
+            const dropdown = document.getElementById('settingsDropdown');
+            if (mobileSettings && dropdown && !mobileSettings.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        function logoutUser() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            renderAuthButtons();
+            // Close mobile settings dropdown
+            const dropdown = document.getElementById('settingsDropdown');
+            if (dropdown) dropdown.classList.remove('show');
+        }
+
+        function showUnauthenticatedUI() {
+            const authButtons = document.getElementById('authButtons');
+            const mobileAuthButtons = document.getElementById('mobileAuthButtons');
+            const userProfile = document.getElementById('userProfile');
+            const mobileSettings = document.getElementById('mobileSettings');
+
+            // Hide user profile and mobile settings
+            if (userProfile) userProfile.style.display = 'none';
+            if (mobileSettings) mobileSettings.style.display = 'none';
+
+            // Show login/signup
+            if (authButtons) {
+                authButtons.innerHTML = `
+                    <a href="public/login.html" class="nav-link auth-btn">Login</a>
+                    <a href="public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
+                `;
+            }
+            if (mobileAuthButtons) {
+                mobileAuthButtons.innerHTML = `
+                    <a href="public/login.html" class="mobile-link auth-btn">Login</a>
+                    <a href="public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
+                `;
+            }
+        }
+
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('active');
@@ -1069,13 +957,15 @@
 
         // Cookie notification
         document.getElementById('acceptCookies')?.addEventListener('click', function() {
-            document.getElementById('cookieNotification').style.display = 'none';
+            const cookieNotification = document.getElementById('cookieNotification');
+            if (cookieNotification) cookieNotification.style.display = 'none';
             localStorage.setItem('cookiesAccepted', 'true');
         });
 
         // Hide cookie notification if already accepted
         if (localStorage.getItem('cookiesAccepted')) {
-            document.getElementById('cookieNotification').style.display = 'none';
+            const cookieNotification = document.getElementById('cookieNotification');
+            if (cookieNotification) cookieNotification.style.display = 'none';
         }
 
         // Smooth scrolling for anchor links
@@ -1089,7 +979,8 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     // Close mobile menu if open
-                    document.getElementById('mobileMenu').classList.remove('active');
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu) mobileMenu.classList.remove('active');
                     
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
@@ -1124,11 +1015,9 @@
 
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
-            Auth.init();
-            attachModalEvents();
+            renderAuthButtons();
         });
 
     </script>
 </body>
 </html>
-
