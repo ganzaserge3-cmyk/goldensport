@@ -242,6 +242,22 @@
             max-width: 150px;
             height: auto;
         }
+         .partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Adjust spacing between logos */
+    flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+}
+
+.partner-logo {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+.partner-logo img {
+    max-width: 150px; /* Adjust logo size as needed */
+    height: auto;
+}
 
         /* Footer */
         footer {
@@ -290,6 +306,73 @@
             padding-top: 20px;
             border-top: 1px solid #333;
             color: #ccc;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--radius-md);
+            width: 320px;
+            position: relative;
+        }
+        .modal h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #000;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+        }
+        .modal-message {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .modal-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .modal-footer a {
+            color: #000;
+            font-weight: 500;
+            text-decoration: underline;
         }
 
         /* Responsive */
@@ -374,6 +457,97 @@
             </div>
         </div>
     </header>
+    <script>
+    // Auth button logic
+    function renderAuthButtons() {
+        const authButtons = document.getElementById('authButtons');
+        const mobileAuthButtons = document.getElementById('mobileAuthButtons');
+        const userProfile = document.getElementById('userProfile');
+        const mobileSettings = document.getElementById('mobileSettings');
+        const profileName = document.getElementById('profileName');
+        const profileEmail = document.getElementById('profileEmail');
+        const mobileUserName = document.getElementById('mobileUserName');
+        const mobileUserEmail = document.getElementById('mobileUserEmail');
+
+        authButtons.innerHTML = '';
+        mobileAuthButtons.innerHTML = '';
+
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (token && user) {
+            // Show user profile
+            userProfile.style.display = 'block';
+            profileName.textContent = `Welcome back, ${user.username}!`;
+            profileEmail.textContent = user.email;
+
+            // Show mobile settings icon
+            mobileSettings.style.display = 'block';
+            mobileUserName.textContent = user.username;
+            mobileUserEmail.textContent = user.email;
+
+            // Show logout, dashboard, settings in nav
+            authButtons.innerHTML = `
+                <a href="public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
+                <a href="Leagues/settings.html" class="nav-link auth-btn">Settings</a>
+                <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+            `;
+            mobileAuthButtons.innerHTML = `
+                <a href="public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
+                <a href="public/settings.html" class="mobile-link auth-btn">Settings</a>
+                <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+            `;
+        } else {
+            // Hide user profile and mobile settings
+            userProfile.style.display = 'none';
+            mobileSettings.style.display = 'none';
+
+        // Show login/signup
+        authButtons.innerHTML = `
+            <a href="public/login.html" class="nav-link auth-btn">Login</a>
+            <a href="public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
+        `;
+        mobileAuthButtons.innerHTML = `
+            <a href="public/login.html" class="mobile-link auth-btn">Login</a>
+            <a href="public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
+        `;
+    }
+
+    async function validateToken(token) {
+        try {
+            // Make a request to validate the token
+            const response = await fetch('http://localhost:3000/api/auth/validate', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            return response.ok;
+        } catch (error) {
+            console.error('Token validation error:', error);
+            return false;
+        }
+    }
+        const dropdown = document.getElementById('settingsDropdown');
+        dropdown.classList.toggle('show');
+    }
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileSettings = document.getElementById('mobileSettings');
+        const dropdown = document.getElementById('settingsDropdown');
+        if (!mobileSettings.contains(event.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+    function logoutUser() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        renderAuthButtons();
+        // Close mobile settings dropdown
+        document.getElementById('settingsDropdown').classList.remove('show');
+    }
+    window.addEventListener('DOMContentLoaded', renderAuthButtons);
+    </script>
 
     <!-- User Profile Section -->
     <section class="user-profile" id="userProfile" style="display: none;">
@@ -388,7 +562,7 @@
                     <div class="profile-actions">
                         <a href="public/dashboard.html" class="btn btn-primary">Dashboard</a>
                         <a href="public/settings.html"  class="btn btn-outline">Settings</a>
-                        <button class="btn btn-outline logout-btn" onclick="logoutUser()">Logout</button>
+                        <button class="btn btnoutline logout-btn" onclick="logoutUser()">Logout</button>
                     </div>
                 </div>
             </div>
@@ -778,27 +952,26 @@
                     </div>
                 </a>
             </div>
+            </main>
         </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section class="partners-section">
-        <div class="container">
-            <h2 class="section-title">Our Partners</h2>
-            <div class="partners-logos">
-                <div class="partner-logo">
-                    <a href="public/G Group.html">
-                        <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
-                    </a>
-                </div>
-                <div class="partner-logo">
-                    <a href="public/Ganza Hoops.html">
-                        <img src="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png" alt="Ganza Hoops">
-                    </a>
-                </div>
+  <!-- Partners Section -->
+<section class="partners-section">
+    <div class="container">
+        <h2 class="section-title">Our Partners</h2>
+        <div class="partners-logos">
+            <div class="partner-logo">
+                <a href="public/G Group.html">
+                    <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="public/Ganza Hoops.html">
+                    <img src="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png" alt="Ganza Hoops">
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -847,99 +1020,9 @@
         </div>
     </footer>
 
+
+   
     <script>
-        // Auth button logic
-        function renderAuthButtons() {
-            const authButtons = document.getElementById('authButtons');
-            const mobileAuthButtons = document.getElementById('mobileAuthButtons');
-            const userProfile = document.getElementById('userProfile');
-            const mobileSettings = document.getElementById('mobileSettings');
-            const profileName = document.getElementById('profileName');
-            const profileEmail = document.getElementById('profileEmail');
-            const mobileUserName = document.getElementById('mobileUserName');
-            const mobileUserEmail = document.getElementById('mobileUserEmail');
-
-            authButtons.innerHTML = '';
-            mobileAuthButtons.innerHTML = '';
-
-            const token = localStorage.getItem('token');
-            const user = JSON.parse(localStorage.getItem('user'));
-
-            if (token && user) {
-                // Show user profile
-                userProfile.style.display = 'block';
-                profileName.textContent = `Welcome back, ${user.username}!`;
-                profileEmail.textContent = user.email;
-
-                // Show mobile settings icon
-                mobileSettings.style.display = 'block';
-                mobileUserName.textContent = user.username;
-                mobileUserEmail.textContent = user.email;
-
-                // Show logout, dashboard, settings in nav
-                authButtons.innerHTML = `
-                    <a href="public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
-                    <a href="public/settings.html" class="nav-link auth-btn">Settings</a>
-                    <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
-                `;
-                mobileAuthButtons.innerHTML = `
-                    <a href="public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
-                    <a href="public/settings.html" class="mobile-link auth-btn">Settings</a>
-                    <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
-                `;
-            } else {
-                showUnauthenticatedUI();
-            }
-        }
-
-        function toggleMobileSettings() {
-            const dropdown = document.getElementById('settingsDropdown');
-            dropdown.classList.toggle('show');
-        }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileSettings = document.getElementById('mobileSettings');
-            const dropdown = document.getElementById('settingsDropdown');
-            if (mobileSettings && dropdown && !mobileSettings.contains(event.target)) {
-                dropdown.classList.remove('show');
-            }
-        });
-
-        function logoutUser() {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            renderAuthButtons();
-            // Close mobile settings dropdown
-            const dropdown = document.getElementById('settingsDropdown');
-            if (dropdown) dropdown.classList.remove('show');
-        }
-
-        function showUnauthenticatedUI() {
-            const authButtons = document.getElementById('authButtons');
-            const mobileAuthButtons = document.getElementById('mobileAuthButtons');
-            const userProfile = document.getElementById('userProfile');
-            const mobileSettings = document.getElementById('mobileSettings');
-
-            // Hide user profile and mobile settings
-            if (userProfile) userProfile.style.display = 'none';
-            if (mobileSettings) mobileSettings.style.display = 'none';
-
-            // Show login/signup
-            if (authButtons) {
-                authButtons.innerHTML = `
-                    <a href="public/login.html" class="nav-link auth-btn">Login</a>
-                    <a href="public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
-                `;
-            }
-            if (mobileAuthButtons) {
-                mobileAuthButtons.innerHTML = `
-                    <a href="public/login.html" class="mobile-link auth-btn">Login</a>
-                    <a href="public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
-                `;
-            }
-        }
-
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('active');
@@ -957,15 +1040,13 @@
 
         // Cookie notification
         document.getElementById('acceptCookies')?.addEventListener('click', function() {
-            const cookieNotification = document.getElementById('cookieNotification');
-            if (cookieNotification) cookieNotification.style.display = 'none';
+            document.getElementById('cookieNotification').style.display = 'none';
             localStorage.setItem('cookiesAccepted', 'true');
         });
 
         // Hide cookie notification if already accepted
         if (localStorage.getItem('cookiesAccepted')) {
-            const cookieNotification = document.getElementById('cookieNotification');
-            if (cookieNotification) cookieNotification.style.display = 'none';
+            document.getElementById('cookieNotification').style.display = 'none';
         }
 
         // Smooth scrolling for anchor links
@@ -979,8 +1060,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    if (mobileMenu) mobileMenu.classList.remove('active');
+                    document.getElementById('mobileMenu').classList.remove('active');
                     
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
@@ -1015,9 +1095,11 @@
 
         // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
-            renderAuthButtons();
+            Auth.init();
+            attachModalEvents();
         });
 
     </script>
 </body>
 </html>
+
