@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="sport website that shows live score, statistics and fixtures,highlights nba, and all major leagues and others leagues don't miss ">
+    <meta name="keywords" content="football fixtures,nba fixtures  , football statistics ,nba highligts,football highlights, ">
+    <meta name="author" content="Golden Sport live  Sports Website">
+    <!-- ✅ Google Verification -->
+    <meta name="google-site-verification" content="2uHcn--eI6ITXQ9gzayv2ab_GLoJ35bt-gp1R9lKpR4" />
+    <title>𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="https://static.vecteezy.com/system/resources/previews/002/767/621/non_2x/gs-logo-letter-initial-logo-designs-template-free-vector.jpg">
+
+    <!-- Font Awesome --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Styles -->
+    <style>
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #f8f9fa; color: #000; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        :root {
+            --primary-bg: #ffffff;
+            --secondary-bg: #f8f9fa;
+            --primary-text: #000000;
+            --accent-color: #000;
+            --border-color: #eaeaea;
+            --shadow-color: rgba(0, 0, 0, 0.05);
+            --radius-md: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { background: #000; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-image { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .logo-text { color: #fff; font-size: 1.5rem; font-weight: 700; }
+        .logo-text span { font-weight: 300; }
+
+        .nav-links { display: flex; gap: 20px; align-items: center; }
+        .nav-link { color: #fff; font-weight: 500; position: relative; padding: 5px 0; }
+        .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: #fff; transition: 0.3s; }
+        .nav-link:hover:after { width: 100%; }
+        .auth-buttons { display: flex; gap: 10px; }
+        .auth-btn { padding: 8px 16px; border-radius: 20px; border: 1px solid #fff; transition: all 0.3s; }
+        .auth-btn:hover { background: #fff; color: #000; }
+        .signup-btn { background: #fff; color: #000; }
+        .signup-btn:hover { background: #f0f0f0; }
+        .logout-btn { background: #ff6b6b; color: #fff; border: 1px solid #ff6b6b; }
+        .logout-btn:hover { background: #fff; color: #ff6b6b; }
+
+        .btn { padding: 10px 20px; border-radius: 50px; font-weight: 500; cursor: pointer; border: none; transition: var(--transition); }
+        .btn-primary { background: var(--accent-color); color: #fff; }
+        .btn-primary:hover { background: #333; }
+        .btn-outline { background: transparent; color: #fff; border: 1.5px solid #fff; }
+        .user-profile { background: #fff; padding: 40px 20px; border-bottom: 1px solid #eaeaea; }
+        .profile-card { display: flex; align-items: center; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .profile-avatar { font-size: 4rem; color: #000; }
+        .profile-info h3 { margin-bottom: 5px; color: #000; }
+        .profile-info p { color: #666; margin-bottom: 15px; }
+        .profile-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .logout-btn { background: #ff6b6b !important; color: #fff !important; border-color: #ff6b6b !important; }
+        .logout-btn:hover { background: #fff !important; color: #ff6b6b !important; }
+
+        /* Mobile Settings Dropdown */
+        .mobile-settings { position: relative; display: none; }
+        .settings-icon { background: none; border: none; font-size: 1.5rem; color: #fff; cursor: pointer; padding: 5px; }
+        .settings-dropdown { display: none; position: absolute; top: 100%; right: 0; background: #fff; color: #000; min-width: 250px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; z-index: 1001; }
+        .settings-dropdown.show { display: block; }
+        .settings-header { padding: 15px; border-bottom: 1px solid #eaeaea; }
+        .settings-user-info { display: flex; align-items: center; gap: 10px; }
+        .settings-avatar { font-size: 2rem; color: #000; }
+        .settings-user-details h4 { margin: 0; color: #000; }
+        .settings-user-details p { margin: 5px 0 0 0; color: #666; font-size: 0.9rem; }
+        .settings-menu { padding: 10px 0; }
+        .settings-menu a, .settings-menu button { display: block; width: 100%; padding: 12px 15px; text-decoration: none; background: none; border: none; text-align: left; color: #333; cursor: pointer; transition: 0.3s; }
+        .settings-menu a:hover, .settings-menu button:hover { background: #f8f9fa; }
+        .settings-menu .logout-btn { color: #ff6b6b; }
+        .settings-menu .logout-btn:hover { background: #ffeaea; }
+        
+        .user-dropdown { position: relative; }
+        .user-menu { display: none; position: absolute; top: 100%; right: 0; background: white; color: black; min-width: 150px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 1001; border-radius: 5px; }
+        .user-menu.active { display: block; }
+        .user-menu a { display: block; padding: 12px 15px; color: black; border-bottom: 1px solid #eee; }
+        .user-menu a:hover { background: #f5f5f5; }
+        .user-menu a:last-child { border-bottom: none; }
+
+        /* Cookie Notification */
+        .cookie-notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #000;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: #000;
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mobile-menu.active {
+            display: flex;
+        }
+        
+        .mobile-link {
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Hero Section */
+        .hero { padding: 120px 20px; background: linear-gradient(135deg, #000, #111); color: #fff; text-align: center; position: relative; }
+        .hero:before { content: ''; position: absolute; top:0; left:0; right:0; bottom:0; background: url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat; opacity:0.15; }
+        .hero-content { position: relative; z-index:2; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; color: #ddd; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-title { font-size: 2rem; margin-bottom: 10px; }
+        .section-subtitle { color: #666; margin-bottom: 20px; }
+
+        /* Stats Section */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            text-align: center;
+            min-width: 180px;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Leagues Section */
+        .leagues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .league-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: var(--radius-md);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .league-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .league-logo img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .league-name {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .league-country {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Partners Section */
+        .partners-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .partner-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+         .partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Adjust spacing between logos */
+    flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+}
+
+.partner-logo {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+.partner-logo img {
+    max-width: 150px; /* Adjust logo size as needed */
+    height: auto;
+}
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        .footer-section p {
+            text-align: left;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-links a {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }  
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: var(--radius-md);
+            width: 320px;
+            position: relative;
+        }
+        .modal h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #000;
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+        }
+        .modal-message {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .modal-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .modal-footer a {
+            color: #000;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-buttons a { width: 100%; max-width: 300px; }
+            .stats-container { gap: 15px; }
+            .stat-card { min-width: 140px; padding: 20px 15px; }
+            .leagues-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .footer-content { grid-template-columns: 1fr; }
+            .modal-content { width: 90%; max-width: 320px; }
+            .mobile-settings { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cookie Notification -->
+    <div class="cookie-notification" id="cookieNotificatin">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+        <button class="btn btn-primary" id="acceptCookies">Accept</button>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="image/ganza.jpeg" alt="Golden Sports Logo" class="logo-image">
+                <div class="logo-text">𝐆𝐨𝐥𝐝𝐞𝐧<span>𝐒𝐩𝐨𝐫𝐭</span></div>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links">
+                <a href="public/about.html" class="nav-link">About Us</a>
+                <a href="public/contact.html" class="nav-link">Contact</a>
+                <div class="auth-buttons" id="authButtons">
+                    <!-- Auth buttons will be managed by JS -->
+                </div>
+            </nav>
+
+            <!-- Mobile Settings -->
+            <div class="mobile-settings" id="mobileSettings">
+                <button class="settings-icon" onclick="toggleMobileSettings()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="settings-dropdown" id="settingsDropdown">
+                    <div class="settings-header">
+                        <div class="settings-user-info">
+                            <div class="settings-avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="settings-user-details">
+                                <h4 id="mobileUserName">User</h4>
+                                <p id="mobileUserEmail">email@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-menu">
+                        <a href="public/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="public/settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <button onclick="logoutUser()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="public/about.html" class="mobile-link">About Us</a>
+            <a href="public/contact.html" class="mobile-link">Contact</a>
+            <div style="margin-top: 20px;" id="mobileAuthButtons">
+                <!-- Auth buttons will be managed by JS -->
+            </div>
+        </div>
+    </header>
+    <script>
+    // Auth button logic
+    function renderAuthButtons() {
+        const authButtons = document.getElementById('authButtons');
+        const mobileAuthButtons = document.getElementById('mobileAuthButtons');
+        const userProfile = document.getElementById('userProfile');
+        const mobileSettings = document.getElementById('mobileSettings');
+        const profileName = document.getElementById('profileName');
+        const profileEmail = document.getElementById('profileEmail');
+        const mobileUserName = document.getElementById('mobileUserName');
+        const mobileUserEmail = document.getElementById('mobileUserEmail');
+
+        authButtons.innerHTML = '';
+        mobileAuthButtons.innerHTML = '';
+
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (token && user) {
+            // Show user profile
+            userProfile.style.display = 'block';
+            profileName.textContent = `Welcome back, ${user.username}!`;
+            profileEmail.textContent = user.email;
+
+            // Show mobile settings icon
+            mobileSettings.style.display = 'block';
+            mobileUserName.textContent = user.username;
+            mobileUserEmail.textContent = user.email;
+
+            // Show logout, dashboard, settings in nav
+            authButtons.innerHTML = `
+                <a href="public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
+                <a href="Leagues/settings.html" class="nav-link auth-btn">Settings</a>
+                <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+            `;
+            mobileAuthButtons.innerHTML = `
+                <a href="public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
+                <a href="public/settings.html" class="mobile-link auth-btn">Settings</a>
+                <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
+            `;
+        } else {
+            // Hide user profile and mobile settings
+            userProfile.style.display = 'none';
+            mobileSettings.style.display = 'none';
+
+        // Show login/signup
+        authButtons.innerHTML = `
+            <a href="public/login.html" class="nav-link auth-btn">Login</a>
+            <a href="public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
+        `;
+        mobileAuthButtons.innerHTML = `
+            <a href="public/login.html" class="mobile-link auth-btn">Login</a>
+            <a href="public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
+        `;
+    }
+
+    async function validateToken(token) {
+        try {
+            // Make a request to validate the token
+            const response = await fetch('http://localhost:3000/api/auth/validate', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            return response.ok;
+        } catch (error) {
+            console.error('Token validation error:', error);
+            return false;
+        }
+    }
+        const dropdown = document.getElementById('settingsDropdown');
+        dropdown.classList.toggle('show');
+    }
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileSettings = document.getElementById('mobileSettings');
+        const dropdown = document.getElementById('settingsDropdown');
+        if (!mobileSettings.contains(event.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+    function logoutUser() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        renderAuthButtons();
+        // Close mobile settings dropdown
+        document.getElementById('settingsDropdown').classList.remove('show');
+    }
+    window.addEventListener('DOMContentLoaded', renderAuthButtons);
+    </script>
+
+    <!-- User Profile Section -->
+    <section class="user-profile" id="userProfile" style="display: none;">
+        <div class="container">
+            <div class="profile-card">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                    <h3 id="profileName">Welcome back!</h3>
+                    <p id="profileEmail"></p>
+                    <div class="profile-actions">
+                        <a href="public/dashboard.html" class="btn btn-primary">Dashboard</a>
+                        <a href="public/settings.html"  class="btn btn-outline">Settings</a>
+                        <button class="btn btnoutline logout-btn" onclick="logoutUser()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Your Sports Universe</h1>
+            <p>Experience every match, every goal, every victory. Real-time Statistics, in-depth stats, and breaking news from Football and Basketball leagues worldwide.</p>
+            <div class="hero-buttons">
+                <a href="#football" class="btn btn-primary">Explore Football Leagues</a>
+                <a href="#highlights" class="btn btn-primary">Watch Highlights</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container stats-container">
+            <div class="stat-card">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Football Leagues</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Advanced Statistics</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Countries Covered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">NBA</div>
+                <div class="stat-label">Games & Statistics</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</h2>
+                <p class="section-subtitle">Comprehensive coverage, real-time updates, and in-depth analysis for true sports enthusiasts</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="feature-title">Global Football Coverage</h3>
+                    <p class="feature-description">From Premier League to local tournaments, we cover football leagues from around the world with detailed statistics and analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <h3 class="feature-title">NBA & Basketball</h3>
+                    <p class="feature-description">Complete NBA coverage with player stats, team analysis, game highlights, and real-time scores from all matches.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3 class="feature-title">Match Highlights</h3>
+                    <p class="feature-description">Watch the best moments from recent matches with our curated highlights section, updated daily with the latest action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL FOOTBALL LEAGUES SECTION -->
+    <section class="leagues-section" id="football">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Football Leagues</h2>
+                <p class="section-subtitle">Complete coverage of football leagues from around the world</p>
+            </div>
+            <div class="leagues-grid">
+                <!-- Premier League -->
+                <a href="Leagues/premierleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Premier League</h3>
+                        <p class="league-country">England</p>
+                    </div>
+                </a>
+
+                <!-- La Liga -->
+                <a href="Leagues/laliga.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/noooo.png" alt="La Liga Logo">
+                    </div>
+                    <div class="league-info">                  
+                        <h3 class="league-name">La Liga</h3>
+                        <p class="league-country">Spain</p>
+                    </div>
+                </a>
+
+                <!-- Bundesliga -->
+                <a href="Leagues/BUNDESLIGA.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/jojojj.webp" alt="Bundesliga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Bundesliga</h3>
+                        <p class="league-country">Germany</p>
+                    </div>
+                </a>
+
+                <!-- Serie A -->
+                <a href="Leagues/SERIE A.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/vieir.webp" alt="Serie A Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Serie A</h3>
+                        <p class="league-country">Italy</p>
+                    </div>
+                </a>
+
+                <!-- Ligue 1 -->
+                <a href="Leagues/ligue1.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/emma.png" alt="Ligue 1 Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Ligue 1</h3>
+                        <p class="league-country">France</p>
+                    </div>
+                </a>
+
+                <!-- Champions League -->
+                <a href="Leagues/championsleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/vraiment.jpg" alt="Champions League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Champions League</h3>
+                        <p class="league-country">Europe</p>
+                    </div>
+                </a>
+
+                <!-- Europa League -->
+                <a href="Leagues/EUROPA LEAGUE.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/just do  it.png" alt="Europa League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Europa League</h3>
+                        <p class="league-country">Europe</p>
+                    </div>
+                </a>
+
+                <!-- Super Lig -->
+                <a href="Leagues/superlig.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/delete.png" alt="Super Lig Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Super Lig</h3>
+                        <p class="league-country">Turkey</p>
+                    </div>
+                </a>
+                
+                <!-- Saudi Pro League -->
+                <a href="Leagues/saudiproleague.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/saudi.png" alt="Saudi Pro league Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Saudi Pro League</h3>
+                        <p class="league-country">Saudi Arabia</p>
+                    </div>
+                </a>
+                
+                <!-- Conference League -->
+                <a href="Leagues/CONFERENCE LEAGUE .html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/goo.jpg" alt="Conference league  Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Conference League</h3>
+                        <p class="league">Uefa</p>
+                    </div>
+                </a>
+                
+                <!-- Italian Serie B -->
+                <a href="Leagues/ITALIAN SERIE B.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/serie b.png" alt="italian serie b Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Italian Serie B</h3>
+                        <p class="league-country">Italy</p>
+                    </div>
+                </a>
+                
+                <!-- Serbian Super Liga -->
+                <a href="Leagues/seribiansuperliga.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/seribian.jpg" alt="Serbian Super Liga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Serbian Super Liga</h3>
+                        <p class="league-country">Serbia</p>
+                    </div>
+                </a>
+                
+                <!-- Tunisian ligue -->
+                <a href="Leagues/tunisianligueprofessionnelle1.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/tunisian.png" alt="Tunisian Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Tunisian Ligue</h3>
+                        <p class="league-country">Tunisia</p>
+                    </div>
+                </a>
+                
+                <!-- South Africa Premiership -->
+                <a href="Leagues/southafricapremiership.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/southafrica.png" alt="South Africa Premiership Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">South Africa Premiership</h3>
+                        <p class="league-country">South Africa</p>
+                    </div>
+                </a>
+                
+                <!-- Ekstraklasa -->
+                <a href="Leagues/EKSTRAKLASA.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/eksastarasa.png" alt="Ekstraklasa Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Ekstraklasa</h3>
+                        <p class="league-country">Poland</p>
+                    </div>
+                </a>
+                
+                <!-- Eredivisie -->
+                <a href="Leagues/eredivisie.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/eredivisie.png" alt="Eredivisie Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Eredivisie</h3>
+                        <p class="league-country">Netherlands</p>
+                    </div>
+                </a>
+                
+                <!-- Egyptian Premier League -->
+                <a href="Leagues/EGYPTIAN PREMIER LEAGUE.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/eyptian.jpg" alt="Egyptian Premier League Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Egyptian Premier League</h3>
+                        <p class="league-country">Egypt</p>
+                    </div>
+                </a>
+                
+                <!-- Efl Championships -->
+                <a href="Leagues/EFL CHAMPIONSHIP.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/efl.png" alt=" Efl Championships Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Efl Championships</h3>
+                        <p class="league-country">England </p>
+                    </div>
+                </a>
+                
+                <!-- Danish Super Liga-->
+                <a href="Leagues/DANISH SUPERLIGA.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/delete.png" alt="Danish Super Liga Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Danish Super Liga</h3>
+                        <p class="league-country">Denmark</p>
+                    </div>
+                </a>
+                
+                <!-- Cypriot First Division  -->
+                <a href="Leagues/CYPRIOT FIRST DIVISION.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/cyprioty.png" alt="  Cypriot First Division Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Cypriot First Division </h3>
+                        <p class="league-country">Cyprus</p>
+                    </div>
+                </a>
+                 
+                <!-- Croatian HNL  -->
+                <a href="Leagues/croatian.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/hnl.png" alt="  Croatian HNL Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Croatian HNL </h3>
+                        <p class="league-country">Croatia</p>
+                    </div>
+                </a>
+                 
+                <!-- Carabao Cup  -->
+                <a href="Leagues/CARABAO CUP.HTML" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/cup carabaop.jpg" alt=" Carabao Cup Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name"> Carabao Cup</h3>
+                        <p class="league-country">England</p>
+                    </div>
+                </a>
+                    
+                <!-- Brasileiro Serie A -->
+                <a href="Leagues/BRASILEIRO SERIE A.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/bars.png" alt="Brasileiro Serie A  Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Brasileiro Serie A </h3>
+                        <p class="league-country">Brazil</p>
+                    </div>
+                </a>
+                      
+                <!-- Allsvenskan-->
+                <a href="Leagues/ALLSVENSKAN.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/kooko.png" alt="ALLSVENSKAN Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Allsvenskan</h3>
+                        <p class="league-country">Sweden</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NBA SECTION -->
+    <section class="leagues-section" id="nba" style="background-color: var(--secondary-bg);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Basketball NBA</h2>
+                <p class="section-subtitle">Complete NBA coverage with statistics, games, and team analysis</p>
+            </div>
+            <div class="leagues-grid">
+                <!-- NBA-->
+                <a href="Leagues/nba.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/SCORE.png" alt="NBA Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">NBA</h3>
+                        <p class="league-country">USA</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS SECTION -->
+    <section class="leagues-section" id="highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Matches Highlights</h2>
+                <p class="section-subtitle">Watch the best moments from recent football matches</p>
+            </div>
+            <div class="leagues-grid">
+                <!-- Highlights  -->
+                <a href="Leagues/highlights.html" class="league-card">
+                    <div class="league-logo">
+                        <img src="image/mel.jpg" alt="Highlights Logo">
+                    </div>
+                    <div class="league-info">
+                        <h3 class="league-name">Highlights</h3>
+                        <p class="league-country">Europe & Worldwide</p>
+                    </div>
+                </a>
+            </div>
+            </main>
+        </div>
+  <!-- Partners Section -->
+<section class="partners-section">
+    <div class="container">
+        <h2 class="section-title">Our Partners</h2>
+        <div class="partners-logos">
+            <div class="partner-logo">
+                <a href="public/G Group.html">
+                    <img src="ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" alt="G Group">
+                </a>
+            </div>
+            <div class="partner-logo">
+                <a href="public/Ganza Hoops.html">
+                    <img src="ChatGPT Image Jan 7, 2026, 09_02_52 PM.png" alt="Ganza Hoops">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</h3>
+                    <p>Your ultimate destination for live football scores, standings, fixtures and stats from all major leagues around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100091981114981"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/goldensportlive/?utm_source=ig_web_button_share_sheet"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#football">Football Leagues</a></li>
+                        <li><a href="#nba">NBA</a></li>
+                        <li><a href="#highlights">Highlights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="public/privacy.html">Privacy Policy</a></li>
+                        <li><a href="public/terms.html">Terms of Service</a></li>
+                        <li><a href="public/cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:gsportlive1a@gmail.com">gsportlive1a@gmail.com</a></li>
+                        <li><a href="tel:0728624943">0728624943</a></li>
+                        <li><a href="public/contact.html">Contact Form</a></li>
+                        <li><a href="public/about.html">About Us</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="copyright">
+                <p>© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝</p>
+            </div>
+        </div>
+    </footer>
+
+
+   
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileMenu && mobileMenuBtn && !mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Cookie notification
+        document.getElementById('acceptCookies')?.addEventListener('click', function() {
+            document.getElementById('cookieNotification').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        });
+
+        // Hide cookie notification if already accepted
+        if (localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieNotification').style.display = 'none';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add card hover effect
+        document.querySelectorAll('.league-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#000';
+                this.style.color = '#fff';
+                
+                const countryText = this.querySelector('.league-country');
+                if(countryText) {
+                    countryText.style.color = '#ccc';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+                this.style.color = '';
+                
+                const countryText = this.querySelector('.league-country');
+                if(countryText) {
+                    countryText.style.color = '';
+                }
+            });
+        });
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            Auth.init();
+            attachModalEvents();
+        });
+
+    </script>
+</body>
+</html>
+
