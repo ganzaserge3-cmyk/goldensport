@@ -35,7 +35,7 @@ app.use(express.static('../'));
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Backend irimo gukora neza 🚀");
+  res.sendFile(__dirname + '/../Leagues/index.html');
 });
 
 // Start server
