@@ -38,6 +38,11 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + '/../Leagues/index.html');
 });
 
+// 404 handler
+app.use((req, res) => {
+  res.status(404).sendFile(__dirname + '/../public/404.html');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`✅ Backend running on http://localhost:${PORT}`);
