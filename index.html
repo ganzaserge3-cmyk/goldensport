@@ -11,7 +11,7 @@
     <title>𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>GS</text></svg>">
+    <link rel="icon" href="image/ganza.jpeg">
 
     <!-- Font Awesome --> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -410,8 +410,8 @@
 
             <!-- Desktop Navigation Links -->
             <nav class="nav-links">
-                <a href="public/about.html" class="nav-link">About Us</a>
-                <a href="public/contact.html" class="nav-link">Contact</a>
+                <a href="./public/about.html" class="nav-link">About Us</a>
+                <a href="./public/contact.html" class="nav-link">Contact</a>
                 <div class="auth-buttons" id="authButtons">
                     <!-- Auth buttons will be managed by JS -->
                 </div>
@@ -435,8 +435,8 @@
                         </div>
                     </div>
                     <div class="settings-menu">
-                        <a href="public/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                        <a href="public/settings.html"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="./public/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a href="./public/settings.html"><i class="fas fa-cog"></i> Settings</a>
                         <button onclick="logoutUser()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
                     </div>
                 </div>
@@ -450,8 +450,8 @@
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
-            <a href="public/about.html" class="mobile-link">About Us</a>
-            <a href="public/contact.html" class="mobile-link">Contact</a>
+            <a href="./public/about.html" class="mobile-link">About Us</a>
+            <a href="./public/contact.html" class="mobile-link">Contact</a>
             <div style="margin-top: 20px;" id="mobileAuthButtons">
                 <!-- Auth buttons will be managed by JS -->
             </div>
@@ -488,13 +488,13 @@
 
             // Show logout, dashboard, settings in nav
             authButtons.innerHTML = `
-                <a href="public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
-                <a href="public/settings.html" class="nav-link auth-btn">Settings</a>
+                <a href="./public/dashboard.html" class="nav-link auth-btn">Dashboard</a>
+                <a href="./public/settings.html" class="nav-link auth-btn">Settings</a>
                 <button class="nav-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
             `;
             mobileAuthButtons.innerHTML = `
-                <a href="public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
-                <a href="public/settings.html" class="mobile-link auth-btn">Settings</a>
+                <a href="./public/dashboard.html" class="mobile-link auth-btn">Dashboard</a>
+                <a href="./public/settings.html" class="mobile-link auth-btn">Settings</a>
                 <button class="mobile-link auth-btn logout-btn" onclick="logoutUser()">Logout</button>
             `;
         } else {
@@ -504,12 +504,12 @@
 
         // Show login/signup
         authButtons.innerHTML = `
-            <a href="public/login.html" class="nav-link auth-btn">Login</a>
-            <a href="public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
+            <a href="./public/login.html" class="nav-link auth-btn">Login</a>
+            <a href="./public/signup.html" class="nav-link auth-btn signup-btn">Sign Up</a>
         `;
         mobileAuthButtons.innerHTML = `
-            <a href="public/login.html" class="mobile-link auth-btn">Login</a>
-            <a href="public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
+            <a href="./public/login.html" class="mobile-link auth-btn">Login</a>
+            <a href="./public/signup.html" class="mobile-link auth-btn signup-btn">Sign Up</a>
         `;
     }
 
@@ -560,8 +560,8 @@
                     <h3 id="profileName">Welcome back!</h3>
                     <p id="profileEmail"></p>
                     <div class="profile-actions">
-                        <a href="public/dashboard.html" class="btn btn-primary">Dashboard</a>
-                        <a href="public/settings.html"  class="btn btn-outline">Settings</a>
+                        <a href="./public/dashboard.html" class="btn btn-primary">Dashboard</a>
+                        <a href="./public/settings.html"  class="btn btn-outline">Settings</a>
                         <button class="btn btnoutline logout-btn" onclick="logoutUser()">Logout</button>
                     </div>
                 </div>
@@ -645,9 +645,9 @@
             </div>
             <div class="leagues-grid">
                 <!-- Premier League -->
-                <a href="Leagues/premierleague.html" class="league-card">
+                <a href="./Leagues/premierleague.html" class="league-card">
                     <div class="league-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1200px-Premier_League_Logo.svg.png" alt="Premier League Logo">
+                        <img src="https://via.placeholder.com/100x100?text=Premier" alt="Premier League Logo" style="width: 100px; height: 100px;">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Premier League</h3>
@@ -656,9 +656,9 @@
                 </a>
 
                 <!-- La Liga -->
-                <a href="Leagues/laliga.html" class="league-card">
+                <a href="./Leagues/laliga.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/noooo.png" alt="La Liga Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logonoooo.png" alt="La Liga Logo">
                     </div>
                     <div class="league-info">                  
                         <h3 class="league-name">La Liga</h3>
@@ -667,9 +667,9 @@
                 </a>
 
                 <!-- Bundesliga -->
-                <a href="Leagues/BUNDESLIGA.html" class="league-card">
+                <a href="./Leagues/BUNDESLIGA.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/jojojj.webp" alt="Bundesliga Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logojojojj.webp" alt="Bundesliga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Bundesliga</h3>
@@ -678,9 +678,9 @@
                 </a>
 
                 <!-- Serie A -->
-                <a href="Leagues/SERIE A.html" class="league-card">
+                <a href="./Leagues/SERIE A.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/vieir.webp" alt="Serie A Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logovieir.webp" alt="Serie A Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Serie A</h3>
@@ -689,9 +689,9 @@
                 </a>
 
                 <!-- Ligue 1 -->
-                <a href="Leagues/ligue1.html" class="league-card">
+                <a href="./Leagues/ligue1.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/emma.png" alt="Ligue 1 Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoemma.png" alt="Ligue 1 Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Ligue 1</h3>
@@ -700,9 +700,9 @@
                 </a>
 
                 <!-- Champions League -->
-                <a href="Leagues/championsleague.html" class="league-card">
+                <a href="./Leagues/championsleague.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/vraiment.jpg" alt="Champions League Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logovraiment.jpg" alt="Champions League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Champions League</h3>
@@ -711,9 +711,9 @@
                 </a>
 
                 <!-- Europa League -->
-                <a href="Leagues/EUROPA LEAGUE.html" class="league-card">
+                <a href="./Leagues/EUROPA LEAGUE.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/just do  it.png" alt="Europa League Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logojust do  it.png" alt="Europa League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Europa League</h3>
@@ -722,9 +722,9 @@
                 </a>
 
                 <!-- Super Lig -->
-                <a href="Leagues/superlig.html" class="league-card">
+                <a href="./Leagues/superlig.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/delete.png" alt="Super Lig Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logodelete.png" alt="Super Lig Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Super Lig</h3>
@@ -733,9 +733,9 @@
                 </a>
                 
                 <!-- Saudi Pro League -->
-                <a href="Leagues/saudiproleague.html" class="league-card">
+                <a href="./Leagues/saudiproleague.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/saudi.png" alt="Saudi Pro league Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logosaudi.png" alt="Saudi Pro league Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Saudi Pro League</h3>
@@ -744,9 +744,9 @@
                 </a>
                 
                 <!-- Conference League -->
-                <a href="Leagues/CONFERENCE LEAGUE .html" class="league-card">
+                <a href="./Leagues/CONFERENCE LEAGUE .html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/goo.jpg" alt="Conference league  Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logogoo.jpg" alt="Conference league  Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Conference League</h3>
@@ -755,9 +755,9 @@
                 </a>
                 
                 <!-- Italian Serie B -->
-                <a href="Leagues/ITALIAN SERIE B.html" class="league-card">
+                <a href="./Leagues/ITALIAN SERIE B.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/serie b.png" alt="italian serie b Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoserie b.png" alt="italian serie b Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Italian Serie B</h3>
@@ -766,9 +766,9 @@
                 </a>
                 
                 <!-- Serbian Super Liga -->
-                <a href="Leagues/seribiansuperliga.HTML" class="league-card">
+                <a href="./Leagues/seribiansuperliga.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="image/seribian.jpg" alt="Serbian Super Liga Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoseribian.jpg" alt="Serbian Super Liga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Serbian Super Liga</h3>
@@ -777,9 +777,9 @@
                 </a>
                 
                 <!-- Tunisian ligue -->
-                <a href="Leagues/tunisianligueprofessionnelle1.HTML" class="league-card">
+                <a href="./Leagues/tunisianligueprofessionnelle1.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="image/tunisian.png" alt="Tunisian Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logotunisian.png" alt="Tunisian Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Tunisian Ligue</h3>
@@ -788,9 +788,9 @@
                 </a>
                 
                 <!-- South Africa Premiership -->
-                <a href="Leagues/southafricapremiership.html" class="league-card">
+                <a href="./Leagues/southafricapremiership.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/southafrica.png" alt="South Africa Premiership Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logosouthafrica.png" alt="South Africa Premiership Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">South Africa Premiership</h3>
@@ -799,9 +799,9 @@
                 </a>
                 
                 <!-- Ekstraklasa -->
-                <a href="Leagues/EKSTRAKLASA.html" class="league-card">
+                <a href="./Leagues/EKSTRAKLASA.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/eksastarasa.png" alt="Ekstraklasa Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoeksastarasa.png" alt="Ekstraklasa Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Ekstraklasa</h3>
@@ -810,9 +810,9 @@
                 </a>
                 
                 <!-- Eredivisie -->
-                <a href="Leagues/eredivisie.html" class="league-card">
+                <a href="./Leagues/eredivisie.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/eredivisie.png" alt="Eredivisie Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoeredivisie.png" alt="Eredivisie Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Eredivisie</h3>
@@ -821,9 +821,9 @@
                 </a>
                 
                 <!-- Egyptian Premier League -->
-                <a href="Leagues/EGYPTIAN PREMIER LEAGUE.html" class="league-card">
+                <a href="./Leagues/EGYPTIAN PREMIER LEAGUE.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/eyptian.jpg" alt="Egyptian Premier League Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoeyptian.jpg" alt="Egyptian Premier League Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Egyptian Premier League</h3>
@@ -832,9 +832,9 @@
                 </a>
                 
                 <!-- Efl Championships -->
-                <a href="Leagues/EFL CHAMPIONSHIP.html" class="league-card">
+                <a href="./Leagues/EFL CHAMPIONSHIP.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/efl.png" alt=" Efl Championships Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logoefl.png" alt=" Efl Championships Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Efl Championships</h3>
@@ -843,9 +843,9 @@
                 </a>
                 
                 <!-- Danish Super Liga-->
-                <a href="Leagues/DANISH SUPERLIGA.HTML" class="league-card">
+                <a href="./Leagues/DANISH SUPERLIGA.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="image/delete.png" alt="Danish Super Liga Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logodelete.png" alt="Danish Super Liga Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Danish Super Liga</h3>
@@ -854,9 +854,9 @@
                 </a>
                 
                 <!-- Cypriot First Division  -->
-                <a href="Leagues/CYPRIOT FIRST DIVISION.html" class="league-card">
+                <a href="./Leagues/CYPRIOT FIRST DIVISION.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/cyprioty.png" alt="  Cypriot First Division Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logocyprioty.png" alt="  Cypriot First Division Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Cypriot First Division </h3>
@@ -865,9 +865,9 @@
                 </a>
                  
                 <!-- Croatian HNL  -->
-                <a href="Leagues/croatian.html" class="league-card">
+                <a href="./Leagues/croatian.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/hnl.png" alt="  Croatian HNL Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logohnl.png" alt="  Croatian HNL Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Croatian HNL </h3>
@@ -876,9 +876,9 @@
                 </a>
                  
                 <!-- Carabao Cup  -->
-                <a href="Leagues/CARABAO CUP.HTML" class="league-card">
+                <a href="./Leagues/CARABAO CUP.HTML" class="league-card">
                     <div class="league-logo">
-                        <img src="image/cup carabaop.jpg" alt=" Carabao Cup Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logocup carabaop.jpg" alt=" Carabao Cup Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name"> Carabao Cup</h3>
@@ -887,9 +887,9 @@
                 </a>
                     
                 <!-- Brasileiro Serie A -->
-                <a href="Leagues/BRASILEIRO SERIE A.html" class="league-card">
+                <a href="./Leagues/BRASILEIRO SERIE A.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/bars.png" alt="Brasileiro Serie A  Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logobars.png" alt="Brasileiro Serie A  Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Brasileiro Serie A </h3>
@@ -898,9 +898,9 @@
                 </a>
                       
                 <!-- Allsvenskan-->
-                <a href="Leagues/ALLSVENSKAN.html" class="league-card">
+                <a href="./Leagues/ALLSVENSKAN.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/kooko.png" alt="ALLSVENSKAN Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logokooko.png" alt="ALLSVENSKAN Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Allsvenskan</h3>
@@ -920,9 +920,9 @@
             </div>
             <div class="leagues-grid">
                 <!-- NBA-->
-                <a href="Leagues/nba.html" class="league-card">
+                <a href="./Leagues/nba.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/SCORE.png" alt="NBA Logo">
+                        <img src="https://via.placeholder.com/80x80?text=LogoSCORE.png" alt="NBA Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">NBA</h3>
@@ -942,9 +942,9 @@
             </div>
             <div class="leagues-grid">
                 <!-- Highlights  -->
-                <a href="Leagues/highlights.html" class="league-card">
+                <a href="./Leagues/highlights.html" class="league-card">
                     <div class="league-logo">
-                        <img src="image/mel.jpg" alt="Highlights Logo">
+                        <img src="https://via.placeholder.com/80x80?text=Logomel.jpg" alt="Highlights Logo">
                     </div>
                     <div class="league-info">
                         <h3 class="league-name">Highlights</h3>
