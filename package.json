@@ -1,0 +1,14 @@
+{
+  "name": "edson-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "google-auth-library": "^9.2.0",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

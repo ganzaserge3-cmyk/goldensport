@@ -9,6 +9,8 @@ const { OAuth2Client } = require('google-auth-library');
 
 // Google OAuth Client
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID || '534367923011-sejspfqhk9i62fob2i254e25n557vqjv.apps.googleusercontent.com');
+// JWT secret fallback
+const JWT_SECRET = process.env.JWT_SECRET || 'ganzakmk';
 
 // Simple in-memory storage for when MongoDB is not available
 let users = [];
@@ -102,7 +104,7 @@ router.post("/login", async (req, res) => {
       const validPassword = await bcrypt.compare(password, user.password);
       if (!validPassword) return res.status(400).json({ message: "Wrong password" });
 
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+      const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h" });
       return res.status(200).json({ message: "Login successful", user: { username: user.username, email: user.email }, token });
     } else {
       // Use file storage
@@ -112,7 +114,7 @@ router.post("/login", async (req, res) => {
       const validPassword = await bcrypt.compare(password, user.password);
       if (!validPassword) return res.status(400).json({ message: "Wrong password" });
 
-      const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+      const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
       return res.status(200).json({ message: "Login successful", user: { username: user.username, email: user.email }, token });
     }
   } catch (err) {
@@ -132,7 +134,7 @@ router.get("/validate", async (req, res) => {
         const token = authHeader.substring(7); // Remove 'Bearer ' prefix
 
         // Verify the token
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'ganzakmk');
+        const decoded = jwt.verify(token, JWT_SECRET);
 
         // Check if MongoDB is connected
         if (mongoose.connection.readyState === 1) {
@@ -188,7 +190,7 @@ router.post("/google", async (req, res) => {
         user = await user.save();
       }
 
-      const jwtToken = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+      const jwtToken = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h" });
       return res.status(200).json({
         message: "Google authentication successful",
         user: { username: user.username, email: user.email, avatar: picture },
@@ -213,7 +215,7 @@ router.post("/google", async (req, res) => {
         saveUsers();
       }
 
-      const jwtToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+      const jwtToken = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
       return res.status(200).json({
         message: "Google authentication successful",
         user: { username: user.username, email: user.email, avatar: user.avatar },
