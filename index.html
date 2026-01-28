@@ -516,7 +516,7 @@
     async function validateToken(token) {
         try {
             // Make a request to validate the token
-            const response = await fetch('http://localhost:3000/api/auth/validate', {
+            const response = await fetch('/api/auth/validate', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

@@ -293,7 +293,7 @@
             const password = document.getElementById('password').value;
 
             try {
-                const response = await fetch('http://localhost:3000/api/auth/signup', {
+                const response = await fetch('/api/auth/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -366,7 +366,7 @@
 
         async function handleGoogleCredentialResponse(response) {
             try {
-                const res = await fetch('http://localhost:3000/api/auth/google', {
+                const res = await fetch('/api/auth/google', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
