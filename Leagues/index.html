@@ -397,7 +397,10 @@
     <!-- Cookie Notification -->
     <div class="cookie-notification" id="cookieNotificatin">
         <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-        <button class="btn btn-primary" id="acceptCookies">Accept</button>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-decline" id="declineCookies">Decline</button>
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Accept</button>
+        </div>
     </div>
 
     <!-- Navigation -->
@@ -474,6 +477,19 @@
 
         const token = localStorage.getItem('token');
         const user = JSON.parse(localStorage.getItem('user'));
+
+        // Handle cookies (safe checks)
+        const cookieNotification = document.getElementById('cookieNotificatin');
+        const acceptCookiesBtn = document.getElementById('acceptCookies');
+        const declineCookiesBtn = document.getElementById('declineCookies');
+
+        if (cookieNotification) {
+            if (localStorage.getItem('cookies-accepted') || localStorage.getItem('cookies-declined')) {
+                cookieNotification.classList.add('hidden');
+            }
+            if (acceptCookiesBtn) acceptCookiesBtn.addEventListener('click', () => { localStorage.setItem('cookies-accepted','true'); cookieNotification.classList.add('hidden'); });
+            if (declineCookiesBtn) declineCookiesBtn.addEventListener('click', () => { localStorage.setItem('cookies-declined','true'); cookieNotification.classList.add('hidden'); });
+        }
 
         if (token && user) {
             // Show user profile

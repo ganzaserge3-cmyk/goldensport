@@ -318,7 +318,8 @@
                     messageDiv.innerHTML = '<div class="error">' + (data.message || 'Login failed') + '</div>';
                 }
             } catch (error) {
-                messageDiv.innerHTML = '<div class="error">Network error. Please make sure the backend server is running.</div>';
+                console.error('Login network error', error);
+                messageDiv.innerHTML = '<div class="error">Network error: unable to reach authentication service. Please try again later.</div>';
             }
         });
 
