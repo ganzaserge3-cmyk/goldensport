@@ -65,7 +65,8 @@ module.exports = async (req, res) => {
       const newUser = { id: Date.now().toString(), username, email, password: hashed, createdAt: new Date().toISOString() };
       users.push(newUser);
       writeUsers(users);
-      return res.status(201).json({ message: 'User created', user: { username: newUser.username, email: newUser.email } });
+      const token = jwt.sign({ id: newUser.id }, JWT_SECRET, { expiresIn: '1h' });
+      return res.status(201).json({ message: 'User created', user: { username: newUser.username, email: newUser.email }, token });
     }
 
     if (action === 'login' && method === 'POST') {

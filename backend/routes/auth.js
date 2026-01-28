@@ -56,7 +56,8 @@ router.post("/signup", async (req, res) => {
       });
 
       const user = await newUser.save();
-      return res.status(201).json({ message: "User created successfully", user: { username: user.username, email: user.email } });
+      const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "1h" });
+      return res.status(201).json({ message: "User created successfully", user: { username: user.username, email: user.email }, token });}
     } else {
       // Use file storage
       const existingUser = users.find(u => u.email === email || u.username === username);
@@ -78,7 +79,8 @@ router.post("/signup", async (req, res) => {
       users.push(newUser);
       saveUsers();
 
-      return res.status(201).json({ message: "User created successfully", user: { username: newUser.username, email: newUser.email } });
+      const token = jwt.sign({ id: newUser.id }, JWT_SECRET, { expiresIn: "1h" });
+      return res.status(201).json({ message: "User created successfully", user: { username: newUser.username, email: newUser.email }, token });
     }
   } catch (err) {
     console.error("Signup error:", err);
