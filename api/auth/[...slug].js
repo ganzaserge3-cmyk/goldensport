@@ -10,22 +10,29 @@ const googleClient = new OAuth2Client(GOOGLE_CLIENT_ID);
 
 const usersFilePath = path.join(process.cwd(), 'backend', 'users.json');
 
+// In-memory fallback for Vercel (serverless filesystem is read-only)
+let usersCache = null;
+
 const readUsers = () => {
   try {
+    if (usersCache) return usersCache;
     if (fs.existsSync(usersFilePath)) {
-      return JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
+      usersCache = JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
+      return usersCache;
     }
   } catch (e) {
     console.error('readUsers error', e.message);
   }
-  return [];
+  return usersCache || [];
 };
 
 const writeUsers = (users) => {
+  usersCache = users;
   try {
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
   } catch (e) {
-    console.error('writeUsers error', e.message);
+    // Fail silently on Vercel (read-only fs) - data persists in-memory for the request
+    console.warn('writeUsers: filesystem read-only (Vercel). Using in-memory cache.');
   }
 };
 
