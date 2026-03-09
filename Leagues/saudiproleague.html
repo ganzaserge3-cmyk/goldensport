@@ -393,6 +393,16 @@
             display: block;
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 768px) {
             main {
@@ -578,12 +588,12 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-trophy"></i>
-                    <div class="info-value">8</div>
+                    <div class="info-value">34</div>
                     <div class="info-label">Matchdays</div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">85%</div>
+                    <div class="info-value">8,113</div>
                     <div class="info-label">Avg. Attendance</div>
                 </div>
             </div>
@@ -596,30 +606,83 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 Saudi Pro League statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORER - SAUDI PRO LEAGUE</h2>
-               
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Ivan Toney</td><td>Al-Ahli</td><td>24</td></tr>
+                        <tr><td>2</td><td>Julian Quinones</td><td>Al-Qadsiah</td><td>22</td></tr>
+                        <tr><td>3</td><td>Cristiano Ronaldo</td><td>Al-Nassr</td><td>21</td></tr>
+                        <tr><td>4</td><td>Roger Martinez</td><td>Al-Taawoun</td><td>19</td></tr>
+                        <tr><td>5</td><td>Joshua King</td><td>Al-Khaleej</td><td>14</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - SAUDI PRO LEAGUE</h2>
-              
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Konstantinos Fortounis</td><td>Al-Khaleej</td><td>11</td></tr>
+                        <tr><td>2</td><td>Kingsley Coman</td><td>Al-Nassr</td><td>10</td></tr>
+                        <tr><td>3</td><td>Musab Al Juwayr</td><td>Al-Qadsiah</td><td>9</td></tr>
+                        <tr><td>4</td><td>Joao Felix</td><td>Al-Nassr</td><td>9</td></tr>
+                        <tr><td>5</td><td>Salem Al Dawsari</td><td>Al-Hilal</td><td>8</td></tr>
+                    </tbody>
+                </table>
                 <h2><i class="fas fa-shield-alt"></i> TOP SAVES - SAUDI PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Saves</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Juan Pablo Cozzani</td><td>Al-Hazem</td><td>89</td></tr>
+                        <tr><td>2</td><td>Marek Rodak</td><td>Al-Ettifaq</td><td>88</td></tr>
+                        <tr><td>3</td><td>Anthony Moris</td><td>Al-Khaleej</td><td>85</td></tr>
+                        <tr><td>3</td><td>Samuel Portugal</td><td>Al-Okhdood</td><td>85</td></tr>
+                        <tr><td>5</td><td>Victor Braga</td><td>Al-Najma</td><td>81</td></tr>
+                    </tbody>
+                </table>
 
-
-                <h2><i class="fas fa-running"></i> TOP TACKLES - SAUDI PRO LEAGUE</h2>
+                <h2><i class="fas fa-running"></i> TOP CLEAN SHEETS - SAUDI PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Edouard Mendy</td><td>Al-Ahli</td><td>11</td></tr>
+                        <tr><td>2</td><td>Yassine Bounou</td><td>Al-Hilal</td><td>8</td></tr>
+                        <tr><td>2</td><td>Bento</td><td>Al-Nassr</td><td>8</td></tr>
+                        <tr><td>4</td><td>Koen Casteels</td><td>Al-Qadsiah</td><td>7</td></tr>
+                        <tr><td>4</td><td>Marek Rodak</td><td>Al-Ettifaq</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
               </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP PASSES - SAUDI PRO LEAGUE</h2>
-              
-                     
-
-
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Total Passes</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Al Hilal</td><td>12,866</td></tr>
+                        <tr><td>2</td><td>Al Ittihad</td><td>12,608</td></tr>
+                        <tr><td>3</td><td>Al Qadsiah</td><td>12,426</td></tr>
+                        <tr><td>4</td><td>Al Nassr</td><td>10,957</td></tr>
+                        <tr><td>5</td><td>Al Taawoun</td><td>10,413</td></tr>
+                    </tbody>
+                </table>
                 <h2><i class="fas fa-check-circle"></i> TOP PASSES SUCCESSFULLY - SAUDI PRO LEAGUE</h2>
-             
-    
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Al Hilal</td><td>66</td></tr>
+                        <tr><td>2</td><td>Al Nassr</td><td>65</td></tr>
+                        <tr><td>3</td><td>Al Qadsiah</td><td>55</td></tr>
+                        <tr><td>4</td><td>Al Ahli</td><td>49</td></tr>
+                        <tr><td>5</td><td>Al Taawoun</td><td>45</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -631,10 +694,29 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> SAUDI PRO LEAGUE STANDINGS</h2>
-               
-           
-           
-              
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Al-Nassr</td><td>24</td><td>20</td><td>1</td><td>3</td><td>65</td><td>19</td><td>+46</td><td>61</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Al-Ahli</td><td>24</td><td>18</td><td>5</td><td>1</td><td>46</td><td>15</td><td>+31</td><td>59</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Al-Hilal</td><td>24</td><td>17</td><td>7</td><td>0</td><td>62</td><td>23</td><td>+39</td><td>58</td></tr>
+                        <tr class="europa-league"><td>4</td><td>Al-Qadsiah</td><td>24</td><td>16</td><td>6</td><td>2</td><td>53</td><td>22</td><td>+31</td><td>54</td></tr>
+                        <tr><td>5</td><td>Al-Ittihad</td><td>24</td><td>12</td><td>6</td><td>6</td><td>39</td><td>28</td><td>+11</td><td>42</td></tr>
+                        <tr><td>6</td><td>Al-Taawoun</td><td>24</td><td>12</td><td>5</td><td>7</td><td>42</td><td>29</td><td>+13</td><td>41</td></tr>
+                        <tr><td>7</td><td>Al-Ettifaq</td><td>24</td><td>11</td><td>5</td><td>8</td><td>35</td><td>40</td><td>-5</td><td>38</td></tr>
+                        <tr><td>8</td><td>Neom</td><td>24</td><td>9</td><td>5</td><td>10</td><td>29</td><td>33</td><td>-4</td><td>32</td></tr>
+                        <tr><td>9</td><td>Al-Fateh</td><td>24</td><td>7</td><td>7</td><td>10</td><td>31</td><td>42</td><td>-11</td><td>28</td></tr>
+                        <tr><td>10</td><td>Al-Hazem</td><td>24</td><td>7</td><td>7</td><td>10</td><td>26</td><td>44</td><td>-18</td><td>28</td></tr>
+                        <tr><td>11</td><td>Al-Khaleej</td><td>24</td><td>7</td><td>6</td><td>11</td><td>42</td><td>38</td><td>+4</td><td>27</td></tr>
+                        <tr><td>12</td><td>Al-Fayha</td><td>24</td><td>7</td><td>6</td><td>11</td><td>28</td><td>41</td><td>-13</td><td>27</td></tr>
+                        <tr><td>13</td><td>Al-Shabab</td><td>24</td><td>6</td><td>8</td><td>10</td><td>30</td><td>38</td><td>-8</td><td>26</td></tr>
+                        <tr><td>14</td><td>Al-Kholood</td><td>24</td><td>8</td><td>1</td><td>15</td><td>32</td><td>42</td><td>-10</td><td>25</td></tr>
+                        <tr><td>15</td><td>Al-Riyadh</td><td>24</td><td>3</td><td>7</td><td>14</td><td>21</td><td>45</td><td>-24</td><td>16</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>Damac</td><td>24</td><td>2</td><td>10</td><td>12</td><td>18</td><td>41</td><td>-23</td><td>16</td></tr>
+                        <tr class="relegation-zone"><td>17</td><td>Al-Okhdood</td><td>24</td><td>3</td><td>4</td><td>17</td><td>21</td><td>49</td><td>-28</td><td>13</td></tr>
+                        <tr class="relegation-zone"><td>18</td><td>Al-Najma</td><td>24</td><td>1</td><td>5</td><td>18</td><td>22</td><td>54</td><td>-32</td><td>8</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

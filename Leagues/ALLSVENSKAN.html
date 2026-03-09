@@ -396,6 +396,16 @@
             display: block;
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 768px) {
             main {
@@ -567,7 +577,7 @@
             <div class="league-info">
                 <div class="info-item">
                     <i class="fas fa-calendar-alt"></i>
-                    <div class="info-value">2025/26</div>
+                    <div class="info-value">2025</div>
                     <div class="info-label">Season</div>
                 </div>
                 <div class="info-item">
@@ -582,7 +592,7 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">72%</div>
+                    <div class="info-value">10,982</div>
                     <div class="info-label">Avg. Attendance</div>
                 </div>
             </div>
@@ -594,29 +604,168 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with the latest completed Allsvenskan data from the 2025 season. The 2026 season is scheduled to start on 5 April 2026.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - ALLSVENSKAN</h2>
-             
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>August Priske</td><td>Djurgardens IF</td><td>18</td></tr>
+                        <tr class="top-player"><td>1</td><td>Ibrahim Diabate</td><td>GAIS</td><td>18</td></tr>
+                        <tr><td>3</td><td>Nahir Besara</td><td>Hammarby IF</td><td>17</td></tr>
+                        <tr><td>4</td><td>Leo Walta</td><td>IK Sirius</td><td>16</td></tr>
+                        <tr><td>5</td><td>Max Fenger</td><td>IFK Goteborg</td><td>12</td></tr>
+                        <tr><td>6</td><td>Christoffer Nyman</td><td>IFK Norrkoping</td><td>11</td></tr>
+                        <tr><td>6</td><td>Robbie Ure</td><td>IK Sirius</td><td>11</td></tr>
+                        <tr><td>8</td><td>Victor Lind</td><td>IF Brommapojkarna</td><td>10</td></tr>
+                        <tr><td>9</td><td>Elliot Stroud</td><td>Mjallby AIF</td><td>9</td></tr>
+                        <tr><td>9</td><td>Tokmac Nguen</td><td>Djurgardens IF</td><td>9</td></tr>
+                        <tr><td>11</td><td>Adam Jakobsen</td><td>IF Brommapojkarna</td><td>8</td></tr>
+                        <tr><td>11</td><td>Johan Hove</td><td>AIK</td><td>8</td></tr>
+                        <tr><td>11</td><td>Paulos Abraham</td><td>Hammarby IF</td><td>8</td></tr>
+                        <tr><td>11</td><td>Tobias Heintz</td><td>IFK Goteborg</td><td>8</td></tr>
+                        <tr><td>15</td><td>Abdoulie Manneh</td><td>Mjallby AIF</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - ALLSVENSKAN</h2>
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Assists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Herman Johansson</td><td>Mjallby AIF</td><td>10</td></tr>
+                        <tr><td>2</td><td>Tobias Heintz</td><td>IFK Goteborg</td><td>9</td></tr>
+                        <tr><td>3</td><td>Besfort Zeneli</td><td>IF Elfsborg</td><td>8</td></tr>
+                        <tr><td>3</td><td>Gustav Lundgren</td><td>GAIS</td><td>8</td></tr>
+                        <tr><td>5</td><td>Otto Rosengren</td><td>Malmo FF</td><td>7</td></tr>
+                        <tr><td>5</td><td>Bersant Celina</td><td>AIK</td><td>7</td></tr>
+                        <tr><td>7</td><td>Simon Hedlund</td><td>IF Elfsborg</td><td>6</td></tr>
+                        <tr><td>7</td><td>Tobias Gulliksen</td><td>Djurgardens IF</td><td>6</td></tr>
+                        <tr><td>7</td><td>Isak Andri Sigurgeirsson</td><td>IFK Norrkoping</td><td>6</td></tr>
+                        <tr><td>7</td><td>Daleho Irandust</td><td>IF Brommapojkarna</td><td>6</td></tr>
+                        <tr><td>7</td><td>Daniel Gudjohnsen</td><td>Malmo FF</td><td>6</td></tr>
+                        <tr><td>12</td><td>Nahir Besara</td><td>Hammarby IF</td><td>5</td></tr>
+                        <tr><td>12</td><td>Victor Lind</td><td>IF Brommapojkarna</td><td>5</td></tr>
+                        <tr><td>12</td><td>Montader Madjed</td><td>Hammarby IF</td><td>5</td></tr>
+                        <tr><td>12</td><td>Elliot Stroud</td><td>Mjallby AIF</td><td>5</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - ALLSVENSKAN</h2>
-             
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Goalkeeper</th>
+                            <th>Club</th>
+                            <th>Matches</th>
+                            <th>Clean Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Warner Hahn</td><td>Hammarby IF</td><td>28</td><td>13</td></tr>
+                        <tr><td>2</td><td>Noel Tornqvist</td><td>Mjallby AIF</td><td>28</td><td>12</td></tr>
+                        <tr><td>3</td><td>Kristoffer Nordfeldt</td><td>AIK</td><td>26</td><td>10</td></tr>
+                        <tr><td>4</td><td>Elis Bishesari</td><td>IFK Goteborg</td><td>21</td><td>9</td></tr>
+                        <tr><td>5</td><td>Filip Manojlovic</td><td>Djurgardens IF</td><td>22</td><td>7</td></tr>
+                        <tr><td>5</td><td>Mergim Krasniqi</td><td>GAIS</td><td>23</td><td>7</td></tr>
+                        <tr><td>7</td><td>Etrit Berisha</td><td>BK Hacken</td><td>19</td><td>6</td></tr>
+                        <tr><td>7</td><td>Tim Erlandsson</td><td>Halmstads BK</td><td>21</td><td>6</td></tr>
+                        <tr><td>9</td><td>Melker Ellborg</td><td>Malmo FF</td><td>7</td><td>5</td></tr>
+                        <tr><td>10</td><td>Leo Cavallius</td><td>IF Brommapojkarna</td><td>12</td><td>5</td></tr>
+                        <tr><td>11</td><td>Robin Wallinder</td><td>Osters IF</td><td>28</td><td>5</td></tr>
+                        <tr><td>12</td><td>Simon Eriksson</td><td>IF Elfsborg</td><td>19</td><td>4</td></tr>
+                        <tr><td>13</td><td>Ricardo Friedrich</td><td>Malmo FF</td><td>9</td><td>3</td></tr>
+                        <tr><td>14</td><td>Robin Olsen</td><td>Malmo FF</td><td>12</td><td>3</td></tr>
+                        <tr><td>15</td><td>David Celic</td><td>IK Sirius</td><td>13</td><td>3</td></tr>
+                    </tbody>
+                </table>
                           
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - ALLSVENSKAN</h2>
-         
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Possession</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Hammarby IF</td><td>62.1%</td></tr>
+                        <tr><td>2</td><td>Malmo FF</td><td>57.7%</td></tr>
+                        <tr><td>3</td><td>BK Hacken</td><td>57.3%</td></tr>
+                        <tr><td>4</td><td>Mjallby AIF</td><td>54.9%</td></tr>
+                        <tr><td>5</td><td>Djurgardens IF</td><td>53.8%</td></tr>
+                        <tr><td>6</td><td>IFK Goteborg</td><td>52.0%</td></tr>
+                        <tr><td>7</td><td>GAIS</td><td>51.9%</td></tr>
+                        <tr><td>8</td><td>IK Sirius</td><td>50.1%</td></tr>
+                        <tr><td>9</td><td>IF Elfsborg</td><td>48.8%</td></tr>
+                        <tr><td>10</td><td>AIK</td><td>46.5%</td></tr>
+                        <tr><td>11</td><td>IFK Varnamo</td><td>46.5%</td></tr>
+                        <tr><td>12</td><td>Osters IF</td><td>46.1%</td></tr>
+                        <tr><td>13</td><td>IFK Norrkoping</td><td>45.7%</td></tr>
+                        <tr><td>14</td><td>Degerfors IF</td><td>43.6%</td></tr>
+                        <tr><td>15</td><td>IF Brommapojkarna</td><td>43.5%</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> ALLSVENSKAN STANDINGS</h2>
-       
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Club</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Mjallby AIF</td><td>30</td><td>23</td><td>6</td><td>1</td><td>57</td><td>18</td><td>+39</td><td>75</td></tr>
+                        <tr class="europa-league"><td>2</td><td>Hammarby IF</td><td>30</td><td>19</td><td>5</td><td>6</td><td>60</td><td>29</td><td>+31</td><td>62</td></tr>
+                        <tr><td>3</td><td>GAIS</td><td>30</td><td>14</td><td>10</td><td>6</td><td>45</td><td>30</td><td>+15</td><td>52</td></tr>
+                        <tr><td>4</td><td>IFK Goteborg</td><td>30</td><td>16</td><td>3</td><td>11</td><td>41</td><td>33</td><td>+8</td><td>51</td></tr>
+                        <tr><td>5</td><td>Djurgardens IF</td><td>30</td><td>13</td><td>10</td><td>7</td><td>52</td><td>32</td><td>+20</td><td>49</td></tr>
+                        <tr><td>6</td><td>Malmo FF</td><td>30</td><td>13</td><td>10</td><td>7</td><td>46</td><td>33</td><td>+13</td><td>49</td></tr>
+                        <tr><td>7</td><td>AIK</td><td>30</td><td>13</td><td>9</td><td>8</td><td>40</td><td>33</td><td>+7</td><td>48</td></tr>
+                        <tr><td>8</td><td>IF Elfsborg</td><td>30</td><td>12</td><td>4</td><td>14</td><td>45</td><td>51</td><td>-6</td><td>40</td></tr>
+                        <tr><td>9</td><td>IK Sirius</td><td>30</td><td>11</td><td>6</td><td>13</td><td>53</td><td>51</td><td>+2</td><td>39</td></tr>
+                        <tr><td>10</td><td>BK Hacken</td><td>30</td><td>9</td><td>8</td><td>13</td><td>42</td><td>50</td><td>-8</td><td>35</td></tr>
+                        <tr><td>11</td><td>Halmstads BK</td><td>30</td><td>10</td><td>5</td><td>15</td><td>24</td><td>50</td><td>-26</td><td>35</td></tr>
+                        <tr><td>12</td><td>IF Brommapojkarna</td><td>30</td><td>9</td><td>4</td><td>17</td><td>40</td><td>47</td><td>-7</td><td>31</td></tr>
+                        <tr><td>13</td><td>Degerfors IF</td><td>30</td><td>8</td><td>6</td><td>16</td><td>33</td><td>52</td><td>-19</td><td>30</td></tr>
+                        <tr class="relegation-zone"><td>14</td><td>IFK Norrkoping</td><td>30</td><td>8</td><td>5</td><td>17</td><td>40</td><td>57</td><td>-17</td><td>29</td></tr>
+                        <tr class="relegation-zone"><td>15</td><td>Osters IF</td><td>30</td><td>6</td><td>8</td><td>16</td><td>29</td><td>48</td><td>-19</td><td>26</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>IFK Varnamo</td><td>30</td><td>3</td><td>7</td><td>20</td><td>36</td><td>69</td><td>-33</td><td>16</td></tr>
+                    </tbody>
+                </table>
 
             </div>
         </section>

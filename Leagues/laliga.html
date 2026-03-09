@@ -374,6 +374,16 @@
         display: block;
     }
 
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #111;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
+
     /* Fixtures styling */
     .fixtures-list {
         margin: 20px 0;
@@ -590,23 +600,100 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 La Liga statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - LA LIGA</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Kylian Mbappe</td><td>Real Madrid</td><td>23</td></tr>
+                        <tr><td>2</td><td>Vedat Muriqi</td><td>RCD Mallorca</td><td>15</td></tr>
+                        <tr><td>3</td><td>Ferran Torres</td><td>Barcelona</td><td>12</td></tr>
+                        <tr><td>4</td><td>Ante Budimir</td><td>Osasuna</td><td>11</td></tr>
+                        <tr><td>5</td><td>Robert Lewandowski</td><td>Barcelona</td><td>10</td></tr>
+                        <tr><td>5</td><td>Lamine Yamal</td><td>Barcelona</td><td>10</td></tr>
+                        <tr><td>7</td><td>Borja Iglesias</td><td>Celta Vigo</td><td>9</td></tr>
+                        <tr><td>7</td><td>Alberto Moleiro</td><td>Villarreal</td><td>9</td></tr>
+                        <tr><td>7</td><td>Mikel Oyarzabal</td><td>Real Sociedad</td><td>9</td></tr>
+                        <tr><td>10</td><td>Raphinha</td><td>Barcelona</td><td>8</td></tr>
+                        <tr><td>10</td><td>Cucho Hernandez</td><td>Real Betis</td><td>8</td></tr>
+                        <tr><td>12</td><td>Gerard Moreno</td><td>Villarreal</td><td>7</td></tr>
+                        <tr><td>12</td><td>Jorge de Frutos</td><td>Rayo Vallecano</td><td>7</td></tr>
+                        <tr><td>12</td><td>Hugo Duro</td><td>Valencia</td><td>7</td></tr>
+                        <tr><td>12</td><td>Julian Alvarez</td><td>Atletico Madrid</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - LA LIGA</h2>
-          
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Luis Milla</td><td>Getafe</td><td>8</td></tr>
+                        <tr class="top-player"><td>1</td><td>Lamine Yamal</td><td>Barcelona</td><td>8</td></tr>
+                        <tr><td>3</td><td>Federico Valverde</td><td>Real Madrid</td><td>7</td></tr>
+                        <tr><td>4</td><td>Marcus Rashford</td><td>Barcelona</td><td>6</td></tr>
+                        <tr><td>4</td><td>Arda Guler</td><td>Real Madrid</td><td>6</td></tr>
+                        <tr><td>4</td><td>Dani Olmo</td><td>Barcelona</td><td>6</td></tr>
+                        <tr><td>7</td><td>Pedri</td><td>Barcelona</td><td>5</td></tr>
+                        <tr><td>7</td><td>Vinicius Junior</td><td>Real Madrid</td><td>5</td></tr>
+                        <tr><td>7</td><td>Edu Exposito</td><td>Espanyol</td><td>5</td></tr>
+                        <tr><td>7</td><td>Giuliano Simeone</td><td>Atletico Madrid</td><td>5</td></tr>
+                        <tr><td>7</td><td>Fermin Lopez</td><td>Barcelona</td><td>5</td></tr>
+                        <tr><td>7</td><td>Antony</td><td>Real Betis</td><td>5</td></tr>
+                        <tr><td>13</td><td>Kylian Mbappe</td><td>Real Madrid</td><td>4</td></tr>
+                        <tr><td>13</td><td>Georges Mikautadze</td><td>Villarreal</td><td>4</td></tr>
+                        <tr><td>13</td><td>Alvaro Garcia</td><td>Rayo Vallecano</td><td>4</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - LA LIGA</h2>
- 
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Matches</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Thibaut Courtois</td><td>Real Madrid</td><td>21</td><td>10</td></tr>
+                        <tr><td>2</td><td>Joan Garcia</td><td>Barcelona</td><td>15</td><td>8</td></tr>
+                        <tr><td>2</td><td>Jan Oblak</td><td>Atletico Madrid</td><td>20</td><td>8</td></tr>
+                        <tr><td>4</td><td>Luiz Junior</td><td>Villarreal</td><td>17</td><td>7</td></tr>
+                        <tr><td>4</td><td>Marko Dmitrovic</td><td>Espanyol</td><td>22</td><td>7</td></tr>
+                        <tr><td>6</td><td>Ionut Radu</td><td>Celta Vigo</td><td>21</td><td>6</td></tr>
+                        <tr><td>6</td><td>Augusto Batalla</td><td>Rayo Vallecano</td><td>21</td><td>6</td></tr>
+                        <tr><td>8</td><td>Alvaro Valles</td><td>Real Betis</td><td>13</td><td>5</td></tr>
+                        <tr><td>8</td><td>Unai Simon</td><td>Athletic Bilbao</td><td>21</td><td>5</td></tr>
+                        <tr><td>8</td><td>Sergio Herrera</td><td>Osasuna</td><td>21</td><td>5</td></tr>
+                        <tr><td>8</td><td>Aaron Escandell</td><td>Real Oviedo</td><td>21</td><td>5</td></tr>
+                        <tr><td>12</td><td>Inaki Pena</td><td>Elche CF</td><td>14</td><td>4</td></tr>
+                        <tr><td>12</td><td>Julen Agirrezabala</td><td>Valencia</td><td>18</td><td>4</td></tr>
+                        <tr><td>12</td><td>Paulo Gazzaniga</td><td>Girona FC</td><td>19</td><td>4</td></tr>
+                        <tr><td>12</td><td>David Soria</td><td>Getafe</td><td>21</td><td>4</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - LA LIGA</h2>
-      
-
-                <h2><i class="fas fa-passport"></i> TOTAL PASSES - LA LIGA</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th><th>Matches</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Barcelona</td><td>60</td><td>22</td></tr>
+                        <tr><td>2</td><td>Real Madrid</td><td>49</td><td>23</td></tr>
+                        <tr><td>3</td><td>Villarreal</td><td>39</td><td>21</td></tr>
+                        <tr><td>4</td><td>Atletico Madrid</td><td>38</td><td>22</td></tr>
+                        <tr><td>5</td><td>Real Betis</td><td>36</td><td>22</td></tr>
+                        <tr><td>6</td><td>Elche CF</td><td>30</td><td>22</td></tr>
+                        <tr><td>6</td><td>Real Sociedad</td><td>30</td><td>22</td></tr>
+                        <tr><td>8</td><td>Celta Vigo</td><td>29</td><td>22</td></tr>
+                        <tr><td>8</td><td>Sevilla</td><td>29</td><td>22</td></tr>
+                        <tr><td>10</td><td>RCD Mallorca</td><td>28</td><td>22</td></tr>
+                        <tr><td>11</td><td>Espanyol</td><td>26</td><td>22</td></tr>
+                        <tr><td>11</td><td>Osasuna</td><td>26</td><td>22</td></tr>
+                        <tr><td>13</td><td>Levante</td><td>24</td><td>21</td></tr>
+                        <tr><td>14</td><td>Valencia</td><td>23</td><td>23</td></tr>
+                        <tr><td>15</td><td>Girona FC</td><td>21</td><td>22</td></tr>
+                    </tbody>
+                </table>
 
             </div>
 
@@ -617,7 +704,31 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> LA LIGA STANDINGS</h2>
-           
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Real Madrid</td><td>24</td><td>19</td><td>3</td><td>2</td><td>53</td><td>19</td><td>+34</td><td>60</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Barcelona</td><td>24</td><td>19</td><td>1</td><td>4</td><td>64</td><td>25</td><td>+39</td><td>58</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Villarreal</td><td>22</td><td>14</td><td>3</td><td>5</td><td>43</td><td>24</td><td>+19</td><td>45</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Atletico Madrid</td><td>24</td><td>13</td><td>6</td><td>5</td><td>38</td><td>21</td><td>+17</td><td>45</td></tr>
+                        <tr class="europa-league"><td>5</td><td>Real Betis</td><td>24</td><td>11</td><td>8</td><td>5</td><td>39</td><td>29</td><td>+10</td><td>41</td></tr>
+                        <tr><td>6</td><td>Espanyol</td><td>24</td><td>10</td><td>5</td><td>9</td><td>29</td><td>33</td><td>-4</td><td>35</td></tr>
+                        <tr><td>7</td><td>Celta Vigo</td><td>24</td><td>8</td><td>10</td><td>6</td><td>32</td><td>27</td><td>+5</td><td>34</td></tr>
+                        <tr><td>8</td><td>Real Sociedad</td><td>24</td><td>8</td><td>7</td><td>9</td><td>34</td><td>35</td><td>-1</td><td>31</td></tr>
+                        <tr><td>9</td><td>Osasuna</td><td>24</td><td>8</td><td>6</td><td>10</td><td>28</td><td>28</td><td>0</td><td>30</td></tr>
+                        <tr><td>10</td><td>Girona FC</td><td>24</td><td>7</td><td>8</td><td>9</td><td>24</td><td>38</td><td>-14</td><td>29</td></tr>
+                        <tr><td>11</td><td>Athletic Bilbao</td><td>23</td><td>8</td><td>4</td><td>11</td><td>25</td><td>33</td><td>-8</td><td>28</td></tr>
+                        <tr><td>12</td><td>Getafe</td><td>23</td><td>7</td><td>5</td><td>11</td><td>18</td><td>27</td><td>-9</td><td>26</td></tr>
+                        <tr><td>13</td><td>Valencia</td><td>24</td><td>6</td><td>8</td><td>10</td><td>25</td><td>37</td><td>-12</td><td>26</td></tr>
+                        <tr><td>14</td><td>Elche CF</td><td>24</td><td>5</td><td>10</td><td>9</td><td>31</td><td>35</td><td>-4</td><td>25</td></tr>
+                        <tr><td>15</td><td>Sevilla</td><td>23</td><td>7</td><td>4</td><td>12</td><td>30</td><td>38</td><td>-8</td><td>25</td></tr>
+                        <tr><td>16</td><td>Rayo Vallecano</td><td>23</td><td>6</td><td>7</td><td>10</td><td>21</td><td>30</td><td>-9</td><td>25</td></tr>
+                        <tr><td>17</td><td>CD Alaves</td><td>23</td><td>7</td><td>4</td><td>12</td><td>20</td><td>29</td><td>-9</td><td>25</td></tr>
+                        <tr class="black-zone"><td>18</td><td>RCD Mallorca</td><td>24</td><td>6</td><td>6</td><td>12</td><td>29</td><td>39</td><td>-10</td><td>24</td></tr>
+                        <tr class="black-zone"><td>19</td><td>Levante</td><td>23</td><td>4</td><td>6</td><td>13</td><td>26</td><td>40</td><td>-14</td><td>18</td></tr>
+                        <tr class="black-zone"><td>20</td><td>Real Oviedo</td><td>22</td><td>3</td><td>7</td><td>12</td><td>12</td><td>34</td><td>-22</td><td>16</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -698,7 +809,7 @@
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
-            };
+            }; 
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {

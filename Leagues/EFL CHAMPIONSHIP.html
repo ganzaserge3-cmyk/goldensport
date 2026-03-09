@@ -394,6 +394,16 @@
         display: block;
     }
 
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #111;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
+
     /* RESPONSIVE */
     @media(max-width: 768px) {
         main {
@@ -593,31 +603,74 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 EFL Championship statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - EFL CHAMPIONSHIP</h2>
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Josh Sargent</td><td>Norwich City</td><td>21</td></tr>
+                        <tr><td>2</td><td>Borja Sainz</td><td>Norwich City</td><td>17</td></tr>
+                        <tr><td>2</td><td>Joel Piroe</td><td>Leeds United</td><td>17</td></tr>
+                        <tr><td>4</td><td>Wilson Isidor</td><td>Sunderland</td><td>15</td></tr>
+                        <tr><td>5</td><td>Adama Traore</td><td>Blackburn Rovers</td><td>14</td></tr>
+                        <tr><td>6</td><td>Tom Fellows</td><td>West Bromwich Albion</td><td>13</td></tr>
+                        <tr><td>7</td><td>Callum Robinson</td><td>Cardiff City</td><td>13</td></tr>
+                        <tr><td>8</td><td>Louie Barry</td><td>Hull City</td><td>12</td></tr>
+                        <tr><td>9</td><td>Kieffer Moore</td><td>Sheffield United</td><td>12</td></tr>
+                        <tr><td>10</td><td>Josh Brownhill</td><td>Burnley</td><td>11</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - EFL CHAMPIONSHIP</h2>
-            
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Michael Johnston</td><td>West Bromwich Albion</td><td>9</td></tr>
+                        <tr><td>2</td><td>Tom Fellows</td><td>West Bromwich Albion</td><td>8</td></tr>
+                        <tr><td>3</td><td>Josh Murphy</td><td>Portsmouth</td><td>8</td></tr>
+                        <tr><td>4</td><td>Jack Rudoni</td><td>Coventry City</td><td>8</td></tr>
+                        <tr><td>5</td><td>Leif Davis</td><td>Ipswich Town</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - EFL CHAMPIONSHIP</h2>
-
-              
-          
-                     
-                       
-                
-                <h2><i class="fas fa-running"></i> TOP TACKLES - EFL CHAMPIONSHIP</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Thomas Kaminski</td><td>Luton Town</td><td>11</td></tr>
+                        <tr><td>2</td><td>James Trafford</td><td>Burnley</td><td>10</td></tr>
+                        <tr><td>2</td><td>Michael Cooper</td><td>Sheffield United</td><td>10</td></tr>
+                        <tr><td>4</td><td>Viktor Johansson</td><td>Stoke City</td><td>10</td></tr>
+                        <tr><td>5</td><td>Karl Darlow</td><td>Leeds United</td><td>10</td></tr>
+                        <tr><td>6</td><td>Anthony Patterson</td><td>Sunderland</td><td>8</td></tr>
+                        <tr><td>7</td><td>Daniel Bachmann</td><td>Watford</td><td>8</td></tr>
+                        <tr><td>8</td><td>Arijanet Muric</td><td>Ipswich Town</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - EFL CHAMPIONSHIP</h2>
-
-               
-            
+                <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - EFL CHAMPIONSHIP</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th><th>Matches</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Leeds United</td><td>72</td><td>35</td></tr>
+                        <tr><td>2</td><td>Sheffield United</td><td>53</td><td>35</td></tr>
+                        <tr><td>3</td><td>Norwich City</td><td>53</td><td>35</td></tr>
+                        <tr><td>4</td><td>Burnley</td><td>52</td><td>35</td></tr>
+                        <tr><td>5</td><td>Sunderland</td><td>49</td><td>35</td></tr>
+                        <tr><td>6</td><td>Coventry City</td><td>47</td><td>35</td></tr>
+                        <tr><td>7</td><td>Middlesbrough</td><td>45</td><td>35</td></tr>
+                        <tr><td>8</td><td>West Bromwich Albion</td><td>44</td><td>35</td></tr>
+                        <tr><td>9</td><td>Bristol City</td><td>43</td><td>35</td></tr>
+                        <tr><td>10</td><td>Blackburn Rovers</td><td>42</td><td>35</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -631,9 +684,36 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> EFL CHAMPIONSHIP STANDINGS</h2>
-          
-                
-           
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="promotion-zone"><td>1</td><td>Leeds United</td><td>35</td><td>22</td><td>10</td><td>3</td><td>72</td><td>22</td><td>+50</td><td>76</td></tr>
+                        <tr class="promotion-zone"><td>2</td><td>Sheffield United</td><td>35</td><td>23</td><td>7</td><td>5</td><td>53</td><td>27</td><td>+26</td><td>73</td></tr>
+                        <tr class="playoff-zone"><td>3</td><td>Burnley</td><td>35</td><td>18</td><td>15</td><td>2</td><td>52</td><td>10</td><td>+42</td><td>69</td></tr>
+                        <tr class="playoff-zone"><td>4</td><td>Sunderland</td><td>35</td><td>18</td><td>12</td><td>5</td><td>49</td><td>28</td><td>+21</td><td>66</td></tr>
+                        <tr class="playoff-zone"><td>5</td><td>Coventry City</td><td>35</td><td>16</td><td>8</td><td>11</td><td>47</td><td>40</td><td>+7</td><td>56</td></tr>
+                        <tr class="playoff-zone"><td>6</td><td>West Bromwich Albion</td><td>35</td><td>13</td><td>16</td><td>6</td><td>44</td><td>30</td><td>+14</td><td>55</td></tr>
+                        <tr><td>7</td><td>Bristol City</td><td>35</td><td>14</td><td>12</td><td>9</td><td>43</td><td>38</td><td>+5</td><td>54</td></tr>
+                        <tr><td>8</td><td>Middlesbrough</td><td>35</td><td>14</td><td>9</td><td>12</td><td>45</td><td>42</td><td>+3</td><td>51</td></tr>
+                        <tr><td>9</td><td>Blackburn Rovers</td><td>35</td><td>14</td><td>7</td><td>14</td><td>42</td><td>38</td><td>+4</td><td>49</td></tr>
+                        <tr><td>10</td><td>Watford</td><td>35</td><td>14</td><td>7</td><td>14</td><td>43</td><td>47</td><td>-4</td><td>49</td></tr>
+                        <tr><td>11</td><td>Norwich City</td><td>35</td><td>13</td><td>10</td><td>12</td><td>53</td><td>49</td><td>+4</td><td>49</td></tr>
+                        <tr><td>12</td><td>Millwall</td><td>35</td><td>11</td><td>12</td><td>12</td><td>36</td><td>38</td><td>-2</td><td>45</td></tr>
+                        <tr><td>13</td><td>Preston North End</td><td>35</td><td>9</td><td>17</td><td>9</td><td>34</td><td>40</td><td>-6</td><td>44</td></tr>
+                        <tr><td>14</td><td>Portsmouth</td><td>35</td><td>12</td><td>8</td><td>15</td><td>43</td><td>55</td><td>-12</td><td>44</td></tr>
+                        <tr><td>15</td><td>Queens Park Rangers</td><td>35</td><td>11</td><td>9</td><td>15</td><td>40</td><td>46</td><td>-6</td><td>42</td></tr>
+                        <tr><td>16</td><td>Swansea City</td><td>35</td><td>11</td><td>8</td><td>16</td><td>37</td><td>44</td><td>-7</td><td>41</td></tr>
+                        <tr><td>17</td><td>Oxford United</td><td>35</td><td>10</td><td>11</td><td>14</td><td>36</td><td>48</td><td>-12</td><td>41</td></tr>
+                        <tr><td>18</td><td>Sheffield Wednesday</td><td>35</td><td>11</td><td>7</td><td>17</td><td>45</td><td>53</td><td>-8</td><td>40</td></tr>
+                        <tr><td>19</td><td>Hull City</td><td>35</td><td>9</td><td>10</td><td>16</td><td>40</td><td>44</td><td>-4</td><td>37</td></tr>
+                        <tr><td>20</td><td>Stoke City</td><td>35</td><td>8</td><td>12</td><td>15</td><td>34</td><td>43</td><td>-9</td><td>36</td></tr>
+                        <tr><td>21</td><td>Cardiff City</td><td>35</td><td>8</td><td>10</td><td>17</td><td>38</td><td>59</td><td>-21</td><td>34</td></tr>
+                        <tr class="relegation-zone"><td>22</td><td>Luton Town</td><td>35</td><td>9</td><td>6</td><td>20</td><td>37</td><td>60</td><td>-23</td><td>33</td></tr>
+                        <tr class="relegation-zone"><td>23</td><td>Derby County</td><td>35</td><td>8</td><td>8</td><td>19</td><td>37</td><td>49</td><td>-12</td><td>32</td></tr>
+                        <tr class="relegation-zone"><td>24</td><td>Plymouth Argyle</td><td>35</td><td>6</td><td>11</td><td>18</td><td>36</td><td>74</td><td>-38</td><td>29</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 

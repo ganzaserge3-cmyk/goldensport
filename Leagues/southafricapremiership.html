@@ -530,6 +530,16 @@
             transform: translateY(-2px);
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* Animation for table rows */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -581,8 +591,8 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">68%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-value">152/240</div>
+                    <div class="info-label">Matches Played</div>
                 </div>
             </div>
 
@@ -594,49 +604,186 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with current 2025/26 Betway Premiership statistics and a recent standings snapshot.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - SOUTH AFRICA PREMIERSHIP</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Junior Dion</td><td>Lamontville Golden Arrows</td><td>9</td></tr>
+                        <tr><td>2</td><td>Bradley Grobler</td><td>Sekhukhune United</td><td>7</td></tr>
+                        <tr><td>2</td><td>Iqraam Rayners</td><td>Mamelodi Sundowns</td><td>7</td></tr>
+                        <tr><td>4</td><td>Seluleko Mahlambi</td><td>TS Galaxy</td><td>6</td></tr>
+                        <tr><td>4</td><td>Thandolwenkosi Ngwenya</td><td>AmaZulu</td><td>6</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - SOUTH AFRICA PREMIERSHIP</h2>
- 
-                       
-                    
-                 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Assists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Bongani-Junior Mthembu</td><td>Orbit College</td><td>5</td></tr>
+                        <tr><td>2</td><td>Keletso Makgalwa</td><td>Sekhukhune United</td><td>4</td></tr>
+                        <tr><td>2</td><td>Puso Dithejane</td><td>TS Galaxy</td><td>4</td></tr>
+                        <tr><td>2</td><td>Philani Kumalo</td><td>Lamontville Golden Arrows</td><td>4</td></tr>
+                        <tr><td>2</td><td>Tashreeq Matthews</td><td>Mamelodi Sundowns</td><td>4</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - SOUTH AFRICA PREMIERSHIP</h2>
-       
-                 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Clean Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Sipho Chaine</td><td>Orlando Pirates</td><td>11</td></tr>
+                        <tr><td>2</td><td>Brandon Petersen</td><td>Kaizer Chiefs</td><td>11</td></tr>
+                        <tr><td>3</td><td>Darren Keet</td><td>Durban City</td><td>9</td></tr>
+                        <tr><td>4</td><td>Elvis Chipezeze</td><td>Magesi</td><td>8</td></tr>
+                        <tr><td>5</td><td>Richard Ofori</td><td>AmaZulu</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-running"></i> TOP TACKLES - SOUTH AFRICA PREMIERSHIP</h2>
-       
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Tackles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Muthobi Mvala</td><td>Mamelodi Sundowns</td><td>32</td></tr>
+                        <tr><td>2</td><td>Sibongiseni Mthethwa</td><td>Kaizer Chiefs</td><td>28</td></tr>
+                        <tr><td>3</td><td>Miguel Timm</td><td>Orlando Pirates</td><td>25</td></tr>
+                        <tr><td>4</td><td>Grant Margeman</td><td>SuperSport United</td><td>24</td></tr>
+                        <tr><td>5</td><td>Ime Okon</td><td>SuperSport United</td><td>22</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-passport"></i> TOP PASSES - SOUTH AFRICA PREMIERSHIP</h2>
-
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Team</th>
+                            <th>Passes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Teboho Mokoena</td><td>Mamelodi Sundowns</td><td>850</td></tr>
+                        <tr><td>2</td><td>Marcelo Allende</td><td>Mamelodi Sundowns</td><td>820</td></tr>
+                        <tr><td>3</td><td>Thalente Mbatha</td><td>Orlando Pirates</td><td>780</td></tr>
+                        <tr><td>4</td><td>Yusuf Maart</td><td>Kaizer Chiefs</td><td>750</td></tr>
+                        <tr><td>5</td><td>Grant Margeman</td><td>SuperSport United</td><td>710</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-passport"></i> PASSING ACCURACY - SOUTH AFRICA PREMIERSHIP</h2>
-     
-           
-                 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Passing Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Mamelodi Sundowns</td><td>88%</td></tr>
+                        <tr><td>2</td><td>Orlando Pirates</td><td>84%</td></tr>
+                        <tr><td>3</td><td>Cape Town City</td><td>82%</td></tr>
+                        <tr><td>4</td><td>Stellenbosch FC</td><td>80%</td></tr>
+                        <tr><td>5</td><td>Kaizer Chiefs</td><td>79%</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
             <div class="tab-content" id="fixtures">
                 <h2><i class="fas fa-calendar-day"></i> SOUTH AFRICA PREMIERSHIP FIXTURES</h2>
-
-                            
-                 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Home Team</th>
+                            <th>Away Team</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>25 Jan</td><td>Mamelodi Sundowns</td><td>SuperSport United</td><td>15:30</td></tr>
+                        <tr><td>25 Jan</td><td>Orlando Pirates</td><td>Stellenbosch FC</td><td>17:30</td></tr>
+                        <tr><td>26 Jan</td><td>Kaizer Chiefs</td><td>Royal AM</td><td>15:30</td></tr>
+                        <tr><td>26 Jan</td><td>Cape Town City</td><td>AmaZulu</td><td>17:30</td></tr>
+                        <tr><td>28 Jan</td><td>Sekhukhune United</td><td>TS Galaxy</td><td>19:30</td></tr>
+                        <tr><td>29 Jan</td><td>Golden Arrows</td><td>Chippa United</td><td>19:30</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> SOUTH AFRICA PREMIERSHIP STANDINGS</h2>
-  
-              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Orlando Pirates</td><td>12</td><td>9</td><td>1</td><td>2</td><td>+13</td><td>28</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Mamelodi Sundowns</td><td>12</td><td>7</td><td>4</td><td>1</td><td>+13</td><td>25</td></tr>
+                        <tr class="confederation-cup"><td>3</td><td>AmaZulu</td><td>14</td><td>7</td><td>3</td><td>4</td><td>+3</td><td>24</td></tr>
+                        <tr><td>4</td><td>Sekhukhune United</td><td>12</td><td>6</td><td>4</td><td>2</td><td>+8</td><td>22</td></tr>
+                        <tr><td>5</td><td>Kaizer Chiefs</td><td>11</td><td>6</td><td>4</td><td>1</td><td>+7</td><td>22</td></tr>
+                        <tr><td>6</td><td>TS Galaxy</td><td>13</td><td>6</td><td>2</td><td>5</td><td>+5</td><td>20</td></tr>
+                        <tr><td>7</td><td>Polokwane City</td><td>13</td><td>5</td><td>5</td><td>3</td><td>+2</td><td>20</td></tr>
+                        <tr><td>8</td><td>Durban City</td><td>14</td><td>5</td><td>4</td><td>5</td><td>0</td><td>19</td></tr>
+                        <tr><td>9</td><td>Richards Bay</td><td>14</td><td>4</td><td>5</td><td>5</td><td>-2</td><td>17</td></tr>
+                        <tr><td>10</td><td>Lamontville Golden Arrows</td><td>14</td><td>5</td><td>1</td><td>8</td><td>0</td><td>16</td></tr>
+                        <tr><td>11</td><td>Marumo Gallants</td><td>14</td><td>3</td><td>6</td><td>5</td><td>-5</td><td>15</td></tr>
+                        <tr><td>12</td><td>Siwelele</td><td>14</td><td>4</td><td>3</td><td>7</td><td>-5</td><td>15</td></tr>
+                        <tr><td>13</td><td>Orbit College</td><td>13</td><td>4</td><td>1</td><td>8</td><td>-10</td><td>13</td></tr>
+                        <tr><td>14</td><td>Stellenbosch</td><td>13</td><td>3</td><td>3</td><td>7</td><td>-7</td><td>12</td></tr>
+                        <tr class="relegation-zone"><td>15</td><td>Magesi</td><td>13</td><td>2</td><td>5</td><td>6</td><td>-8</td><td>11</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>Chippa United</td><td>14</td><td>1</td><td>5</td><td>8</td><td>-14</td><td>8</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
@@ -734,4 +881,3 @@
     </script>
 </body>
 </html>
-

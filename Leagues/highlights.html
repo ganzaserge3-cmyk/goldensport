@@ -4,223 +4,303 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sports Highlights - Golden Sport</title>
-
 <link rel="icon" href="../image/ganza.jpeg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <style>
-/* ===== GLOBAL STYLES ===== */
-* { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI", Arial, sans-serif;}
-body { background:#f7f7f7; color:#222; line-height:1.8; font-size:17px;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.8;
+  font-size: 17px;
+}
 
 header {
   background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
-  padding:25px 0;
-  text-align:center;
-  border-bottom:3px solid #080707;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px 0;
+  text-align: center;
+  border-bottom: 3px solid #080707;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  color:white;
-  font-size:40px;
-  font-weight:700;
-  margin-bottom:15px;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 nav {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 nav a {
-  color:#e6e6e6;
-  text-decoration:none;
-  margin:0 18px;
-  font-size:17px;
-  font-weight:600;
-  transition:0.25s;
-  padding:8px 15px;
-  border-radius:4px;
+  color: #e6e6e6;
+  text-decoration: none;
+  margin: 0 18px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: 0.25s;
+  padding: 8px 15px;
+  border-radius: 4px;
 }
 
 nav a:hover {
-  color:white;
-  background: rgba(255,255,255,0.1);
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
 nav a[href="highlights.html"] {
-  background: rgba(255,255,255,0.15);
-  color:white;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
 }
 
 main {
-  max-width:1100px;
-  margin:40px auto;
-  background:white;
-  padding:35px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 h2 {
-  font-size:28px;
-  margin:35px 0 15px;
-  font-weight:700;
-  color:#333;
-  border-left:5px solid #100f0f;
-  padding-left:10px;
-  display:flex;
-  align-items:center;
+  font-size: 28px;
+  margin: 35px 0 15px;
+  font-weight: 700;
+  color: #333;
+  border-left: 5px solid #100f0f;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-/* ===== TABS ===== */
+h2::after {
+  content: "";
+  flex-grow: 1;
+  height: 3px;
+  background: linear-gradient(to right, #0a0a0a, transparent);
+  margin-left: 10px;
+}
+
+.update-note {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  background: #f4f4f4;
+  border-left: 4px solid #111;
+  border-radius: 6px;
+  color: #444;
+  font-size: 15px;
+}
+
 .tab-container {
-  display:flex;
-  margin-bottom:20px;
-  border-bottom:2px solid #e5e5e5;
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5e5e5;
   overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
 }
 
 .tab {
-  padding:12px 20px;
-  cursor:pointer;
-  font-weight:600;
-  color:#666;
-  border:none;
-  background:none;
-  border-bottom:3px solid transparent;
-  transition:all 0.3s;
-  flex-shrink: 0;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  border: none;
+  background: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  white-space: nowrap;
 }
 
 .tab.active {
-  color:#000;
-  border-bottom:3px solid #000;
+  color: #000;
+  border-bottom-color: #000;
 }
 
-.tab:hover {
-  color:#000;
-}
-
-/* ===== TAB CONTENT ===== */
 .tab-content {
-  display:none;
+  display: none;
 }
 
 .tab-content.active {
-  display:block;
-  margin-top:20px;
+  display: block;
 }
 
-/* ===== VIDEO GRID ===== */
-.video-card {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-/* ✅ MOBILE RESPONSIVE VIDEO FIX */
 .video-item {
-  flex:1 1 100%;
-  max-width:100%;
-  background:#f9f9f9;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  overflow: hidden;
+  padding-top: 56.25%;
 }
 
 .video-wrapper iframe {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 8px;
   border: none;
 }
 
 .video-title {
-  padding:15px;
-  font-weight:600;
-  font-size:16px;
+  padding: 14px 16px;
+  font-weight: 600;
   background: white;
 }
 
-
-
-
-footer p {
-  color:#555;
-  margin:10px 0;
-  font-size:16px;
-}
- /* Back to Home Button */
-        .back-to-home {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(194, 152, 2, 0.8);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-home:hover {
-            background: rgba(0, 0, 0, 1);
-            transform: translateY(-2px);
-        }
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  main{padding:20px;margin:20px 10px;}
-  header h1{font-size:32px;}
-  .video-card{flex-direction:column;}
-  .tab-container {
-    padding-bottom: 5px;
-  }
+footer {
+  background: linear-gradient(135deg, #0c0c0c 0%, #2c2c2c 100%);
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+  border-top: 3px solid #080808;
 }
 
-@media(max-width:480px){
-  body{font-size:16px;}
-  main{padding:15px;}
-  h2{font-size:20px;}
-  nav a {
-    margin: 0 8px;
-    font-size: 15px;
-    padding: 6px 10px;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-left: none;
+  padding-left: 0;
+}
+
+.footer-section h2::after {
+  display: none;
+}
+
+.footer-section p,
+.footer-section ul li a {
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.email-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sports-showcase {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.square-img {
+  max-width: 100px;
+  width: 100px;
+  border-radius: 8px;
+}
+
+.under-text,
+.powered-text,
+.footer-copyright {
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+}
+
+.back-to-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(194, 152, 2, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.back-to-home:hover {
+  background: rgba(0, 0, 0, 1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+    margin: 20px 10px;
   }
-  .video-title {
-    padding: 12px;
-    font-size: 15px;
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
   }
 }
 </style>
 </head>
-
 <body>
-
-<body>
-      <!-- Back to Home Button -->
-    <a href="../index.html" class="back-to-home">
-        ← Back to GoldenSport
-    </a>
+<a href="../index.html" class="back-to-home">← Back to GoldenSport</a>
 
 <header>
   <h1><i class="fas fa-bolt"></i> SPORTS HIGHLIGHTS</h1>
@@ -231,288 +311,61 @@ footer p {
 </header>
 
 <main>
-<!-- TABS -->
+  <p class="update-note">Updated on 8 March 2026 with refreshed embedded YouTube highlights for basketball and football.</p>
+
   <div class="tab-container">
-    <button class="tab active" data-tab="basketball">🏀 Basketball</button>
-    <button class="tab" data-tab="football">⚽ Football</button> <!-- Note: Only basketball is active initially -->
+    <button class="tab active" data-tab="basketball">Basketball</button>
+    <button class="tab" data-tab="football">Football</button>
   </div>
 
-  <!-- BASKETBALL -->
   <div class="tab-content active" id="basketball">
-    <h2>🏀 BASKETBALL HIGHLIGHTS</h2>
-    <div class="video-card">
+    <h2><i class="fas fa-basketball-ball"></i> Basketball Highlights</h2>
+    <div class="video-grid">
       <div class="video-item" data-aos="fade-up">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/qqryFe6aQAs?si=V47LW55w2-7qADmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/OxLf9yZxlzc" title="NBA Top 10 Plays of the Night | February 21, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+        <div class="video-title">NBA Top 10 Plays of the Night | February 21, 2026</div>
       </div>
-      
       <div class="video-item" data-aos="fade-up">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/rZ1MrPg2VWs?si=JHo1Dmt1bRmUHJy_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/W0ngDLlPjP8" title="NBA Top 10 Plays of the Night | February 9, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/0f-89gT639w?si=QBJgpzXDdbzELcxs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/4cQdmuoXIts?si=6qvCy9qCY0SK9qaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/ZRp48iozxOA?si=ErtZqAePm-xOhEP1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/lfxpzDHLQWA?si=YPBpWdK-CNi_Zf6t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/0C8SIkX_CpY?si=eOHFuuSQS4fpCO9Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/XQYnpwsevfg?si=3WO4dJWVN9orclXp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/k9pRMyx--rY?si=66CLDvwWoITVfRKO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-      
-      <div class="video-item" data-aos="fade-up">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/qmoj6gReKRs?si=6zjS8CRx_3Ekv5CG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        <div class="video-title">NBA Top 10 Plays of the Night | February 9, 2026</div>
       </div>
     </div>
-  </div> <!-- CLOSING BASKETBALL SECTION -->
+  </div>
 
-  <!-- FOOTBALL -->
-  <div class="tab-content" id="football"> <!-- Note: NOT active initially -->
-    <h2>⚽ FOOTBALL HIGHLIGHTS</h2>
-    <div class="video-card">
-    
-      </div>
-      
+  <div class="tab-content" id="football">
+    <h2><i class="fas fa-futbol"></i> Football Highlights</h2>
+    <div class="video-grid">
       <div class="video-item" data-aos="fade-up">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/61_yVJdnHAo?si=qoN0_fSYF8PmxBQB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/MjtPH2cUUGY" title="UEFA Champions League League Phase Highlights | January 21, 2026" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+        <div class="video-title">UEFA Champions League League Phase Highlights | January 21, 2026</div>
       </div>
-      
       <div class="video-item" data-aos="fade-up">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dFmH01A9Q9M?si=H3MtLhed8bK6m67T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/muB2TpKvtEs" title="UEFA Champions League League Phase Highlights | December 9, 2025" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
+        <div class="video-title">UEFA Champions League League Phase Highlights | December 9, 2025</div>
       </div>
-      
-   
-  
+      <div class="video-item" data-aos="fade-up">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/T2YTiOJomkM" title="Premier League Netbusters | Matchweek 9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Premier League Netbusters | Matchweek 9</div>
+      </div>
+      <div class="video-item" data-aos="fade-up">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/bSGc0y8v798" title="Premier League Netbusters | Matchweek 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Premier League Netbusters | Matchweek 3</div>
       </div>
     </div>
   </div>
 </main>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ganza Sport Hub</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: white;
-  }
-
-  main {
-    flex: 1;
-  }
-
-  footer {
-    background-color: #070707;
-    color: white;
-    padding: 50px 100px;
-    border: none;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: none;
-  }
-
-  .footer-section {
-    flex: 1;
-    min-width: 220px;
-    margin: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .footer-section h2 {
-    color: white;
-    font-size: 20px;
-    margin-bottom: 15px;
-    border: none;
-  }
-
-  .footer-section p,
-  .footer-section ul li a {
-    color: white;
-    line-height: 1.6;
-    text-decoration: none;
-    border: none;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-    border: none;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 8px;
-    border: none;
-  }
-
-  .footer-section ul li a:hover {
-    color: white;
-  }
-
-  .social-icons a {
-    margin-right: 15px;
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .social-icons img {
-    width: 22px;
-    height: 22px;
-    transition: transform 0.3s;
-    border: none;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-
-  .email-link {
-    display: inline-flex;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none;
-  }
-
-  .email-link i {
-    color: white;
-    font-size: 22px;
-    margin-right: 8px;
-    transition: color 0.3s, transform 0.3s;
-    border: none;
-  }
-
-  .email-link:hover i {
-    color: gold;
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    footer {
-      padding: 10px;
-    }
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    .footer-section {
-      margin-bottom: 20px;
-    }
-  }
-
-  /* IMAGE AREA */
-  .sports-showcase {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border: none;
-  }
-
-  .square-img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain; 
-    background-color: white;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    border: none; /* removed line */
-  }
-
-  .under-text {
-    text-align: center;
-    margin-top: 8px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-  }
-
-  .powered-text {
-    text-align: center;
-    margin-top: 2px;
-    color:white;
-    font-size: 14px;
-    border: none;
-  }
-
-  p {
-    border: none !important;
-  }
-</style>
-</head>
-<body>
-
-<main></main>
-
-
-
-
 
 <footer>
   <div class="footer-container">
@@ -520,72 +373,58 @@ footer p {
       <h2>Golden Sport</h2>
       <p>The premier source for professional sports scores, news, and analysis. Elevate your sports experience.</p>
     </div>
-
+    <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="../public/about.html">About Us</a></li>
+        <li><a href="../public/privacy.html">Privacy Policy</a></li>
+        <li><a href="../public/contact.html">Contact</a></li>
+      </ul>
+    </div>
     <div class="footer-section" data-aos="fade-up" data-aos-delay="300">
       <h2>Follow Us</h2>
       <div class="social-icons">
-        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank" data-aos="fade-up" data-aos-delay="400">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png">
+        <a href="https://www.youtube.com/channel/UC3HzV9SWt8rryVOj61Au21Q" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+          YouTube
         </a>
-        <a href="https://www.instagram.com/goldensportlive" target="_blank" data-aos="fade-up" data-aos-delay="500">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg">
+        <a href="https://www.instagram.com/goldensportlive" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+          Instagram
         </a>
-        <a href="mailto:gsportlive1a@gmail.com" class="email-link" data-aos="fade-up" data-aos-delay="600">
+        <a href="mailto:gsportlive1a@gmail.com" class="email-link">
           <i class="fa-solid fa-envelope"></i> gsportlive1a@gmail.com
         </a>
       </div>
     </div>
   </div>
 
-<div class="sports-showcase">
-    <img src="../image/ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img">
-</div>
+  <div class="sports-showcase">
+    <img src="../image/ChatGPT Image Nov 16, 2025, 01_35_56 PM.png" class="square-img" alt="Ganza Sport Hub">
+  </div>
 
-<p class="under-text">𝐈𝐧 𝐩𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩 𝐰𝐢𝐭𝐡 𝐆 𝐆𝐫𝐨𝐮𝐩</p>
-<p class="powered-text">𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆 𝐆𝐫𝐨𝐮𝐩™</p>
-
-<p style="text-align:center; color:white; margin-top:20px; border:none;">
-© 𝟐𝟎𝟐𝟓 𝐆𝐨𝐥𝐝𝐞𝐧 𝐒𝐩𝐨𝐫𝐭 - 𝐀𝐥𝐥 𝐫𝐢𝐠𝐡𝐭𝐬 𝐫𝐞𝐬𝐞𝐫𝐯𝐞𝐝
-</p>
-
+  <p class="under-text">In partnership with G Group</p>
+  <p class="powered-text">Powered by G Group</p>
+  <p class="footer-copyright">© 2026 Golden Sport - All rights reserved</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
 <script>
-AOS.init({ duration:1000, once:true });
+  AOS.init({ duration: 1000, once: true });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".tab");
-  const tabContents = document.querySelectorAll(".tab-content");
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", function () {
-      tabs.forEach(t => t.classList.remove("active"));
-      tabContents.forEach(c => c.classList.remove("active"));
-
-      this.classList.add("active");
-      const target = this.getAttribute("data-tab");
-      document.getElementById(target).classList.add("active");
-    });
-  });
-});
-
-
-  const tabs = document.querySelectorAll(".tab");
-  const contents = document.querySelectorAll(".tab-content");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      contents.forEach(c => c.classList.remove("active"));
-      document.getElementById(tab.dataset.tab).classList.add("active");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", function () {
+        tabs.forEach((item) => item.classList.remove("active"));
+        contents.forEach((content) => content.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
     });
   });
 </script>
-
 </body>
 </html>
-

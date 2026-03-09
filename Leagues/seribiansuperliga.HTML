@@ -529,6 +529,16 @@
             transform: translateY(-2px);
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* Animation for table rows */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -580,8 +590,8 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">72%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-value">205/240</div>
+                    <div class="info-label">Matches Played</div>
                 </div>
             </div>
 
@@ -593,33 +603,72 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with current 2025/26 Serbian Super Liga statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORER - SERBIAN SUPER LIGA</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Aleksandar Katai</td><td>18</td></tr>
+                        <tr><td>2</td><td>Mirko Ivanic</td><td>12</td></tr>
+                        <tr><td>2</td><td>Jovan Milosevic</td><td>12</td></tr>
+                        <tr><td>4</td><td>Slobodan Tedic</td><td>11</td></tr>
+                        <tr><td>4</td><td>Ester Sokler</td><td>11</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - SERBIAN SUPER LIGA</h2>
-
-      
-                
-               
-
-                <h2><i class="fas fa-running"></i> TOP TACKLES - SERBIAN SUPER LIGA</h2>
-           
-             
-        
-                    
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Lazar Randjelovic</td><td>9</td></tr>
+                        <tr><td>2</td><td>Vasilije Kostov</td><td>8</td></tr>
+                        <tr><td>2</td><td>Diogo Bezerra de Oliveira</td><td>8</td></tr>
+                        <tr><td>4</td><td>Marko Arnautovic</td><td>7</td></tr>
+                        <tr><td>5</td><td>Bibras Natcho</td><td>6</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - SERBIAN SUPER LIGA</h2>
-  
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Zoran Popovic</td><td>12</td></tr>
+                        <tr><td>2</td><td>Matheus Lima Magalhaes</td><td>10</td></tr>
+                        <tr><td>3</td><td>Dragan Rosic</td><td>9</td></tr>
+                        <tr><td>3</td><td>Marko Milosevic</td><td>9</td></tr>
+                        <tr><td>5</td><td>Balsa Popovic</td><td>8</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-          
+                <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - SERBIAN SUPER LIGA</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Red Star Belgrade</td><td>78</td></tr>
+                        <tr><td>2</td><td>Partizan</td><td>56</td></tr>
+                        <tr><td>3</td><td>Vojvodina</td><td>44</td></tr>
+                        <tr><td>4</td><td>Cukaricki</td><td>38</td></tr>
+                        <tr><td>5</td><td>Radnicki Nis</td><td>33</td></tr>
+                    </tbody>
+                </table>
 
-    <h2><i class="fas fa-futbol"></i> SERBIAN SUPER LIGA TOP POSSESSION</h2>
-
-                   
+                <h2><i class="fas fa-check-circle"></i> MOST TEAM CLEAN SHEETS - SERBIAN SUPER LIGA</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Red Star Belgrade</td><td>12</td></tr>
+                        <tr class="top-player"><td>1</td><td>Zeleznicar Pancevo</td><td>12</td></tr>
+                        <tr><td>3</td><td>Partizan</td><td>9</td></tr>
+                        <tr><td>3</td><td>Radnik Surdulica</td><td>9</td></tr>
+                        <tr><td>3</td><td>Vojvodina</td><td>9</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -633,8 +682,27 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> SERBIAN SUPER LIGA STANDINGS</h2>
- 
-               
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Red Star Belgrade</td><td>26</td><td>20</td><td>3</td><td>3</td><td>78</td><td>19</td><td>+59</td><td>63</td></tr>
+                        <tr class="conference-league"><td>2</td><td>Partizan</td><td>25</td><td>17</td><td>2</td><td>6</td><td>56</td><td>32</td><td>+24</td><td>53</td></tr>
+                        <tr class="conference-league"><td>3</td><td>Vojvodina</td><td>25</td><td>15</td><td>4</td><td>6</td><td>44</td><td>26</td><td>+18</td><td>49</td></tr>
+                        <tr><td>4</td><td>Zeleznicar Pancevo</td><td>26</td><td>12</td><td>6</td><td>8</td><td>31</td><td>26</td><td>+5</td><td>42</td></tr>
+                        <tr><td>5</td><td>Novi Pazar</td><td>25</td><td>12</td><td>6</td><td>7</td><td>33</td><td>31</td><td>+2</td><td>42</td></tr>
+                        <tr><td>6</td><td>Radnik Surdulica</td><td>26</td><td>9</td><td>7</td><td>10</td><td>32</td><td>31</td><td>+1</td><td>34</td></tr>
+                        <tr><td>7</td><td>Cukaricki</td><td>26</td><td>9</td><td>7</td><td>10</td><td>38</td><td>40</td><td>-2</td><td>34</td></tr>
+                        <tr><td>8</td><td>Radnicki Nis</td><td>26</td><td>9</td><td>6</td><td>11</td><td>33</td><td>33</td><td>0</td><td>33</td></tr>
+                        <tr><td>9</td><td>OFK Beograd</td><td>25</td><td>9</td><td>6</td><td>10</td><td>32</td><td>33</td><td>-1</td><td>33</td></tr>
+                        <tr><td>10</td><td>Radnicki 1923 Kragujevac</td><td>25</td><td>8</td><td>8</td><td>9</td><td>31</td><td>35</td><td>-4</td><td>32</td></tr>
+                        <tr><td>11</td><td>IMT Novi Beograd</td><td>26</td><td>9</td><td>5</td><td>12</td><td>28</td><td>43</td><td>-15</td><td>32</td></tr>
+                        <tr><td>12</td><td>Backa Topola</td><td>26</td><td>7</td><td>9</td><td>10</td><td>22</td><td>29</td><td>-7</td><td>30</td></tr>
+                        <tr class="relegation-zone"><td>13</td><td>Javor Ivanjica</td><td>26</td><td>7</td><td>8</td><td>11</td><td>25</td><td>35</td><td>-10</td><td>29</td></tr>
+                        <tr class="relegation-zone"><td>14</td><td>Mladost Lucani</td><td>25</td><td>6</td><td>9</td><td>10</td><td>19</td><td>37</td><td>-18</td><td>27</td></tr>
+                        <tr class="relegation-zone"><td>15</td><td>Spartak Subotica</td><td>26</td><td>3</td><td>9</td><td>14</td><td>28</td><td>47</td><td>-19</td><td>18</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>Napredak Krusevac</td><td>26</td><td>2</td><td>7</td><td>17</td><td>22</td><td>55</td><td>-33</td><td>13</td></tr>
+                    </tbody>
+                </table>
         </section>
     </main>
 

@@ -490,6 +490,16 @@
             background: rgba(0, 0, 0, 1);
             transform: translateY(-2px);
         }
+
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
     /* Animation for table rows */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
@@ -541,8 +551,8 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">78%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-value">Final</div>
+                    <div class="info-label">Current Stage</div>
                 </div>
             </div>
 
@@ -554,46 +564,75 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with the latest confirmed 2025/26 Carabao Cup competition status. The final is set between Liverpool and Newcastle United.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
-                <h2><i class="fas fa-futbol"></i> TOP SCORERS - CARABAO CUP</h2>
+                <h2><i class="fas fa-star"></i> COMPETITION LEADERS - CARABAO CUP</h2>
+                <table>
+                    <thead><tr><th>Category</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>Top scorer total</td><td>5 goals</td></tr>
+                        <tr><td>Finalists</td><td>Liverpool, Newcastle United</td></tr>
+                        <tr><td>Semi-finalists</td><td>Arsenal, Tottenham Hotspur</td></tr>
+                        <tr><td>Competition format</td><td>Knockout cup across 7 rounds</td></tr>
+                        <tr><td>Teams</td><td>92 clubs</td></tr>
+                    </tbody>
+                </table>
 
-
-
-                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - CARABAO CUP</h2>
-      
-                 
-                <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - CARABAO CUP</h2>
-         
-
-                  
-
-                <h2><i class="fas fa-running"></i> TOP TACKLES - CARABAO CUP</h2>
-             
+                <h2><i class="fas fa-futbol"></i> FINAL FOUR SUMMARY - CARABAO CUP</h2>
+                <table>
+                    <thead><tr><th>Club</th><th>Stage Reached</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>Liverpool</td><td>Final</td></tr>
+                        <tr class="top-player"><td>Newcastle United</td><td>Final</td></tr>
+                        <tr><td>Arsenal</td><td>Semi-finals</td></tr>
+                        <tr><td>Tottenham Hotspur</td><td>Semi-finals</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - CARABAO CUP</h2>
-       
-               
-                    
-               
+                <h2><i class="fas fa-trophy"></i> COMPETITION PROGRESSION - CARABAO CUP</h2>
+                <table>
+                    <thead><tr><th>Round</th><th>Key Outcome</th></tr></thead>
+                    <tbody>
+                        <tr><td>First Round</td><td>EFL clubs entered the knockout bracket</td></tr>
+                        <tr><td>Second Round</td><td>Premier League clubs not in Europe entered</td></tr>
+                        <tr><td>Third Round</td><td>European-qualified English clubs entered</td></tr>
+                        <tr><td>Quarter-finals</td><td>Arsenal, Liverpool, Newcastle, Tottenham advanced</td></tr>
+                        <tr class="top-player"><td>Semi-finals</td><td>Liverpool and Newcastle United reached the final</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
             <div class="tab-content" id="fixtures">
-          
-
-                  
+                <h2><i class="fas fa-calendar-day"></i> CARABAO CUP FIXTURES</h2>
+                <table>
+                    <thead><tr><th>Match</th><th>Stage</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>Liverpool vs Newcastle United</td><td>Final</td><td>Scheduled</td></tr>
+                        <tr><td>Liverpool vs Arsenal</td><td>Semi-final</td><td>Liverpool advanced</td></tr>
+                        <tr><td>Newcastle United vs Tottenham Hotspur</td><td>Semi-final</td><td>Newcastle advanced</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
-           
-                      
-     
-         
+                <h2><i class="fas fa-list-ol"></i> CARABAO CUP STANDINGS</h2>
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Competition Status</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Liverpool</td><td>Finalist</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Newcastle United</td><td>Finalist</td></tr>
+                        <tr class="conference-league"><td>3</td><td>Arsenal</td><td>Semi-finalist</td></tr>
+                        <tr class="conference-league"><td>4</td><td>Tottenham Hotspur</td><td>Semi-finalist</td></tr>
+                        <tr><td>5</td><td>Remaining quarter-finalists</td><td>Eliminated</td></tr>
+                    </tbody>
+                </table>
 
         </section>
     </main>

@@ -375,6 +375,16 @@
         display: block;
     }
 
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #111;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
+
     /* RESPONSIVE */
     @media(max-width: 768px) {
         main {
@@ -562,37 +572,188 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with the latest available 2025/26 UEFA Champions League statistics. Standings below reflect the completed league phase table.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - CHAMPIONS LEAGUE</h2>
-           
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Kylian Mbappe</td><td>Real Madrid</td><td>13</td></tr>
+                        <tr><td>2</td><td>Anthony Gordon</td><td>Newcastle United</td><td>10</td></tr>
+                        <tr><td>3</td><td>Harry Kane</td><td>Bayern Munich</td><td>8</td></tr>
+                        <tr><td>4</td><td>Victor Osimhen</td><td>Galatasaray</td><td>7</td></tr>
+                        <tr><td>4</td><td>Erling Haaland</td><td>Manchester City</td><td>7</td></tr>
+                        <tr><td>6</td><td>Jens Petter Hauge</td><td>Bodo/Glimt</td><td>6</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - CHAMPIONS LEAGUE</h2>
-              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Assists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Michael Olise</td><td>Bayern Munich</td><td>6</td></tr>
+                        <tr class="top-player"><td>1</td><td>Vinicius Junior</td><td>Real Madrid</td><td>6</td></tr>
+                        <tr><td>3</td><td>Pierre-Emerick Aubameyang</td><td>Marseille</td><td>5</td></tr>
+                        <tr><td>4</td><td>Blomberg</td><td>Bodo/Glimt</td><td>4</td></tr>
+                        <tr><td>4</td><td>Arda Guler</td><td>Real Madrid</td><td>4</td></tr>
+                        <tr><td>4</td><td>Dominik Szoboszlai</td><td>Liverpool</td><td>4</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - CHAMPIONS LEAGUE</h2>
-              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Goalkeeper</th>
+                            <th>Club</th>
+                            <th>Clean Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Guglielmo Vicario</td><td>Tottenham Hotspur</td><td>6</td></tr>
+                        <tr><td>2</td><td>David Raya</td><td>Arsenal</td><td>5</td></tr>
+                        <tr><td>3</td><td>Yann Sommer</td><td>Inter</td><td>4</td></tr>
+                        <tr><td>3</td><td>Nick Pope</td><td>Newcastle United</td><td>4</td></tr>
+                        <tr><td>5</td><td>Alisson Becker</td><td>Liverpool</td><td>3</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - CHAMPIONS LEAGUE</h2>
-      
-          
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Possession</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Paris Saint-Germain</td><td>65.3%</td></tr>
+                        <tr><td>2</td><td>Barcelona</td><td>61.5%</td></tr>
+                        <tr><td>3</td><td>Manchester City</td><td>59.0%</td></tr>
+                        <tr><td>4</td><td>Real Madrid</td><td>56.8%</td></tr>
+                        <tr><td>5</td><td>Bayern Munich</td><td>56.5%</td></tr>
+                        <tr><td>6</td><td>Inter</td><td>55.8%</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-passport"></i> PASSING ACCURACY (%) - CHAMPIONS LEAGUE</h2>
-            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Passing Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Paris Saint-Germain</td><td>91.7%</td></tr>
+                        <tr><td>2</td><td>Manchester City</td><td>91.4%</td></tr>
+                        <tr><td>3</td><td>Chelsea</td><td>90.2%</td></tr>
+                        <tr><td>4</td><td>Bayern Munich</td><td>89.8%</td></tr>
+                        <tr><td>5</td><td>Liverpool</td><td>89.0%</td></tr>
+                        <tr><td>6</td><td>Barcelona</td><td>88.9%</td></tr>
+                    </tbody>
+                </table>
+
                 <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - CHAMPIONS LEAGUE</h2>
-             
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Newcastle United</td><td>26</td></tr>
+                        <tr class="top-player"><td>1</td><td>Paris Saint-Germain</td><td>26</td></tr>
+                        <tr><td>3</td><td>Atletico Madrid</td><td>24</td></tr>
+                        <tr><td>3</td><td>Real Madrid</td><td>24</td></tr>
+                        <tr><td>5</td><td>Arsenal</td><td>23</td></tr>
+                        <tr><td>6</td><td>Borussia Dortmund</td><td>22</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TACKLES - CHAMPIONS LEAGUE</h2>
-           
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Tackles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Manuel Locatelli</td><td>Juventus</td><td>41</td></tr>
+                        <tr><td>2</td><td>Moises Caicedo</td><td>Chelsea</td><td>33</td></tr>
+                        <tr><td>3</td><td>Van De Perre</td><td>Union SG</td><td>32</td></tr>
+                        <tr><td>4</td><td>Lucas Torreira</td><td>Galatasaray</td><td>30</td></tr>
+                        <tr><td>4</td><td>Aurelien Tchouameni</td><td>Real Madrid</td><td>30</td></tr>
+                        <tr><td>6</td><td>Mac Allister</td><td>Union SG</td><td>28</td></tr>
+                    </tbody>
+                </table>
+
                 <h2><i class="fas fa-hands"></i> SAVES - CHAMPIONS LEAGUE</h2>
-            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Goalkeeper</th>
+                            <th>Club</th>
+                            <th>Saves</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Nikita Haikin</td><td>Bodo/Glimt</td><td>56</td></tr>
+                        <tr><td>2</td><td>Thibaut Courtois</td><td>Real Madrid</td><td>48</td></tr>
+                        <tr><td>3</td><td>Mateusz Kochalski</td><td>Qarabag</td><td>45</td></tr>
+                        <tr><td>4</td><td>Aleksandr Anarbekov</td><td>Kairat Almaty</td><td>36</td></tr>
+                        <tr><td>4</td><td>Geronimo Rulli</td><td>Marseille</td><td>36</td></tr>
+                        <tr><td>6</td><td>Anatoliy Trubin</td><td>Benfica</td><td>35</td></tr>
+                    </tbody>
+                </table>
                 
                 <h2><i class="fas fa-passport"></i> PLAYERS PASSING ACCURACY (%) - CHAMPIONS LEAGUE</h2>
-              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Passing Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Dani Carvajal</td><td>Real Madrid</td><td>100%</td></tr>
+                        <tr><td>1</td><td>Marc Guiu</td><td>Chelsea</td><td>100%</td></tr>
+                        <tr><td>1</td><td>Mateo Kovacic</td><td>Manchester City</td><td>100%</td></tr>
+                        <tr><td>1</td><td>Steve Mmaee</td><td>Qarabag</td><td>100%</td></tr>
+                        <tr><td>1</td><td>Gunay Guvenc</td><td>Galatasaray</td><td>100%</td></tr>
+                        <tr><td>1</td><td>Ben Davies</td><td>Tottenham Hotspur</td><td>100%</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -604,7 +765,40 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> CHAMPIONS LEAGUE STANDINGS</h2>
-          
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Club</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Arsenal</td><td>8</td><td>8</td><td>0</td><td>0</td><td>23</td><td>4</td><td>+19</td><td>24</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Bayern Munich</td><td>8</td><td>7</td><td>0</td><td>1</td><td>22</td><td>8</td><td>+14</td><td>21</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Liverpool</td><td>8</td><td>6</td><td>0</td><td>2</td><td>20</td><td>8</td><td>+12</td><td>18</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Tottenham Hotspur</td><td>8</td><td>5</td><td>2</td><td>1</td><td>17</td><td>7</td><td>+10</td><td>17</td></tr>
+                        <tr class="champions-league"><td>5</td><td>Barcelona</td><td>8</td><td>5</td><td>1</td><td>2</td><td>22</td><td>14</td><td>+8</td><td>16</td></tr>
+                        <tr class="champions-league"><td>6</td><td>Chelsea</td><td>8</td><td>5</td><td>1</td><td>2</td><td>17</td><td>10</td><td>+7</td><td>16</td></tr>
+                        <tr class="champions-league"><td>7</td><td>Sporting CP</td><td>8</td><td>5</td><td>1</td><td>2</td><td>17</td><td>11</td><td>+6</td><td>16</td></tr>
+                        <tr class="champions-league"><td>8</td><td>Manchester City</td><td>8</td><td>5</td><td>1</td><td>2</td><td>15</td><td>9</td><td>+6</td><td>16</td></tr>
+                        <tr class="europa-league"><td>9</td><td>Real Madrid</td><td>8</td><td>5</td><td>0</td><td>3</td><td>21</td><td>12</td><td>+9</td><td>15</td></tr>
+                        <tr class="europa-league"><td>10</td><td>Inter</td><td>8</td><td>5</td><td>0</td><td>3</td><td>15</td><td>7</td><td>+8</td><td>15</td></tr>
+                        <tr class="europa-league"><td>11</td><td>Paris Saint-Germain</td><td>8</td><td>4</td><td>2</td><td>2</td><td>21</td><td>11</td><td>+10</td><td>14</td></tr>
+                        <tr class="europa-league"><td>12</td><td>Newcastle United</td><td>8</td><td>4</td><td>2</td><td>2</td><td>17</td><td>7</td><td>+10</td><td>14</td></tr>
+                        <tr class="europa-league"><td>13</td><td>Juventus</td><td>8</td><td>3</td><td>4</td><td>1</td><td>14</td><td>10</td><td>+4</td><td>13</td></tr>
+                        <tr class="europa-league"><td>14</td><td>Atletico Madrid</td><td>8</td><td>4</td><td>1</td><td>3</td><td>17</td><td>15</td><td>+2</td><td>13</td></tr>
+                        <tr class="europa-league"><td>15</td><td>Atalanta</td><td>8</td><td>4</td><td>1</td><td>3</td><td>10</td><td>10</td><td>0</td><td>13</td></tr>
+                        <tr class="europa-league"><td>16</td><td>Bayer Leverkusen</td><td>8</td><td>3</td><td>3</td><td>2</td><td>13</td><td>14</td><td>-1</td><td>12</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

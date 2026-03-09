@@ -375,6 +375,16 @@
         display: block;
     }
 
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #1a1a1b;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
+
     /* RESPONSIVE */
     @media(max-width: 768px) {
         main {
@@ -554,27 +564,101 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 Premier League statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - PREMIER LEAGUE</h2>
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Erling Haaland</td><td>Manchester City</td><td>22</td></tr>
+                        <tr><td>2</td><td>Igor Thiago</td><td>Brentford</td><td>17</td></tr>
+                        <tr><td>3</td><td>Antoine Semenyo</td><td>Manchester City</td><td>13</td></tr>
+                        <tr><td>4</td><td>Joao Pedro</td><td>Chelsea</td><td>11</td></tr>
+                        <tr><td>5</td><td>Hugo Ekitike</td><td>Liverpool</td><td>10</td></tr>
+                        <tr><td>5</td><td>Dominic Calvert-Lewin</td><td>Leeds United</td><td>10</td></tr>
+                        <tr><td>5</td><td>Viktor Gyokeres</td><td>Arsenal</td><td>10</td></tr>
+                        <tr><td>8</td><td>Bruno Guimaraes</td><td>Newcastle United</td><td>9</td></tr>
+                        <tr><td>8</td><td>Bryan Mbeumo</td><td>Manchester United</td><td>9</td></tr>
+                        <tr><td>8</td><td>Danny Welbeck</td><td>Brighton &amp; Hove Albion</td><td>9</td></tr>
+                        <tr><td>11</td><td>Morgan Rogers</td><td>Aston Villa</td><td>8</td></tr>
+                        <tr><td>11</td><td>Raul Jimenez</td><td>Fulham</td><td>8</td></tr>
+                        <tr><td>11</td><td>Jarrod Bowen</td><td>West Ham United</td><td>8</td></tr>
+                        <tr><td>11</td><td>Ollie Watkins</td><td>Aston Villa</td><td>8</td></tr>
+                        <tr><td>11</td><td>Cole Palmer</td><td>Chelsea</td><td>8</td></tr>
+                    </tbody>
+                </table>
                   
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - PREMIER LEAGUE</h2>
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Bruno Fernandes</td><td>Manchester United</td><td>12</td></tr>
+                        <tr><td>2</td><td>Mathis Rayan Cherki</td><td>Manchester City</td><td>7</td></tr>
+                        <tr><td>3</td><td>Jack Grealish</td><td>Everton</td><td>6</td></tr>
+                        <tr><td>3</td><td>Erling Haaland</td><td>Manchester City</td><td>6</td></tr>
+                        <tr><td>5</td><td>Mohamed Salah</td><td>Liverpool</td><td>5</td></tr>
+                        <tr><td>5</td><td>Granit Xhaka</td><td>Sunderland</td><td>5</td></tr>
+                        <tr><td>5</td><td>Mohammed Kudus</td><td>Tottenham Hotspur</td><td>5</td></tr>
+                        <tr><td>5</td><td>Leandro Trossard</td><td>Arsenal</td><td>5</td></tr>
+                        <tr><td>5</td><td>Morgan Rogers</td><td>Aston Villa</td><td>5</td></tr>
+                        <tr><td>5</td><td>Xavi Simons</td><td>Tottenham Hotspur</td><td>5</td></tr>
+                        <tr><td>11</td><td>Enzo Le Fee</td><td>Sunderland</td><td>4</td></tr>
+                        <tr><td>11</td><td>Yankuba Minteh</td><td>Brighton &amp; Hove Albion</td><td>4</td></tr>
+                        <tr><td>11</td><td>Samuel Chukwueze</td><td>Fulham</td><td>4</td></tr>
+                        <tr><td>11</td><td>Jeremy Doku</td><td>Manchester City</td><td>4</td></tr>
+                        <tr><td>11</td><td>Bernardo Silva</td><td>Manchester City</td><td>4</td></tr>
+                    </tbody>
+                </table>
                   
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - PREMIER LEAGUE</h2>
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Matches</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>David Raya</td><td>Arsenal</td><td>26</td><td>13</td></tr>
+                        <tr><td>2</td><td>Gianluigi Donnarumma</td><td>Manchester City</td><td>23</td><td>10</td></tr>
+                        <tr><td>3</td><td>Robert Sanchez</td><td>Chelsea</td><td>25</td><td>9</td></tr>
+                        <tr><td>3</td><td>Dean Henderson</td><td>Crystal Palace</td><td>26</td><td>9</td></tr>
+                        <tr><td>3</td><td>Jordan Pickford</td><td>Everton</td><td>26</td><td>9</td></tr>
+                        <tr><td>6</td><td>Robin Roefs</td><td>Sunderland</td><td>26</td><td>8</td></tr>
+                        <tr><td>7</td><td>Nick Pope</td><td>Newcastle United</td><td>20</td><td>7</td></tr>
+                        <tr><td>7</td><td>Alisson</td><td>Liverpool</td><td>21</td><td>7</td></tr>
+                        <tr><td>7</td><td>Emiliano Martinez</td><td>Aston Villa</td><td>22</td><td>7</td></tr>
+                        <tr><td>7</td><td>Guglielmo Vicario</td><td>Tottenham Hotspur</td><td>26</td><td>7</td></tr>
+                        <tr><td>11</td><td>Djordje Petrovic</td><td>AFC Bournemouth</td><td>26</td><td>6</td></tr>
+                        <tr><td>11</td><td>Caoimhin Kelleher</td><td>Brentford</td><td>26</td><td>6</td></tr>
+                        <tr><td>13</td><td>Bart Verbruggen</td><td>Brighton &amp; Hove Albion</td><td>26</td><td>5</td></tr>
+                        <tr><td>13</td><td>Bernd Leno</td><td>Fulham</td><td>26</td><td>5</td></tr>
+                        <tr><td>15</td><td>Matz Sels</td><td>Nottingham Forest</td><td>19</td><td>4</td></tr>
+                    </tbody>
+                </table>
                  
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - PREMIER LEAGUE</h2>
-            
-          
-
-                <h2><i class="fas fa-passport"></i> TOTAL PASSES - PREMIER LEAGUE</h2>
-           
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th><th>Matches</th><th>Goals per Match</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Manchester City</td><td>54</td><td>26</td><td>2.08</td></tr>
+                        <tr><td>2</td><td>Arsenal</td><td>50</td><td>26</td><td>1.92</td></tr>
+                        <tr><td>3</td><td>Manchester United</td><td>47</td><td>26</td><td>1.81</td></tr>
+                        <tr><td>4</td><td>Chelsea</td><td>46</td><td>26</td><td>1.77</td></tr>
+                        <tr><td>5</td><td>AFC Bournemouth</td><td>43</td><td>26</td><td>1.65</td></tr>
+                        <tr><td>6</td><td>Liverpool</td><td>41</td><td>26</td><td>1.58</td></tr>
+                        <tr><td>7</td><td>Brentford</td><td>40</td><td>26</td><td>1.54</td></tr>
+                        <tr><td>8</td><td>Tottenham Hotspur</td><td>37</td><td>26</td><td>1.42</td></tr>
+                        <tr><td>8</td><td>Aston Villa</td><td>37</td><td>26</td><td>1.42</td></tr>
+                        <tr><td>8</td><td>Newcastle United</td><td>37</td><td>26</td><td>1.42</td></tr>
+                        <tr><td>11</td><td>Leeds United</td><td>36</td><td>26</td><td>1.38</td></tr>
+                        <tr><td>12</td><td>Fulham</td><td>35</td><td>26</td><td>1.35</td></tr>
+                        <tr><td>13</td><td>Brighton &amp; Hove Albion</td><td>34</td><td>26</td><td>1.31</td></tr>
+                        <tr><td>14</td><td>West Ham United</td><td>32</td><td>26</td><td>1.23</td></tr>
+                        <tr><td>15</td><td>Everton</td><td>28</td><td>26</td><td>1.08</td></tr>
+                    </tbody>
+                </table>
             </div>
              
                     
@@ -586,8 +670,31 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> PREMIER LEAGUE STANDINGS</h2>
-             
-             
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Arsenal</td><td>28</td><td>18</td><td>7</td><td>3</td><td>56</td><td>21</td><td>+35</td><td>61</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Manchester City</td><td>27</td><td>17</td><td>5</td><td>5</td><td>56</td><td>25</td><td>+31</td><td>56</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Aston Villa</td><td>27</td><td>15</td><td>6</td><td>6</td><td>38</td><td>28</td><td>+10</td><td>51</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Manchester United</td><td>27</td><td>13</td><td>9</td><td>5</td><td>48</td><td>37</td><td>+11</td><td>48</td></tr>
+                        <tr class="europa-league"><td>5</td><td>Chelsea</td><td>27</td><td>12</td><td>9</td><td>6</td><td>47</td><td>31</td><td>+16</td><td>45</td></tr>
+                        <tr><td>6</td><td>Liverpool</td><td>27</td><td>13</td><td>6</td><td>8</td><td>42</td><td>35</td><td>+7</td><td>45</td></tr>
+                        <tr><td>7</td><td>Brentford</td><td>27</td><td>12</td><td>4</td><td>11</td><td>40</td><td>38</td><td>+2</td><td>40</td></tr>
+                        <tr><td>8</td><td>AFC Bournemouth</td><td>27</td><td>9</td><td>11</td><td>7</td><td>43</td><td>45</td><td>-2</td><td>38</td></tr>
+                        <tr><td>9</td><td>Fulham</td><td>27</td><td>11</td><td>5</td><td>11</td><td>38</td><td>40</td><td>-2</td><td>38</td></tr>
+                        <tr><td>10</td><td>Newcastle United</td><td>27</td><td>10</td><td>6</td><td>11</td><td>38</td><td>39</td><td>-1</td><td>36</td></tr>
+                        <tr><td>11</td><td>Sunderland</td><td>27</td><td>9</td><td>9</td><td>9</td><td>28</td><td>33</td><td>-5</td><td>36</td></tr>
+                        <tr><td>12</td><td>Crystal Palace</td><td>27</td><td>9</td><td>8</td><td>10</td><td>29</td><td>31</td><td>-2</td><td>35</td></tr>
+                        <tr><td>13</td><td>Everton</td><td>27</td><td>9</td><td>8</td><td>10</td><td>28</td><td>31</td><td>-3</td><td>35</td></tr>
+                        <tr><td>14</td><td>Brighton &amp; Hove Albion</td><td>27</td><td>8</td><td>10</td><td>9</td><td>36</td><td>34</td><td>+2</td><td>34</td></tr>
+                        <tr><td>15</td><td>Leeds United</td><td>27</td><td>7</td><td>10</td><td>10</td><td>37</td><td>46</td><td>-9</td><td>31</td></tr>
+                        <tr><td>16</td><td>Tottenham Hotspur</td><td>27</td><td>7</td><td>8</td><td>12</td><td>38</td><td>41</td><td>-3</td><td>29</td></tr>
+                        <tr><td>17</td><td>Nottingham Forest</td><td>27</td><td>7</td><td>6</td><td>14</td><td>25</td><td>39</td><td>-14</td><td>27</td></tr>
+                        <tr class="relegation-zone"><td>18</td><td>West Ham United</td><td>27</td><td>6</td><td>7</td><td>14</td><td>32</td><td>49</td><td>-17</td><td>25</td></tr>
+                        <tr class="relegation-zone"><td>19</td><td>Burnley</td><td>27</td><td>4</td><td>7</td><td>16</td><td>29</td><td>52</td><td>-23</td><td>19</td></tr>
+                        <tr class="relegation-zone"><td>20</td><td>Wolverhampton Wanderers</td><td>28</td><td>1</td><td>7</td><td>20</td><td>18</td><td>51</td><td>-33</td><td>10</td></tr>
+                    </tbody>
+                </table>
        
 
         </section>

@@ -8,7 +8,8 @@ const JWT_SECRET = process.env.JWT_SECRET || 'ganzakmk';
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '534367923011-sejspfqhk9i62fob2i254e25n557vqjv.apps.googleusercontent.com';
 const googleClient = new OAuth2Client(GOOGLE_CLIENT_ID);
 
-const usersFilePath = path.join(process.cwd(), 'backend', 'users.json');
+const usersDir = path.join(process.cwd(), 'backend');
+const usersFilePath = path.join(usersDir, 'users.json');
 
 // In-memory fallback for Vercel (serverless filesystem is read-only)
 let usersCache = null;
@@ -17,7 +18,9 @@ const readUsers = () => {
   try {
     if (usersCache) return usersCache;
     if (fs.existsSync(usersFilePath)) {
-      usersCache = JSON.parse(fs.readFileSync(usersFilePath, 'utf8'));
+      const fileContent = fs.readFileSync(usersFilePath, 'utf8');
+      if (!fileContent.trim()) return [];
+      usersCache = JSON.parse(fileContent);
       return usersCache;
     }
   } catch (e) {
@@ -29,10 +32,13 @@ const readUsers = () => {
 const writeUsers = (users) => {
   usersCache = users;
   try {
+    if (!fs.existsSync(usersDir)) {
+      fs.mkdirSync(usersDir, { recursive: true });
+    }
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
   } catch (e) {
     // Fail silently on Vercel (read-only fs) - data persists in-memory for the request
-    console.warn('writeUsers: filesystem read-only (Vercel). Using in-memory cache.');
+    console.warn('writeUsers: filesystem read-only (Vercel). Using in-memory cache.', e.message);
   }
 };
 
@@ -48,6 +54,19 @@ const getBody = async (req) => {
 };
 
 module.exports = async (req, res) => {
+  // CORS Headers
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
+  );
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   try {
     const slug = Array.isArray(req.query.slug) ? req.query.slug : (req.query.slug ? [req.query.slug] : []);
     const action = slug[0] || '';

@@ -374,6 +374,16 @@
             display: block;
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 768px) {
             main {
@@ -556,24 +566,90 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with the latest available 2025/26 UEFA Europa League statistics. Standings below reflect the completed league phase table.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - EUROPA LEAGUE</h2>
-              
-               
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Assists</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Denis Undav</td><td>Stuttgart</td><td>6</td></tr>
+                        <tr><td>2</td><td>Andrija Zivkovic</td><td>PAOK</td><td>5</td></tr>
+                        <tr><td>3</td><td>Daan Heymans</td><td>Genk</td><td>4</td></tr>
+                        <tr><td>3</td><td>Bryan Zaragoza</td><td>Celta Vigo</td><td>4</td></tr>
+                        <tr><td>3</td><td>Ricardo Horta</td><td>Braga</td><td>4</td></tr>
+                        <tr><td>6</td><td>Ryan Yates</td><td>Nottingham Forest</td><td>3</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - EUROPA LEAGUE</h2>
-
-
-              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Igor Jesus</td><td>Nottingham Forest</td><td>7</td></tr>
+                        <tr class="top-player"><td>1</td><td>Petar Stanic</td><td>Ludogorets</td><td>7</td></tr>
+                        <tr><td>3</td><td>Kerem Akturkoglu</td><td>Fenerbahce</td><td>6</td></tr>
+                        <tr><td>4</td><td>Bilal El Khannouss</td><td>Stuttgart</td><td>5</td></tr>
+                        <tr><td>4</td><td>Dion Beljo</td><td>GNK Dinamo</td><td>5</td></tr>
+                        <tr><td>6</td><td>Daan Heymans</td><td>Genk</td><td>4</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP PLAYER TOTAL TACKLES</h2>
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Club</th>
+                            <th>Tackles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Daan Heymans</td><td>Genk</td><td>27</td></tr>
+                        <tr class="top-player"><td>1</td><td>Bryan Heynen</td><td>Genk</td><td>27</td></tr>
+                        <tr class="top-player"><td>1</td><td>Andre</td><td>Lille</td><td>27</td></tr>
+                        <tr><td>4</td><td>Pedro Naressi</td><td>Ludogorets</td><td>25</td></tr>
+                        <tr><td>5</td><td>Josip Misic</td><td>GNK Dinamo</td><td>24</td></tr>
+                        <tr><td>6</td><td>Zakaria El Ouahdi</td><td>Genk</td><td>23</td></tr>
+                    </tbody>
+                </table>
 
                   
                 <h2><i class="fas fa-hands"></i> PLAYERS SAVES</h2>
-               
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Goalkeeper</th>
+                            <th>Club</th>
+                            <th>Saves</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Jari De Busser</td><td>Go Ahead Eagles</td><td>37</td></tr>
+                        <tr><td>2</td><td>Elias Olafsson</td><td>Midtjylland</td><td>35</td></tr>
+                        <tr><td>2</td><td>Mathias Dyngeland</td><td>Brann</td><td>35</td></tr>
+                        <tr><td>4</td><td>Stefan Tarnovanu</td><td>FCSB</td><td>33</td></tr>
+                        <tr><td>4</td><td>Marwin Hitz</td><td>Basel</td><td>33</td></tr>
+                        <tr><td>6</td><td>Kasper Schmeichel</td><td>Celtic</td><td>32</td></tr>
+                    </tbody>
+                </table>
 
        
             </div>
@@ -581,18 +657,81 @@
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-users"></i> TOP SCORING TEAMS - EUROPA LEAGUE</h2>
-
-            
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Nottingham Forest</td><td>19</td></tr>
+                        <tr class="top-player"><td>1</td><td>Stuttgart</td><td>19</td></tr>
+                        <tr><td>3</td><td>Midtjylland</td><td>18</td></tr>
+                        <tr><td>3</td><td>Lyon</td><td>18</td></tr>
+                        <tr><td>3</td><td>Celta Vigo</td><td>18</td></tr>
+                        <tr><td>3</td><td>PAOK</td><td>18</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - EUROPA LEAGUE</h2>
-
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Clean Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Braga</td><td>6</td></tr>
+                        <tr><td>2</td><td>Viktoria Plzen</td><td>5</td></tr>
+                        <tr><td>2</td><td>Lyon</td><td>5</td></tr>
+                        <tr><td>2</td><td>Nottingham Forest</td><td>5</td></tr>
+                        <tr><td>2</td><td>Crvena Zvezda</td><td>5</td></tr>
+                        <tr><td>6</td><td>Lille</td><td>4</td></tr>
+                    </tbody>
+                </table>
                 
                 <h2><i class="fas fa-bullseye"></i> TOP POSSESSION TEAMS - EUROPA LEAGUE</h2>
-     
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Possession</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Lyon</td><td>61.4%</td></tr>
+                        <tr><td>2</td><td>Fenerbahce</td><td>58.1%</td></tr>
+                        <tr><td>3</td><td>Aston Villa</td><td>57.1%</td></tr>
+                        <tr><td>4</td><td>Lille</td><td>57.1%</td></tr>
+                        <tr><td>5</td><td>Porto</td><td>56.2%</td></tr>
+                        <tr><td>6</td><td>Stuttgart</td><td>56.1%</td></tr>
+                    </tbody>
+                </table>
                     
                 <h2><i class="fas fa-passport"></i> TOP PASSING ACCURACY TEAMS - EUROPA LEAGUE</h2>
-
-</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Club</th>
+                            <th>Passing Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Lyon</td><td>89.1%</td></tr>
+                        <tr><td>2</td><td>Aston Villa</td><td>87.4%</td></tr>
+                        <tr><td>3</td><td>Real Betis</td><td>86.9%</td></tr>
+                        <tr><td>4</td><td>Stuttgart</td><td>86.8%</td></tr>
+                        <tr><td>5</td><td>Porto</td><td>86.2%</td></tr>
+                        <tr><td>6</td><td>Nottingham Forest</td><td>85.9%</td></tr>
+                    </tbody>
+                </table>
+            </div>
                   
 
 
@@ -606,10 +745,41 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> EUROPA LEAGUE STANDINGS</h2>
-       
-        
-
-                      
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Club</th>
+                            <th>Pld</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Lyon</td><td>8</td><td>7</td><td>0</td><td>1</td><td>18</td><td>5</td><td>+13</td><td>21</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Aston Villa</td><td>8</td><td>7</td><td>0</td><td>1</td><td>14</td><td>6</td><td>+8</td><td>21</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Midtjylland</td><td>8</td><td>6</td><td>1</td><td>1</td><td>18</td><td>8</td><td>+10</td><td>19</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Real Betis</td><td>8</td><td>5</td><td>2</td><td>1</td><td>13</td><td>7</td><td>+6</td><td>17</td></tr>
+                        <tr class="champions-league"><td>5</td><td>Porto</td><td>8</td><td>5</td><td>2</td><td>1</td><td>13</td><td>7</td><td>+6</td><td>17</td></tr>
+                        <tr class="champions-league"><td>6</td><td>Braga</td><td>8</td><td>5</td><td>2</td><td>1</td><td>11</td><td>5</td><td>+6</td><td>17</td></tr>
+                        <tr class="champions-league"><td>7</td><td>SC Freiburg</td><td>8</td><td>5</td><td>2</td><td>1</td><td>10</td><td>4</td><td>+6</td><td>17</td></tr>
+                        <tr class="champions-league"><td>8</td><td>Roma</td><td>8</td><td>5</td><td>1</td><td>2</td><td>13</td><td>6</td><td>+7</td><td>16</td></tr>
+                        <tr class="europa-league"><td>9</td><td>Genk</td><td>8</td><td>5</td><td>1</td><td>2</td><td>11</td><td>7</td><td>+4</td><td>16</td></tr>
+                        <tr class="europa-league"><td>10</td><td>Bologna</td><td>8</td><td>4</td><td>3</td><td>1</td><td>14</td><td>7</td><td>+7</td><td>15</td></tr>
+                        <tr class="europa-league"><td>11</td><td>Stuttgart</td><td>8</td><td>5</td><td>0</td><td>3</td><td>15</td><td>9</td><td>+6</td><td>15</td></tr>
+                        <tr class="europa-league"><td>12</td><td>Ferencvaros</td><td>8</td><td>4</td><td>3</td><td>1</td><td>12</td><td>11</td><td>+1</td><td>15</td></tr>
+                        <tr class="europa-league"><td>13</td><td>Nottingham Forest</td><td>8</td><td>4</td><td>2</td><td>2</td><td>15</td><td>7</td><td>+8</td><td>14</td></tr>
+                        <tr class="europa-league"><td>14</td><td>Viktoria Plzen</td><td>8</td><td>3</td><td>5</td><td>0</td><td>8</td><td>3</td><td>+5</td><td>14</td></tr>
+                        <tr class="europa-league"><td>15</td><td>Red Star Belgrade</td><td>8</td><td>4</td><td>2</td><td>2</td><td>7</td><td>6</td><td>+1</td><td>14</td></tr>
+                        <tr class="europa-league"><td>16</td><td>Celta Vigo</td><td>8</td><td>4</td><td>1</td><td>3</td><td>15</td><td>11</td><td>+4</td><td>13</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
         </section>
         </main>

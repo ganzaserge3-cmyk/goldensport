@@ -393,6 +393,16 @@
             display: block;
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* RESPONSIVE */
         @media(max-width: 768px) {
             main {
@@ -599,23 +609,76 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 Bundesliga statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - BUNDESLIGA</h2>
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Harry Kane</td><td>Bayern Munich</td><td>30</td></tr>
+                        <tr><td>2</td><td>Deniz Undav</td><td>VfB Stuttgart</td><td>14</td></tr>
+                        <tr><td>3</td><td>Luis Diaz</td><td>Bayern Munich</td><td>13</td></tr>
+                        <tr><td>4</td><td>Haris Tabakovic</td><td>Borussia Monchengladbach</td><td>11</td></tr>
+                        <tr><td>4</td><td>Serhou Guirassy</td><td>Borussia Dortmund</td><td>11</td></tr>
+                        <tr><td>6</td><td>Christoph Baumgartner</td><td>RB Leipzig</td><td>10</td></tr>
+                        <tr><td>6</td><td>Michael Olise</td><td>Bayern Munich</td><td>10</td></tr>
+                        <tr><td>6</td><td>Andrej Kramaric</td><td>Hoffenheim</td><td>10</td></tr>
+                        <tr><td>6</td><td>Nadiem Amiri</td><td>Mainz 05</td><td>10</td></tr>
+                        <tr><td>10</td><td>Yan Diomande</td><td>RB Leipzig</td><td>9</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - BUNDESLIGA</h2>
-       
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Michael Olise</td><td>Bayern Munich</td><td>16</td></tr>
+                        <tr><td>2</td><td>Julian Ryerson</td><td>Borussia Dortmund</td><td>11</td></tr>
+                        <tr><td>3</td><td>Luis Diaz</td><td>Bayern Munich</td><td>10</td></tr>
+                        <tr><td>4</td><td>Andrej Ilic</td><td>Union Berlin</td><td>7</td></tr>
+                        <tr><td>4</td><td>Fares Chaibi</td><td>Eintracht Frankfurt</td><td>7</td></tr>
+                        <tr><td>6</td><td>Jamie Leweling</td><td>VfB Stuttgart</td><td>6</td></tr>
+                        <tr><td>6</td><td>Vladimir Coufal</td><td>Hoffenheim</td><td>6</td></tr>
+                        <tr><td>6</td><td>Christoph Baumgartner</td><td>RB Leipzig</td><td>6</td></tr>
+                        <tr><td>9</td><td>Joshua Kimmich</td><td>Bayern Munich</td><td>5</td></tr>
+                        <tr><td>9</td><td>Fabio Silva</td><td>Borussia Dortmund</td><td>5</td></tr>
+                        <tr><td>9</td><td>Aleix Garcia</td><td>Bayer Leverkusen</td><td>5</td></tr>
+                        <tr><td>9</td><td>Angelo Stiller</td><td>VfB Stuttgart</td><td>5</td></tr>
+                        <tr><td>9</td><td>Bazoumana Toure</td><td>Hoffenheim</td><td>5</td></tr>
+                        <tr><td>9</td><td>Franck Honorat</td><td>Borussia Monchengladbach</td><td>5</td></tr>
+                        <tr><td>9</td><td>Romano Schmid</td><td>Werder Bremen</td><td>5</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - BUNDESLIGA</h2>
-             
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Gregor Kobel</td><td>Borussia Dortmund</td><td>8</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - BUNDESLIGA</h2>
-
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th><th>Matches</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Bayern Munich</td><td>71</td><td>18</td></tr>
+                        <tr><td>2</td><td>Eintracht Frankfurt</td><td>38</td><td>18</td></tr>
+                        <tr><td>3</td><td>Borussia Dortmund</td><td>35</td><td>18</td></tr>
+                        <tr><td>3</td><td>Hoffenheim</td><td>35</td><td>17</td></tr>
+                        <tr><td>5</td><td>Bayer Leverkusen</td><td>34</td><td>17</td></tr>
+                        <tr><td>6</td><td>RB Leipzig</td><td>33</td><td>17</td></tr>
+                        <tr><td>7</td><td>VfB Stuttgart</td><td>32</td><td>17</td></tr>
+                        <tr><td>8</td><td>Borussia Monchengladbach</td><td>27</td><td>18</td></tr>
+                        <tr><td>8</td><td>Freiburg</td><td>27</td><td>17</td></tr>
+                        <tr><td>8</td><td>Koln</td><td>27</td><td>18</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -627,8 +690,29 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> BUNDESLIGA STANDINGS</h2>
-               
-      
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Bayern Munich</td><td>18</td><td>16</td><td>2</td><td>0</td><td>71</td><td>14</td><td>+57</td><td>50</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Borussia Dortmund</td><td>18</td><td>11</td><td>6</td><td>1</td><td>35</td><td>17</td><td>+18</td><td>39</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Hoffenheim</td><td>17</td><td>10</td><td>3</td><td>4</td><td>35</td><td>21</td><td>+14</td><td>33</td></tr>
+                        <tr class="champions-league"><td>4</td><td>RB Leipzig</td><td>17</td><td>10</td><td>2</td><td>5</td><td>33</td><td>24</td><td>+9</td><td>32</td></tr>
+                        <tr class="europa-league"><td>5</td><td>VfB Stuttgart</td><td>17</td><td>10</td><td>2</td><td>5</td><td>32</td><td>25</td><td>+7</td><td>32</td></tr>
+                        <tr><td>6</td><td>Bayer Leverkusen</td><td>17</td><td>9</td><td>2</td><td>6</td><td>34</td><td>25</td><td>+9</td><td>29</td></tr>
+                        <tr><td>7</td><td>Eintracht Frankfurt</td><td>18</td><td>7</td><td>6</td><td>5</td><td>38</td><td>39</td><td>-1</td><td>27</td></tr>
+                        <tr><td>8</td><td>Freiburg</td><td>17</td><td>6</td><td>5</td><td>6</td><td>27</td><td>29</td><td>-2</td><td>23</td></tr>
+                        <tr><td>9</td><td>Union Berlin</td><td>17</td><td>6</td><td>5</td><td>6</td><td>23</td><td>26</td><td>-3</td><td>23</td></tr>
+                        <tr><td>10</td><td>Koln</td><td>18</td><td>5</td><td>5</td><td>8</td><td>27</td><td>30</td><td>-3</td><td>20</td></tr>
+                        <tr><td>11</td><td>Borussia Monchengladbach</td><td>18</td><td>5</td><td>5</td><td>8</td><td>23</td><td>29</td><td>-6</td><td>20</td></tr>
+                        <tr><td>12</td><td>Wolfsburg</td><td>18</td><td>5</td><td>4</td><td>9</td><td>27</td><td>38</td><td>-11</td><td>19</td></tr>
+                        <tr><td>13</td><td>Werder Bremen</td><td>17</td><td>4</td><td>6</td><td>7</td><td>21</td><td>34</td><td>-13</td><td>18</td></tr>
+                        <tr><td>14</td><td>Hamburg</td><td>17</td><td>4</td><td>5</td><td>8</td><td>17</td><td>27</td><td>-10</td><td>17</td></tr>
+                        <tr><td>15</td><td>Augsburg</td><td>17</td><td>4</td><td>3</td><td>10</td><td>18</td><td>33</td><td>-15</td><td>15</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>Heidenheim</td><td>18</td><td>3</td><td>4</td><td>11</td><td>17</td><td>39</td><td>-22</td><td>13</td></tr>
+                        <tr class="relegation-zone"><td>17</td><td>Mainz 05</td><td>18</td><td>2</td><td>6</td><td>10</td><td>18</td><td>31</td><td>-13</td><td>12</td></tr>
+                        <tr class="relegation-zone"><td>18</td><td>St. Pauli</td><td>17</td><td>3</td><td>3</td><td>11</td><td>16</td><td>31</td><td>-15</td><td>12</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

@@ -376,6 +376,16 @@
         display: block;
     }
 
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #111;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
+
     /* RESPONSIVE */
     @media(max-width: 768px) {
         main {
@@ -563,25 +573,63 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 Ekstraklasa statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - EKSTRAKLASA</h2>
-              
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Tomas Bobcek</td><td>Lechia Gdansk</td><td>14</td></tr>
+                        <tr><td>2</td><td>Karol Czubak</td><td>Motor Lublin</td><td>13</td></tr>
+                        <tr><td>3</td><td>Mikael Ishak</td><td>Lech Poznan</td><td>12</td></tr>
+                        <tr><td>4</td><td>Sebastian Bergier</td><td>Widzew Lodz</td><td>11</td></tr>
+                        <tr><td>4</td><td>Jonatan Braut Brunes</td><td>Rakow Czestochowa</td><td>11</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - EKSTRAKLASA</h2>
-              
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Camilo Mena</td><td>Lechia Gdansk</td><td>8</td></tr>
+                        <tr><td>2</td><td>Rafal Wolski</td><td>Wisla Plock</td><td>7</td></tr>
+                        <tr><td>3</td><td>Jesus Imaz</td><td>Jagiellonia Bialystok</td><td>5</td></tr>
+                        <tr><td>4</td><td>Kamil Grosicki</td><td>Pogon Szczecin</td><td>4</td></tr>
+                        <tr><td>5</td><td>Rafal Kurzawa</td><td>Pogon Szczecin</td><td>4</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - EKSTRAKLASA</h2>
-                
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Sebastian Madejski</td><td>Cracovia</td><td>10</td></tr>
+                        <tr><td>2</td><td>Jasmin Buric</td><td>Zaglebie Lubin</td><td>7</td></tr>
+                        <tr><td>2</td><td>Xavier Dziekonski</td><td>Korona Kielce</td><td>7</td></tr>
+                        <tr><td>2</td><td>Frantisek Plach</td><td>Piast Gliwice</td><td>7</td></tr>
+                        <tr><td>5</td><td>Bartosz Mrozek</td><td>Lech Poznan</td><td>6</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
                 <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - EKSTRAKLASA</h2>
-               
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Lechia Gdansk</td><td>49</td></tr>
+                        <tr><td>2</td><td>Lech Poznan</td><td>40</td></tr>
+                        <tr><td>3</td><td>Radomiak Radom</td><td>40</td></tr>
+                        <tr><td>4</td><td>Jagiellonia Bialystok</td><td>39</td></tr>
+                        <tr><td>5</td><td>Zaglebie Lubin</td><td>37</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-passport"></i> TOP PASSING ACCURACY - EKSTRAKLASA</h2>
-              
+                <p class="stats-update-note">Passing accuracy leaderboard is not populated in this pass. Standings and core player stats are updated.</p>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -593,8 +641,29 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> EKSTRAKLASA STANDINGS</h2>
-               
-     
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Jagiellonia Bialystok</td><td>23</td><td>10</td><td>8</td><td>5</td><td>39</td><td>29</td><td>+10</td><td>38</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Zaglebie Lubin</td><td>23</td><td>10</td><td>8</td><td>5</td><td>37</td><td>27</td><td>+10</td><td>38</td></tr>
+                        <tr class="europa-league"><td>3</td><td>Lech Poznan</td><td>23</td><td>10</td><td>8</td><td>5</td><td>40</td><td>34</td><td>+6</td><td>38</td></tr>
+                        <tr><td>4</td><td>Gornik Zabrze</td><td>23</td><td>10</td><td>4</td><td>9</td><td>33</td><td>31</td><td>+2</td><td>34</td></tr>
+                        <tr><td>5</td><td>Rakow Czestochowa</td><td>23</td><td>10</td><td>4</td><td>9</td><td>31</td><td>29</td><td>+2</td><td>34</td></tr>
+                        <tr><td>6</td><td>Cracovia</td><td>23</td><td>8</td><td>9</td><td>6</td><td>29</td><td>25</td><td>+4</td><td>33</td></tr>
+                        <tr><td>7</td><td>Wisla Plock</td><td>23</td><td>8</td><td>9</td><td>6</td><td>24</td><td>20</td><td>+4</td><td>33</td></tr>
+                        <tr><td>8</td><td>Korona Kielce</td><td>24</td><td>9</td><td>6</td><td>9</td><td>29</td><td>27</td><td>+2</td><td>33</td></tr>
+                        <tr><td>9</td><td>Radomiak Radom</td><td>23</td><td>8</td><td>8</td><td>7</td><td>40</td><td>35</td><td>+5</td><td>32</td></tr>
+                        <tr><td>10</td><td>Lechia Gdansk</td><td>24</td><td>10</td><td>6</td><td>8</td><td>49</td><td>45</td><td>+4</td><td>31</td></tr>
+                        <tr><td>11</td><td>Pogon Szczecin</td><td>23</td><td>9</td><td>4</td><td>10</td><td>33</td><td>35</td><td>-2</td><td>31</td></tr>
+                        <tr><td>12</td><td>GKS Katowice</td><td>22</td><td>9</td><td>3</td><td>10</td><td>31</td><td>32</td><td>-1</td><td>30</td></tr>
+                        <tr><td>13</td><td>Motor Lublin</td><td>23</td><td>7</td><td>9</td><td>7</td><td>32</td><td>37</td><td>-5</td><td>30</td></tr>
+                        <tr><td>14</td><td>Piast Gliwice</td><td>23</td><td>8</td><td>5</td><td>10</td><td>26</td><td>28</td><td>-2</td><td>29</td></tr>
+                        <tr><td>15</td><td>Widzew Lodz</td><td>23</td><td>6</td><td>6</td><td>11</td><td>25</td><td>33</td><td>-8</td><td>24</td></tr>
+                        <tr><td>16</td><td>Legia Warszawa</td><td>23</td><td>5</td><td>8</td><td>10</td><td>23</td><td>31</td><td>-8</td><td>23</td></tr>
+                        <tr class="black-zone"><td>17</td><td>Arka Gdynia</td><td>23</td><td>5</td><td>5</td><td>13</td><td>22</td><td>39</td><td>-17</td><td>20</td></tr>
+                        <tr class="black-zone"><td>18</td><td>Bruk-Bet Termalica Nieciecza</td><td>23</td><td>4</td><td>6</td><td>13</td><td>24</td><td>41</td><td>-17</td><td>18</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

@@ -522,10 +522,20 @@
             transition: all 0.3s ease;
         }
         
-        .back-to-home:hover {
-            background: rgba(0, 0, 0, 1);
-            transform: translateY(-2px);
-        }
+    .back-to-home:hover {
+        background: rgba(0, 0, 0, 1);
+        transform: translateY(-2px);
+    }
+
+    .stats-update-note {
+        margin: 0 0 20px;
+        padding: 12px 16px;
+        background: #f4f4f4;
+        border-left: 4px solid #111;
+        border-radius: 6px;
+        color: #444;
+        font-size: 15px;
+    }
 
     /* Animation for table rows */
     @keyframes fadeIn {
@@ -579,7 +589,7 @@
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
                     <div class="info-value">82%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-label">Completed Phase</div>
                 </div>
             </div>
 
@@ -591,48 +601,72 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with completed 2025/26 UEFA Conference League league-phase standings and current scoring leaders through 26 February 2026.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - CONFERENCE LEAGUE</h2>
-              
-                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - CONFERENCE LEAGUE</h2>
-               
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Marius Mouandilmadji</td><td>Samsunspor</td><td>7</td></tr>
+                        <tr><td>2</td><td>Mikael Ishak</td><td>Lech Poznan</td><td>5</td></tr>
+                        <tr><td>2</td><td>Franko Kovacevic</td><td>Celje</td><td>5</td></tr>
+                        <tr><td>2</td><td>Sven Mijnans</td><td>AZ Alkmaar</td><td>5</td></tr>
+                        <tr><td>2</td><td>Nardin Mulahusejnovic</td><td>Noah</td><td>5</td></tr>
+                    </tbody>
+                </table>
 
-             
+                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - CONFERENCE LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Carlo Holse</td><td>Samsunspor</td><td>4</td></tr>
+                        <tr><td>2</td><td>Martial Godo</td><td>Strasbourg</td><td>3</td></tr>
+                        <tr><td>2</td><td>Luis Palma</td><td>Lech Poznan</td><td>3</td></tr>
+                        <tr><td>2</td><td>Kees Smit</td><td>AZ Alkmaar</td><td>3</td></tr>
+                        <tr><td>2</td><td>Ronaldo Webster</td><td>Shkendija</td><td>3</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - CONFERENCE LEAGUE</h2>
-            
-            
-
-                <h2><i class="fas fa-running"></i> TOP TACKLES - CONFERENCE LEAGUE</h2>
-            
-    
-               
-                <h2><i class="fas fa-hands"></i> TOP SAVES - CONFERENCE LEAGUE</h2>
-            
-
-                <h2><i class="fas fa-passport"></i> PLAYERS PASSING ACCURACY - CONFERENCE LEAGUE</h2>
-             
-
-                    
-               
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Zlatan Alomerovic</td><td>AEK Larnaca</td><td>5</td></tr>
+                        <tr><td>2</td><td>Martin Zlomislic</td><td>Rijeka</td><td>4</td></tr>
+                        <tr><td>2</td><td>Karlo Letica</td><td>Lausanne-Sport</td><td>4</td></tr>
+                        <tr><td>2</td><td>Rome-Jayden Owusu-Oduro</td><td>AZ Alkmaar</td><td>4</td></tr>
+                        <tr><td>5</td><td>Oliwier Zych</td><td>Rakow Czestochowa</td><td>3</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - CONFERENCE LEAGUE</h2>
-              
-        
-
-                <h2><i class="fas fa-passport"></i> PASSING ACCURACY - CONFERENCE LEAGUE</h2>
-              
-     
-                  
-
                 <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - CONFERENCE LEAGUE</h2>
-               
-                       
-                 
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>AEK Athens</td><td>14</td></tr>
+                        <tr><td>2</td><td>Rayo Vallecano</td><td>13</td></tr>
+                        <tr><td>3</td><td>Lech Poznan</td><td>12</td></tr>
+                        <tr><td>4</td><td>Strasbourg</td><td>11</td></tr>
+                        <tr><td>4</td><td>Crystal Palace</td><td>11</td></tr>
+                    </tbody>
+                </table>
+
+                <h2><i class="fas fa-check-circle"></i> MOST TEAM CLEAN SHEETS - CONFERENCE LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>AEK Larnaca</td><td>5</td></tr>
+                        <tr><td>2</td><td>Rijeka</td><td>4</td></tr>
+                        <tr><td>2</td><td>Lausanne-Sport</td><td>4</td></tr>
+                        <tr><td>2</td><td>AZ Alkmaar</td><td>4</td></tr>
+                        <tr><td>5</td><td>Rakow Czestochowa</td><td>3</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -647,7 +681,27 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> CONFERENCE LEAGUE STANDINGS</h2>
-           
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Strasbourg</td><td>6</td><td>5</td><td>1</td><td>0</td><td>11</td><td>5</td><td>+6</td><td>16</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Rakow Czestochowa</td><td>6</td><td>4</td><td>2</td><td>0</td><td>9</td><td>2</td><td>+7</td><td>14</td></tr>
+                        <tr class="champions-league"><td>3</td><td>AEK Athens</td><td>6</td><td>4</td><td>1</td><td>1</td><td>14</td><td>7</td><td>+7</td><td>13</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Sparta Prague</td><td>6</td><td>4</td><td>1</td><td>1</td><td>10</td><td>3</td><td>+7</td><td>13</td></tr>
+                        <tr class="champions-league"><td>5</td><td>Rayo Vallecano</td><td>6</td><td>4</td><td>1</td><td>1</td><td>13</td><td>7</td><td>+6</td><td>13</td></tr>
+                        <tr class="champions-league"><td>6</td><td>Shakhtar Donetsk</td><td>6</td><td>4</td><td>1</td><td>1</td><td>10</td><td>5</td><td>+5</td><td>13</td></tr>
+                        <tr class="champions-league"><td>7</td><td>Mainz 05</td><td>6</td><td>4</td><td>1</td><td>1</td><td>7</td><td>3</td><td>+4</td><td>13</td></tr>
+                        <tr class="champions-league"><td>8</td><td>AEK Larnaca</td><td>6</td><td>3</td><td>3</td><td>0</td><td>7</td><td>1</td><td>+6</td><td>12</td></tr>
+                        <tr class="conference-league"><td>9</td><td>Lausanne-Sport</td><td>6</td><td>3</td><td>2</td><td>1</td><td>6</td><td>3</td><td>+3</td><td>11</td></tr>
+                        <tr class="conference-league"><td>10</td><td>Crystal Palace</td><td>6</td><td>3</td><td>1</td><td>2</td><td>11</td><td>6</td><td>+5</td><td>10</td></tr>
+                        <tr class="conference-league"><td>11</td><td>Lech Poznan</td><td>6</td><td>3</td><td>1</td><td>2</td><td>12</td><td>8</td><td>+4</td><td>10</td></tr>
+                        <tr class="conference-league"><td>12</td><td>Samsunspor</td><td>6</td><td>3</td><td>1</td><td>2</td><td>10</td><td>6</td><td>+4</td><td>10</td></tr>
+                        <tr class="conference-league"><td>13</td><td>Celje</td><td>6</td><td>3</td><td>1</td><td>2</td><td>8</td><td>7</td><td>+1</td><td>10</td></tr>
+                        <tr class="conference-league"><td>14</td><td>AZ Alkmaar</td><td>6</td><td>3</td><td>1</td><td>2</td><td>7</td><td>7</td><td>0</td><td>10</td></tr>
+                        <tr class="conference-league"><td>15</td><td>Fiorentina</td><td>6</td><td>3</td><td>0</td><td>3</td><td>8</td><td>5</td><td>+3</td><td>9</td></tr>
+                        <tr class="conference-league"><td>16</td><td>Rijeka</td><td>6</td><td>2</td><td>3</td><td>1</td><td>5</td><td>2</td><td>+3</td><td>9</td></tr>
+                    </tbody>
+                </table>
                           
          
         </section>

@@ -378,6 +378,16 @@
             display: block;
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* Match grid for fixtures */
         .match-grid {
             display: grid;
@@ -591,34 +601,87 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 7 March 2026 with current 2025/26 Eredivisie statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORERS - EREDIVISIE</h2>
-    
-
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Sem Steijn</td><td>Feyenoord</td><td>18</td></tr>
+                        <tr><td>2</td><td>Troy Parrott</td><td>AZ</td><td>14</td></tr>
+                        <tr><td>3</td><td>Luuk de Jong</td><td>PSV</td><td>12</td></tr>
+                        <tr><td>4</td><td>Igor Paixao</td><td>Feyenoord</td><td>10</td></tr>
+                        <tr><td>5</td><td>Dylan Vente</td><td>Heerenveen</td><td>10</td></tr>
+                    </tbody>
+                </table>
                 <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - EREDIVISIE</h2>
-   
-             
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Oliver Antman</td><td>Go Ahead Eagles</td><td>9</td></tr>
+                        <tr><td>2</td><td>Noa Lang</td><td>PSV</td><td>9</td></tr>
+                        <tr><td>3</td><td>Davy Klaassen</td><td>Ajax</td><td>7</td></tr>
+                        <tr><td>4</td><td>Kenneth Taylor</td><td>Ajax</td><td>7</td></tr>
+                        <tr><td>5</td><td>Jakob Breum</td><td>Go Ahead Eagles</td><td>7</td></tr>
+                    </tbody>
+                </table>
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - EREDIVISIE</h2>
-            
-                <h2><i class="fas fa-hands"></i> TOP SAVES - EREDIVISIE</h2>
-               
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Nick Olij</td><td>Sparta Rotterdam</td><td>8</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <h2><i class="fas fa-running"></i> TOP TACKLES - EREDIVISIE</h2>
-                
-
-                <h2><i class="fas fa-passport"></i> TOP PASSING ACCURACY - EREDIVISIE</h2>
-              
+            <div class="tab-content" id="team-stats">
+                <h2><i class="fas fa-bullseye"></i> TOP SCORING TEAMS - EREDIVISIE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th><th>Matches</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>PSV Eindhoven</td><td>71</td><td>24</td></tr>
+                        <tr><td>2</td><td>Ajax</td><td>52</td><td>24</td></tr>
+                        <tr><td>3</td><td>Twente</td><td>49</td><td>24</td></tr>
+                        <tr><td>4</td><td>Feyenoord</td><td>48</td><td>24</td></tr>
+                        <tr><td>5</td><td>Utrecht</td><td>42</td><td>24</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
-        
+            <div class="tab-content" id="fixtures">
+                <h2><i class="fas fa-calendar-day"></i> EREDIVISIE FIXTURES</h2>
+                <p class="stats-update-note">Fixtures are not populated in this pass. Player and standings data are updated.</p>
+            </div>
 
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> EREDIVISIE STANDINGS</h2>
-      
-
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Ajax</td><td>24</td><td>19</td><td>3</td><td>2</td><td>52</td><td>18</td><td>+34</td><td>60</td></tr>
+                        <tr class="champions-league"><td>2</td><td>PSV Eindhoven</td><td>24</td><td>16</td><td>4</td><td>4</td><td>71</td><td>28</td><td>+43</td><td>52</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Feyenoord</td><td>24</td><td>13</td><td>8</td><td>3</td><td>48</td><td>27</td><td>+21</td><td>47</td></tr>
+                        <tr class="champions-league"><td>4</td><td>Utrecht</td><td>24</td><td>13</td><td>7</td><td>4</td><td>42</td><td>35</td><td>+7</td><td>46</td></tr>
+                        <tr class="europa-league"><td>5</td><td>Twente</td><td>24</td><td>13</td><td>6</td><td>5</td><td>49</td><td>31</td><td>+18</td><td>45</td></tr>
+                        <tr><td>6</td><td>AZ</td><td>23</td><td>13</td><td>4</td><td>6</td><td>40</td><td>21</td><td>+19</td><td>43</td></tr>
+                        <tr><td>7</td><td>Go Ahead Eagles</td><td>24</td><td>12</td><td>5</td><td>7</td><td>42</td><td>36</td><td>+6</td><td>41</td></tr>
+                        <tr><td>8</td><td>Heerenveen</td><td>24</td><td>8</td><td>6</td><td>10</td><td>38</td><td>41</td><td>-3</td><td>30</td></tr>
+                        <tr><td>9</td><td>Fortuna Sittard</td><td>24</td><td>8</td><td>5</td><td>11</td><td>28</td><td>38</td><td>-10</td><td>29</td></tr>
+                        <tr><td>10</td><td>FC Groningen</td><td>24</td><td>7</td><td>7</td><td>10</td><td>22</td><td>33</td><td>-11</td><td>28</td></tr>
+                        <tr><td>11</td><td>NAC Breda</td><td>24</td><td>8</td><td>4</td><td>12</td><td>26</td><td>41</td><td>-15</td><td>28</td></tr>
+                        <tr><td>12</td><td>NEC Nijmegen</td><td>24</td><td>8</td><td>4</td><td>12</td><td>35</td><td>35</td><td>0</td><td>28</td></tr>
+                        <tr><td>13</td><td>Heracles Almelo</td><td>24</td><td>5</td><td>10</td><td>9</td><td>28</td><td>43</td><td>-15</td><td>25</td></tr>
+                        <tr><td>14</td><td>PEC Zwolle</td><td>24</td><td>6</td><td>6</td><td>12</td><td>29</td><td>38</td><td>-9</td><td>24</td></tr>
+                        <tr><td>15</td><td>Willem II</td><td>24</td><td>6</td><td>6</td><td>12</td><td>27</td><td>39</td><td>-12</td><td>24</td></tr>
+                        <tr><td>16</td><td>Sparta Rotterdam</td><td>24</td><td>5</td><td>8</td><td>11</td><td>23</td><td>33</td><td>-10</td><td>23</td></tr>
+                        <tr class="black-zone"><td>17</td><td>Almere City</td><td>24</td><td>3</td><td>5</td><td>16</td><td>15</td><td>46</td><td>-31</td><td>14</td></tr>
+                        <tr class="black-zone"><td>18</td><td>RKC Waalwijk</td><td>24</td><td>2</td><td>5</td><td>17</td><td>25</td><td>56</td><td>-31</td><td>11</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

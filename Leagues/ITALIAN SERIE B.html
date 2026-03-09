@@ -495,6 +495,16 @@
             transform: translateY(-2px);
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
         /* Small screen adjustments */
         @media(max-width: 480px) {
             body {
@@ -585,8 +595,8 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">68%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-value">280/380</div>
+                    <div class="info-label">Matches Played</div>
                 </div>
             </div>
 
@@ -598,24 +608,73 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
 
+            <p class="stats-update-note">Updated on 8 March 2026 with current 2025/26 Italian Serie B statistics.</p>
+
             <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
                 <h2><i class="fas fa-futbol"></i> TOP SCORER - ITALIAN SERIE B</h2>
-         
-                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - ITALIAN SERIE B</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Joel Pohjanpalo</td><td>Palermo</td><td>19</td></tr>
+                        <tr><td>2</td><td>Andrea Adorante</td><td>Juve Stabia</td><td>13</td></tr>
+                        <tr><td>3</td><td>Tommaso Biasci</td><td>Catanzaro</td><td>11</td></tr>
+                        <tr><td>4</td><td>Ettore Gliozzi</td><td>Modena</td><td>10</td></tr>
+                        <tr><td>4</td><td>Fares Ghedjemis</td><td>Frosinone</td><td>10</td></tr>
+                    </tbody>
+                </table>
 
+                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - ITALIAN SERIE B</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Giacomo Calo</td><td>Frosinone</td><td>10</td></tr>
+                        <tr><td>2</td><td>Antonio Palumbo</td><td>Palermo</td><td>9</td></tr>
+                        <tr><td>3</td><td>Pietro Iemmello</td><td>Catanzaro</td><td>7</td></tr>
+                        <tr><td>3</td><td>Salvatore Elia</td><td>Empoli</td><td>7</td></tr>
+                        <tr><td>3</td><td>John Yeboah</td><td>Venezia</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
                 <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - ITALIAN SERIE B</h2>
-                
-
-                <h2><i class="fas fa-running"></i> TOP TACKLES - ITALIAN SERIE B</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Filip Stankovic</td><td>Venezia</td><td>8</td></tr>
+                        <tr><td>2</td><td>Jesse Joronen</td><td>Palermo</td><td>7</td></tr>
+                        <tr><td>2</td><td>Leandro Chichizola</td><td>Modena</td><td>7</td></tr>
+                        <tr><td>2</td><td>Demba Thiam</td><td>Monza</td><td>7</td></tr>
+                        <tr><td>2</td><td>Lorenzo Palmisani</td><td>Frosinone</td><td>7</td></tr>
+                    </tbody>
+                </table>
 
             </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - ITALIAN SERIE B</h2>
-               
+                <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - ITALIAN SERIE B</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Venezia</td><td>60</td></tr>
+                        <tr><td>2</td><td>Frosinone</td><td>55</td></tr>
+                        <tr><td>3</td><td>Palermo</td><td>49</td></tr>
+                        <tr><td>4</td><td>Monza</td><td>46</td></tr>
+                        <tr><td>5</td><td>Catanzaro</td><td>45</td></tr>
+                    </tbody>
+                </table>
+
+                <h2><i class="fas fa-check-circle"></i> MOST TEAM CLEAN SHEETS - ITALIAN SERIE B</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Palermo</td><td>14</td></tr>
+                        <tr><td>2</td><td>Modena</td><td>13</td></tr>
+                        <tr><td>3</td><td>Venezia</td><td>12</td></tr>
+                        <tr><td>4</td><td>Frosinone</td><td>11</td></tr>
+                        <tr><td>4</td><td>Monza</td><td>11</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- Fixtures Tab Content -->
@@ -627,8 +686,31 @@
             <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
                 <h2><i class="fas fa-list-ol"></i> ITALIAN SERIE B STANDINGS</h2>
-          
-       
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Venezia</td><td>28</td><td>+33</td><td>60</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Monza</td><td>28</td><td>+23</td><td>60</td></tr>
+                        <tr class="conference-league"><td>3</td><td>Frosinone</td><td>28</td><td>+24</td><td>55</td></tr>
+                        <tr class="conference-league"><td>4</td><td>Palermo</td><td>28</td><td>+26</td><td>54</td></tr>
+                        <tr class="conference-league"><td>5</td><td>Catanzaro</td><td>28</td><td>+10</td><td>46</td></tr>
+                        <tr class="conference-league"><td>6</td><td>Modena</td><td>28</td><td>+13</td><td>43</td></tr>
+                        <tr><td>7</td><td>Juve Stabia</td><td>28</td><td>0</td><td>40</td></tr>
+                        <tr><td>8</td><td>Cesena</td><td>28</td><td>-5</td><td>38</td></tr>
+                        <tr><td>9</td><td>Sudtirol</td><td>28</td><td>+3</td><td>37</td></tr>
+                        <tr><td>10</td><td>Padova</td><td>28</td><td>-5</td><td>34</td></tr>
+                        <tr><td>11</td><td>Carrarese</td><td>28</td><td>-5</td><td>32</td></tr>
+                        <tr><td>12</td><td>Empoli</td><td>28</td><td>-5</td><td>31</td></tr>
+                        <tr><td>13</td><td>Sampdoria</td><td>28</td><td>-8</td><td>30</td></tr>
+                        <tr><td>14</td><td>Avellino</td><td>28</td><td>-16</td><td>30</td></tr>
+                        <tr><td>15</td><td>Reggiana</td><td>28</td><td>-11</td><td>29</td></tr>
+                        <tr><td>16</td><td>Virtus Entella</td><td>28</td><td>-14</td><td>28</td></tr>
+                        <tr class="relegation-zone"><td>17</td><td>Bari</td><td>28</td><td>-15</td><td>28</td></tr>
+                        <tr class="relegation-zone"><td>18</td><td>Mantova</td><td>28</td><td>-16</td><td>27</td></tr>
+                        <tr class="relegation-zone"><td>19</td><td>Spezia</td><td>28</td><td>-12</td><td>26</td></tr>
+                        <tr class="relegation-zone"><td>20</td><td>Pescara</td><td>28</td><td>-20</td><td>22</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ekstraklasa - Golden Sport</title>
+<title>Belgian Pro League - Golden Sport</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3486690881489807"
      crossorigin="anonymous"></script>
  <!-- ✅ Logo (favicon) online -->
@@ -76,12 +76,12 @@
     }
 
     /* Active page indicator */
-    nav a[href="ekstraklasa.html"] {
+    nav a[href="proleague.html"] {
         background-color: rgba(255, 255, 255, 0.15);
         color: #ffffff;
     }
 
-    nav a[href="ekstraklasa.html"]::after {
+    nav a[href="proleague.html"]::after {
         content: "";
         position: absolute;
         bottom: -3px;
@@ -492,6 +492,16 @@
             transform: translateY(-2px);
         }
 
+        .stats-update-note {
+            margin: 0 0 20px;
+            padding: 12px 16px;
+            background: #f4f4f4;
+            border-left: 4px solid #111;
+            border-radius: 6px;
+            color: #444;
+            font-size: 15px;
+        }
+
     /* Animation for table rows */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
@@ -516,7 +526,7 @@
         ← Back to GoldenSport
     </a>
     <header>
-        <h1><i class="fas fa-trophy"></i> EKSTRAKLASA</h1>
+        <h1><i class="fas fa-trophy"></i> BELGIAN PRO LEAGUE</h1>
         <nav>
             <a href="../index.html"><i class="fas fa-home"></i> Home</a>
        
@@ -534,18 +544,18 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-users"></i>
-                    <div class="info-value">18</div>
+                    <div class="info-value">16</div>
                     <div class="info-label">Teams</div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-trophy"></i>
-                    <div class="info-value">34</div>
+                    <div class="info-value">30</div>
                     <div class="info-label">Matchdays</div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-chart-line"></i>
-                    <div class="info-value">68%</div>
-                    <div class="info-label">Avg. Attendance</div>
+                    <div class="info-value">217/240</div>
+                    <div class="info-label">Matches Played</div>
                 </div>
             </div>
 
@@ -557,50 +567,105 @@
                 <div class="tab" data-tab="standings">Standings</div>
             </div>
             
-  <!-- Player Stats Tab Content -->
+            <p class="stats-update-note">Updated on 8 March 2026 with current 2025/26 Belgian Pro League statistics.</p>
+
+            <!-- Player Stats Tab Content -->
             <div class="tab-content active" id="player-stats">
-                <h2><i class="fas fa-futbol"></i> TOP SCORERS - PRO LEAGUE</h2>   
+                <h2><i class="fas fa-futbol"></i> TOP SCORERS - BELGIAN PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Keisuke Goto</td><td>Sint-Truidense</td><td>10</td></tr>
+                        <tr><td>2</td><td>Nicolo Tresoldi</td><td>Club Brugge</td><td>9</td></tr>
+                        <tr><td>2</td><td>Promise David</td><td>Union Saint-Gilloise</td><td>9</td></tr>
+                        <tr><td>2</td><td>Thorgan Hazard</td><td>Anderlecht</td><td>9</td></tr>
+                        <tr><td>5</td><td>Jeppe Erenbjerg</td><td>Zulte Waregem</td><td>8</td></tr>
+                    </tbody>
+                </table>
 
+                <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - BELGIAN PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Player</th><th>Club</th><th>Assists</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Christos Tzolis</td><td>Club Brugge</td><td>10</td></tr>
+                        <tr><td>2</td><td>Konstantinos Karetsas</td><td>Genk</td><td>9</td></tr>
+                        <tr><td>3</td><td>Patrick Pflucke</td><td>Royal Charleroi</td><td>6</td></tr>
+                        <tr><td>3</td><td>Jarne Steuckers</td><td>Genk</td><td>6</td></tr>
+                        <tr><td>5</td><td>Gary Magnee</td><td>Cercle Brugge</td><td>5</td></tr>
+                    </tbody>
+                </table>
 
-         <h2><i class="fas fa-assistive-listening-systems"></i> TOP ASSISTS - EKSTRAKLASA</h2>
-             
-            
-   <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - EKSTRAKLASA</h2>
- 
-
-
-
-        <!-- TOP TACKLES -->
-    
-            <h3 class="league-title  replace-text">TOP TACKLES  PRO LEAGUE</h3>
-     
-
-
+                <h2><i class="fas fa-shield-alt"></i> TOP CLEAN SHEETS - BELGIAN PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Goalkeeper</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Kjell Scherpen</td><td>Union Saint-Gilloise</td><td>11</td></tr>
+                        <tr><td>2</td><td>Colin Coosemans</td><td>Anderlecht</td><td>10</td></tr>
+                        <tr><td>3</td><td>Marcos Peano</td><td>RAAL La Louviere</td><td>9</td></tr>
+                        <tr><td>3</td><td>Andreas Jungdal</td><td>Westerlo</td><td>9</td></tr>
+                        <tr><td>5</td><td>Nordin Jackers</td><td>Club Brugge</td><td>7</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
             <!-- Team Stats Tab Content -->
             <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOP POSSESSION - EKSTRAKLASA</h2>
+                <h2><i class="fas fa-futbol"></i> TOP SCORING TEAMS - BELGIAN PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Goals</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Union Saint-Gilloise</td><td>51</td></tr>
+                        <tr><td>2</td><td>Club Brugge</td><td>50</td></tr>
+                        <tr><td>3</td><td>Genk</td><td>46</td></tr>
+                        <tr><td>4</td><td>KAA Gent</td><td>45</td></tr>
+                        <tr><td>5</td><td>Anderlecht</td><td>40</td></tr>
+                    </tbody>
+                </table>
 
-
-        
-            <!-- Team Stats Tab Content -->
-            <div class="tab-content" id="team-stats">
-                <h2><i class="fas fa-bullseye"></i> TOTAL PASSESS - PRO LEAGUE</h2>
-
-                
-
+                <h2><i class="fas fa-check-circle"></i> MOST TEAM CLEAN SHEETS - BELGIAN PRO LEAGUE</h2>
+                <table>
+                    <thead><tr><th>Rank</th><th>Club</th><th>Clean Sheets</th></tr></thead>
+                    <tbody>
+                        <tr class="top-player"><td>1</td><td>Union Saint-Gilloise</td><td>11</td></tr>
+                        <tr><td>2</td><td>Anderlecht</td><td>10</td></tr>
+                        <tr><td>3</td><td>RAAL La Louviere</td><td>9</td></tr>
+                        <tr><td>3</td><td>Westerlo</td><td>9</td></tr>
+                        <tr><td>5</td><td>Club Brugge</td><td>9</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
             <!-- Fixtures Tab Content -->
             <div class="tab-content" id="fixtures">
-                <h2><i class="fas fa-calendar-day"></i> PRO LEAGUE FIXTURES</h2>
-           
+                <h2><i class="fas fa-calendar-day"></i> BELGIAN PRO LEAGUE FIXTURES</h2>
+            </div>
 
-  
-   <!-- Standings Tab Content -->
+            <!-- Standings Tab Content -->
             <div class="tab-content" id="standings">
-                <h2><i class="fas fa-list-ol"></i> PRO LEAGUE STANDINGS</h2>
-             
-        </section>1w
+                <h2><i class="fas fa-list-ol"></i> BELGIAN PRO LEAGUE STANDINGS</h2>
+                <table>
+                    <thead><tr><th>Pos</th><th>Club</th><th>Pld</th><th>GD</th><th>Pts</th></tr></thead>
+                    <tbody>
+                        <tr class="champions-league"><td>1</td><td>Union Saint-Gilloise</td><td>27</td><td>+29</td><td>58</td></tr>
+                        <tr class="champions-league"><td>2</td><td>Club Brugge</td><td>27</td><td>+23</td><td>52</td></tr>
+                        <tr class="champions-league"><td>3</td><td>Anderlecht</td><td>27</td><td>+21</td><td>49</td></tr>
+                        <tr class="champions-league"><td>4</td><td>KRC Genk</td><td>27</td><td>+17</td><td>48</td></tr>
+                        <tr class="conference-league"><td>5</td><td>KAA Gent</td><td>27</td><td>+16</td><td>47</td></tr>
+                        <tr class="conference-league"><td>6</td><td>Royal Antwerp</td><td>28</td><td>+4</td><td>42</td></tr>
+                        <tr><td>7</td><td>RAAL La Louviere</td><td>28</td><td>+2</td><td>37</td></tr>
+                        <tr><td>8</td><td>Royal Charleroi</td><td>27</td><td>+2</td><td>35</td></tr>
+                        <tr><td>9</td><td>KV Mechelen</td><td>27</td><td>-7</td><td>35</td></tr>
+                        <tr><td>10</td><td>Dender</td><td>27</td><td>-3</td><td>34</td></tr>
+                        <tr><td>11</td><td>Westerlo</td><td>27</td><td>-4</td><td>33</td></tr>
+                        <tr><td>12</td><td>Standard Liege</td><td>27</td><td>-6</td><td>32</td></tr>
+                        <tr><td>13</td><td>Sint-Truidense</td><td>27</td><td>-16</td><td>27</td></tr>
+                        <tr class="relegation-zone"><td>14</td><td>Zulte Waregem</td><td>27</td><td>-12</td><td>25</td></tr>
+                        <tr class="relegation-zone"><td>15</td><td>Oud-Heverlee Leuven</td><td>27</td><td>-23</td><td>23</td></tr>
+                        <tr class="relegation-zone"><td>16</td><td>Cercle Brugge</td><td>27</td><td>-43</td><td>14</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer>
